@@ -1,0 +1,23 @@
+# Binary files and large APKs (GitHub rejects files > 100MB)
+*.apk
+*.ipa
+*.idsig
+*.zip
+*.so
+*.dll
+*.bank
+*.bundle
+
+# Android build outputs
+build_unity/
+bin/
+gen/
+out/
+.gradle/
+*.dex
+*.class
+*.flat
+
+# System files
+.DS_Store
+Thumbs.db
