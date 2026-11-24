@@ -1,66 +1,73 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using Atlas.Audio;
+using Atlas.Contexts;
+using Atlas.Definitions;
+using Atlas.Gameplay;
+using Atlas.Gameplay.Kart;
+using Atlas.Gameplay.Pickups;
+using Atlas.Gameplay.Player;
+using Atlas.Gameplay.Usables;
+using Atlas.Input;
+using Atlas.League;
+using Atlas.Lighting;
+using Atlas.Networking;
+using Atlas.Rendering;
+using Atlas.Save;
+using Atlas.Settings;
+using Atlas.Stats;
+using Atlas.UI;
+using Core.Actors;
+using Core.Application;
+using Core.Assets;
+using Core.Audio;
+using Core.Cameras;
+using Core.Containers;
+using Core.Contexts;
+using Core.Definitions;
+using Core.Input;
+using Core.Localisation;
+using Core.Networking;
+using Core.Scenes;
+using Core.Services;
+using Core.Settings;
+using Unity.Collections;
+using Unity.Jobs;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.Events;
+using UnityEngine.UI;
+using Object = UnityEngine.Object;
+using Network = Atlas.Networking.Network;
+using NetworkPlayer = Core.Networking.NetworkPlayer;
 
 namespace Atlas.Analytics
 {
-	public class AtlasAnalyticsEvents : MonoBehaviour
+	public class AtlasAnalyticsEvents
 	{
-		/*
-		Dummy class. This could have happened for several reasons:
-
-		1. No dll files were provided to AssetRipper.
-
-			Unity asset bundles and serialized files do not contain script information to decompile.
-				* For Mono games, that information is contained in .NET dll files.
-				* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-				
-			AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-			A unexpected file structure could cause AssetRipper to not find the required files.
-
-		2. Incorrect dll files were provided to AssetRipper.
-
-			Any of the following could cause this:
-				* Il2CppInterop assemblies
-				* Deobfuscated assemblies
-				* Older assemblies (compared to when the bundle was built)
-				* Newer assemblies (compared to when the bundle was built)
-
-			Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
-
-		3. Assembly Reconstruction has not been implemented.
-
-			Asset bundles contain a small amount of information about the script content.
-			This information can be used to recover the serializable fields of a script.
-
-			See: https://github.com/AssetRipper/AssetRipper/issues/655
-	
-		4. This script is unnecessary.
-
-			If this script has no asset or script references, it can be deleted.
-			Be sure to resolve any compile errors before deleting because they can hide references.
-
-		5. Script Content Level 0
-
-			AssetRipper was set to not load any script information.
-
-		6. Cpp2IL failed to decompile Il2Cpp data
-
-			If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-			This is an upstream problem, and the AssetRipper developer has very little control over it.
-			Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
-
-		7. An incorrect path was provided to AssetRipper.
-
-			This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-			AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-			An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-			Generally, AssetRipper expects users to provide the root folder of the game. For example:
-				* Windows: the folder containing the game's .exe file
-				* Mac: the .app file/folder
-				* Linux: the folder containing the game's executable file
-				* Android: the apk file
-				* iOS: the ipa file
-				* Switch: the folder containing exefs and romfs
-
-		*/
+		private AnalyticsManager _analyticsManager;
+		private string _sessionGUID;
+		public string SessionGUID { set { } }
+		public void Init(AnalyticsManager analyticsManager) { }
+		public void DeInit() { }
+		public void StartSessionEvent(string os, string inputFamily, string gameVersion) { }
+		public void NewSaveGameEvent() { }
+		public void FTUEStageCompletedEvent(string ftueStageId) { }
+		public void LobbyExitEvent(int humanCount, int durationMs, int reason, int gameType, string lobby) { }
+		public void VolumeChangedEvent(int oldVO, int oldMusic, int oldSFX, int newVO, int newMusic, int newSFX) { }
+		public void EpisodeProgressEvent(string episodeID, int numberOfReruns, int progress, int firstProgressOfSeason) { }
+		public void CharacterRankUpEvent(string characterId, int rank) { }
+		public void RewardEvent(string item) { }
+		public void DailyChallengeEvent(int difficulty, int position) { }
+		public void EventResultsEvent(string eventId, int completedChallengeBitField, int flagCount) { }
+		public void NetworkErrorEvent(string errorCode) { }
+		public void MemoryWarningEvent(string deviceModel) { }
+		public void ArcadeProgressEvent(ArcadeEventDefinition.Medal medal, int totalGoldMedalCount, int totalSilverMedalCount, int totalBronzeMedalCount) { }
+		public void EndBaseLayerEvent(int finishPosition, int score, GameType gameType, DefinitionID contextId, DefinitionID mapId, DefinitionID aiId, DefinitionID characterId, DefinitionID kartId, DefinitionID gliderId, DefinitionID wheelsId, DefinitionID antennaId, DefinitionID boostId) { }
+		public void LeagueEvent(string leagueTier, string leagueSeed, int currentDay, int eventDay, int position, int replayCount, int positionChange) { }
+		public void LeagueEndEvent(string leagueTier, string leagueSeed, string leagueStanding, int eventCount, int promoted, int starsAwarded) { }
 	}
 }

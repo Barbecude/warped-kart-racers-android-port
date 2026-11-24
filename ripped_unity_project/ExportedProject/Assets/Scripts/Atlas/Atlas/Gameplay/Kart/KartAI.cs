@@ -1,8 +1,10 @@
 using System.Collections.Generic;
+using Atlas.Contexts;
+using Atlas.Definitions;
 using Atlas.Gameplay.Usables;
 using Core.Actors;
+using Core.Application;
 using Core.Definitions;
-using Core.GameLoop;
 using Unity.Mathematics;
 using Unity.Profiling;
 using UnityEngine;

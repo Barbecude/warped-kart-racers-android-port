@@ -1,66 +1,55 @@
+using System;
+using Atlas.Gameplay.Usables;
+using Atlas.Stats;
 using UnityEngine;
 
 namespace Atlas.Definitions
 {
-	public class UsableDefinition : MonoBehaviour
+	public abstract class UsableDefinition : Definition
 	{
-		/*
-		Dummy class. This could have happened for several reasons:
+		public enum UseType
+		{
+			ThrowForwards = 0,
+			ThrowBackwards = 1,
+			Activate = 2,
+			Propane = 3,
+			TimeCheater = 4
+		}
 
-		1. No dll files were provided to AssetRipper.
+		[Serializable]
+		public struct GeneralUsableData
+		{
+			[SerializeField] private int _numberOfUses;
+			[SerializeField] private float _lifeTime;
+			[SerializeField] private int _equippingTime;
+			[SerializeField] private int _activatingTime;
+			[SerializeField] private int _reequipTime;
+			[SerializeField] private string _onHitSplatId;
+			[SerializeField] private string _inHandVisualsID;
+			[SerializeField] private bool _keepInHandTransformValuesOnUse;
+			[SerializeField] private bool _ignoreItemPickupAnimOnReequip;
 
-			Unity asset bundles and serialized files do not contain script information to decompile.
-				* For Mono games, that information is contained in .NET dll files.
-				* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-				
-			AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-			A unexpected file structure could cause AssetRipper to not find the required files.
+			public int NumberOfUses => _numberOfUses;
+			public float LifeTime => _lifeTime;
+			public int EquippingTime => _equippingTime;
+			public int ActivatingTime => _activatingTime;
+			public int ReequipTime => _reequipTime;
+			public string OnHitSplatId => _onHitSplatId;
+			public string InHandVisualsID => _inHandVisualsID;
+			public bool KeepInHandTransformValuesOnUse => _keepInHandTransformValuesOnUse;
+			public bool IgnoreItemPickupAnimOnReequip => _ignoreItemPickupAnimOnReequip;
+		}
 
-		2. Incorrect dll files were provided to AssetRipper.
+		[SerializeField] private GeneralUsableData _generalData;
+		[SerializeField] private Stat _hitOpponentWithStat;
+		[SerializeField] private Stat _wasHitByStat;
+		[SerializeField] private Stat _usedStat;
 
-			Any of the following could cause this:
-				* Il2CppInterop assemblies
-				* Deobfuscated assemblies
-				* Older assemblies (compared to when the bundle was built)
-				* Newer assemblies (compared to when the bundle was built)
-
-			Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
-
-		3. Assembly Reconstruction has not been implemented.
-
-			Asset bundles contain a small amount of information about the script content.
-			This information can be used to recover the serializable fields of a script.
-
-			See: https://github.com/AssetRipper/AssetRipper/issues/655
-	
-		4. This script is unnecessary.
-
-			If this script has no asset or script references, it can be deleted.
-			Be sure to resolve any compile errors before deleting because they can hide references.
-
-		5. Script Content Level 0
-
-			AssetRipper was set to not load any script information.
-
-		6. Cpp2IL failed to decompile Il2Cpp data
-
-			If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-			This is an upstream problem, and the AssetRipper developer has very little control over it.
-			Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
-
-		7. An incorrect path was provided to AssetRipper.
-
-			This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-			AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-			An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-			Generally, AssetRipper expects users to provide the root folder of the game. For example:
-				* Windows: the folder containing the game's .exe file
-				* Mac: the .app file/folder
-				* Linux: the folder containing the game's executable file
-				* Android: the apk file
-				* iOS: the ipa file
-				* Switch: the folder containing exefs and romfs
-
-		*/
+		public GeneralUsableData GeneralData => _generalData;
+		public Stat HitOpponentWithStat => _hitOpponentWithStat;
+		public Stat WasHitByStat => _wasHitByStat;
+		public Stat UsedStat => _usedStat;
+		public abstract UsableType UsableType { get; }
+		public abstract UseType PrimaryUseType();
 	}
 }

@@ -1,66 +1,200 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using Atlas.Audio;
+using Atlas.Contexts;
+using Atlas.Definitions;
+using Atlas.Gameplay;
+using Atlas.Gameplay.Kart;
+using Atlas.Gameplay.Pickups;
+using Atlas.Gameplay.Player;
+using Atlas.Gameplay.Usables;
+using Atlas.Input;
+using Atlas.League;
+using Atlas.Lighting;
+using Atlas.Networking;
+using Atlas.Rendering;
+using Atlas.Save;
+using Atlas.Settings;
+using Atlas.Stats;
+using Atlas.UI;
+using Core.Actors;
+using Core.Application;
+using Core.Assets;
+using Core.Audio;
+using Core.Cameras;
+using Core.Containers;
+using Core.Contexts;
+using Core.Definitions;
+using Core.Input;
+using Core.Localisation;
+using Core.Networking;
+using Core.Scenes;
+using Core.Services;
+using Core.Settings;
+using Unity.Collections;
+using Unity.Jobs;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.Events;
+using UnityEngine.UI;
+using Object = UnityEngine.Object;
+using Network = Atlas.Networking.Network;
+using NetworkPlayer = Core.Networking.NetworkPlayer;
 
 namespace Atlas.Contexts
 {
-	public class GameContextBase : MonoBehaviour
+	public abstract class GameContextBase : AtlasContext
 	{
-		/*
-		Dummy class. This could have happened for several reasons:
-
-		1. No dll files were provided to AssetRipper.
-
-			Unity asset bundles and serialized files do not contain script information to decompile.
-				* For Mono games, that information is contained in .NET dll files.
-				* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-				
-			AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-			A unexpected file structure could cause AssetRipper to not find the required files.
-
-		2. Incorrect dll files were provided to AssetRipper.
-
-			Any of the following could cause this:
-				* Il2CppInterop assemblies
-				* Deobfuscated assemblies
-				* Older assemblies (compared to when the bundle was built)
-				* Newer assemblies (compared to when the bundle was built)
-
-			Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
-
-		3. Assembly Reconstruction has not been implemented.
-
-			Asset bundles contain a small amount of information about the script content.
-			This information can be used to recover the serializable fields of a script.
-
-			See: https://github.com/AssetRipper/AssetRipper/issues/655
-	
-		4. This script is unnecessary.
-
-			If this script has no asset or script references, it can be deleted.
-			Be sure to resolve any compile errors before deleting because they can hide references.
-
-		5. Script Content Level 0
-
-			AssetRipper was set to not load any script information.
-
-		6. Cpp2IL failed to decompile Il2Cpp data
-
-			If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-			This is an upstream problem, and the AssetRipper developer has very little control over it.
-			Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
-
-		7. An incorrect path was provided to AssetRipper.
-
-			This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-			AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-			An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-			Generally, AssetRipper expects users to provide the root folder of the game. For example:
-				* Windows: the folder containing the game's .exe file
-				* Mac: the .app file/folder
-				* Linux: the folder containing the game's executable file
-				* Android: the apk file
-				* iOS: the ipa file
-				* Switch: the folder containing exefs and romfs
-
-		*/
+		public const string ContextName = "GameContextBase";
+		protected AtlasStats _atlasStats;
+		protected StateMachine _stateMachine;
+		protected GameContextBaseIntroState _introState;
+		protected GameContextBaseInProgressState _inProgressState;
+		protected GameContextBaseOutroState _outroState;
+		protected GameContextPlayerManager _gameContextPlayerManager;
+		protected GameInProgressScreen _gameInProgressScreen;
+		protected EventDefinition.EventDuration _durationType;
+		private static readonly DefinitionID SkipPostEventFTUEStage;
+		private DependencyManager _dependencyManager;
+		private CameraManager _cameraManager;
+		private AtlasUIManager _uiManager;
+		private ContextManager _contextManager;
+		private KartCompositeFactory _kartCompositeFactory;
+		private GameContextDebugBinding _gameContextDebugBinding;
+		private AssetManager _assetManager;
+		private AtlasPoolCreator _poolCreator;
+		private PoolManager _poolManager;
+		private ActorManager _actorManager;
+		private PooledActorManager _pooledActorManager;
+		private UsableManager _usableManager;
+		private AtlasDefinitions _atlasDefinitions;
+		private Network _network;
+		private AtlasQualitySettings _atlasQualitySettings;
+		private TransitionManager _transitionManager;
+		private PostProcessingManager _postProcessingManager;
+		private AchievementManager _achievementManager;
+		private DailyChallengeManager _dailyChallengeManager;
+		private FTUEManager _FTUEManager;
+		private LocalisationManager _localisationManager;
+		private MessageBoxManager _messageBoxManager;
+		private MPErrorManager _mpErrorManager;
+		private SeasonsManager _seasonsManager;
+		private MatchMakingManager _matchMakingManager;
+		private ServicesManager _servicesManager;
+		private ToastManager _toastManager;
+		private KartManager _kartManager;
+		private KartFollowCamera _kartFollowCamera;
+		private MapSequenceController _sequenceController;
+		private MusicManager _musicManager;
+		private AtlasAudioManager _audioManager;
+		private SaveManager _saveManager;
+		private UnlockManager _unlockManager;
+		private PauseManager _pauseManager;
+		private InputManager _inputManager;
+		private BaseLayerFTUEManager _baseLayerFtueManager;
+		private AddressablesSceneLoader _sceneLoader;
+		private NetworkTimelineManager _networkTimelineManager;
+		private NetworkCarUpdater _networkCarUpdater;
+		private NetworkResultsUpdater _networkResults;
+		private NetworkMigrationUpdater _networkMigrationUpdater;
+		private AtlasShaders _shaders;
+		private AtlasAnalyticsManager _analyticsManager;
+		private bool _isUserPauseAllowed;
+		private GameContextInfoBase _currentContextInfo;
+		private GameContextDefinition _currentContextDefinition;
+		private MapBehaviour _mapBehaviour;
+		private ToonShaderBehaviour _toonShaderBehaviour;
+		private PickupManager _pickupManager;
+		private InteractableManager _interactableManager;
+		private LightWorld _lightWorld;
+		private PostProcessingEffectBehaviour _postProcessingEffectBehaviour;
+		private VfxHitVolumeManager _vfxHitVolumeManager;
+		private PickupLimitsDefinition _pickupLimitsDefinition;
+		private DateTime _startTime;
+		private double _perfTrackingFrameTimeAcculator;
+		private uint _perfTrackingFrameCount;
+		private ArcadeEvent _arcadeEvent;
+		private bool _disableEndConditions;
+		private LeagueManager _leagueManager;
+		private bool _trackChallenges;
+		private bool _isNetworkSessionValid;
+		private bool _earlyExit;
+		private bool _restarting;
+		private static readonly ProfilerMarker UpdateProfilerMarker;
+		private static readonly ProfilerMarker FixedUpdateProfilerMarker;
+		private static readonly ProfilerMarker LateUpdateProfilerMarker;
+		public MapBehaviour MapBehaviour { get => default; set { } }
+		public AtlasUIManager UIManager { get => default; }
+		public KartManager KartManager { get => default; }
+		public KartFollowCamera KartFollowCamera { get => default; }
+		public MapSequenceController SequenceController { get => default; }
+		public GameContextPlayerManager GameContextPlayerManager { get => default; }
+		public GameInProgressScreen GameInProgressScreen { get => default; }
+		public GameContextInfoBase CurrentContextInfo { get => default; }
+		public GameContextDefinition CurrentGameContextDefinition { get => default; }
+		public PickupManager PickupManager { get => default; }
+		public ActorManager ActorManager { get => default; }
+		public DependencyManager DependencyManager { get => default; }
+		public TransitionManager TransitionManager { get => default; }
+		public AtlasAudioManager AudioManager { get => default; }
+		public PostProcessingEffectBehaviour PostProcessingEffectBehaviour { get => default; }
+		public Network Network { get => default; }
+		public VfxHitVolumeManager VfxHitVolumeManager { get => default; }
+		public ArcadeEvent ArcadeEvent { get => default; }
+		public bool DisableEndConditions { get => default; set { } }
+		public int ScorePerHit { get => default; }
+		public bool IsUserPauseAllowed { get => default; set { } }
+		public virtual string GetContextName() { return default; }
+		public virtual IEnumerator OnInit(IContextInfo contextInfo, DependencyManager dependencyManager) { return default; }
+		public NetworkResultsUpdater GetResultUpdater() { return default; }
+		public virtual IEnumerator OnPostInit(IContextInfo contextInfo, DependencyManager dependencyManager) { return default; }
+		public virtual void OnUpdate(IUpdateParams updateParams) { }
+		public virtual void OnPreLateUpdate(IUpdateParams updateParams) { }
+		public virtual void OnLateUpdate(IUpdateParams updateParams) { }
+		public virtual void OnFixedUpdate(IUpdateParams updateParams) { }
+		public virtual IEnumerator OnDeInit() { return default; }
+		public virtual void DeInitEditor() { }
+		public void InitLightWorld() { }
+		public void DeInitLightWorld() { }
+		public void ExitContext() { }
+		private void DispatchLeagueEventAnalytics(bool hasPlayedEventPreviously, int eventDayIndex, int previousPlayerPosition, int newPlayerPosition) { }
+		public void InitPickupLimitsDefinition() { }
+		private void UpdateLoadingProgress(float percentageComplete) { }
+		private void SwitchToFrontEndContext(int challengesCompleted) { }
+		private void OnDisconnect() { }
+		private void EndOfTournamentRound() { }
+		public bool IsUsingPoints() { return default; }
+		public VFXBehaviour SpawnAoE(string vfxPoolName, AoEHitData data, Vector3 centre, KartComposite ownerKart, UsableDefinition fromUsable, KartComposite excludeKart) { return default; }
+		public static bool TryGetLocalHumanPlayerFromCollider(Collider collider, out KartComposite localHumanPlayer) { localHumanPlayer = default; return default; }
+		public static bool TryGetKartCompositeFromCollider(Collider collider, out KartComposite kartComposite) { kartComposite = default; return default; }
+		public void StartTrackingChallenges() { }
+		public void ResetChallenges() { }
+		protected void MapBehaviourUpdate(IUpdateParams updateParams) { }
+		private void RandomizeInvalidKartVisuals() { }
+		private void InitPostProcessing(GameObject prefab) { }
+		private void FindAndInitCoreBehaviours(MapDefinition mapDefinition) { }
+		private void DeInitBehaviours() { }
+		private void DeInitFollowCam() { }
+		private void InitStates(EventDefinition eventDefinition) { }
+		private void DeInitStates() { }
+		private IEnumerator InitPools() { return default; }
+		private void DeInitPools() { }
+		private void InitAtlasPlayers(AtlasStats atlasStats) { }
+		private void DeInitAtlasPlayers(AtlasStats atlasStats) { }
+		private void HandleUsableHitPlayer(GameContextPlayer hitPlayer, GameContextPlayer throwingPlayer, UsableDefinition usable) { }
+		private void OnQuitFromPause() { }
+		private void OnRestartFromPause() { }
+		private void UpdateFrameTiming(IUpdateParams updateParams) { }
+		private void OnPartyInviteReceived(string lobbyCode) { }
+		public void InProgressStateStartFirstUpdate() { }
+		private void InitArcade() { }
+		private void DeInitArcade(out int position) { position = default; }
+		private void PostInitArcade() { }
+		private void OnUsableUsed(GameContextPlayer player, UsableDefinition usable, int usesRemaining) { }
+		public virtual void SetupGameContextScreen(GameInProgressScreen screen, GameInProgressScreenBehaviour screenBehaviour) { }
+		public void PostSetupGameContextScreen(GameInProgressScreen screen, GameInProgressScreenBehaviour screenBehaviour) { }
 	}
 }

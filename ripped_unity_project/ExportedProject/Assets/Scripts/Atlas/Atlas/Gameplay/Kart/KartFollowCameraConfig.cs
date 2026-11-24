@@ -1,4 +1,5 @@
 using System;
+using Atlas.Definitions;
 using Core.Definitions;
 using UnityEngine;
 

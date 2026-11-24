@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using Atlas.Rendering;
+using Core.Application;
 using Core.Containers;
 using Core.Definitions;
-using Core.GameLoop;
 using UnityEngine;
 
 namespace Atlas.Gameplay.Kart

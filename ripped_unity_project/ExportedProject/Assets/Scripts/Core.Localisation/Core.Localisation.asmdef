@@ -1,5 +1,8 @@
 {
   "name": "Core.Localisation",
-  "references": [],
+  "references": [
+    "Unity.TextMeshPro",
+    "UnityEngine.UI"
+  ],
   "allowUnsafeCode": true
 }

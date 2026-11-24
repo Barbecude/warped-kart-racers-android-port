@@ -1,66 +1,89 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using Atlas.Audio;
+using Atlas.Contexts;
+using Atlas.Definitions;
+using Atlas.Gameplay;
+using Atlas.Gameplay.Kart;
+using Atlas.Gameplay.Pickups;
+using Atlas.Gameplay.Player;
+using Atlas.Gameplay.Usables;
+using Atlas.Input;
+using Atlas.League;
+using Atlas.Lighting;
+using Atlas.Networking;
+using Atlas.Rendering;
+using Atlas.Save;
+using Atlas.Settings;
+using Atlas.Stats;
+using Atlas.UI;
+using Core.Actors;
+using Core.Application;
+using Core.Assets;
+using Core.Audio;
+using Core.Cameras;
+using Core.Containers;
+using Core.Contexts;
+using Core.Definitions;
+using Core.Input;
+using Core.Localisation;
+using Core.Networking;
+using Core.Scenes;
+using Core.Services;
+using Core.Settings;
+using Unity.Collections;
+using Unity.Jobs;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.Events;
+using UnityEngine.UI;
+using Object = UnityEngine.Object;
+using Network = Atlas.Networking.Network;
+using NetworkPlayer = Core.Networking.NetworkPlayer;
 
 namespace Atlas.Maps
 {
 	public class MapBehaviour : MonoBehaviour
 	{
-		/*
-		Dummy class. This could have happened for several reasons:
-
-		1. No dll files were provided to AssetRipper.
-
-			Unity asset bundles and serialized files do not contain script information to decompile.
-				* For Mono games, that information is contained in .NET dll files.
-				* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-				
-			AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-			A unexpected file structure could cause AssetRipper to not find the required files.
-
-		2. Incorrect dll files were provided to AssetRipper.
-
-			Any of the following could cause this:
-				* Il2CppInterop assemblies
-				* Deobfuscated assemblies
-				* Older assemblies (compared to when the bundle was built)
-				* Newer assemblies (compared to when the bundle was built)
-
-			Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
-
-		3. Assembly Reconstruction has not been implemented.
-
-			Asset bundles contain a small amount of information about the script content.
-			This information can be used to recover the serializable fields of a script.
-
-			See: https://github.com/AssetRipper/AssetRipper/issues/655
-	
-		4. This script is unnecessary.
-
-			If this script has no asset or script references, it can be deleted.
-			Be sure to resolve any compile errors before deleting because they can hide references.
-
-		5. Script Content Level 0
-
-			AssetRipper was set to not load any script information.
-
-		6. Cpp2IL failed to decompile Il2Cpp data
-
-			If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-			This is an upstream problem, and the AssetRipper developer has very little control over it.
-			Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
-
-		7. An incorrect path was provided to AssetRipper.
-
-			This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-			AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-			An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-			Generally, AssetRipper expects users to provide the root folder of the game. For example:
-				* Windows: the folder containing the game's .exe file
-				* Mac: the .app file/folder
-				* Linux: the folder containing the game's executable file
-				* Android: the apk file
-				* iOS: the ipa file
-				* Switch: the folder containing exefs and romfs
-
-		*/
+		private Vector3 _cachedBoundingBoxMin;
+		private Vector3 _cachedBoundingBoxMax;
+		private bool _boundingBoxBoundsCached;
+		private int _mapBoundsRespawnCounter;
+		[SerializeField] private MapSequenceBehaviour _mapSequence;
+		[SerializeField] private RaceSplineRootBehaviour _raceSplineRootBehaviour;
+		[SerializeField] private SpawnLocationsBehaviour _spawnLocationsBehaviour;
+		[SerializeField] private PickupSpotsRootBehaviour _pickupSpotsRootBehaviour;
+		[SerializeField] private HitVolumeRootBehaviour _hitVolumeRootBehaviour;
+		[SerializeField] private IdentifiableLocatorBehaviourRoot _identifiableLocatorRootBehaviour;
+		[SerializeField] private BattleAIMapBoundsBehaviour _battleAiMapBoundsBehaviour;
+		[SerializeField] private Transform _interactablesRoot;
+		[SerializeField] private PlayableDirector[] _networkSyncedPlayableDirectors;
+		[SerializeField] private int _variantTextureSwapIndex;
+		[SerializeField] protected Transform _mapBoundsBox;
+		[SerializeField] protected Transform _minimapBoundsPlane;
+		[SerializeField] protected bool _rotateMinimapAxes;
+		[SerializeField] protected Transform _aiRerouteTriggersRoot;
+		public MapSequenceBehaviour MapSequence { get => default; }
+		public RaceSplineRootBehaviour RaceSplineRootBehaviour { get => default; }
+		public SpawnLocationsBehaviour SpawnLocationsBehaviour { get => default; }
+		public PickupSpotsRootBehaviour PickupSpotsRootBehaviour { get => default; }
+		public BattleAIMapBoundsBehaviour BattleAiMapBoundsBehaviour { get => default; }
+		public Transform InteractablesRoot { get => default; }
+		public PlayableDirector[] NetworkSyncedPlayableDirectors { get => default; }
+		public int VariantTextureSwapIndex { get => default; }
+		public Transform MapBoundsBox { get => default; }
+		public Transform MinimapBounds { get => default; }
+		public bool RotateMinimapAxes { get => default; }
+		public HitVolumeRootBehaviour HitVolumeRootBehaviour { get => default; }
+		public IdentifiableLocatorBehaviourRoot IdentifiableLocatorRootBehaviour { get => default; }
+		public void Init() { }
+		public void DeInit() { }
+		public Transform GetSpawnLocation() { return default; }
+		public bool IsOutsideBounds(Vector3 pos) { return default; }
+		public bool IsNearBounds(Vector3 pos) { return default; }
+		public bool TryGetMapBounds(out Vector3 min, out Vector3 max) { min = default; max = default; return default; }
 	}
 }

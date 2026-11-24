@@ -1,5 +1,7 @@
 using System;
+using Atlas.Definitions;
 using Atlas.Gameplay.Kart;
+using Atlas.Lighting;
 using Core.Definitions;
 using UnityEngine;
 

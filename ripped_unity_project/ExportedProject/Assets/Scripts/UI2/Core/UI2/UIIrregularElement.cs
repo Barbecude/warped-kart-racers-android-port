@@ -1,66 +1,74 @@
+using UnityEngine.UI;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Core.UI2
 {
-	public class UIIrregularElement : MonoBehaviour
+	public class UIIrregularElement : MaskableGraphic, ILayoutElement, ICanvasRaycastFilter
 	{
-		/*
-		Dummy class. This could have happened for several reasons:
-
-		1. No dll files were provided to AssetRipper.
-
-			Unity asset bundles and serialized files do not contain script information to decompile.
-				* For Mono games, that information is contained in .NET dll files.
-				* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-				
-			AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-			A unexpected file structure could cause AssetRipper to not find the required files.
-
-		2. Incorrect dll files were provided to AssetRipper.
-
-			Any of the following could cause this:
-				* Il2CppInterop assemblies
-				* Deobfuscated assemblies
-				* Older assemblies (compared to when the bundle was built)
-				* Newer assemblies (compared to when the bundle was built)
-
-			Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
-
-		3. Assembly Reconstruction has not been implemented.
-
-			Asset bundles contain a small amount of information about the script content.
-			This information can be used to recover the serializable fields of a script.
-
-			See: https://github.com/AssetRipper/AssetRipper/issues/655
-	
-		4. This script is unnecessary.
-
-			If this script has no asset or script references, it can be deleted.
-			Be sure to resolve any compile errors before deleting because they can hide references.
-
-		5. Script Content Level 0
-
-			AssetRipper was set to not load any script information.
-
-		6. Cpp2IL failed to decompile Il2Cpp data
-
-			If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-			This is an upstream problem, and the AssetRipper developer has very little control over it.
-			Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
-
-		7. An incorrect path was provided to AssetRipper.
-
-			This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-			AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-			An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-			Generally, AssetRipper expects users to provide the root folder of the game. For example:
-				* Windows: the folder containing the game's .exe file
-				* Mac: the .app file/folder
-				* Linux: the folder containing the game's executable file
-				* Android: the apk file
-				* iOS: the ipa file
-				* Switch: the folder containing exefs and romfs
-
-		*/
+		public struct EdgeDetails { }
+		private const float MAX_UV = 0.5f;
+		[SerializeField] private Sprite _sprite;
+		[SerializeField] private float _borderWidth;
+		[SerializeField] private Color _borderColour;
+		[SerializeField] private Vector2 _shadowOffset;
+		[SerializeField] private Color _shadowColour;
+		[SerializeField] private float _antiAliasing;
+		[SerializeField] private bool _projectUVs;
+		[SerializeField] private UIUtils.PreserveAspectRatioType _projectPreserveAspectRatioType;
+		[SerializeField] private Vector2 _offsetUVs;
+		[SerializeField] private Vector2 _scaleUVs;
+		[SerializeField] private float _topLeftUVX;
+		[SerializeField] private float _topLeftUVY;
+		[SerializeField] private float _topRightUVX;
+		[SerializeField] private float _topRightUVY;
+		[SerializeField] private float _bottomRightUVX;
+		[SerializeField] private float _bottomRightUVY;
+		[SerializeField] private float _bottomLeftUVX;
+		[SerializeField] private float _bottomLeftUVY;
+		[SerializeField] private float _leftCurveMagnitude;
+		[SerializeField] private float _leftCurveFrequency;
+		[SerializeField] private float _leftCurveOffset;
+		[SerializeField] private int _leftCurveDivisions;
+		[SerializeField] private float _rightCurveMagnitude;
+		[SerializeField] private float _rightCurveFrequency;
+		[SerializeField] private float _rightCurveOffset;
+		[SerializeField] private int _rightCurveDivisions;
+		[SerializeField] private float _fillPercentage;
+		private Vector2 _adjustedScaleUVs;
+		private float m_CachedReferencePixelsPerUnit;
+		public float FillPerc { get => default; set { } }
+		public float TopLeftUVX { get => default; set { } }
+		public float TopLeftUVY { get => default; set { } }
+		public float TopRightUVX { get => default; set { } }
+		public float TopRightUVY { get => default; set { } }
+		public float BottomRightUVX { get => default; set { } }
+		public float BottomRightUVY { get => default; set { } }
+		public float BottomLeftUVX { get => default; set { } }
+		public float BottomLeftUVY { get => default; set { } }
+		public Sprite sprite { get => default; set { } }
+		public float minWidth { get => default; }
+		public float preferredWidth { get => default; }
+		public float flexibleWidth { get => default; }
+		public float minHeight { get => default; }
+		public float preferredHeight { get => default; }
+		public float flexibleHeight { get => default; }
+		public int layoutPriority { get => default; }
+		public Texture mainTexture { get => default; }
+		public float pixelsPerUnit { get => default; }
+		public virtual void CalculateLayoutInputHorizontal() { }
+		public virtual void CalculateLayoutInputVertical() { }
+		public virtual bool IsRaycastLocationValid(Vector2 screenPoint, Camera eventCamera) { return default; }
+		protected virtual void OnPopulateMesh(VertexHelper toFill) { }
+		private Vector2 AdjustUVs(Vector2 uvs, Vector2 offset, Vector2 scale) { return default; }
+		private void GenerateMesh(VertexHelper vh, bool lPreserveAspect) { }
+		private void AddStripTris(int startVertIndex, int endVertIndex, int outerVertCount, VertexHelper vh) { }
+		private void AddMiddleTris(int startVertIndex, int endVertIndex, int centerIndex, int outerVertCount, VertexHelper vh) { }
+		private void AddEdge(UIIrregularElement.EdgeDetails edgeDetails, int vertCount, Vector2 offset, bool projectUVs, Vector4 dimensions, VertexHelper vh) { }
+		private static Vector2 CalculateUV(Vector2 vert, Vector4 dimensions) { return default; }
+		private Vector4 GetDrawingDimensions(bool shouldPreserveAspect) { return default; }
+		private void PreserveSpriteAspectRatio(ref Rect rect, Vector2 spriteSize) { }
 	}
 }

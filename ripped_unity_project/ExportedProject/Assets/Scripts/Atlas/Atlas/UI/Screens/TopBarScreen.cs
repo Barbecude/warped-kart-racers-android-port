@@ -1,66 +1,109 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using Atlas.Audio;
+using Atlas.Contexts;
+using Atlas.Definitions;
+using Atlas.Gameplay;
+using Atlas.Gameplay.Kart;
+using Atlas.Gameplay.Pickups;
+using Atlas.Gameplay.Player;
+using Atlas.Gameplay.Usables;
+using Atlas.Input;
+using Atlas.League;
+using Atlas.Lighting;
+using Atlas.Networking;
+using Atlas.Rendering;
+using Atlas.Save;
+using Atlas.Settings;
+using Atlas.Stats;
+using Atlas.UI;
+using Core.Actors;
+using Core.Application;
+using Core.Assets;
+using Core.Audio;
+using Core.Cameras;
+using Core.Containers;
+using Core.Contexts;
+using Core.Definitions;
+using Core.Input;
+using Core.Localisation;
+using Core.Networking;
+using Core.Scenes;
+using Core.Services;
+using Core.Settings;
+using Unity.Collections;
+using Unity.Jobs;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.Events;
+using UnityEngine.UI;
+using Object = UnityEngine.Object;
+using Network = Atlas.Networking.Network;
+using NetworkPlayer = Core.Networking.NetworkPlayer;
 
 namespace Atlas.UI.Screens
 {
-	public class TopBarScreen : MonoBehaviour
+	public class TopBarScreen : AtlasScreen<TopBarScreenBehaviour, TopBarScreen.TransitionData>
 	{
-		/*
-		Dummy class. This could have happened for several reasons:
-
-		1. No dll files were provided to AssetRipper.
-
-			Unity asset bundles and serialized files do not contain script information to decompile.
-				* For Mono games, that information is contained in .NET dll files.
-				* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-				
-			AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-			A unexpected file structure could cause AssetRipper to not find the required files.
-
-		2. Incorrect dll files were provided to AssetRipper.
-
-			Any of the following could cause this:
-				* Il2CppInterop assemblies
-				* Deobfuscated assemblies
-				* Older assemblies (compared to when the bundle was built)
-				* Newer assemblies (compared to when the bundle was built)
-
-			Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
-
-		3. Assembly Reconstruction has not been implemented.
-
-			Asset bundles contain a small amount of information about the script content.
-			This information can be used to recover the serializable fields of a script.
-
-			See: https://github.com/AssetRipper/AssetRipper/issues/655
-	
-		4. This script is unnecessary.
-
-			If this script has no asset or script references, it can be deleted.
-			Be sure to resolve any compile errors before deleting because they can hide references.
-
-		5. Script Content Level 0
-
-			AssetRipper was set to not load any script information.
-
-		6. Cpp2IL failed to decompile Il2Cpp data
-
-			If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-			This is an upstream problem, and the AssetRipper developer has very little control over it.
-			Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
-
-		7. An incorrect path was provided to AssetRipper.
-
-			This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-			AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-			An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-			Generally, AssetRipper expects users to provide the root folder of the game. For example:
-				* Windows: the folder containing the game's .exe file
-				* Mac: the .app file/folder
-				* Linux: the folder containing the game's executable file
-				* Android: the apk file
-				* iOS: the ipa file
-				* Switch: the folder containing exefs and romfs
-
-		*/
+		public enum ElementType
+		{
+			Invalid = -1,
+			BackButton = 0,
+			SettingsButton = 1,
+			GameCenterButton = 2,
+			TransparentGameCenterButton = 3,
+			NextButton = 4,
+			PadlockButton = 5,
+			BackPanel = 6,
+			NextPanel = 7,
+			TitlePanel = 8,
+			Count = 9,
+		}
+		public enum ElementState
+		{
+			Hidden = 0,
+			AnimatingIn = 1,
+			Shown = 2,
+			AnimatingOut = 3,
+		}
+		private static readonly Vector3 SidePanelScreenOffset;
+		private static readonly Vector3 TopPanelScreenOffset;
+		private TopBarScreen.Element[] _elements;
+		private TopBarManager.TopBarButton _defaultSelectionButton;
+		private float _nexxtPanelEnabledVisuals;
+		private bool _nextPanelEnabled;
+		private string _nextTitleLocKey;
+		private Sprite _nextTitleIcon;
+		private Material _nextButtonMaterial;
+		public void SetNextPanelEnabledVisuals(bool disabled) { }
+		protected virtual void OnUpdate(float dt) { }
+		public void SetNextTitle(string titleLocKey, Sprite icon) { }
+		public void ReLayoutTitle() { }
+		private TopBarScreen.ElementType GetElementType(TopBarManager.TopBarButton topBarButton) { return default; }
+		private TopBarScreen.ElementState VisibleToElementState(bool visible) { return default; }
+		public void RequestButtonVisible(TopBarManager.TopBarButton topBarButton, bool visible, bool animate) { }
+		public void RequestElementVisible(TopBarScreen.ElementType elementType, bool visible, bool animate) { }
+		public TopBarScreen.ElementState GetElementState(TopBarManager.TopBarButton topBarButton) { return default; }
+		private void ForceButtonState(TopBarScreen.ElementType elementType, bool visible) { }
+		private void AnimateInSlash(TopBarScreen.Element element) { }
+		private void AnimateOutSlash(TopBarScreen.Element element) { }
+		private void AnimateInTitle(TopBarScreen.Element element) { }
+		private void AnimateOutTitle(TopBarScreen.Element element) { }
+		private void AnimateInButton(TopBarScreen.Element element) { }
+		private void AnimateOutButton(TopBarScreen.Element element) { }
+		private void UpdateElement(TopBarScreen.ElementType elementType) { }
+		private void OnElementAnimatingOutComplete(TopBarScreen.ElementType elementType) { }
+		private void OnElementAnimatingInComplete(TopBarScreen.ElementType elementType) { }
+		public void ShowBackingPanelsIfRequired(bool ignoreBackPanel, bool ignoreNextPanel) { }
+		public void HideNextPanel(bool animate) { }
+		public void HideAll(bool animate) { }
+		protected virtual void OnBeforeEnter() { }
+		protected virtual void OnAfterExit() { }
+		private void OnButtonPressed(TopBarManager.TopBarButton topBarButton) { }
+		public void OnTransparentGameCenterButtonSelected() { }
+		public void OnTransparentGameCenterButtonDeselected() { }
 	}
 }

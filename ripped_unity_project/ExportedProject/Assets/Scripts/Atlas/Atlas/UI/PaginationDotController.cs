@@ -1,66 +1,96 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using Atlas.Audio;
+using Atlas.Contexts;
+using Atlas.Definitions;
+using Atlas.Gameplay;
+using Atlas.Gameplay.Kart;
+using Atlas.Gameplay.Pickups;
+using Atlas.Gameplay.Player;
+using Atlas.Gameplay.Usables;
+using Atlas.Input;
+using Atlas.League;
+using Atlas.Lighting;
+using Atlas.Networking;
+using Atlas.Rendering;
+using Atlas.Save;
+using Atlas.Settings;
+using Atlas.Stats;
+using Atlas.UI;
+using Core.Actors;
+using Core.Application;
+using Core.Assets;
+using Core.Audio;
+using Core.Cameras;
+using Core.Containers;
+using Core.Contexts;
+using Core.Definitions;
+using Core.Input;
+using Core.Localisation;
+using Core.Networking;
+using Core.Scenes;
+using Core.Services;
+using Core.Settings;
+using Unity.Collections;
+using Unity.Jobs;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.Events;
+using UnityEngine.UI;
+using Object = UnityEngine.Object;
+using Network = Atlas.Networking.Network;
+using NetworkPlayer = Core.Networking.NetworkPlayer;
 
 namespace Atlas.UI
 {
 	public class PaginationDotController : MonoBehaviour
 	{
-		/*
-		Dummy class. This could have happened for several reasons:
-
-		1. No dll files were provided to AssetRipper.
-
-			Unity asset bundles and serialized files do not contain script information to decompile.
-				* For Mono games, that information is contained in .NET dll files.
-				* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-				
-			AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-			A unexpected file structure could cause AssetRipper to not find the required files.
-
-		2. Incorrect dll files were provided to AssetRipper.
-
-			Any of the following could cause this:
-				* Il2CppInterop assemblies
-				* Deobfuscated assemblies
-				* Older assemblies (compared to when the bundle was built)
-				* Newer assemblies (compared to when the bundle was built)
-
-			Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
-
-		3. Assembly Reconstruction has not been implemented.
-
-			Asset bundles contain a small amount of information about the script content.
-			This information can be used to recover the serializable fields of a script.
-
-			See: https://github.com/AssetRipper/AssetRipper/issues/655
-	
-		4. This script is unnecessary.
-
-			If this script has no asset or script references, it can be deleted.
-			Be sure to resolve any compile errors before deleting because they can hide references.
-
-		5. Script Content Level 0
-
-			AssetRipper was set to not load any script information.
-
-		6. Cpp2IL failed to decompile Il2Cpp data
-
-			If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-			This is an upstream problem, and the AssetRipper developer has very little control over it.
-			Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
-
-		7. An incorrect path was provided to AssetRipper.
-
-			This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-			AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-			An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-			Generally, AssetRipper expects users to provide the root folder of the game. For example:
-				* Windows: the folder containing the game's .exe file
-				* Mac: the .app file/folder
-				* Linux: the folder containing the game's executable file
-				* Android: the apk file
-				* iOS: the ipa file
-				* Switch: the folder containing exefs and romfs
-
-		*/
+		[SerializeField] private ScrollRect _targetScroller;
+		[SerializeField] private int _numberOfDots;
+		[SerializeField] private bool _awaitDotCount;
+		[SerializeField] private GameObject _initialDot;
+		[SerializeField] private GameObject _dotPrefab;
+		[SerializeField] private bool _useDynamicSpeed;
+		[SerializeField] private Button _nextButton;
+		[SerializeField] private UIAtlasButtonGroup _uISingleSelectionAtlasButtonGroup;
+		[SerializeField] private Button _leftTabButton;
+		[SerializeField] private Button _rightTabButton;
+		[SerializeField] private LayoutGroup _layoutGroup;
+		private float _normalizedScrollerPos;
+		private int _dotToHighlight;
+		private bool _autoScroll;
+		private float _normalizedScrollTarget;
+		private float _normalizedStartPos;
+		private float _startTime;
+		private bool _setupCalled;
+		private UIAtlasButton _lastSelected;
+		private int _dotsContainerSize;
+		[SerializeField] private float _scrollSpeed;
+		private float _initialScrollSpeed;
+		[SerializeField] private bool _autoScrollToSelectionInGroup;
+		[SerializeField] private UIAtlasButtonGroup _contentButtonGroup;
+		public ScrollRect TargetScroller { get => default; }
+		public int DotToHighlight { get => default; }
+		public int DotsContainerSize { get => default; }
+		public void SetDotAmount(int count) { }
+		public void DisablePagination() { }
+		public void ScrollToTarget(float normalizedScrollTarget) { }
+		public void SnapToTarget(float normalizedScrollTarget) { }
+		private void Start() { }
+		private void Setup() { }
+		private void OnDotPressed(int index) { }
+		private float GetHorizontalPadding() { return default; }
+		private float GetLeftPadding() { return default; }
+		public void MoveScrollerExternal(int index) { }
+		private void Update() { }
+		public void StartAutoScroll() { }
+		private void SetDotHighlightStates() { }
+		private void InitDot(UIAtlasButton dot, int index) { }
+		private float SetDynamicSpeed(float speed) { return default; }
+		private void OnButtonSelected(UIAtlasButton button) { }
+		private void OnTabButtonPressed(bool left) { }
 	}
 }

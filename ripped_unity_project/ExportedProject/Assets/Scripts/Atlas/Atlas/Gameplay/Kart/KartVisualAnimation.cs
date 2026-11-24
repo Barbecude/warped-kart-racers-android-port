@@ -1,8 +1,9 @@
 using Atlas.Audio;
+using Atlas.Definitions;
 using Atlas.Gameplay.Usables;
 using Atlas.Rendering;
+using Core.Application;
 using Core.Cameras;
-using Core.GameLoop;
 using Core.Networking;
 using UnityEngine;
 

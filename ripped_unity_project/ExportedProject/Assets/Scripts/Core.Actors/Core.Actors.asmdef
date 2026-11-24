@@ -1,5 +1,7 @@
 {
   "name": "Core.Actors",
-  "references": [],
+  "references": [
+    "Core.Application"
+  ],
   "allowUnsafeCode": true
 }

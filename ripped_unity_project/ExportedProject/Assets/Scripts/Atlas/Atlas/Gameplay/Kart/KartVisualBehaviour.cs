@@ -1,3 +1,4 @@
+using NetworkPlayer = Core.Networking.NetworkPlayer;
 using System;
 using System.Collections.Generic;
 using Core.Networking;

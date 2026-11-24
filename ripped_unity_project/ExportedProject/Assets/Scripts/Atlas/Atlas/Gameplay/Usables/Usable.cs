@@ -1,66 +1,215 @@
+using Atlas.Contexts;
+using Atlas.Definitions;
+using Atlas.Gameplay.Kart;
+using Core.Actors;
+using Core.Application;
+using Core.Services;
 using UnityEngine;
 
 namespace Atlas.Gameplay.Usables
 {
-	public class Usable : MonoBehaviour
+	public abstract class Usable : IActor
 	{
-		/*
-		Dummy class. This could have happened for several reasons:
+		protected UsableManager _usableManager;
+		protected bool _isUsed;
+		protected bool _areParamsSetUp;
+		protected IContext _currentContext;
+		protected KartComposite _ownerKart;
+		protected UsableDefinition _usableDefinition;
+		protected AchievementManager _achievementManager;
+		protected float _lifeTimer;
+		protected UsableBehaviour _usableBehaviour;
+		protected KartComposite _latestHitKart;
+		private AtlasDefinitions _definitions;
+		private bool _markedForDestroy;
+		private bool _destroyWithVFX;
+		private TransformData _originalVisualValues;
+		private InHandUsableVisualsDefinition _inHandUsableDefinition;
+		private TransformData _inHandUsableTransformValues;
 
-		1. No dll files were provided to AssetRipper.
+		protected GameContextBase GameContextBase => _currentContext as GameContextBase;
+		public UsableBehaviour Behaviour => _usableBehaviour;
+		public UsableDefinition UsableDefinition => _usableDefinition;
+		public bool IsUsed => _isUsed;
+		public virtual bool IsAlive => _lifeTimer > 0f && !_markedForDestroy;
+		public float TimeLeftAlive => _lifeTimer;
+		public float TimeAlive => _usableDefinition != null ? _usableDefinition.GeneralData.LifeTime - _lifeTimer : 0f;
+		public KartComposite OwnerKart => _ownerKart;
+		protected bool MarkedForDestroy => _markedForDestroy;
+		protected bool DestroyWithVFX => _destroyWithVFX;
 
-			Unity asset bundles and serialized files do not contain script information to decompile.
-				* For Mono games, that information is contained in .NET dll files.
-				* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-				
-			AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-			A unexpected file structure could cause AssetRipper to not find the required files.
+		public virtual void Init(UsableManager usableManager, IContext context, AtlasDefinitions definitions, AchievementManager achievementManager)
+		{
+			_usableManager = usableManager;
+			_currentContext = context;
+			_definitions = definitions;
+			_achievementManager = achievementManager;
+		}
 
-		2. Incorrect dll files were provided to AssetRipper.
+		public virtual void DeInit()
+		{
+			if (_areParamsSetUp)
+			{
+				OnTearDownParamsInternal();
+			}
+			_usableManager = null;
+			_currentContext = null;
+			_definitions = null;
+			_achievementManager = null;
+		}
 
-			Any of the following could cause this:
-				* Il2CppInterop assemblies
-				* Deobfuscated assemblies
-				* Older assemblies (compared to when the bundle was built)
-				* Newer assemblies (compared to when the bundle was built)
+		public void OnExitPool(UsableDefinition usableDefinition, UsableBehaviour usableBehaviour)
+		{
+			OnExitPool(usableDefinition, usableBehaviour, null, 0, 0);
+		}
 
-			Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
+		public void OnExitPool(UsableDefinition usableDefinition, UsableBehaviour usableBehaviour, KartComposite ownerKart, int groupId, int sequenceId)
+		{
+			_areParamsSetUp = true;
+			_ownerKart = ownerKart;
+			_usableDefinition = usableDefinition;
+			_usableBehaviour = usableBehaviour;
+			_latestHitKart = null;
+			if (_definitions != null && usableDefinition != null)
+			{
+				_inHandUsableDefinition = _definitions.GameDefinitions.GetDefinition<InHandUsableVisualsDefinition>((Core.Definitions.DefinitionID)usableDefinition.GeneralData.InHandVisualsID);
+				SetInHandUsableTransformValues();
+			}
+		}
 
-		3. Assembly Reconstruction has not been implemented.
+		public virtual void OnCharacterStartUse() { }
+		public virtual void OnEnterPool()
+		{
+			if (_areParamsSetUp)
+			{
+				OnTearDownParamsInternal();
+			}
+		}
 
-			Asset bundles contain a small amount of information about the script content.
-			This information can be used to recover the serializable fields of a script.
+		public virtual void Destroy()
+		{
+			if (!_markedForDestroy)
+			{
+				_markedForDestroy = true;
+				_destroyWithVFX = true;
+			}
+		}
 
-			See: https://github.com/AssetRipper/AssetRipper/issues/655
-	
-		4. This script is unnecessary.
+		public void MarkForDestroy(bool destroyWithVFX)
+		{
+			_markedForDestroy = true;
+			_destroyWithVFX = destroyWithVFX;
+		}
 
-			If this script has no asset or script references, it can be deleted.
-			Be sure to resolve any compile errors before deleting because they can hide references.
+		public void DestroyImmediately(bool destroyWithVFX)
+		{
+			if (_usableBehaviour != null)
+			{
+				DeSpawn(destroyWithVFX);
+			}
+		}
 
-		5. Script Content Level 0
+		public virtual void SetRemoteUseParams(bool hasStartPosition = false, Vector3 startPosition = default) { }
 
-			AssetRipper was set to not load any script information.
+		public virtual void Use()
+		{
+			if (_usableDefinition != null)
+			{
+				if (!_usableDefinition.GeneralData.KeepInHandTransformValuesOnUse && _usableBehaviour != null && _usableBehaviour.VisualRoot != null)
+				{
+					_usableBehaviour.VisualRoot.localPosition = _originalVisualValues.Position;
+					_usableBehaviour.VisualRoot.localRotation = _originalVisualValues.Rotation;
+					_usableBehaviour.VisualRoot.localScale = _originalVisualValues.Scale;
+				}
+				_isUsed = true;
+				_lifeTimer = _usableDefinition.GeneralData.LifeTime;
+			}
+		}
 
-		6. Cpp2IL failed to decompile Il2Cpp data
+		public virtual void Update(IUpdateParams updateParams)
+		{
+			if (!_isUsed)
+			{
+				return;
+			}
+			_lifeTimer -= updateParams.DeltaTime;
+			if (_lifeTimer <= 0f)
+			{
+				Destroy();
+			}
+		}
 
-			If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-			This is an upstream problem, and the AssetRipper developer has very little control over it.
-			Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
+		public virtual void LateUpdate(IUpdateParams updateParams)
+		{
+			if (_markedForDestroy)
+			{
+				DeSpawn(_destroyWithVFX);
+			}
+		}
 
-		7. An incorrect path was provided to AssetRipper.
+		public virtual void FixedUpdate(IUpdateParams updateParams) { }
+		public virtual void PreFixedUpdate(IUpdateParams updateParams) { }
+		public virtual void PostFixedUpdate(IUpdateParams updateParams) { }
+		public virtual void EarlyUpdate(IUpdateParams updateParams) { }
 
-			This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-			AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-			An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-			Generally, AssetRipper expects users to provide the root folder of the game. For example:
-				* Windows: the folder containing the game's .exe file
-				* Mac: the .app file/folder
-				* Linux: the folder containing the game's executable file
-				* Android: the apk file
-				* iOS: the ipa file
-				* Switch: the folder containing exefs and romfs
+		public void AttachToTransform(Transform attachTo)
+		{
+			if (_usableBehaviour != null)
+			{
+				Transform t = _usableBehaviour.transform;
+				t.SetParent(attachTo, false);
+				t.localPosition = Vector3.zero;
+				t.localRotation = Quaternion.identity;
+				t.localScale = Vector3.one;
+			}
+		}
 
-		*/
+		protected Vector3 InterpolateDespawnVFXPosition(KartComposite hitkart, Vector3 usableHitPosition, float interpolant)
+		{
+			if (hitkart != null && hitkart.KartPhysics != null && hitkart.KartPhysics.Rigidbody != null)
+			{
+				return Vector3.Lerp(usableHitPosition, hitkart.KartPhysics.Rigidbody.position, interpolant);
+			}
+			return usableHitPosition;
+		}
+
+		protected abstract void DeSpawn(bool destroyWithVFX);
+
+		private void OnTearDownParamsInternal()
+		{
+			if (_usableBehaviour != null && _usableBehaviour.VisualRoot != null)
+			{
+				_usableBehaviour.VisualRoot.localPosition = _originalVisualValues.Position;
+				_usableBehaviour.VisualRoot.localRotation = _originalVisualValues.Rotation;
+				_usableBehaviour.VisualRoot.localScale = _originalVisualValues.Scale;
+			}
+			_areParamsSetUp = false;
+			_inHandUsableDefinition = null;
+			_inHandUsableTransformValues = default;
+			if (_usableBehaviour != null && _usableBehaviour.Replicator != null)
+			{
+				_usableBehaviour.Replicator.ResetState();
+			}
+			_usableBehaviour = null;
+			_isUsed = false;
+			_ownerKart = null;
+			_usableDefinition = null;
+			_lifeTimer = -1f;
+			_markedForDestroy = false;
+			_destroyWithVFX = false;
+		}
+
+		private void SetInHandUsableTransformValues()
+		{
+			if (_ownerKart == null || _inHandUsableDefinition == null)
+			{
+				return;
+			}
+			_inHandUsableTransformValues = _inHandUsableDefinition.DefaultTransformData;
+		}
+
+		protected Usable()
+		{
+		}
 	}
 }

@@ -570,7 +570,7 @@ namespace Atlas.Gameplay.Kart
 			}
 		}
 
-		public override void LateUpdate()
+		public override void LateUpdate(IUpdateParams updateParams)
 		{
 			if (_raceAiUtilityManager != null)
 			{

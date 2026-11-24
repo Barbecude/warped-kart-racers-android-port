@@ -1,66 +1,98 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using Atlas.Audio;
+using Atlas.Contexts;
+using Atlas.Definitions;
+using Atlas.Gameplay;
+using Atlas.Gameplay.Kart;
+using Atlas.Gameplay.Pickups;
+using Atlas.Gameplay.Player;
+using Atlas.Gameplay.Usables;
+using Atlas.Input;
+using Atlas.League;
+using Atlas.Lighting;
+using Atlas.Networking;
+using Atlas.Rendering;
+using Atlas.Save;
+using Atlas.Settings;
+using Atlas.Stats;
+using Atlas.UI;
+using Core.Actors;
+using Core.Application;
+using Core.Assets;
+using Core.Audio;
+using Core.Cameras;
+using Core.Containers;
+using Core.Contexts;
+using Core.Definitions;
+using Core.Input;
+using Core.Localisation;
+using Core.Networking;
+using Core.Scenes;
+using Core.Services;
+using Core.Settings;
+using Unity.Collections;
+using Unity.Jobs;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.Events;
+using UnityEngine.UI;
+using Object = UnityEngine.Object;
+using Network = Atlas.Networking.Network;
+using NetworkPlayer = Core.Networking.NetworkPlayer;
 
 namespace Atlas.League
 {
-	public class LeaguePlayerSave : MonoBehaviour
+	public class LeaguePlayerSave
 	{
-		/*
-		Dummy class. This could have happened for several reasons:
-
-		1. No dll files were provided to AssetRipper.
-
-			Unity asset bundles and serialized files do not contain script information to decompile.
-				* For Mono games, that information is contained in .NET dll files.
-				* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-				
-			AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-			A unexpected file structure could cause AssetRipper to not find the required files.
-
-		2. Incorrect dll files were provided to AssetRipper.
-
-			Any of the following could cause this:
-				* Il2CppInterop assemblies
-				* Deobfuscated assemblies
-				* Older assemblies (compared to when the bundle was built)
-				* Newer assemblies (compared to when the bundle was built)
-
-			Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
-
-		3. Assembly Reconstruction has not been implemented.
-
-			Asset bundles contain a small amount of information about the script content.
-			This information can be used to recover the serializable fields of a script.
-
-			See: https://github.com/AssetRipper/AssetRipper/issues/655
-	
-		4. This script is unnecessary.
-
-			If this script has no asset or script references, it can be deleted.
-			Be sure to resolve any compile errors before deleting because they can hide references.
-
-		5. Script Content Level 0
-
-			AssetRipper was set to not load any script information.
-
-		6. Cpp2IL failed to decompile Il2Cpp data
-
-			If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-			This is an upstream problem, and the AssetRipper developer has very little control over it.
-			Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
-
-		7. An incorrect path was provided to AssetRipper.
-
-			This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-			AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-			An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-			Generally, AssetRipper expects users to provide the root folder of the game. For example:
-				* Windows: the folder containing the game's .exe file
-				* Mac: the .app file/folder
-				* Linux: the folder containing the game's executable file
-				* Android: the apk file
-				* iOS: the ipa file
-				* Switch: the folder containing exefs and romfs
-
-		*/
+		public const string LatestOpenedDateKey_String = "L_OD";
+		public const string LatestPlayedDateKey_String = "L_LPD";
+		public const string ShowPodiumLatchKey_Int = "L_SP";
+		public const string PlayerLeagueKey_Int = "L_PL";
+		public const string PlayerDayPlacementKey_Int = "L_PDP";
+		public const string StarsAwardedLatchKey_Int = "L_SAL";
+		public const string WeeksBronzeTotalKey_Int = "L_WB";
+		public const string WeeksSilverTotalKey_Int = "L_WS";
+		public const string WeeksGoldTotalKey_Int = "L_WG";
+		public const string WeeksPlatinumTotalKey_Int = "L_WP";
+		public const string WeeksDiamondTotalKey_Int = "L_WD";
+		public const string WeeksMasterTotalKey_Int = "L_WM";
+		public const string WeeksGoldOrHigherRowKey_Int = "L_WGHR";
+		public const string LeagueRewardSeenKey_Int = "L_R_";
+		public const string ReplayCountDayKey_Int = "L_RC_";
+		public const string LeaderboardAIKey_Int = "L_LB_A_{0}";
+		public const string LeaderboardPlayerKey_Int = "L_LB_P";
+		public const string LatestCheckedStatsDateKey_String = "L_CSD";
+		private readonly SaveManager _sm;
+		public int PlayerLeague { get => default; set { } }
+		public string LatestOpenedDate { get => default; set { } }
+		public string LatestPlayedDate { get => default; set { } }
+		public bool ShowPodiumLatch { get => default; set { } }
+		public bool StarsAwardedLatch { get => default; set { } }
+		public string LatestCheckedStatsDate { get => default; set { } }
+		public int WeeksBronzeTotal { get => default; set { } }
+		public int WeeksSilverTotal { get => default; set { } }
+		public int WeeksGoldTotal { get => default; set { } }
+		public int WeeksPlatinumTotal { get => default; set { } }
+		public int WeeksDiamondTotal { get => default; set { } }
+		public int WeeksMasterTotal { get => default; set { } }
+		public int WeeksGoldOrHigherInARow { get => default; set { } }
+		public void SetPlayerDayPlacement(int dayIndex, int placement) { }
+		public int GetPlayerDayPlacement(int dayIndex) { return default; }
+		public void ClearAllDayPlacements() { }
+		private string DayPlacementKey(int dayIndex) { return default; }
+		public void SaveRewardSeen(string itemID) { }
+		public void SaveRewardUnseen(string itemID) { }
+		private void SaveRewardSeenStatus(string itemID, int unlockStatus) { }
+		public bool GetRewardSeen(string itemID) { return default; }
+		public void SetReplayCountDay(int dayIndex, int value) { }
+		public int GetReplayCountDay(int dayIndex) { return default; }
+		private string ParseLeaderboardAIKey(int aiIndex) { return default; }
+		public void SaveLeaderboardForUI(int[] aiStandings, int playerStanding) { }
+		public int[] GetLeaderboardForUI() { return default; }
+		public int GetPlayerStandingForUI() { return default; }
 	}
 }

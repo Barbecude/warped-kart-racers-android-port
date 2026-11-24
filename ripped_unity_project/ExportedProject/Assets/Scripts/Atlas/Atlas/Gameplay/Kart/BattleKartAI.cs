@@ -99,7 +99,7 @@ namespace Atlas.Gameplay.Kart
 			_invalidPathCount = 0;
 			_pathIndex = 0;
 			_wasInAirTimer = 0f;
-			_currentNavState = BattleKartNavState.None;
+			_currentNavState = BattleKartNavState.RandomPoint;
 			_prevPosAreaIndex = -1;
 			_currentPosAreaIndex = -1;
 			_prevTargetAreaIndex = -1;
@@ -119,7 +119,7 @@ namespace Atlas.Gameplay.Kart
 		public override void OnFinishGame()
 		{
 			base.OnFinishGame();
-			_currentNavState = BattleKartNavState.Random;
+			_currentNavState = BattleKartNavState.RandomPoint;
 			ResetTrackingTargets();
 			RandomizeTargetPoint();
 		}
@@ -349,12 +349,6 @@ namespace Atlas.Gameplay.Kart
 
 		protected void UpdateCurrentNavState()
 		{
-			if (_currentNavState == BattleKartNavState.None)
-			{
-				NextNavStateAndRefreshTarget();
-				return;
-			}
-
 			float3 curPos = _kartComposite.KartPhysics.Rigidbody.position;
 			if (_trackingTarget != null)
 			{
@@ -362,14 +356,14 @@ namespace Atlas.Gameplay.Kart
 			}
 
 			float distSq = math.distancesq(curPos, _targetPoint);
-			if (_currentNavState == BattleKartNavState.Pickup)
+			if (_currentNavState == BattleKartNavState.SeekPickup)
 			{
 				if (_trackingBox == null || !_trackingBox.IsActive || distSq <= _pickupReachedDistToleranceSq || _kartComposite.KartUsableManager.HasUsableEquipped)
 				{
 					NextNavStateAndRefreshTarget();
 				}
 			}
-			else if (_currentNavState == BattleKartNavState.Attack)
+			else if (_currentNavState == BattleKartNavState.SeekOtherKart)
 			{
 				if (_trackingTarget == null || !_kartComposite.KartUsableManager.HasUsableEquipped || distSq <= _targetReachedDistToleranceSq)
 				{
@@ -389,11 +383,11 @@ namespace Atlas.Gameplay.Kart
 		{
 			if (_kartComposite.KartUsableManager != null && _kartComposite.KartUsableManager.HasUsableEquipped)
 			{
-				_currentNavState = BattleKartNavState.Attack;
+				_currentNavState = BattleKartNavState.SeekOtherKart;
 			}
 			else
 			{
-				_currentNavState = UnityEngine.Random.value < _battleKartAIDefinition.PickupChance ? BattleKartNavState.Pickup : BattleKartNavState.Random;
+				_currentNavState = UnityEngine.Random.value < _battleKartAIDefinition.PickupChance ? BattleKartNavState.SeekPickup : BattleKartNavState.RandomPoint;
 			}
 		}
 
@@ -402,10 +396,10 @@ namespace Atlas.Gameplay.Kart
 			ResetTrackingTargets();
 			switch (_currentNavState)
 			{
-				case BattleKartNavState.Pickup:
+				case BattleKartNavState.SeekPickup:
 					SetTargetToPickup();
 					break;
-				case BattleKartNavState.Attack:
+				case BattleKartNavState.SeekOtherKart:
 					SetTargetToOtherKart();
 					break;
 				default:
@@ -637,9 +631,9 @@ namespace Atlas.Gameplay.Kart
 			Vector3 toTarget = targetPos - ownPos;
 			float dist = toTarget.magnitude;
 			float angleDot = dist > 0.001f ? Vector3.Dot(ownForward, toTarget / dist) : 1f;
-			float distScore = weights.DistanceWeight / (dist + 1f);
-			float angleScore = weights.AngleWeight * ((angleDot + 1f) * 0.5f);
-			float valueScore = weights.ValueWeight * value;
+			float distScore = weights.Proximity / (dist + 1f);
+			float angleScore = weights.ForwardBias * ((angleDot + 1f) * 0.5f);
+			float valueScore = weights.Value * value;
 			return distScore + angleScore + valueScore;
 		}
 

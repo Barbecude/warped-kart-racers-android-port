@@ -7,6 +7,7 @@ using Core.Application;
 using Core.Definitions;
 using Core.Networking;
 using UnityEngine;
+using Network = Atlas.Networking.Network;
 
 namespace Atlas.Gameplay.Kart
 {
@@ -245,7 +246,7 @@ namespace Atlas.Gameplay.Kart
 					{
 						UsableDefinition def = _definitions.GameDefinitions.GetDefinition<UsableDefinition>(_shuffledUsableDefinitionID);
 						KartUsableCommand cmd = CreateEquipCommand(nextGroupId, def);
-						AddNetworkUsableCommand(cmd, UsableType.Ricochet, false);
+						AddNetworkUsableCommand(cmd, UsableType.RicochetProjectile, false);
 					}
 					_shuffleGroupId = nextGroupId;
 				}
@@ -381,7 +382,7 @@ namespace Atlas.Gameplay.Kart
 				IsRemoteCommand = false,
 				Position = Vector3.zero
 			};
-			AddNetworkUsableCommand(cmd, UsableType.Ricochet, true);
+			AddNetworkUsableCommand(cmd, UsableType.RicochetProjectile, true);
 		}
 
 		public void StartUseLocal()
@@ -445,7 +446,7 @@ namespace Atlas.Gameplay.Kart
 			UnEquip(cmd, unEquipImmediately);
 		}
 
-		private void AddNetworkUsableCommand(KartUsableCommand command, UsableType type = UsableType.Ricochet, bool execute = true)
+		private void AddNetworkUsableCommand(KartUsableCommand command, UsableType type = UsableType.RicochetProjectile, bool execute = true)
 		{
 			if (!_networkIdentifiers.TryGetKeyFromIdentifier(command.UsableDefinitionID, out ushort key))
 			{

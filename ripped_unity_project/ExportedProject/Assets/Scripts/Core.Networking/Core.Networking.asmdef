@@ -1,5 +1,8 @@
 {
   "name": "Core.Networking",
-  "references": [],
+  "references": [
+    "FlatBuffers",
+    "Core.Services"
+  ],
   "allowUnsafeCode": true
 }

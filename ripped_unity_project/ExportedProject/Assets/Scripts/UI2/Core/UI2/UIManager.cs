@@ -1,66 +1,73 @@
+using Unity.Profiling;
+using UnityEngine.UI;
+using Core.Assets;
+using Core.Input;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Core.UI2
 {
-	public class UIManager : MonoBehaviour
+	public class UIManager
 	{
-		/*
-		Dummy class. This could have happened for several reasons:
-
-		1. No dll files were provided to AssetRipper.
-
-			Unity asset bundles and serialized files do not contain script information to decompile.
-				* For Mono games, that information is contained in .NET dll files.
-				* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-				
-			AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-			A unexpected file structure could cause AssetRipper to not find the required files.
-
-		2. Incorrect dll files were provided to AssetRipper.
-
-			Any of the following could cause this:
-				* Il2CppInterop assemblies
-				* Deobfuscated assemblies
-				* Older assemblies (compared to when the bundle was built)
-				* Newer assemblies (compared to when the bundle was built)
-
-			Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
-
-		3. Assembly Reconstruction has not been implemented.
-
-			Asset bundles contain a small amount of information about the script content.
-			This information can be used to recover the serializable fields of a script.
-
-			See: https://github.com/AssetRipper/AssetRipper/issues/655
-	
-		4. This script is unnecessary.
-
-			If this script has no asset or script references, it can be deleted.
-			Be sure to resolve any compile errors before deleting because they can hide references.
-
-		5. Script Content Level 0
-
-			AssetRipper was set to not load any script information.
-
-		6. Cpp2IL failed to decompile Il2Cpp data
-
-			If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-			This is an upstream problem, and the AssetRipper developer has very little control over it.
-			Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
-
-		7. An incorrect path was provided to AssetRipper.
-
-			This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-			AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-			An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-			Generally, AssetRipper expects users to provide the root folder of the game. For example:
-				* Windows: the folder containing the game's .exe file
-				* Mac: the .app file/folder
-				* Linux: the folder containing the game's executable file
-				* Android: the apk file
-				* iOS: the ipa file
-				* Switch: the folder containing exefs and romfs
-
-		*/
+		public struct ScreenInfo { }
+		private const int InitialScreenInfoCapacity = 20;
+		private const int InitialAssetRequestCapacity = 20;
+		private UIManagerBehaviour _managerBehaviour;
+		private Transform _rootTransform;
+		private AssetManager _assetManager;
+		private int _layerCount;
+		private UIScreenParameters _sharedScreenParameters;
+		private bool _isInited;
+		private int _nextAssetRequestIndexToCheck;
+		private InputManager _inputManager;
+		private static readonly ProfilerMarker _updateProfilerMarker;
+		private static readonly ProfilerMarker _lateUpdateProfilerMarker;
+		public Canvas Canvas { get => default; }
+		public CanvasScaler CanvasScaler { get => default; }
+		public bool IsInited { get => default; }
+		public void Init(GameObject managerPrefab, AssetManager assetManager, InputManager inputManager, Transform rootTransform, int layerCount, UIScreenParameters sharedScreenParameters) { }
+		public void DeInit() { }
+		public void Update(float dt) { }
+		public void LateUpdate(float dt) { }
+		public void RegisterScreen(string id, Type type, string assetManagerPath, string assetManagerBucket) { }
+		public bool ShowScreen(string id, int layerIndex, UIScreenParameters screenParameters, bool startInvisible) { return default; }
+		public void HideScreen(int layerIndex) { }
+		public string GetCurrentScreenID(int layerIndex) { return default; }
+		public void ClearLayer(int layerIndex) { }
+		public void ClearLayerAndShowScreen(string screenId, int layerIndex, UIScreenParameters screenParameters) { }
+		public bool IsScreenIdValid(string id) { return default; }
+		public bool IsLayerValid(int layerIndex) { return default; }
+		public bool IsLayerReady(int layerIndex) { return default; }
+		public UIScreen.State GetLayerState(int layerIndex) { return default; }
+		public void EnableInput(int screenLayer, bool enabled) { }
+		public void SetScreenVisible(int screenLayer, bool visible) { }
+		public void RequestScreenAssetsAndPin(string screenId) { }
+		public void UnPinScreenAssets(string screenId) { }
+		private void UpdateLayer(int layerIndex) { }
+		private void UpdateLayerCurrentScreen(int layerIndex, float dt) { }
+		private void LateUpdateLayerCurrentScreen(int layerIndex, float dt) { }
+		private void SetPinnedAssetRequest(UIManager.ScreenInfo screenInfo, bool pinned) { }
+		private bool TryGetScreenWithBehaviour(string screenId, out UIScreen outScreen) { outScreen = default; return default; }
+		private void ReturnScreenWithBehaviour(UIScreen screen) { }
+		private UIScreen InstantiateScreen(Type screenType) { return default; }
+		private void DestroyScreen(UIScreen screen) { }
+		private UIScreenBehaviour InstantiateScreenBehaviour(GameObject prefab) { return default; }
+		private void DestroyScreenBehaviour(UIScreenBehaviour behaviour) { }
+		private void RequestAsset(string assetManagerPath, string assetManagerBucket) { }
+		private void AssetLoadSuccessHandler(object asset, string path, AssetManagerHandle handle) { }
+		private void AssetLoadFailedHandler(string error, string path, AssetManagerHandle handle) { }
+		private bool TryGetAssetRequestIndex(string assetManagerPath, out int outIndex) { outIndex = default; return default; }
+		private bool AreScreenIdsEqual(string leftScreenId, string rightScreenId) { return default; }
+		private bool TryGetScreenInfo(string screenId, out UIManager.ScreenInfo outScreenInfo) { outScreenInfo = default; return default; }
+		private void UpdateCleanUpAssetRequests() { }
+		private void ReleaseAssetRequestIfNotInUse(int assetRequestIndex) { }
+		private GameObject CreateLayerRootGameObject(string name, Transform parent) { return default; }
+		private void AssignCallbacks(UIScreen uIScreen) { }
+		private void RemoveCallbacks(UIScreen uIScreen) { }
+		private void OnScreenStartBeforeEnter(UIScreen uIScreen, int layer) { }
+		private void OnScreenEnterStarted(UIScreen uIScreen, int layer) { }
+		private void OnScreenEnterFinish(UIScreen uIScreen, int layer) { }
 	}
 }

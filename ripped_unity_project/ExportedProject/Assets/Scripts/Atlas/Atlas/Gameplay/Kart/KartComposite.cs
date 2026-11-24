@@ -1,3 +1,4 @@
+using NetworkPlayer = Core.Networking.NetworkPlayer;
 using System;
 using Atlas.Arcade;
 using Atlas.Audio;
@@ -143,7 +144,7 @@ namespace Atlas.Gameplay.Kart
 				if (_replicator != null)
 				{
 					_replicator.SyncId = _networkPlayer.SyncId;
-					_replicator.SyncOwner = _networkPlayer.Type == NetworkPlayerType.Local || _networkPlayer.Type == NetworkPlayerType.LocalAI;
+					_replicator.SyncOwner = _networkPlayer.Type == NetworkPlayer.NetworkPlayerType.Local || _networkPlayer.Type == NetworkPlayer.NetworkPlayerType.LocalAi;
 				}
 			}
 
@@ -393,7 +394,7 @@ namespace Atlas.Gameplay.Kart
 		{
 			NetworkCar car = default;
 			car.SyncId = _networkPlayer.SyncId;
-			car.IsLocal = _networkPlayer.Type == NetworkPlayerType.Local;
+			car.IsLocal = _networkPlayer.Type == NetworkPlayer.NetworkPlayerType.Local;
 			return car;
 		}
 
@@ -401,7 +402,7 @@ namespace Atlas.Gameplay.Kart
 		{
 			_networkPlayer = player;
 			_replicator.SyncId = _networkPlayer.SyncId;
-			if (player.Type == NetworkPlayerType.LocalAI)
+			if (player.Type == NetworkPlayer.NetworkPlayerType.LocalAi)
 			{
 				_replicator.SyncOwner = true;
 				if (_kartPhysicsInput.InputType == KartInputType.RemotePlayerInput)

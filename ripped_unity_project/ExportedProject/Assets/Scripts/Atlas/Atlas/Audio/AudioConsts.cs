@@ -1,66 +1,179 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using Atlas.Audio;
+using Atlas.Contexts;
+using Atlas.Definitions;
+using Atlas.Gameplay;
+using Atlas.Gameplay.Kart;
+using Atlas.Gameplay.Pickups;
+using Atlas.Gameplay.Player;
+using Atlas.Gameplay.Usables;
+using Atlas.Input;
+using Atlas.League;
+using Atlas.Lighting;
+using Atlas.Networking;
+using Atlas.Rendering;
+using Atlas.Save;
+using Atlas.Settings;
+using Atlas.Stats;
+using Atlas.UI;
+using Core.Actors;
+using Core.Application;
+using Core.Assets;
+using Core.Audio;
+using Core.Cameras;
+using Core.Containers;
+using Core.Contexts;
+using Core.Definitions;
+using Core.Input;
+using Core.Localisation;
+using Core.Networking;
+using Core.Scenes;
+using Core.Services;
+using Core.Settings;
+using Unity.Collections;
+using Unity.Jobs;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.Events;
+using UnityEngine.UI;
+using Object = UnityEngine.Object;
+using Network = Atlas.Networking.Network;
+using NetworkPlayer = Core.Networking.NetworkPlayer;
 
 namespace Atlas.Audio
 {
-	public class AudioConsts : MonoBehaviour
+	public static class AudioConsts
 	{
-		/*
-		Dummy class. This could have happened for several reasons:
-
-		1. No dll files were provided to AssetRipper.
-
-			Unity asset bundles and serialized files do not contain script information to decompile.
-				* For Mono games, that information is contained in .NET dll files.
-				* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-				
-			AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-			A unexpected file structure could cause AssetRipper to not find the required files.
-
-		2. Incorrect dll files were provided to AssetRipper.
-
-			Any of the following could cause this:
-				* Il2CppInterop assemblies
-				* Deobfuscated assemblies
-				* Older assemblies (compared to when the bundle was built)
-				* Newer assemblies (compared to when the bundle was built)
-
-			Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
-
-		3. Assembly Reconstruction has not been implemented.
-
-			Asset bundles contain a small amount of information about the script content.
-			This information can be used to recover the serializable fields of a script.
-
-			See: https://github.com/AssetRipper/AssetRipper/issues/655
-	
-		4. This script is unnecessary.
-
-			If this script has no asset or script references, it can be deleted.
-			Be sure to resolve any compile errors before deleting because they can hide references.
-
-		5. Script Content Level 0
-
-			AssetRipper was set to not load any script information.
-
-		6. Cpp2IL failed to decompile Il2Cpp data
-
-			If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-			This is an upstream problem, and the AssetRipper developer has very little control over it.
-			Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
-
-		7. An incorrect path was provided to AssetRipper.
-
-			This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-			AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-			An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-			Generally, AssetRipper expects users to provide the root folder of the game. For example:
-				* Windows: the folder containing the game's .exe file
-				* Mac: the .app file/folder
-				* Linux: the folder containing the game's executable file
-				* Android: the apk file
-				* iOS: the ipa file
-				* Switch: the folder containing exefs and romfs
-
-		*/
+		public static readonly float MAX_RPM;
+		public static readonly float MAX_ACCELERATION;
+		public static readonly float MAX_COLLISION_FORCE;
+		public static readonly float MAX_SLOPE;
+		public static readonly float ENGINE_INCLINE_MULTIPLIER;
+		public static readonly float SCRAPE_DELAY;
+		public static readonly float WEAPON_EXPLODE_SOUND;
+		public static readonly float SHIELD_ACTIVATE_SOUND;
+		public static readonly float SHIELD_TIMEOUT_SOUND;
+		public static readonly float SHIELD_DEACTIVATE_SOUND;
+		public static readonly float OFFROAD_SPEECH_LIMIT;
+		public static readonly float MIN_RANDOM_SPEECH_DISTANCE_RACE;
+		public static readonly float MIN_RANDOM_SPEECH_DISTANCE_BATTLE;
+		public static readonly float AI_RANDOM_SPEECH_COOLDOWN_TIME;
+		public static readonly string KART_SPORTS_PATH;
+		public static readonly string KART_MUSCLE_PATH;
+		public static readonly string KART_DIESEL_PATH;
+		public static readonly string KART_GENERIC_PATH;
+		public static readonly string KART_ELECTRIC_PATH;
+		public static readonly string KART_TRACTOR_PATH;
+		public static readonly string BOOST_EVENT;
+		public static readonly string DRIFT_HOP_EVENT;
+		public static readonly string PICKUP_EVENT;
+		public static readonly string COLLISION_EVENT;
+		public static readonly string COLLISION_SPINOUT_EVENT;
+		public static readonly string BLUE_LIGHTNING_EVENT;
+		public static readonly string SHIELD1_EVENT;
+		public static readonly string SHIELD2_EVENT;
+		public static readonly string GLIDER_START_EVENT;
+		public static readonly string GLIDER_AIRBORNE_EVENT;
+		public static readonly string PORTAL_EVENT;
+		public static readonly string SHLORP_EVENT;
+		public static readonly string SHLORP_REVERSE_EVENT;
+		public static readonly string COLLISION_SPEECH_EVENT;
+		public static readonly string SHLORP_AI_EVENT;
+		public static readonly string SHLORP_AI_REVERSE_EVENT;
+		public static readonly string SHELDONTRACKER_EVENT;
+		public static readonly string PAUSE_EVENT;
+		public static readonly string WEAPON_DING_EVENT;
+		public static readonly string WEAPON_SELECTOR_EVENT;
+		public static readonly string SURFACE_AUDIO_EVENT;
+		public static readonly string SPEEDBUMP_EVENT;
+		public static readonly string KART_LANDING_EVENT;
+		public static readonly string ORANGE_FIRE_EVENT;
+		public static readonly string LASER_WEAPON_HIT_EVENT;
+		public static readonly string LASER_WEAPON_CRACKLE;
+		public static readonly string PLAYER_HIT_EVENT;
+		public static readonly string HOP_BOOST_SUCCESS_EVENT;
+		public static readonly string DRIFT_COLOURS_EVENT;
+		public static readonly string LASER_WEAPON_HIT_SHIELD;
+		public static readonly string REVERB_PATH;
+		public static readonly string AI_ENGINE_PATH;
+		public static readonly string PLAYER_ENGINE_PATH;
+		public static readonly string DISTANCE_PARAM;
+		public static readonly string INCLINE_PARAM;
+		public static readonly string REVERSING_PARAM;
+		public static readonly string GLIDER_START_PARAM;
+		public static readonly string GLIDING_REVERB;
+		public static readonly string AIRBORNE_PARAM;
+		public static readonly string ACCENTS_PARAM;
+		public static readonly string SIDE_COLLISION_PARAM;
+		public static readonly string FRONT_COLLISION_PARAM;
+		public static readonly string SCRAPES_PARAM;
+		public static readonly string UNDERCARRIAGE_PARAM;
+		public static readonly string SCRAPE_INTENSITY_PARAM;
+		public static readonly string COLLISION_MATERIAL_PARAM;
+		public static readonly string COLLISION_INTENSITY_PARAM;
+		public static readonly string SPEED_PARAM;
+		public static readonly string TERRAIN_CONTEXT_PARAM;
+		public static readonly string SHIELD_PARAM;
+		public static readonly string SHIELD_TIME_PARAM;
+		public static readonly string ALL_CHARACTER_PARAM;
+		public static readonly string PARAM_ACCEL_BRAKE;
+		public static readonly string PARAM_IS_ACCELERATING;
+		public static readonly string PARAM_IS_BRAKING;
+		public static readonly string EV_BOOST_SOUND;
+		public static readonly string EV_DRIFT_HOP_SOUND;
+		public static readonly string EV_PICKUP_SOUND;
+		public static readonly string EV_COLLISION_SOUND;
+		public static readonly string EV_COLLISION_SPINOUT_SOUND;
+		public static readonly string EV_USABLE_HIT_SOUND;
+		public static readonly string EV_VFX_SOUND;
+		public static readonly string EV_SHIELD1_SOUND;
+		public static readonly string EV_SHIELD2_SOUND;
+		public static readonly string EV_GLIDER_START_SOUND;
+		public static readonly string EV_GLIDER_IN_AIR_SOUND;
+		public static readonly string EV_PORTAL_SOUND;
+		public static readonly string EV_SHLORP_SOUND;
+		public static readonly string EV_SHLORP_REVERSE_SOUND;
+		public static readonly string EV_SHLORP_AI_SOUND;
+		public static readonly string EV_SHLORP_REVERSE_AI_SOUND;
+		public static readonly string EV_WEAPON_DING_SOUND;
+		public static readonly string EV_HOP_BOOST_SUCCESS_SOUND;
+		public static readonly string EV_DRIFT_COLOURS;
+		public static readonly string EV_COLLISION_SPEECH_SOUND;
+		public static readonly string EV_WEAPON_HIT_SOUND;
+		public static readonly string EV_SELECTOR_SOUND;
+		public static readonly string EV_LANDING_EVENT;
+		public static readonly string EV_ORANGE_FIRE;
+		public static readonly string EV_LASER_WEAPON_HIT;
+		public static readonly string EV_PLAYER_HIT;
+		public static readonly string EV_LASER_CRACKLE;
+		public static readonly string EV_LASER_WEAPON_HIT_SHIELD;
+		public static readonly string TAG_GLIDER_RAMP;
+		public static readonly string EV_SPEEDBUMP_SOUND;
+		public static readonly string RACE_EVENT_SELECTION;
+		public static readonly float MIN_OVERTAKE_DELAY;
+		public static readonly float MAX_OVERTAKE_DISTANCE;
+		public static readonly float AI_SPEECH_SILENCE_PERIOD;
+		public static readonly string EVENT_AUDIOMANAGER;
+		public static readonly string EVENT_CULTUREPODALERT;
+		public static readonly string PAUSE_SNAPSHOT;
+		public static readonly string EVENT_COUNTDOWN;
+		public static readonly string BATTLE_LAST_TEN_SECONDS;
+		public static readonly string RACE_EVENT_EVENT;
+		public static readonly string RACE_EVENT_TURD;
+		public static readonly string AM_PICKUP_EVENT;
+		public static readonly string AM_COLLISION_EVENT;
+		public static readonly string WIN_LOSE_EVENT;
+		public static readonly string OVERTAKE_EVENT;
+		public static readonly string AUDIO_QUALITY_ID;
+		public static readonly string VCA_MUSIC;
+		public static readonly string VCA_SFX;
+		public static readonly string VCA_VO;
+		public static readonly float LOG_MIN_RANGE;
+		public static readonly float LOG_MAX_RANGE;
+		public static readonly string TARGETTED;
 	}
 }

@@ -1,5 +1,9 @@
 {
   "name": "Core.Input",
-  "references": [],
+  "references": [
+    "Core.Assets",
+    "UnityEngine.UI",
+    "Unity.InputSystem"
+  ],
   "allowUnsafeCode": true
 }

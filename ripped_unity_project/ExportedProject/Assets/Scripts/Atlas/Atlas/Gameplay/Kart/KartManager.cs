@@ -1,3 +1,4 @@
+using NetworkPlayer = Core.Networking.NetworkPlayer;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -164,7 +165,7 @@ namespace Atlas.Gameplay.Kart
 				KartComposite kart = _loadedKarts[i];
 				_actorManager.AddActor(kart);
 				_lightWorld.AddLightWorldSample(kart);
-				if (kart.NetworkPlayer.Type == NetworkPlayerType.Local)
+				if (kart.NetworkPlayer.Type == NetworkPlayer.NetworkPlayerType.Local)
 				{
 					_localPlayerKartComposite = kart;
 				}
@@ -307,7 +308,7 @@ namespace Atlas.Gameplay.Kart
 			{
 				for (int i = 0; i < playerList.Count; i++)
 				{
-					if (playerList[i].NetworkPlayer.Type == NetworkPlayerType.Local)
+					if (playerList[i].NetworkPlayer.Type == NetworkPlayer.NetworkPlayerType.Local)
 					{
 						return i;
 					}

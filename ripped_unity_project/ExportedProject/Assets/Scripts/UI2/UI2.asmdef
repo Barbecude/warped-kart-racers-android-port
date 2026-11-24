@@ -1,5 +1,10 @@
 {
   "name": "UI2",
-  "references": [],
+  "references": [
+    "Core.Assets",
+    "Core.Input",
+    "Unity.InputSystem",
+    "DOTween"
+  ],
   "allowUnsafeCode": true
 }

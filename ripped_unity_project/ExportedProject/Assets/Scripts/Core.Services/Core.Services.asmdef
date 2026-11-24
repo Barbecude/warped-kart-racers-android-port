@@ -1,5 +1,9 @@
 {
   "name": "Core.Services",
-  "references": [],
+  "references": [
+    "FlatBuffers",
+    "Unity.Collections",
+    "UniRx.Async"
+  ],
   "allowUnsafeCode": true
 }

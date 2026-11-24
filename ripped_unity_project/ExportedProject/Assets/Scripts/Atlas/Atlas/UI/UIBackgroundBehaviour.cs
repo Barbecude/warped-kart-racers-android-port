@@ -1,66 +1,103 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using Atlas.Audio;
+using Atlas.Contexts;
+using Atlas.Definitions;
+using Atlas.Gameplay;
+using Atlas.Gameplay.Kart;
+using Atlas.Gameplay.Pickups;
+using Atlas.Gameplay.Player;
+using Atlas.Gameplay.Usables;
+using Atlas.Input;
+using Atlas.League;
+using Atlas.Lighting;
+using Atlas.Networking;
+using Atlas.Rendering;
+using Atlas.Save;
+using Atlas.Settings;
+using Atlas.Stats;
+using Atlas.UI;
+using Core.Actors;
+using Core.Application;
+using Core.Assets;
+using Core.Audio;
+using Core.Cameras;
+using Core.Containers;
+using Core.Contexts;
+using Core.Definitions;
+using Core.Input;
+using Core.Localisation;
+using Core.Networking;
+using Core.Scenes;
+using Core.Services;
+using Core.Settings;
+using Unity.Collections;
+using Unity.Jobs;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.Events;
+using UnityEngine.UI;
+using Object = UnityEngine.Object;
+using Network = Atlas.Networking.Network;
+using NetworkPlayer = Core.Networking.NetworkPlayer;
 
 namespace Atlas.UI
 {
-	public class UIBackgroundBehaviour : MonoBehaviour
+	public class UIBackgroundBehaviour : MaskableGraphic, ILayoutElement, ICanvasRaycastFilter
 	{
-		/*
-		Dummy class. This could have happened for several reasons:
-
-		1. No dll files were provided to AssetRipper.
-
-			Unity asset bundles and serialized files do not contain script information to decompile.
-				* For Mono games, that information is contained in .NET dll files.
-				* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-				
-			AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-			A unexpected file structure could cause AssetRipper to not find the required files.
-
-		2. Incorrect dll files were provided to AssetRipper.
-
-			Any of the following could cause this:
-				* Il2CppInterop assemblies
-				* Deobfuscated assemblies
-				* Older assemblies (compared to when the bundle was built)
-				* Newer assemblies (compared to when the bundle was built)
-
-			Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
-
-		3. Assembly Reconstruction has not been implemented.
-
-			Asset bundles contain a small amount of information about the script content.
-			This information can be used to recover the serializable fields of a script.
-
-			See: https://github.com/AssetRipper/AssetRipper/issues/655
-	
-		4. This script is unnecessary.
-
-			If this script has no asset or script references, it can be deleted.
-			Be sure to resolve any compile errors before deleting because they can hide references.
-
-		5. Script Content Level 0
-
-			AssetRipper was set to not load any script information.
-
-		6. Cpp2IL failed to decompile Il2Cpp data
-
-			If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-			This is an upstream problem, and the AssetRipper developer has very little control over it.
-			Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
-
-		7. An incorrect path was provided to AssetRipper.
-
-			This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-			AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-			An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-			Generally, AssetRipper expects users to provide the root folder of the game. For example:
-				* Windows: the folder containing the game's .exe file
-				* Mac: the .app file/folder
-				* Linux: the folder containing the game's executable file
-				* Android: the apk file
-				* iOS: the ipa file
-				* Switch: the folder containing exefs and romfs
-
-		*/
+		[SerializeField] private Sprite _sprite;
+		[SerializeField] private float _skewX;
+		[SerializeField] private Vector2 _offsetUVs;
+		[SerializeField] private Vector2 _scaleUVs;
+		[SerializeField] private int _gridCountY;
+		[SerializeField] private bool _hideBackground;
+		[SerializeField] private int _maxDotsFullyVisible;
+		[SerializeField] private int _minDotsFullyVisible;
+		[SerializeField] private int _maxDotsFlipped;
+		[SerializeField] private float _fadeInOutTime;
+		[SerializeField] private float _changeLayoutTime;
+		[SerializeField] private int _possibleDotLocationCount;
+		[SerializeField] private float _removeDotsDistanceFromCenter;
+		[SerializeField] private float _fadeInDotsOverDistance;
+		[SerializeField] private int _randomSeed;
+		private UIBackgroundBehaviour.FilledLocation[] _filledLocations;
+		private UIBackgroundBehaviour.Dot[] _dots;
+		private float _updateTimer;
+		private Color32 _fadeInColour;
+		private Color32 _fadeOutColour;
+		private bool _fading;
+		private int _generatedSeed;
+		private float _generatedWidth;
+		private float _generatedHeight;
+		private int _generatedPossibleDotLocationCount;
+		private int _generatedGridCountY;
+		private float m_CachedReferencePixelsPerUnit;
+		public Sprite Sprite { set { } }
+		public float minWidth { get => default; }
+		public float preferredWidth { get => default; }
+		public float flexibleWidth { get => default; }
+		public float minHeight { get => default; }
+		public float preferredHeight { get => default; }
+		public float flexibleHeight { get => default; }
+		public int layoutPriority { get => default; }
+		public Texture mainTexture { get => default; }
+		public float pixelsPerUnit { get => default; }
+		public virtual void CalculateLayoutInputHorizontal() { }
+		public virtual void CalculateLayoutInputVertical() { }
+		public virtual bool IsRaycastLocationValid(Vector2 screenPoint, Camera eventCamera) { return default; }
+		private void Update() { }
+		private void InitDotIndices() { }
+		private void UpdateDots() { }
+		private void GenerateDots(Vector2 min, Vector2 orgSize) { }
+		protected virtual void OnPopulateMesh(VertexHelper vh) { }
+		private void AddDotsToVertexHelper(UIBackgroundBehaviour.Dot[] dots, Color32 colour, VertexHelper vh) { }
+		private void AddDotToVertexHelper(ref UIBackgroundBehaviour.Dot dot, Color32 colour, VertexHelper vh) { }
+		private void AddQuad(Vector2 minCorner, Vector2 maxCorner, Color32 colour32, Vector2 min, Vector2 orgSize, VertexHelper vh) { }
+		private UIBackgroundBehaviour.Dot CreateDot(Vector2 minCorner, Vector2 maxCorner, Vector2 min, Vector2 orgSize) { return default; }
+		private Vector4 CreateVector4(float x, float y, Vector2 yw) { return default; }
+		private Vector4 AdjustUVs(Vector2 uvs, Vector2 offset, Vector2 scale) { return default; }
 	}
 }

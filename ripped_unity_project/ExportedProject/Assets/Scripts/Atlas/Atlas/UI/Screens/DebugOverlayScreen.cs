@@ -1,66 +1,95 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using Atlas.Audio;
+using Atlas.Contexts;
+using Atlas.Definitions;
+using Atlas.Gameplay;
+using Atlas.Gameplay.Kart;
+using Atlas.Gameplay.Pickups;
+using Atlas.Gameplay.Player;
+using Atlas.Gameplay.Usables;
+using Atlas.Input;
+using Atlas.League;
+using Atlas.Lighting;
+using Atlas.Networking;
+using Atlas.Rendering;
+using Atlas.Save;
+using Atlas.Settings;
+using Atlas.Stats;
+using Atlas.UI;
+using Core.Actors;
+using Core.Application;
+using Core.Assets;
+using Core.Audio;
+using Core.Cameras;
+using Core.Containers;
+using Core.Contexts;
+using Core.Definitions;
+using Core.Input;
+using Core.Localisation;
+using Core.Networking;
+using Core.Scenes;
+using Core.Services;
+using Core.Settings;
+using Unity.Collections;
+using Unity.Jobs;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.Events;
+using UnityEngine.UI;
+using Object = UnityEngine.Object;
+using Network = Atlas.Networking.Network;
+using NetworkPlayer = Core.Networking.NetworkPlayer;
 
 namespace Atlas.UI.Screens
 {
-	public class DebugOverlayScreen : MonoBehaviour
+	public class DebugOverlayScreen : AtlasScreen<DebugOverlayScreenBehaviour, DebugOverlayScreen.TransitionData>
 	{
-		/*
-		Dummy class. This could have happened for several reasons:
-
-		1. No dll files were provided to AssetRipper.
-
-			Unity asset bundles and serialized files do not contain script information to decompile.
-				* For Mono games, that information is contained in .NET dll files.
-				* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-				
-			AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-			A unexpected file structure could cause AssetRipper to not find the required files.
-
-		2. Incorrect dll files were provided to AssetRipper.
-
-			Any of the following could cause this:
-				* Il2CppInterop assemblies
-				* Deobfuscated assemblies
-				* Older assemblies (compared to when the bundle was built)
-				* Newer assemblies (compared to when the bundle was built)
-
-			Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
-
-		3. Assembly Reconstruction has not been implemented.
-
-			Asset bundles contain a small amount of information about the script content.
-			This information can be used to recover the serializable fields of a script.
-
-			See: https://github.com/AssetRipper/AssetRipper/issues/655
-	
-		4. This script is unnecessary.
-
-			If this script has no asset or script references, it can be deleted.
-			Be sure to resolve any compile errors before deleting because they can hide references.
-
-		5. Script Content Level 0
-
-			AssetRipper was set to not load any script information.
-
-		6. Cpp2IL failed to decompile Il2Cpp data
-
-			If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-			This is an upstream problem, and the AssetRipper developer has very little control over it.
-			Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
-
-		7. An incorrect path was provided to AssetRipper.
-
-			This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-			AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-			An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-			Generally, AssetRipper expects users to provide the root folder of the game. For example:
-				* Windows: the folder containing the game's .exe file
-				* Mac: the .app file/folder
-				* Linux: the folder containing the game's executable file
-				* Android: the apk file
-				* iOS: the ipa file
-				* Switch: the folder containing exefs and romfs
-
-		*/
+		private const int ReusableStringBuilderLength = 256;
+		private ServicesManager _servicesManager;
+		private string _photonAppVersion;
+		private StringBuilder _reusableStringBuilder;
+		private string _lastPhotonAppVersion;
+		private FixedString64Bytes _lastConnectionRegion;
+		private FixedString64Bytes _lastConnectionProtocol;
+		private bool _lastIsHost;
+		private bool _lastIsHostIsValid;
+		private int _highestBytesIn;
+		private int _highestPacketsIn;
+		private int _highestUnreliableCommandsIn;
+		private int _highestReliableCommandsIn;
+		private int _highestFragmentCommandsIn;
+		private int _highestBytesOut;
+		private int _highestPacketsOut;
+		private int _highestUnreliableCommandsOut;
+		private int _highestReliableCommandsOut;
+		private int _highestFragmentCommandsOut;
+		private int _lastBytesIn;
+		private int _lastBytesOut;
+		private bool _lastShowServicesInfo;
+		private const int UpdateFPSFrequency = 30;
+		private int _fpsFrameCount;
+		private Stopwatch _fpsStopWatch;
+		private static readonly string[] _ignoreErrorsEndingList;
+		private static readonly string[] _ignoreStackTraceStarting;
+		private const int _errorListSize = 5;
+		private const int _errorTextBuilderSize = 1024;
+		private const int _stackTraceLineCount = 4;
+		private string[] _errorList;
+		private string[] _stackTraceList;
+		private int _lastErrorListIndex;
+		private bool _captureErrorMessages;
+		private StringBuilder _errorTextStringBuilder;
+		protected virtual void OnBeforeEnter() { }
+		protected virtual void OnAfterExit() { }
+		protected virtual void OnUpdate(float dt) { }
+		private int ExtractInt(FixedString512Bytes text, FixedString32Bytes parameter) { return default; }
+		private void OnLogMessageRecieved(string logString, string stackTrace, LogType type) { }
+		private void AddErrorMessage(string errorMsg, string stackTrace) { }
+		private void CaptureErrorMessages(bool enabled) { }
+		private void HideErrorMessage() { }
 	}
 }

@@ -1,8 +1,8 @@
 using System;
 using Atlas.Definitions;
+using Core.Application;
 using Core.Assets;
 using Core.Definitions;
-using Core.GameLoop;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 

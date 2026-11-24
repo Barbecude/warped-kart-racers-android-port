@@ -1,5 +1,7 @@
 {
   "name": "StateManagement",
-  "references": [],
+  "references": [
+    "Core.Application"
+  ],
   "allowUnsafeCode": true
 }

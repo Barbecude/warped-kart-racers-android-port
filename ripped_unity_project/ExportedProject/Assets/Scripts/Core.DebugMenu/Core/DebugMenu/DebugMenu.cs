@@ -1,66 +1,106 @@
+using UnityEngine.UI;
+using Unity.Profiling;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Core.DebugMenu
 {
-	public class DebugMenu : MonoBehaviour
+	public class DebugMenu
 	{
-		/*
-		Dummy class. This could have happened for several reasons:
-
-		1. No dll files were provided to AssetRipper.
-
-			Unity asset bundles and serialized files do not contain script information to decompile.
-				* For Mono games, that information is contained in .NET dll files.
-				* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-				
-			AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-			A unexpected file structure could cause AssetRipper to not find the required files.
-
-		2. Incorrect dll files were provided to AssetRipper.
-
-			Any of the following could cause this:
-				* Il2CppInterop assemblies
-				* Deobfuscated assemblies
-				* Older assemblies (compared to when the bundle was built)
-				* Newer assemblies (compared to when the bundle was built)
-
-			Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
-
-		3. Assembly Reconstruction has not been implemented.
-
-			Asset bundles contain a small amount of information about the script content.
-			This information can be used to recover the serializable fields of a script.
-
-			See: https://github.com/AssetRipper/AssetRipper/issues/655
-	
-		4. This script is unnecessary.
-
-			If this script has no asset or script references, it can be deleted.
-			Be sure to resolve any compile errors before deleting because they can hide references.
-
-		5. Script Content Level 0
-
-			AssetRipper was set to not load any script information.
-
-		6. Cpp2IL failed to decompile Il2Cpp data
-
-			If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-			This is an upstream problem, and the AssetRipper developer has very little control over it.
-			Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
-
-		7. An incorrect path was provided to AssetRipper.
-
-			This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-			AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-			An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-			Generally, AssetRipper expects users to provide the root folder of the game. For example:
-				* Windows: the folder containing the game's .exe file
-				* Mac: the .app file/folder
-				* Linux: the folder containing the game's executable file
-				* Android: the apk file
-				* iOS: the ipa file
-				* Switch: the folder containing exefs and romfs
-
-		*/
+		public enum InstantiateUIResult { Success = 0, Failed = 1 }
+		public class Element { }
+		public enum ElementType
+		{
+			Canvas = 0,
+			Panel = 1,
+			Button = 2,
+			RootButton = 3,
+			Label = 4,
+			Slider = 5,
+			Dropdown = 6,
+			Toggle = 7,
+			HorizontalLayout = 8,
+		}
+		public const int InvalidId = -1;
+		public const int MaxStringLength = 14000;
+		public const float DefaultPanelWidthPerc = 40;
+		private const float _cellHeight = 50;
+		public const float _cellPadding = 3;
+		private const float _horizontalCellSpacing = 15;
+		private const float _dPanelAlpha = 15;
+		private const float _delayedShowTime = 0.15f;
+		private const float _defaultLabelPerc = 20;
+		private const float _defaultToggleLabelPerc = 70;
+		private const float _rootPanelWidth = 500;
+		private const float _rootPanelHeight = 500;
+		private const float _rootButtonDoubleClickTimeMs = 750;
+		private static readonly string[] _prefabPaths;
+		private RectTransform _rootRectTransform;
+		private Canvas _rootCanvas;
+		private CanvasGroup _rootCanvasGroup;
+		private int _debugMenuPanelId;
+		private int _rootPanelId;
+		private int _nextId;
+		private int _minimisedPanelId;
+		private DateTime _lastRootButtonPressedTime;
+		private int _consecutiveRootButtonPressed;
+		private DebugMenuControllerInputSupport _controllerSupport;
+		private bool _inited;
+		private static ProfilerMarker _updateProfilerMarker;
+		private bool IsControllerSupported { get => default; }
+		public int DebugMenuPanelId { get => default; }
+		public int RootPanelId { get => default; }
+		public RectTransform RootRectTransform { get => default; }
+		public bool Visible { get => default; set { } }
+		public float Opacity { get => default; set { } }
+		public bool IsInited { get => default; }
+		public IEnumerator Init(Transform rootTransform) { return default; }
+		public void DeInit() { }
+		public void Update(float dt) { }
+		public bool IsPanelShowing(int panelId) { return default; }
+		public bool IsOnlyPanelShowing(int panelId) { return default; }
+		public void ShowRootPanel() { }
+		public void HideAllPanels() { }
+		public void HideLastPanel() { }
+		public int AddButtonAndPanel(int parentPanelId, string name, object owner, float widthPerc) { return default; }
+		private void UpdateMouse() { }
+		private void UpdateTouch() { }
+		private void TryPressRootButton(Vector2 normPos) { }
+		public int AddPanelByScreenPercentage(float topLeftXPerc, float topLeftYPerc, float widthPerc, bool showHeader, string title, object createdBy, int parentPanelId) { return default; }
+		public int AddPanel(float topLeftX, float topLeftY, float width, bool showHeader, string title, object createdBy, int parentPanelId) { return default; }
+		public void RemoveElement(int elementId) { }
+		public int RemoveAllElementsCreatedBy(object createdBy) { return default; }
+		public int AddLabel(int panelId, string labelText, object createdBy, string optionalLabel, float optionalLabelWidthPerc) { return default; }
+		public DebugUIButtonBehaviour GetButton(int id) { return default; }
+		public bool ConfigureButton(int id, string buttonText, bool interactable) { return default; }
+		public bool SetButtonInteractable(int id, bool interactable) { return default; }
+		public bool ConfigureSlider(int id, float value) { return default; }
+		public bool ConfigureLabel(int id, string labelText, bool raycastTarget) { return default; }
+		public void SetDropdownIndex(int id, int newIndex) { }
+		public bool ConfigureDropdown(int id, int optionIndex) { return default; }
+		public bool ConfigureToggle(int id, bool toggled) { return default; }
+		public float SyncSliderValue(int sliderId, float value) { return default; }
+		private DebugMenu.InstantiateUIResult InstantiateUIWithOptionalLabel(DebugMenu.ElementType elementType, string name, float width, float height, string label, float labelWidthPerc) { return default; }
+		private DebugMenu.InstantiateUIResult InstantiateUI(DebugMenu.ElementType elementType, string name, float width, float height) { return default; }
+		private DebugMenu.InstantiateUIResult InstantiateComponentUIWithLabel(DebugMenu.ElementType elementType, string name, float width, float height, string label, float labelWidthPerc) { return default; }
+		private GameObject InstantiatePrefab(GameObject prefab, string name) { return default; }
+		private bool TryGetElementCopy(int id, DebugMenu.ElementType elementType, out DebugMenu.Element outElement) { outElement = default; return default; }
+		private bool IsValidId(int id) { return default; }
+		private void PushPanel(int panelId, int fromPanelId) { }
+		private void PopPanel(int panelId) { }
+		private void PopAll(int panelId) { }
+		private void PopPanelToFirst(int panelId) { }
+		private void PopPanels(int panelId, int stackCountOffset) { }
+		public void ShowPanel(int panelId, float delayTime) { }
+		public void HidePanel(int panelId, float delayTime) { }
+		private void ButtonPressed(int id) { }
+		private void MinimiseButtonPressed(int id) { }
+		private void BackButtonPressed(int id) { }
+		private void CloseButtonPressed(int id) { }
+		private void RootButtonPressed() { }
+		private int GetNextIdAndIncrement() { return default; }
+		private void OnOpacitySliderChange(int elementId, float value) { }
 	}
 }

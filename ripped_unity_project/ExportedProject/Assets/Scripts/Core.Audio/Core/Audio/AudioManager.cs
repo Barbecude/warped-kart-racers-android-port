@@ -1,66 +1,35 @@
+using FMODUnity;
+using FMOD.Studio;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Core.Audio
 {
-	public class AudioManager : MonoBehaviour
+	public struct PARAMETER_ID { public uint data1; public uint data2; }
+	public class AudioManager
 	{
-		/*
-		Dummy class. This could have happened for several reasons:
-
-		1. No dll files were provided to AssetRipper.
-
-			Unity asset bundles and serialized files do not contain script information to decompile.
-				* For Mono games, that information is contained in .NET dll files.
-				* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-				
-			AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-			A unexpected file structure could cause AssetRipper to not find the required files.
-
-		2. Incorrect dll files were provided to AssetRipper.
-
-			Any of the following could cause this:
-				* Il2CppInterop assemblies
-				* Deobfuscated assemblies
-				* Older assemblies (compared to when the bundle was built)
-				* Newer assemblies (compared to when the bundle was built)
-
-			Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
-
-		3. Assembly Reconstruction has not been implemented.
-
-			Asset bundles contain a small amount of information about the script content.
-			This information can be used to recover the serializable fields of a script.
-
-			See: https://github.com/AssetRipper/AssetRipper/issues/655
-	
-		4. This script is unnecessary.
-
-			If this script has no asset or script references, it can be deleted.
-			Be sure to resolve any compile errors before deleting because they can hide references.
-
-		5. Script Content Level 0
-
-			AssetRipper was set to not load any script information.
-
-		6. Cpp2IL failed to decompile Il2Cpp data
-
-			If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-			This is an upstream problem, and the AssetRipper developer has very little control over it.
-			Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
-
-		7. An incorrect path was provided to AssetRipper.
-
-			This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-			AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-			An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-			Generally, AssetRipper expects users to provide the root folder of the game. For example:
-				* Windows: the folder containing the game's .exe file
-				* Mac: the .app file/folder
-				* Linux: the folder containing the game's executable file
-				* Android: the apk file
-				* iOS: the ipa file
-				* Switch: the folder containing exefs and romfs
-
-		*/
+		private bool _inited;
+		public virtual void Init() { }
+		public virtual void DeInit() { }
+		public virtual void Update(float dt) { }
+		public bool IsBankLoaded(string bankName) { return default; }
+		public void LoadBank(string bankName, bool preloadSamples) { }
+		public void UnloadBank(string bankName) { }
+		public bool AnyBanksLoading() { return default; }
+		public void WaitForLoad() { }
+		public void SetListenerCount(int listenerCount) { }
+		public void SetListenerTransform(int listenerIndex, Transform transform) { }
+		public void SetParameter(string name, float value) { }
+		public bool TryGetParameterIdByName(string name, out PARAMETER_ID outParameterId) { outParameterId = default; return default; }
+		public PARAMETER_ID GetParameterIdByName(string name) { return default; }
+		public void SetParameter(PARAMETER_ID id, float value, bool ignoreseekspeed) { }
+		public bool TryGetParameter(string name, out float value) { value = default; return default; }
+		public void PlayOneShot(string name) { }
+		public void PlayOneShot(string name, Vector3 position) { }
+		public void MuteAllEvents(bool pause) { }
+		private void RemoveFromLoadedBanksList(string bankName) { }
+		public void SetGlobalParameter(string name, float value, bool ignoreseekspeed) { }
 	}
 }

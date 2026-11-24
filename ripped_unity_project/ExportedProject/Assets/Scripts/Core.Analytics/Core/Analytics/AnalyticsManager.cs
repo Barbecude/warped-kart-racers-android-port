@@ -1,66 +1,83 @@
+using System.Diagnostics;
+using System.Text;
+using UnityEngine.Networking;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Core.Analytics
 {
-	public class AnalyticsManager : MonoBehaviour
+	public class AnalyticsManager
 	{
-		/*
-		Dummy class. This could have happened for several reasons:
-
-		1. No dll files were provided to AssetRipper.
-
-			Unity asset bundles and serialized files do not contain script information to decompile.
-				* For Mono games, that information is contained in .NET dll files.
-				* For Il2Cpp games, that information is contained in compiled C++ assemblies and the global metadata.
-				
-			AssetRipper usually expects games to conform to a normal file structure for Unity games of that platform.
-			A unexpected file structure could cause AssetRipper to not find the required files.
-
-		2. Incorrect dll files were provided to AssetRipper.
-
-			Any of the following could cause this:
-				* Il2CppInterop assemblies
-				* Deobfuscated assemblies
-				* Older assemblies (compared to when the bundle was built)
-				* Newer assemblies (compared to when the bundle was built)
-
-			Note: Although assembly publicizing is bad, it alone cannot cause empty scripts. See: https://github.com/AssetRipper/AssetRipper/issues/653
-
-		3. Assembly Reconstruction has not been implemented.
-
-			Asset bundles contain a small amount of information about the script content.
-			This information can be used to recover the serializable fields of a script.
-
-			See: https://github.com/AssetRipper/AssetRipper/issues/655
-	
-		4. This script is unnecessary.
-
-			If this script has no asset or script references, it can be deleted.
-			Be sure to resolve any compile errors before deleting because they can hide references.
-
-		5. Script Content Level 0
-
-			AssetRipper was set to not load any script information.
-
-		6. Cpp2IL failed to decompile Il2Cpp data
-
-			If this happened, there will be errors in the AssetRipper.log indicating that it happened.
-			This is an upstream problem, and the AssetRipper developer has very little control over it.
-			Please post a GitHub issue at: https://github.com/SamboyCoding/Cpp2IL/issues
-
-		7. An incorrect path was provided to AssetRipper.
-
-			This is characterized by "Mixed game structure has been found at" in the AssetRipper.log file.
-			AssetRipper expects games to conform to a normal file structure for Unity games of that platform.
-			An unexpected file structure could cause AssetRipper to not find the required files for script decompilation.
-			Generally, AssetRipper expects users to provide the root folder of the game. For example:
-				* Windows: the folder containing the game's .exe file
-				* Mac: the .app file/folder
-				* Linux: the folder containing the game's executable file
-				* Android: the apk file
-				* iOS: the ipa file
-				* Switch: the folder containing exefs and romfs
-
-		*/
+		public struct Event { }
+		private static readonly TimeSpan AWSMinimumSecondsBetweenRequests;
+		private const int EventBatchEndOverSize = 262144;
+		private const int EventBatchEndOverCount = 100;
+		private const int EventQueueMaxCount = 100;
+		private const int EventBatchInitialCapacity = 288358;
+		private const int ReusableByteBufferSize = 393216;
+		private const int QueueInitialCapacity = 25;
+		private const int CustomParamListPoolInitialCapacity = 25;
+		private const int CustomParamListPoolGrowSize = 25;
+		private const int CustomParamListInitialCapacity = 8;
+		private const int EventHistoryCapacity = 10;
+		private const int EventDataFormatVersion = 1;
+		private const string PlayerPrefsSaveKey = "AM_SAVE";
+		private string _awsAPIKey;
+		private string _awsEventsURL;
+		private StringBuilder _activeEventBatchStringBuilder;
+		private int _customParamListsCreated;
+		private DateTime _dateTimeSinceLastAWSRequest;
+		private UnityWebRequestAsyncOperation _awsPostAsyncOperation;
+		private int _sendingEventCount;
+		private int _successSentEventBatchCount;
+		private int _failedSentEventBatchCount;
+		private int _totalSentPostBodySize;
+		private int _totalPostBodySizeBeforeCompression;
+		private bool _allowStoringEvents;
+		private bool _allowSendingEvents;
+		private bool _compressedPostBody;
+		private bool _storeEventHistory;
+		private bool _sendNextBatchOfQueuedEvents;
+		private string _lastPostedEventName;
+		private byte[] _reusableByteBuffer;
+		private Stopwatch _timeSpentBuildingAndPostingEvents;
+		public int SuccessSentEventBatchCount { get => default; }
+		public int FailedSentEventBatchCount { get => default; }
+		public int TotalSentPostBodySize { get => default; }
+		public int TotalPostBodySizeBeforeCompression { get => default; }
+		public double TotalTimeBuildingAndPostingEventsMs { get => default; }
+		public bool IsSendingEventBatch { get => default; }
+		public int QueuedEventCount { get => default; }
+		public int PostedEventHistoryCount { get => default; }
+		public bool AllowStoringEvents { get => default; set { } }
+		public bool AllowSendingEvents { get => default; set { } }
+		public bool CompressPostBody { get => default; set { } }
+		public bool StoreEventHistory { get => default; set { } }
+		public int CustomParamListsCreated { get => default; }
+		public int CustomParamListPoolSize { get => default; }
+		public string LastPostedEventName { get => default; }
+		public void Init(string AWSEventsURL, string AWSApiKey, bool storeEventHistory) { }
+		public void DeInit() { }
+		public void Update() { }
+		public void RequestSendNextBatchOfQueuedEvents() { }
+		public void ClearData() { }
+		public bool CanSendEventBatchNow() { return default; }
+		public void SaveQueuedEvents() { }
+		public void LoadAndClearSavedQueuedEvents() { }
+		public void ClearSavedQueuedEvents() { }
+		public bool TryGetQueuedOrHistoryEvent(int index, out AnalyticsManager.Event outEvent, out bool outSent) { outEvent = default; outSent = default; return default; }
+		private void FillCustomParamListPool(int addCount) { }
+		private void ReturnPooledObjects(AnalyticsManager.Event evt) { }
+		private void StartEventBatch() { }
+		private void AddEventToBatch(AnalyticsManager.Event evt, bool firstInBatch) { }
+		private void EndEventBatch() { }
+		private bool SendEventBatch(byte[] body, bool gzipCompressed) { return default; }
+		private bool SendEventBatch(UnityWebRequest webRequest) { return default; }
+		private UnityWebRequest CreatePOSTRequest(string url, byte[] body, bool gzipCompressed) { return default; }
+		private void UpdatePendingBatches() { }
+		private void UpdateSendingEventBatch() { }
+		private void RemoveAndArchiveQueuedEvents(int oldestEventCount) { }
 	}
 }

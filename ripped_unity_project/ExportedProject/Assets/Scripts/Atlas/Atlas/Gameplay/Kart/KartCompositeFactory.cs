@@ -1,3 +1,4 @@
+using NetworkPlayer = Core.Networking.NetworkPlayer;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,6 +6,7 @@ using Atlas.Audio;
 using Atlas.Contexts;
 using Atlas.Definitions;
 using Atlas.Gameplay.Usables;
+using Atlas.Input;
 using Atlas.League;
 using Atlas.Networking;
 using Atlas.Rendering;
@@ -149,7 +151,7 @@ namespace Atlas.Gameplay.Kart
 
 			foreach (NetworkKartLoadout loadout in networkKartLoadouts)
 			{
-				if (loadout.NetworkPlayer.Type == NetworkPlayerType.Local)
+				if (loadout.NetworkPlayer.Type == NetworkPlayer.NetworkPlayerType.Local)
 				{
 					_playerIDCharacterID = loadout.KartLoadout.CharacterID;
 				}
@@ -167,7 +169,7 @@ namespace Atlas.Gameplay.Kart
 				WheelsDefinition wheelsDef = _atlasDefinitions.GameDefinitions.GetDefinition<WheelsDefinition>(kartLoadout.WheelsID);
 
 				DefinitionID charId = kartLoadout.CharacterID;
-				if (netLoadout.NetworkPlayer.Type != NetworkPlayerType.Local && gameContextInfoBase.GameMode == GameMode.League)
+				if (netLoadout.NetworkPlayer.Type != NetworkPlayer.NetworkPlayerType.Local && gameContextInfoBase.GameMode == GameMode.League)
 				{
 					DefinitionID nextLeagueChar = GetNextLeagueCharacterID();
 					if (!string.IsNullOrEmpty(nextLeagueChar))
@@ -232,7 +234,7 @@ namespace Atlas.Gameplay.Kart
 					FrontWheelHandle = frontWheelHandle,
 					RearWheelHandle = rearWheelHandle,
 					BoostHandle = boostHandle,
-					EngineType = kartDef != null ? kartDef.EngineType : KartAudio.EngineType.Default
+					EngineType = kartDef != null ? kartDef.EngineType : KartAudio.EngineType.GENERIC
 				};
 				_playerLoadoutSets.Add(set);
 
@@ -263,8 +265,8 @@ namespace Atlas.Gameplay.Kart
 
 			foreach (PlayerLoadoutSet set in _playerLoadoutSets)
 			{
-				bool isAI = set.NetworkKartLoadout.NetworkPlayer.Type == NetworkPlayerType.LocalAI ||
-							set.NetworkKartLoadout.NetworkPlayer.Type == NetworkPlayerType.RemoteAI;
+				bool isAI = set.NetworkKartLoadout.NetworkPlayer.Type == NetworkPlayer.NetworkPlayerType.LocalAi ||
+							set.NetworkKartLoadout.NetworkPlayer.Type == NetworkPlayer.NetworkPlayerType.RemoteAi;
 				KartPhysicsHandling handling = CreateKartPhysicsHandling(kartAIHandlingID, gameContext, isAI);
 				if (handling == null)
 				{
@@ -313,7 +315,7 @@ namespace Atlas.Gameplay.Kart
 			List<NetworkKartLoadout> result = new List<NetworkKartLoadout>();
 			foreach (NetworkPlayer player in networkPlayers)
 			{
-				if (player.Type == NetworkPlayerType.Local)
+				if (player.Type == NetworkPlayer.NetworkPlayerType.Local)
 				{
 					result.Add(new NetworkKartLoadout
 					{
@@ -321,7 +323,7 @@ namespace Atlas.Gameplay.Kart
 						KartLoadout = gameContextInfoBase.LocalPlayerLoadout
 					});
 				}
-				else if (player.Type == NetworkPlayerType.Remote)
+				else if (player.Type == NetworkPlayer.NetworkPlayerType.Remote)
 				{
 					foreach (RemoteKartLoadout remote in gameContextInfoBase.RemotePlayerLoadouts)
 					{
@@ -336,7 +338,7 @@ namespace Atlas.Gameplay.Kart
 						}
 					}
 				}
-				else if (player.Type == NetworkPlayerType.LocalAI || player.Type == NetworkPlayerType.RemoteAI)
+				else if (player.Type == NetworkPlayer.NetworkPlayerType.LocalAi || player.Type == NetworkPlayer.NetworkPlayerType.RemoteAi)
 				{
 					if (player.SyncId <= gameContextInfoBase.AIPlayerLoadouts.Count)
 					{
@@ -414,14 +416,14 @@ namespace Atlas.Gameplay.Kart
 			KartInputType inputType;
 			switch (set.NetworkKartLoadout.NetworkPlayer.Type)
 			{
-				case NetworkPlayerType.Local:
+				case NetworkPlayer.NetworkPlayerType.Local:
 					inputType = KartInputType.LocalPlayerInput;
 					break;
-				case NetworkPlayerType.Remote:
-				case NetworkPlayerType.RemoteAI:
+				case NetworkPlayer.NetworkPlayerType.Remote:
+				case NetworkPlayer.NetworkPlayerType.RemoteAi:
 					inputType = KartInputType.RemotePlayerInput;
 					break;
-				case NetworkPlayerType.LocalAI:
+				case NetworkPlayer.NetworkPlayerType.LocalAi:
 					inputType = KartInputType.AiInput;
 					break;
 				default:
@@ -578,7 +580,7 @@ namespace Atlas.Gameplay.Kart
 
 			if (singlePlayerStartPosIndex >= 0 && singlePlayerStartPosIndex < sortedPlayers.Count)
 			{
-				int localIdx = sortedPlayers.FindIndex(p => p.Type == NetworkPlayerType.Local);
+				int localIdx = sortedPlayers.FindIndex(p => p.Type == NetworkPlayer.NetworkPlayerType.Local);
 				if (localIdx >= 0)
 				{
 					NetworkPlayer localPlayer = sortedPlayers[localIdx];
