@@ -1,0 +1,10257 @@
+// Decompiled from UnityFramework (ARM64 IL2CPP) via Ghidra 12.1.4
+// Class: Core.Services.Match
+
+// ============================================================
+// RVA: 0x167d450 | Core.Services.Match.get_ByteBuffer
+// ============================================================
+
+undefined8 Core_Services_Match__get_ByteBuffer(long param_1)
+
+{
+  return *(undefined8 *)(param_1 + 8);
+}
+
+
+
+// ============================================================
+// RVA: 0x167d458 | Core.Services.Match.GetRootAsMatch
+// ============================================================
+
+undefined1  [16] Core_Services_Match__GetRootAsMatch(long param_1)
+
+{
+  int iVar1;
+  undefined8 *puVar2;
+  undefined8 uVar3;
+  undefined1 auVar4 [16];
+  undefined1 auVar5 [16];
+  undefined1 auVar6 [12];
+  
+  uVar3 = 0;
+  if (param_1 != 0) {
+    iVar1 = /*FlatBuffers.ByteBuffer$$GetInt*/ func_0x016ccdec(param_1,*(undefined4 *)(param_1 + 0x18),0);
+    auVar4._4_4_ = 0;
+    auVar4._0_4_ = *(int *)(param_1 + 0x18) + iVar1;
+    auVar4._8_8_ = param_1;
+    return auVar4;
+  }
+  auVar6 = func_0x00f78af4();
+  puVar2 = auVar6._0_8_;
+  *(int *)puVar2 = auVar6._8_4_;
+  puVar2[1] = uVar3;
+  auVar5._0_8_ = *puVar2;
+  auVar5._8_8_ = uVar3;
+  return auVar5;
+}
+
+
+
+// ============================================================
+// RVA: 0x167d464 | Core.Services.Match.GetRootAsMatch
+// ============================================================
+
+undefined1  [16] Core_Services_Match__GetRootAsMatch(long param_1,ulong param_2,undefined8 param_3)
+
+{
+  int iVar1;
+  undefined8 *puVar2;
+  undefined1 auVar3 [16];
+  undefined1 auVar4 [16];
+  undefined1 auVar5 [12];
+  
+  if (param_1 != 0) {
+    iVar1 = /*FlatBuffers.ByteBuffer$$GetInt*/ func_0x016ccdec(param_1,*(undefined4 *)(param_1 + 0x18),0);
+    auVar3._0_8_ = param_2 & 0xffffffff00000000 | (ulong)(uint)(*(int *)(param_1 + 0x18) + iVar1);
+    auVar3._8_8_ = param_1;
+    return auVar3;
+  }
+  auVar5 = func_0x00f78af4();
+  puVar2 = auVar5._0_8_;
+  *(int *)puVar2 = auVar5._8_4_;
+  puVar2[1] = param_3;
+  auVar4._0_8_ = *puVar2;
+  auVar4._8_8_ = param_3;
+  return auVar4;
+}
+
+
+
+// ============================================================
+// RVA: 0x167d4a8 | Core.Services.Match.__assign
+// ============================================================
+
+undefined1  [16]
+Core_Services_Match____assign(undefined8 *param_1,undefined4 param_2,undefined8 param_3)
+
+{
+  undefined1 auVar1 [16];
+  
+  *(undefined4 *)param_1 = param_2;
+  param_1[1] = param_3;
+  auVar1._0_8_ = *param_1;
+  auVar1._8_8_ = param_3;
+  return auVar1;
+}
+
+
+
+// ============================================================
+// RVA: 0x167d4bc | Core.Services.Match.__init
+// ============================================================
+
+void Core_Services_Match____init(undefined4 *param_1,undefined4 param_2,undefined8 param_3)
+
+{
+  *param_1 = param_2;
+  *(undefined8 *)(param_1 + 2) = param_3;
+  return;
+}
+
+
+
+// ============================================================
+// RVA: 0x167d4c8 | Core.Services.Match.get_Id
+// ============================================================
+
+/* WARNING: Possible PIC construction at 0x016cf3cc: Changing call to branch */
+/* WARNING: Removing unreachable block (ram,0x016cf3d0) */
+/* WARNING: Removing unreachable block (ram,0x016cf444) */
+/* WARNING: Removing unreachable block (ram,0x016cf464) */
+/* WARNING: Removing unreachable block (ram,0x016cf474) */
+/* WARNING: Removing unreachable block (ram,0x016cf480) */
+/* WARNING: Removing unreachable block (ram,0x016cf4ec) */
+/* WARNING: Removing unreachable block (ram,0x016cf4f0) */
+/* WARNING: Removing unreachable block (ram,0x016cf5a0) */
+/* WARNING: Removing unreachable block (ram,0x016cf5b4) */
+/* WARNING: Removing unreachable block (ram,0x016cf6ac) */
+/* WARNING: Removing unreachable block (ram,0x016cf6e0) */
+/* WARNING: Removing unreachable block (ram,0x016cf6f4) */
+/* WARNING: Removing unreachable block (ram,0x016cf6f8) */
+/* WARNING: Removing unreachable block (ram,0x016cf720) */
+/* WARNING: Removing unreachable block (ram,0x016cf73c) */
+/* WARNING: Removing unreachable block (ram,0x016cf744) */
+/* WARNING: Removing unreachable block (ram,0x016cf748) */
+/* WARNING: Removing unreachable block (ram,0x016cf760) */
+/* WARNING: Removing unreachable block (ram,0x016cf770) */
+/* WARNING: Removing unreachable block (ram,0x016cf7bc) */
+/* WARNING: Removing unreachable block (ram,0x016cf7c8) */
+/* WARNING: Removing unreachable block (ram,0x016cf788) */
+/* WARNING: Removing unreachable block (ram,0x016cf794) */
+/* WARNING: Removing unreachable block (ram,0x016cf7a0) */
+/* WARNING: Removing unreachable block (ram,0x016cf7a4) */
+/* WARNING: Removing unreachable block (ram,0x016cf5b8) */
+/* WARNING: Removing unreachable block (ram,0x016cf624) */
+/* WARNING: Removing unreachable block (ram,0x016cf62c) */
+/* WARNING: Removing unreachable block (ram,0x016cf630) */
+/* WARNING: Removing unreachable block (ram,0x016cf648) */
+/* WARNING: Removing unreachable block (ram,0x016cf65c) */
+/* WARNING: Removing unreachable block (ram,0x016cf680) */
+/* WARNING: Removing unreachable block (ram,0x016cf690) */
+/* WARNING: Removing unreachable block (ram,0x016cf694) */
+/* WARNING: Removing unreachable block (ram,0x016cf494) */
+/* WARNING: Removing unreachable block (ram,0x016cf4b4) */
+/* WARNING: Removing unreachable block (ram,0x016cf4cc) */
+/* WARNING: Removing unreachable block (ram,0x016cf3ec) */
+/* WARNING: Removing unreachable block (ram,0x02616890) */
+
+ulong Core_Services_Match__get_Id(int *param_1)
+
+{
+  uint uVar1;
+  int **ppiVar2;
+  undefined1 *puVar3;
+  short sVar5;
+  int iVar6;
+  int iVar7;
+  long *plVar8;
+  ulong uVar9;
+  undefined8 uVar10;
+  long lVar11;
+  int *piVar12;
+  int *extraout_x8;
+  int *piVar13;
+  int *unaff_x20;
+  int *piVar14;
+  undefined8 unaff_x21;
+  ulong unaff_x22;
+  undefined *puVar15;
+  undefined1 auVar16 [16];
+  undefined1 auVar17 [16];
+  undefined1 auVar18 [12];
+  int *piStack_40;
+  int *piStack_38;
+  undefined1 *puVar4;
+  
+  iVar6 = /*FlatBuffers.Table$$__offset*/ func_0x016cf120(param_1,4,0);
+  if (iVar6 == 0) {
+    return 0;
+  }
+  uVar1 = *param_1 + iVar6;
+  if (*(long *)(param_1 + 2) != 0) {
+    iVar6 = /*FlatBuffers.ByteBuffer$$ReadLittleEndian*/ func_0x016cc634(*(long *)(param_1 + 2),(int *)(ulong)uVar1,4);
+    unaff_x20 = (int *)(ulong)uVar1;
+    if (*(long *)(param_1 + 2) != 0) {
+      unaff_x20 = (int *)(ulong)(iVar6 + uVar1);
+      uVar10 = /*FlatBuffers.ByteBuffer$$ReadLittleEndian*/ func_0x016cc634(*(long *)(param_1 + 2),unaff_x20,4);
+      lVar11 = *(long *)(param_1 + 2);
+      if (lVar11 != 0) {
+        plVar8 = (long *)/*System.Text.Encoding$$get_UTF8*/ func_0x02abb130(0);
+        lVar11 = *(long *)(lVar11 + 0x10);
+        if ((lVar11 != 0) && (plVar8 != (long *)0x0)) {
+                    /* WARNING: Could not recover jumptable at 0x016ccdac. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          uVar9 = (**(code **)(*plVar8 + 0x348))
+                            (plVar8,*(undefined8 *)(lVar11 + 0x10),iVar6 + uVar1 + 4,uVar10,
+                             *(undefined8 *)(*plVar8 + 0x350));
+          return uVar9;
+        }
+        auVar16 = func_0x00f78af4();
+        piStack_38 = (int *)&FlatBuffers_ByteBuffer__GetShort;
+        piStack_40 = (int *)&stack0xfffffffffffffff0;
+        sVar5 = /*FlatBuffers.ByteBuffer$$ReadLittleEndian*/ func_0x016cc634(auVar16._0_8_,auVar16._8_8_,2);
+        return (ulong)(uint)(int)sVar5;
+      }
+    }
+  }
+  auVar18 = func_0x00f78af4();
+  piVar13 = auVar18._0_8_;
+  piVar14 = unaff_x20;
+  piStack_40 = unaff_x20;
+  piStack_38 = param_1;
+  if (*(long *)(piVar13 + 2) != 0) {
+    uVar1 = *piVar13 + auVar18._8_4_;
+    piVar14 = (int *)(ulong)uVar1;
+    iVar6 = /*FlatBuffers.ByteBuffer$$ReadLittleEndian*/ func_0x016cc634(*(long *)(piVar13 + 2),piVar14,4);
+    if (*(long *)(piVar13 + 2) != 0) {
+      uVar9 = /*FlatBuffers.ByteBuffer$$ReadLittleEndian*/ func_0x016cc634(*(long *)(piVar13 + 2),uVar1 + iVar6,4);
+      return uVar9;
+    }
+  }
+  puVar15 = &FlatBuffers_Table____vector;
+  auVar16 = func_0x00f78af4();
+  ppiVar2 = &piStack_40;
+  puVar3 = (undefined1 *)register0x00000008;
+  while( true ) {
+    puVar4 = (undefined1 *)ppiVar2;
+    *(int **)(puVar4 + -0x20) = piVar14;
+    *(int **)(puVar4 + -0x18) = piVar13;
+    *(undefined1 **)(puVar4 + -0x10) = puVar3 + -0x30;
+    *(undefined **)(puVar4 + -8) = puVar15;
+    lVar11 = *(long *)(auVar16._0_8_ + 2);
+    if (lVar11 != 0) {
+      iVar6 = *auVar16._0_8_ + auVar16._8_4_;
+      iVar7 = /*FlatBuffers.ByteBuffer$$ReadLittleEndian*/ func_0x016cc634(lVar11,iVar6,4);
+      return (ulong)(iVar6 + iVar7 + 4);
+    }
+    auVar17 = func_0x00f78af4();
+    piVar12 = auVar17._0_8_;
+    *(ulong *)(puVar4 + -0x50) = unaff_x22;
+    *(undefined8 *)(puVar4 + -0x48) = unaff_x21;
+    *(int **)(puVar4 + -0x40) = piVar14;
+    *(int **)(puVar4 + -0x38) = piVar13;
+    *(undefined1 **)(puVar4 + -0x30) = puVar4 + -0x10;
+    *(undefined **)(puVar4 + -0x28) = &FlatBuffers_Table____vector_as_arraysegment;
+    if ((bRam0000000003eb5cd9 & 1) == 0) {
+      func_0x00f78a20(0x3d3e500);
+      bRam0000000003eb5cd9 = 1;
+    }
+    unaff_x22 = /*FlatBuffers.Table$$__offset*/ func_0x016cf120(piVar12,auVar17._8_8_);
+    auVar16._8_8_ = unaff_x22;
+    auVar16._0_8_ = piVar12;
+    if ((int)unaff_x22 == 0) break;
+    puVar15 = &UNK_016cf3d0;
+    ppiVar2 = (int **)(puVar4 + -0x50);
+    piVar13 = extraout_x8;
+    piVar14 = piVar12;
+    unaff_x21 = auVar17._8_8_;
+    puVar3 = puVar4;
+  }
+  extraout_x8[0] = 0;
+  extraout_x8[1] = 0;
+  extraout_x8[2] = 0;
+  extraout_x8[3] = 0;
+  extraout_x8[4] = 0;
+  extraout_x8[5] = 0;
+  return unaff_x22;
+}
+
+
+
+// ============================================================
+// RVA: 0x167d514 | Core.Services.Match.GetIdBytes
+// ============================================================
+
+void Core_Services_Match__GetIdBytes(undefined8 *param_1,undefined8 param_2)
+
+{
+  undefined8 uStack_38;
+  undefined8 uStack_30;
+  undefined8 uStack_28;
+  
+  /*FlatBuffers.Table$$__vector_as_arraysegment*/ func_0x016cf374(&uStack_38,param_2,4,0);
+  param_1[1] = uStack_30;
+  *param_1 = uStack_38;
+  param_1[2] = uStack_28;
+  return;
+}
+
+
+
+// ============================================================
+// RVA: 0x167d558 | Core.Services.Match.GetIdArray
+// ============================================================
+
+long Core_Services_Match__GetIdArray(long param_1)
+
+{
+  undefined8 uVar1;
+  undefined8 uVar2;
+  long lVar3;
+  ulong uVar4;
+  undefined8 uVar5;
+  undefined8 uVar6;
+  long lVar7;
+  long lVar8;
+  undefined1 auVar9 [16];
+  undefined1 auVar10 [16];
+  undefined8 uStack_158;
+  undefined8 uStack_150;
+  undefined8 uStack_148;
+  undefined8 uStack_140;
+  undefined8 uStack_138;
+  undefined8 **ppuStack_130;
+  undefined *puStack_128;
+  undefined8 uStack_120;
+  undefined8 uStack_118;
+  long lStack_110;
+  undefined8 uStack_108;
+  undefined8 **ppuStack_100;
+  undefined *puStack_f8;
+  undefined8 uStack_e8;
+  undefined8 uStack_e0;
+  undefined8 uStack_d8;
+  long lStack_d0;
+  long lStack_c8;
+  undefined8 **ppuStack_c0;
+  undefined *puStack_b8;
+  undefined8 uStack_b0;
+  undefined8 uStack_a8;
+  long lStack_a0;
+  undefined8 uStack_98;
+  undefined1 **ppuStack_90;
+  undefined *puStack_88;
+  undefined8 uStack_78;
+  undefined8 uStack_70;
+  undefined8 uStack_68;
+  long lStack_60;
+  long lStack_58;
+  undefined1 *puStack_50;
+  undefined *puStack_48;
+  
+  if ((bRam0000000003eb59de & 1) == 0) {
+    func_0x00f78a20(0x3d5ded0);
+    bRam0000000003eb59de = 1;
+  }
+  lVar3 = lRam0000000003d5ded0;
+  uVar6 = 4;
+  uVar1 = 0x3d201a0;
+  if ((bRam0000000003eb6695 & 1) == 0) {
+    func_0x00f78a20(0x3d201a0);
+    bRam0000000003eb6695 = 1;
+  }
+  if (((*(ushort *)(/*System.BitConverter_TypeInfo*/ lRam0000000003d201a0 + 0x132) >> 10 & 1) != 0) &&
+     (*(int *)(/*System.BitConverter_TypeInfo*/ lRam0000000003d201a0 + 0xe0) == 0)) {
+    func_0x00f78ad0();
+  }
+  if (**(char **)(/*System.BitConverter_TypeInfo*/ lRam0000000003d201a0 + 0xb8) == '\0') {
+    func_0x00f78a24(0x3d238d8);
+    lVar3 = func_0x00f78aec();
+    uVar2 = func_0x00f78a24(0x3d6d410);
+    /*System.NotSupportedException$$.ctor*/ func_0x029503bc(lVar3,uVar2,0);
+    uVar2 = func_0x00f78a24(0x3d5ded0);
+    func_0x00f78ac0(lVar3,uVar2);
+  }
+  else {
+    uVar1 = /*FlatBuffers.Table$$__offset*/ func_0x016cf120(param_1,4,0);
+    if ((int)uVar1 == 0) {
+      return 0;
+    }
+    uVar6 = /*FlatBuffers.Table$$__vector*/ func_0x016cf330(param_1,uVar1,0);
+    uVar2 = /*FlatBuffers.Table$$__vector_len*/ func_0x016cf2dc(param_1,uVar1,0);
+    if (*(long *)(param_1 + 8) != 0) {
+                    /* WARNING: Could not recover jumptable at 0x018e4728. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      lVar3 = (**(code **)**(undefined8 **)(lVar3 + 0x30))(*(long *)(param_1 + 8),uVar6,uVar2);
+      return lVar3;
+    }
+  }
+  auVar9 = func_0x00f78af4();
+  uStack_78 = auVar9._0_8_;
+  puStack_48 = &System_Threading_Tasks_Task__FromCancellation_bool_;
+  uStack_70 = uVar1;
+  uStack_68 = uVar6;
+  lStack_60 = param_1;
+  lStack_58 = lVar3;
+  puStack_50 = &stack0xfffffffffffffff0;
+  uVar4 = /*System.Threading.CancellationToken$$get_IsCancellationRequested*/ func_0x0294aac4(&uStack_78,0);
+  uVar2 = uStack_78;
+  if ((uVar4 & 1) != 0) {
+    lVar3 = **(long **)(auVar9._8_8_ + 0x30);
+    if ((*(ushort *)(lVar3 + 0x132) & 1) == 0) {
+      func_0x00fac028(lVar3);
+    }
+    lVar3 = func_0x00f78aec(lVar3);
+    (*(code *)**(undefined8 **)(*(long *)(auVar9._8_8_ + 0x30) + 8))(lVar3,1,0,0,uVar2);
+    return lVar3;
+  }
+  func_0x00f78a24(0x3d1fcf8);
+  uVar2 = func_0x00f78aec();
+  uVar5 = func_0x00f78a24(0x3d781b8);
+  /*System.ArgumentOutOfRangeException$$.ctor*/ func_0x0292a524(uVar2,uVar5,0);
+  uVar5 = func_0x00f78a24(0x3d5df30);
+  auVar9 = func_0x00f78ac0(uVar2,uVar5);
+  lVar8 = auVar9._8_8_;
+  lVar3 = auVar9._0_8_;
+  puStack_88 = &System_Threading_Tasks_Task__FromCancellation_int_;
+  uStack_b0 = uVar1;
+  uStack_a8 = uVar6;
+  lStack_a0 = param_1;
+  uStack_98 = uVar2;
+  ppuStack_90 = &puStack_50;
+  if (lVar3 == 0) {
+    func_0x00f78a24(0x3d1fcf0);
+    lVar3 = func_0x00f78aec();
+    uVar2 = func_0x00f78a24(0x3d791a0);
+    /*System.ArgumentNullException$$.ctor*/ func_0x02920400(lVar3,uVar2,0);
+    uVar2 = func_0x00f78a24(0x3d5df38);
+    func_0x00f78ac0(lVar3,uVar2);
+  }
+  else {
+    lVar7 = **(long **)(lVar8 + 0x30);
+    if ((*(ushort *)(lVar7 + 0x132) & 1) == 0) {
+      func_0x00fac028(lVar7);
+    }
+    lVar7 = func_0x00f78aec(lVar7);
+    (*(code *)**(undefined8 **)(*(long *)(lVar8 + 0x30) + 8))();
+    uVar6 = 0;
+    param_1 = lVar8;
+    if (lVar7 != 0) {
+      (*(code *)**(undefined8 **)(*(long *)(lVar8 + 0x30) + 0x10))
+                (lVar7,*(undefined8 *)(lVar3 + 0x88),lVar3);
+      return lVar7;
+    }
+  }
+  auVar9 = func_0x00f78af4();
+  uStack_e8 = auVar9._0_8_;
+  puStack_b8 = &System_Threading_Tasks_Task__FromCancellation_int_;
+  uStack_e0 = uVar1;
+  uStack_d8 = uVar6;
+  lStack_d0 = param_1;
+  lStack_c8 = lVar3;
+  ppuStack_c0 = &ppuStack_90;
+  uVar4 = /*System.Threading.CancellationToken$$get_IsCancellationRequested*/ func_0x0294aac4(&uStack_e8,0);
+  uVar2 = uStack_e8;
+  if ((uVar4 & 1) != 0) {
+    lVar3 = **(long **)(auVar9._8_8_ + 0x30);
+    if ((*(ushort *)(lVar3 + 0x132) & 1) == 0) {
+      func_0x00fac028(lVar3);
+    }
+    lVar3 = func_0x00f78aec(lVar3);
+    (*(code *)**(undefined8 **)(*(long *)(auVar9._8_8_ + 0x30) + 8))(lVar3,1,0,0,uVar2);
+    return lVar3;
+  }
+  func_0x00f78a24(0x3d1fcf8);
+  uVar2 = func_0x00f78aec();
+  uVar5 = func_0x00f78a24(0x3d781b8);
+  /*System.ArgumentOutOfRangeException$$.ctor*/ func_0x0292a524(uVar2,uVar5,0);
+  uVar5 = func_0x00f78a24(0x3d5df40);
+  auVar9 = func_0x00f78ac0(uVar2,uVar5);
+  lVar8 = auVar9._8_8_;
+  lVar3 = auVar9._0_8_;
+  puStack_f8 = &System_Threading_Tasks_Task__FromCancellation_object_;
+  uStack_120 = uVar1;
+  uStack_118 = uVar6;
+  lStack_110 = param_1;
+  uStack_108 = uVar2;
+  ppuStack_100 = &ppuStack_c0;
+  if (lVar3 == 0) {
+    func_0x00f78a24(0x3d1fcf0);
+    uVar2 = func_0x00f78aec();
+    auVar9._8_8_ = param_1;
+    auVar9._0_8_ = uVar2;
+    uVar5 = func_0x00f78a24(0x3d791a0);
+    /*System.ArgumentNullException$$.ctor*/ func_0x02920400(uVar2,uVar5,0);
+    uVar5 = func_0x00f78a24(0x3d5df48);
+    func_0x00f78ac0(uVar2,uVar5);
+  }
+  else {
+    lVar7 = **(long **)(lVar8 + 0x30);
+    if ((*(ushort *)(lVar7 + 0x132) & 1) == 0) {
+      func_0x00fac028(lVar7);
+    }
+    lVar7 = func_0x00f78aec(lVar7);
+    (*(code *)**(undefined8 **)(*(long *)(lVar8 + 0x30) + 8))();
+    uVar6 = 0;
+    if (lVar7 != 0) {
+      (*(code *)**(undefined8 **)(*(long *)(lVar8 + 0x30) + 0x10))
+                (lVar7,*(undefined8 *)(lVar3 + 0x88),lVar3);
+      return lVar7;
+    }
+  }
+  auVar10 = func_0x00f78af4();
+  uStack_158 = auVar10._0_8_;
+  puStack_128 = &System_Threading_Tasks_Task__FromCancellation_object_;
+  uStack_150 = uVar1;
+  uStack_148 = uVar6;
+  uStack_140 = auVar9._8_8_;
+  uStack_138 = auVar9._0_8_;
+  ppuStack_130 = &ppuStack_100;
+  uVar4 = /*System.Threading.CancellationToken$$get_IsCancellationRequested*/ func_0x0294aac4(&uStack_158,0);
+  uVar1 = uStack_158;
+  if ((uVar4 & 1) != 0) {
+    lVar3 = **(long **)(auVar10._8_8_ + 0x30);
+    if ((*(ushort *)(lVar3 + 0x132) & 1) == 0) {
+      func_0x00fac028(lVar3);
+    }
+    lVar3 = func_0x00f78aec(lVar3);
+    (*(code *)**(undefined8 **)(*(long *)(auVar10._8_8_ + 0x30) + 8))(lVar3,1,0,0,uVar1);
+    return lVar3;
+  }
+  func_0x00f78a24(0x3d1fcf8);
+  uVar1 = func_0x00f78aec();
+  uVar6 = func_0x00f78a24(0x3d781b8);
+  /*System.ArgumentOutOfRangeException$$.ctor*/ func_0x0292a524(uVar1,uVar6,0);
+  uVar6 = func_0x00f78a24(0x3d5df50);
+  auVar9 = func_0x00f78ac0(uVar1,uVar6);
+  lVar8 = auVar9._8_8_;
+  lVar3 = auVar9._0_8_;
+  if (lVar3 == 0) {
+    func_0x00f78a24(0x3d1fcf0);
+    uVar1 = func_0x00f78aec();
+    uVar6 = func_0x00f78a24(0x3d791a0);
+    /*System.ArgumentNullException$$.ctor*/ func_0x02920400(uVar1,uVar6,0);
+    uVar6 = func_0x00f78a24(0x3d5df58);
+    func_0x00f78ac0(uVar1,uVar6);
+  }
+  else {
+    lVar7 = **(long **)(lVar8 + 0x30);
+    if ((*(ushort *)(lVar7 + 0x132) & 1) == 0) {
+      func_0x00fac028(lVar7);
+    }
+    lVar7 = func_0x00f78aec(lVar7);
+    (*(code *)**(undefined8 **)(*(long *)(lVar8 + 0x30) + 8))();
+    if (lVar7 != 0) {
+      (*(code *)**(undefined8 **)(*(long *)(lVar8 + 0x30) + 0x10))
+                (lVar7,*(undefined8 *)(lVar3 + 0x88),lVar3);
+      return lVar7;
+    }
+  }
+  auVar9 = func_0x00f78af4();
+  lVar3 = auVar9._8_8_;
+  if (auVar9._0_8_ == 0) {
+    func_0x00f78a24(0x3d1fcf0);
+    uVar1 = func_0x00f78aec();
+    uVar6 = func_0x00f78a24(0x3d791a0);
+    /*System.ArgumentNullException$$.ctor*/ func_0x02920400(uVar1,uVar6,0);
+    uVar6 = func_0x00f78a24(0x3d5df60);
+    func_0x00f78ac0(uVar1,uVar6);
+  }
+  else {
+    lVar8 = **(long **)(lVar3 + 0x30);
+    if ((*(ushort *)(lVar8 + 0x132) & 1) == 0) {
+      func_0x00fac028(lVar8);
+    }
+    lVar8 = func_0x00f78aec(lVar8);
+    (*(code *)**(undefined8 **)(*(long *)(lVar3 + 0x30) + 8))();
+    if (lVar8 != 0) {
+      (*(code *)**(undefined8 **)(*(long *)(lVar3 + 0x30) + 0x10))(lVar8,auVar9._0_8_);
+      return lVar8;
+    }
+  }
+  auVar9 = func_0x00f78af4();
+  lVar3 = auVar9._8_8_;
+  if (auVar9._0_8_ == 0) {
+    func_0x00f78a24(0x3d1fcf0);
+    uVar1 = func_0x00f78aec();
+    uVar6 = func_0x00f78a24(0x3d791a0);
+    /*System.ArgumentNullException$$.ctor*/ func_0x02920400(uVar1,uVar6,0);
+    uVar6 = func_0x00f78a24(0x3d5df68);
+    func_0x00f78ac0(uVar1,uVar6);
+  }
+  else {
+    lVar8 = **(long **)(lVar3 + 0x30);
+    if ((*(ushort *)(lVar8 + 0x132) & 1) == 0) {
+      func_0x00fac028(lVar8);
+    }
+    lVar8 = func_0x00f78aec(lVar8);
+    (*(code *)**(undefined8 **)(*(long *)(lVar3 + 0x30) + 8))();
+    if (lVar8 != 0) {
+      (*(code *)**(undefined8 **)(*(long *)(lVar3 + 0x30) + 0x10))(lVar8,auVar9._0_8_);
+      return lVar8;
+    }
+  }
+  auVar9 = func_0x00f78af4();
+  lVar3 = auVar9._8_8_;
+  if (auVar9._0_8_ == 0) {
+    func_0x00f78a24(0x3d1fcf0);
+    uVar1 = func_0x00f78aec();
+    uVar6 = func_0x00f78a24(0x3d791a0);
+    /*System.ArgumentNullException$$.ctor*/ func_0x02920400(uVar1,uVar6,0);
+    uVar6 = func_0x00f78a24(0x3d5df70);
+    func_0x00f78ac0(uVar1,uVar6);
+  }
+  else {
+    lVar8 = **(long **)(lVar3 + 0x30);
+    if ((*(ushort *)(lVar8 + 0x132) & 1) == 0) {
+      func_0x00fac028(lVar8);
+    }
+    lVar8 = func_0x00f78aec(lVar8);
+    (*(code *)**(undefined8 **)(*(long *)(lVar3 + 0x30) + 8))();
+    if (lVar8 != 0) {
+      (*(code *)**(undefined8 **)(*(long *)(lVar3 + 0x30) + 0x10))(lVar8,auVar9._0_8_);
+      return lVar8;
+    }
+  }
+  auVar9 = func_0x00f78af4();
+  lVar3 = **(long **)(auVar9._8_8_ + 0x30);
+  if ((*(ushort *)(lVar3 + 0x132) & 1) == 0) {
+    func_0x00fac028(lVar3);
+  }
+  lVar3 = func_0x00f78aec(lVar3);
+  (*(code *)**(undefined8 **)(*(long *)(auVar9._8_8_ + 0x30) + 8))(lVar3,auVar9._0_8_);
+  return lVar3;
+}
+
+
+
+// ============================================================
+// RVA: 0x167d5b0 | Core.Services.Match.get_MatchType
+// ============================================================
+
+ulong * Core_Services_Match__get_MatchType(int *param_1)
+
+{
+  uint uVar1;
+  short sVar2;
+  int iVar3;
+  ulong *puVar4;
+  ulong uVar5;
+  undefined8 uVar6;
+  undefined8 uVar7;
+  long *plVar8;
+  ulong uVar9;
+  long lVar10;
+  ulong *extraout_x8;
+  undefined1 auVar11 [16];
+  undefined1 auVar12 [12];
+  
+  puVar4 = (ulong *)/*FlatBuffers.Table$$__offset*/ func_0x016cf120(param_1,6,0);
+  if ((int)puVar4 == 0) {
+    return puVar4;
+  }
+  lVar10 = *(long *)(param_1 + 2);
+  if (lVar10 == 0) {
+    auVar12 = func_0x00f78af4();
+    lVar10 = auVar12._0_8_;
+    if ((bRam0000000003eb59df & 1) == 0) {
+      func_0x00f78a20(0x3d3ebe0);
+      bRam0000000003eb59df = 1;
+    }
+    puVar4 = (ulong *)/*FlatBuffers.Table$$__offset*/ func_0x016cf120(lVar10,8,0);
+    if ((int)puVar4 != 0) {
+      iVar3 = /*FlatBuffers.Table$$__vector*/ func_0x016cf330(lVar10,puVar4,0);
+      uVar5 = /*FlatBuffers.Table$$__indirect*/ func_0x016cf210(lVar10,iVar3 + auVar12._8_4_ * 4,0);
+      uVar9 = *(ulong *)(lVar10 + 8);
+      extraout_x8[1] = 0;
+      extraout_x8[2] = 0;
+      *extraout_x8 = 0;
+      *(undefined1 *)(extraout_x8 + 2) = 1;
+      *extraout_x8 = uVar5 & 0xffffffff;
+      extraout_x8[1] = uVar9;
+      return extraout_x8;
+    }
+    *extraout_x8 = 0;
+    extraout_x8[1] = 0;
+    extraout_x8[2] = 0;
+    return puVar4;
+  }
+  uVar1 = *param_1 + (int)puVar4;
+  /*FlatBuffers.ByteBuffer$$AssertOffsetAndLength*/ func_0x016cc7a4(lVar10,uVar1,1);
+  if ((*(long *)(lVar10 + 0x10) == 0) ||
+     (lVar10 = *(long *)(*(long *)(lVar10 + 0x10) + 0x10), lVar10 == 0)) {
+    func_0x00f78af4();
+  }
+  else if (uVar1 < *(uint *)(lVar10 + 0x18)) {
+    return (ulong *)(long)*(char *)(lVar10 + (int)uVar1 + 0x20);
+  }
+  uVar6 = func_0x00f78b24();
+  auVar11 = func_0x00f78ac0(uVar6,0);
+  uVar6 = 1;
+  /*FlatBuffers.ByteBuffer$$AssertOffsetAndLength*/ func_0x016cc7a4(auVar11._0_8_,auVar11._8_8_,1);
+  lVar10 = *(long *)(auVar11._0_8_ + 0x10);
+  if ((lVar10 == 0) || (lVar10 = *(long *)(lVar10 + 0x10), lVar10 == 0)) {
+    func_0x00f78af4();
+  }
+  else if (auVar11._8_4_ < *(uint *)(lVar10 + 0x18)) {
+    return (ulong *)(ulong)*(byte *)(lVar10 + (int)auVar11._8_4_ + 0x20);
+  }
+  uVar7 = func_0x00f78b24();
+  auVar11 = func_0x00f78ac0(uVar7,0);
+  plVar8 = (long *)/*System.Text.Encoding$$get_UTF8*/ func_0x02abb130(0);
+  lVar10 = *(long *)(auVar11._0_8_ + 0x10);
+  if ((lVar10 != 0) && (plVar8 != (long *)0x0)) {
+                    /* WARNING: Could not recover jumptable at 0x016ccdac. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    puVar4 = (ulong *)(**(code **)(*plVar8 + 0x348))
+                                (plVar8,*(undefined8 *)(lVar10 + 0x10),auVar11._8_8_,uVar6,
+                                 *(undefined8 *)(*plVar8 + 0x350));
+    return puVar4;
+  }
+  auVar11 = func_0x00f78af4();
+  sVar2 = /*FlatBuffers.ByteBuffer$$ReadLittleEndian*/ func_0x016cc634(auVar11._0_8_,auVar11._8_8_,2);
+  return (ulong *)(ulong)(uint)(int)sVar2;
+}
+
+
+
+// ============================================================
+// RVA: 0x167d604 | Core.Services.Match.OtherPlayers
+// ============================================================
+
+void Core_Services_Match__OtherPlayers(ulong *param_1,long param_2,int param_3)
+
+{
+  int iVar1;
+  undefined8 uVar2;
+  ulong uVar3;
+  ulong uVar4;
+  
+  if ((bRam0000000003eb59df & 1) == 0) {
+    func_0x00f78a20(0x3d3ebe0);
+    bRam0000000003eb59df = 1;
+  }
+  uVar2 = /*FlatBuffers.Table$$__offset*/ func_0x016cf120(param_2,8,0);
+  if ((int)uVar2 != 0) {
+    iVar1 = /*FlatBuffers.Table$$__vector*/ func_0x016cf330(param_2,uVar2,0);
+    uVar3 = /*FlatBuffers.Table$$__indirect*/ func_0x016cf210(param_2,iVar1 + param_3 * 4,0);
+    uVar4 = *(ulong *)(param_2 + 8);
+    param_1[1] = 0;
+    param_1[2] = 0;
+    *param_1 = 0;
+    *(undefined1 *)(param_1 + 2) = 1;
+    *param_1 = uVar3 & 0xffffffff;
+    param_1[1] = uVar4;
+    return;
+  }
+  *param_1 = 0;
+  param_1[1] = 0;
+  param_1[2] = 0;
+  return;
+}
+
+
+
+// ============================================================
+// RVA: 0x167d6d0 | Core.Services.Match.get_OtherPlayersLength
+// ============================================================
+
+/* WARNING: Possible PIC construction at 0x016cf3cc: Changing call to branch */
+/* WARNING: Removing unreachable block (ram,0x016cf3d0) */
+/* WARNING: Removing unreachable block (ram,0x016cf444) */
+/* WARNING: Removing unreachable block (ram,0x016cf464) */
+/* WARNING: Removing unreachable block (ram,0x016cf474) */
+/* WARNING: Removing unreachable block (ram,0x016cf480) */
+/* WARNING: Removing unreachable block (ram,0x016cf4ec) */
+/* WARNING: Removing unreachable block (ram,0x016cf4f0) */
+/* WARNING: Removing unreachable block (ram,0x016cf5a0) */
+/* WARNING: Removing unreachable block (ram,0x016cf5b4) */
+/* WARNING: Removing unreachable block (ram,0x016cf6ac) */
+/* WARNING: Removing unreachable block (ram,0x016cf6e0) */
+/* WARNING: Removing unreachable block (ram,0x016cf6f4) */
+/* WARNING: Removing unreachable block (ram,0x016cf6f8) */
+/* WARNING: Removing unreachable block (ram,0x016cf720) */
+/* WARNING: Removing unreachable block (ram,0x016cf73c) */
+/* WARNING: Removing unreachable block (ram,0x016cf744) */
+/* WARNING: Removing unreachable block (ram,0x016cf748) */
+/* WARNING: Removing unreachable block (ram,0x016cf760) */
+/* WARNING: Removing unreachable block (ram,0x016cf770) */
+/* WARNING: Removing unreachable block (ram,0x016cf7bc) */
+/* WARNING: Removing unreachable block (ram,0x016cf7c8) */
+/* WARNING: Removing unreachable block (ram,0x016cf788) */
+/* WARNING: Removing unreachable block (ram,0x016cf794) */
+/* WARNING: Removing unreachable block (ram,0x016cf7a0) */
+/* WARNING: Removing unreachable block (ram,0x016cf7a4) */
+/* WARNING: Removing unreachable block (ram,0x016cf5b8) */
+/* WARNING: Removing unreachable block (ram,0x016cf624) */
+/* WARNING: Removing unreachable block (ram,0x016cf62c) */
+/* WARNING: Removing unreachable block (ram,0x016cf630) */
+/* WARNING: Removing unreachable block (ram,0x016cf648) */
+/* WARNING: Removing unreachable block (ram,0x016cf65c) */
+/* WARNING: Removing unreachable block (ram,0x016cf680) */
+/* WARNING: Removing unreachable block (ram,0x016cf690) */
+/* WARNING: Removing unreachable block (ram,0x016cf694) */
+/* WARNING: Removing unreachable block (ram,0x016cf494) */
+/* WARNING: Removing unreachable block (ram,0x016cf4b4) */
+/* WARNING: Removing unreachable block (ram,0x016cf4cc) */
+/* WARNING: Removing unreachable block (ram,0x016cf3ec) */
+/* WARNING: Removing unreachable block (ram,0x02616890) */
+
+ulong Core_Services_Match__get_OtherPlayersLength(int *param_1)
+
+{
+  uint uVar1;
+  undefined1 *puVar2;
+  int iVar3;
+  int iVar4;
+  ulong uVar5;
+  long lVar6;
+  int *extraout_x8;
+  ulong unaff_x20;
+  undefined8 unaff_x21;
+  ulong unaff_x22;
+  undefined1 *puVar7;
+  undefined *puVar8;
+  undefined1 auVar9 [16];
+  undefined1 auVar10 [16];
+  
+  uVar5 = /*FlatBuffers.Table$$__offset*/ func_0x016cf120(param_1,8,0);
+  if ((int)uVar5 == 0) {
+    return uVar5;
+  }
+  puVar7 = &stack0xfffffffffffffff0;
+  if (*(long *)(param_1 + 2) != 0) {
+    uVar1 = *param_1 + (int)uVar5;
+    unaff_x20 = (ulong)uVar1;
+    iVar3 = /*FlatBuffers.ByteBuffer$$ReadLittleEndian*/ func_0x016cc634(*(long *)(param_1 + 2),unaff_x20,4);
+    if (*(long *)(param_1 + 2) != 0) {
+      uVar5 = /*FlatBuffers.ByteBuffer$$ReadLittleEndian*/ func_0x016cc634(*(long *)(param_1 + 2),uVar1 + iVar3,4);
+      return uVar5;
+    }
+  }
+  puVar8 = &FlatBuffers_Table____vector;
+  auVar9 = func_0x00f78af4();
+  puVar2 = &stack0xffffffffffffffe0;
+  while( true ) {
+    *(ulong *)(puVar2 + -0x20) = unaff_x20;
+    *(int **)(puVar2 + -0x18) = param_1;
+    *(undefined1 **)(puVar2 + -0x10) = puVar7;
+    *(undefined **)(puVar2 + -8) = puVar8;
+    lVar6 = *(long *)(auVar9._0_8_ + 2);
+    if (lVar6 != 0) {
+      iVar3 = *auVar9._0_8_ + auVar9._8_4_;
+      iVar4 = /*FlatBuffers.ByteBuffer$$ReadLittleEndian*/ func_0x016cc634(lVar6,iVar3,4);
+      return (ulong)(iVar3 + iVar4 + 4);
+    }
+    auVar10 = func_0x00f78af4();
+    uVar5 = auVar10._0_8_;
+    *(ulong *)(puVar2 + -0x50) = unaff_x22;
+    *(undefined8 *)(puVar2 + -0x48) = unaff_x21;
+    *(ulong *)(puVar2 + -0x40) = unaff_x20;
+    *(int **)(puVar2 + -0x38) = param_1;
+    *(undefined1 **)(puVar2 + -0x30) = puVar2 + -0x10;
+    *(undefined **)(puVar2 + -0x28) = &FlatBuffers_Table____vector_as_arraysegment;
+    puVar7 = puVar2 + -0x30;
+    if ((bRam0000000003eb5cd9 & 1) == 0) {
+      func_0x00f78a20(0x3d3e500);
+      bRam0000000003eb5cd9 = 1;
+    }
+    unaff_x22 = /*FlatBuffers.Table$$__offset*/ func_0x016cf120(uVar5,auVar10._8_8_);
+    auVar9._8_8_ = unaff_x22;
+    auVar9._0_8_ = uVar5;
+    if ((int)unaff_x22 == 0) break;
+    puVar8 = &UNK_016cf3d0;
+    puVar2 = puVar2 + -0x50;
+    param_1 = extraout_x8;
+    unaff_x20 = uVar5;
+    unaff_x21 = auVar10._8_8_;
+  }
+  extraout_x8[0] = 0;
+  extraout_x8[1] = 0;
+  extraout_x8[2] = 0;
+  extraout_x8[3] = 0;
+  extraout_x8[4] = 0;
+  extraout_x8[5] = 0;
+  return unaff_x22;
+}
+
+
+
+// ============================================================
+// RVA: 0x167d714 | Core.Services.Match.get_Host
+// ============================================================
+
+/* WARNING: Possible PIC construction at 0x0167d74c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x0167d79c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x0167d7b4: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x0167d7cc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cea74: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cea88: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ceb04: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ceb50: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ceb74: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cebe4: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cec2c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ced5c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cee1c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cef0c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cef44: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cef60: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cecfc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce31c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce3a0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce468: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x0167d918: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce220: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x0167d9dc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce184: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc898: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc904: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc830: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdc30: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc688: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdc8c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdce8: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdd44: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdda0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cddfc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccba0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccc30: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cccb8: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccd14: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccdc0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cde98: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce4d8: Changing call to branch */
+/* WARNING: Removing unreachable block (ram,0x016cde9c) */
+/* WARNING: Removing unreachable block (ram,0x016ccdc4) */
+/* WARNING: Removing unreachable block (ram,0x016ccd18) */
+/* WARNING: Removing unreachable block (ram,0x016ccd20) */
+/* WARNING: Removing unreachable block (ram,0x016ccd48) */
+/* WARNING: Removing unreachable block (ram,0x016ccd28) */
+/* WARNING: Removing unreachable block (ram,0x016ccd4c) */
+/* WARNING: Removing unreachable block (ram,0x016ccd84) */
+/* WARNING: Removing unreachable block (ram,0x016ccdb0) */
+/* WARNING: Removing unreachable block (ram,0x016ccd88) */
+/* WARNING: Removing unreachable block (ram,0x016ccd34) */
+/* WARNING: Removing unreachable block (ram,0x016cccbc) */
+/* WARNING: Removing unreachable block (ram,0x016cccc4) */
+/* WARNING: Removing unreachable block (ram,0x016cccec) */
+/* WARNING: Removing unreachable block (ram,0x016ccccc) */
+/* WARNING: Removing unreachable block (ram,0x016cccf0) */
+/* WARNING: Removing unreachable block (ram,0x016cccd8) */
+/* WARNING: Removing unreachable block (ram,0x016ccc34) */
+/* WARNING: Removing unreachable block (ram,0x016ccc3c) */
+/* WARNING: Removing unreachable block (ram,0x016ccc44) */
+/* WARNING: Removing unreachable block (ram,0x016ccc90) */
+/* WARNING: Removing unreachable block (ram,0x016ccc68) */
+/* WARNING: Removing unreachable block (ram,0x016ccc94) */
+/* WARNING: Removing unreachable block (ram,0x016ccc70) */
+/* WARNING: Removing unreachable block (ram,0x016ccba4) */
+/* WARNING: Removing unreachable block (ram,0x016ccbac) */
+/* WARNING: Removing unreachable block (ram,0x016ccbb4) */
+/* WARNING: Removing unreachable block (ram,0x016ccc00) */
+/* WARNING: Removing unreachable block (ram,0x016ccbd8) */
+/* WARNING: Removing unreachable block (ram,0x016ccc04) */
+/* WARNING: Removing unreachable block (ram,0x016ccbe0) */
+/* WARNING: Removing unreachable block (ram,0x016cde00) */
+/* WARNING: Removing unreachable block (ram,0x016cdda4) */
+/* WARNING: Removing unreachable block (ram,0x016cdd48) */
+/* WARNING: Removing unreachable block (ram,0x016cdcec) */
+/* WARNING: Removing unreachable block (ram,0x016cdc90) */
+/* WARNING: Removing unreachable block (ram,0x016cc68c) */
+/* WARNING: Removing unreachable block (ram,0x016cc698) */
+/* WARNING: Removing unreachable block (ram,0x016cc6a0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6a8) */
+/* WARNING: Removing unreachable block (ram,0x016cc718) */
+/* WARNING: Removing unreachable block (ram,0x016cc720) */
+/* WARNING: Removing unreachable block (ram,0x016cc728) */
+/* WARNING: Removing unreachable block (ram,0x016cc730) */
+/* WARNING: Removing unreachable block (ram,0x016cc74c) */
+/* WARNING: Removing unreachable block (ram,0x016cc754) */
+/* WARNING: Removing unreachable block (ram,0x016cc778) */
+/* WARNING: Removing unreachable block (ram,0x016cc6b4) */
+/* WARNING: Removing unreachable block (ram,0x016cc77c) */
+/* WARNING: Removing unreachable block (ram,0x016cc6bc) */
+/* WARNING: Removing unreachable block (ram,0x016cc6c4) */
+/* WARNING: Removing unreachable block (ram,0x016cc6cc) */
+/* WARNING: Removing unreachable block (ram,0x016cc6e0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6e8) */
+/* WARNING: Removing unreachable block (ram,0x016cc794) */
+/* WARNING: Removing unreachable block (ram,0x016cc7a0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6f0) */
+/* WARNING: Removing unreachable block (ram,0x016cc714) */
+/* WARNING: Removing unreachable block (ram,0x016cc780) */
+/* WARNING: Removing unreachable block (ram,0x016cdc34) */
+/* WARNING: Removing unreachable block (ram,0x016cc834) */
+/* WARNING: Removing unreachable block (ram,0x016cc83c) */
+/* WARNING: Removing unreachable block (ram,0x016cc868) */
+/* WARNING: Removing unreachable block (ram,0x016cc844) */
+/* WARNING: Removing unreachable block (ram,0x016cc86c) */
+/* WARNING: Removing unreachable block (ram,0x016cc850) */
+/* WARNING: Removing unreachable block (ram,0x016cc908) */
+/* WARNING: Removing unreachable block (ram,0x016cc910) */
+/* WARNING: Removing unreachable block (ram,0x016cc920) */
+/* WARNING: Removing unreachable block (ram,0x016cc928) */
+/* WARNING: Removing unreachable block (ram,0x016cc964) */
+/* WARNING: Removing unreachable block (ram,0x016cc930) */
+/* WARNING: Removing unreachable block (ram,0x016cc968) */
+/* WARNING: Removing unreachable block (ram,0x016cc93c) */
+/* WARNING: Removing unreachable block (ram,0x016cc954) */
+/* WARNING: Removing unreachable block (ram,0x016cc89c) */
+/* WARNING: Removing unreachable block (ram,0x016cc8a4) */
+/* WARNING: Removing unreachable block (ram,0x016cc8d0) */
+/* WARNING: Removing unreachable block (ram,0x016cc8ac) */
+/* WARNING: Removing unreachable block (ram,0x016cc8d4) */
+/* WARNING: Removing unreachable block (ram,0x016cc8b8) */
+/* WARNING: Removing unreachable block (ram,0x016ce188) */
+/* WARNING: Removing unreachable block (ram,0x0167d9e0) */
+/* WARNING: Removing unreachable block (ram,0x016ce224) */
+/* WARNING: Removing unreachable block (ram,0x0167d91c) */
+/* WARNING: Removing unreachable block (ram,0x0167d928) */
+/* WARNING: Removing unreachable block (ram,0x0167d930) */
+/* WARNING: Removing unreachable block (ram,0x0167d94c) */
+/* WARNING: Removing unreachable block (ram,0x0167d958) */
+/* WARNING: Removing unreachable block (ram,0x0167d964) */
+/* WARNING: Removing unreachable block (ram,0x016ce20c) */
+/* WARNING: Removing unreachable block (ram,0x016ce46c) */
+/* WARNING: Removing unreachable block (ram,0x016ce3a4) */
+/* WARNING: Removing unreachable block (ram,0x016ce3a8) */
+/* WARNING: Removing unreachable block (ram,0x016ce3b4) */
+/* WARNING: Removing unreachable block (ram,0x016ce320) */
+/* WARNING: Removing unreachable block (ram,0x016ced00) */
+/* WARNING: Removing unreachable block (ram,0x016ced04) */
+/* WARNING: Removing unreachable block (ram,0x016ced10) */
+/* WARNING: Removing unreachable block (ram,0x016ced20) */
+/* WARNING: Removing unreachable block (ram,0x016ced28) */
+/* WARNING: Removing unreachable block (ram,0x016cef64) */
+/* WARNING: Removing unreachable block (ram,0x016cef48) */
+/* WARNING: Removing unreachable block (ram,0x016cef70) */
+/* WARNING: Removing unreachable block (ram,0x016cef78) */
+/* WARNING: Removing unreachable block (ram,0x016cef10) */
+/* WARNING: Removing unreachable block (ram,0x016cef24) */
+/* WARNING: Removing unreachable block (ram,0x016cef2c) */
+/* WARNING: Removing unreachable block (ram,0x016cee20) */
+/* WARNING: Removing unreachable block (ram,0x016cee2c) */
+/* WARNING: Removing unreachable block (ram,0x016cee44) */
+/* WARNING: Removing unreachable block (ram,0x016ced60) */
+/* WARNING: Removing unreachable block (ram,0x016cec30) */
+/* WARNING: Removing unreachable block (ram,0x016cec38) */
+/* WARNING: Removing unreachable block (ram,0x016cec44) */
+/* WARNING: Removing unreachable block (ram,0x016cebe8) */
+/* WARNING: Removing unreachable block (ram,0x016cec48) */
+/* WARNING: Removing unreachable block (ram,0x016cebf0) */
+/* WARNING: Removing unreachable block (ram,0x016cec64) */
+/* WARNING: Removing unreachable block (ram,0x016cec6c) */
+/* WARNING: Removing unreachable block (ram,0x016cec78) */
+/* WARNING: Removing unreachable block (ram,0x016ceca8) */
+/* WARNING: Removing unreachable block (ram,0x016cec84) */
+/* WARNING: Removing unreachable block (ram,0x016cec8c) */
+/* WARNING: Removing unreachable block (ram,0x016cec94) */
+/* WARNING: Removing unreachable block (ram,0x016ced3c) */
+/* WARNING: Removing unreachable block (ram,0x016cc4e0) */
+/* WARNING: Removing unreachable block (ram,0x016cc518) */
+/* WARNING: Removing unreachable block (ram,0x016cc52c) */
+/* WARNING: Removing unreachable block (ram,0x016cc538) */
+/* WARNING: Removing unreachable block (ram,0x016cc540) */
+/* WARNING: Removing unreachable block (ram,0x016cc548) */
+/* WARNING: Removing unreachable block (ram,0x016cc5b8) */
+/* WARNING: Removing unreachable block (ram,0x016cc5c0) */
+/* WARNING: Removing unreachable block (ram,0x016cc5d4) */
+/* WARNING: Removing unreachable block (ram,0x016cc5dc) */
+/* WARNING: Removing unreachable block (ram,0x016cc5e4) */
+/* WARNING: Removing unreachable block (ram,0x016cc5f0) */
+/* WARNING: Removing unreachable block (ram,0x016cc554) */
+/* WARNING: Removing unreachable block (ram,0x016cc55c) */
+/* WARNING: Removing unreachable block (ram,0x016cc574) */
+/* WARNING: Removing unreachable block (ram,0x016cc57c) */
+/* WARNING: Removing unreachable block (ram,0x016cc624) */
+/* WARNING: Removing unreachable block (ram,0x016cc584) */
+/* WARNING: Removing unreachable block (ram,0x016cc628) */
+/* WARNING: Removing unreachable block (ram,0x016cc590) */
+/* WARNING: Removing unreachable block (ram,0x016cc5b4) */
+/* WARNING: Removing unreachable block (ram,0x016cc610) */
+/* WARNING: Removing unreachable block (ram,0x016cebfc) */
+/* WARNING: Removing unreachable block (ram,0x016cec00) */
+/* WARNING: Removing unreachable block (ram,0x016cec08) */
+/* WARNING: Removing unreachable block (ram,0x016cec20) */
+/* WARNING: Removing unreachable block (ram,0x016ceb78) */
+/* WARNING: Removing unreachable block (ram,0x016cec58) */
+/* WARNING: Removing unreachable block (ram,0x016cecac) */
+/* WARNING: Removing unreachable block (ram,0x016cecb8) */
+/* WARNING: Removing unreachable block (ram,0x016cecd8) */
+/* WARNING: Removing unreachable block (ram,0x016cecf0) */
+/* WARNING: Removing unreachable block (ram,0x016cec60) */
+/* WARNING: Removing unreachable block (ram,0x016ceb84) */
+/* WARNING: Removing unreachable block (ram,0x016ceb88) */
+/* WARNING: Removing unreachable block (ram,0x016ceb90) */
+/* WARNING: Removing unreachable block (ram,0x016ceb98) */
+/* WARNING: Removing unreachable block (ram,0x016ceba0) */
+/* WARNING: Removing unreachable block (ram,0x016cebac) */
+/* WARNING: Removing unreachable block (ram,0x016cebd8) */
+/* WARNING: Removing unreachable block (ram,0x016ceb54) */
+/* WARNING: Removing unreachable block (ram,0x016ceb08) */
+/* WARNING: Removing unreachable block (ram,0x016ceb10) */
+/* WARNING: Removing unreachable block (ram,0x016ceb1c) */
+/* WARNING: Removing unreachable block (ram,0x016ceb2c) */
+/* WARNING: Removing unreachable block (ram,0x016cea8c) */
+/* WARNING: Removing unreachable block (ram,0x016cea9c) */
+/* WARNING: Removing unreachable block (ram,0x016ceaa0) */
+/* WARNING: Removing unreachable block (ram,0x016ceb30) */
+/* WARNING: Removing unreachable block (ram,0x016ceaa8) */
+/* WARNING: Removing unreachable block (ram,0x016ced84) */
+/* WARNING: Removing unreachable block (ram,0x016ceab0) */
+/* WARNING: Removing unreachable block (ram,0x016ceabc) */
+/* WARNING: Removing unreachable block (ram,0x016ceac8) */
+/* WARNING: Removing unreachable block (ram,0x016ceacc) */
+/* WARNING: Removing unreachable block (ram,0x016ced88) */
+/* WARNING: Removing unreachable block (ram,0x016ceadc) */
+/* WARNING: Removing unreachable block (ram,0x016ceae8) */
+/* WARNING: Removing unreachable block (ram,0x016cea78) */
+/* WARNING: Removing unreachable block (ram,0x0167d7d0) */
+/* WARNING: Removing unreachable block (ram,0x0167d7b8) */
+/* WARNING: Removing unreachable block (ram,0x0167d7a0) */
+/* WARNING: Removing unreachable block (ram,0x0167d750) */
+/* WARNING: Removing unreachable block (ram,0x016ce4dc) */
+/* WARNING: Removing unreachable block (ram,0x016ce334) */
+
+ulong Core_Services_Match__get_Host
+                (int *param_1,undefined8 param_2,undefined8 param_3,int param_4,ulong param_5)
+
+{
+  uint uVar1;
+  uint uVar2;
+  uint uVar3;
+  int iVar4;
+  undefined1 auVar5 [16];
+  undefined1 auVar6 [16];
+  undefined1 *puVar7;
+  undefined1 *puVar8;
+  undefined1 *puVar9;
+  undefined1 *puVar10;
+  undefined1 *puVar11;
+  undefined1 *puVar12;
+  undefined1 ***pppuVar13;
+  undefined1 **ppuVar14;
+  ulong uVar15;
+  long *plVar16;
+  undefined8 uVar17;
+  ulong uVar18;
+  undefined8 uVar19;
+  undefined8 uVar20;
+  long lVar21;
+  undefined4 uVar22;
+  int iVar23;
+  undefined8 *puVar24;
+  ulong uVar25;
+  ulong uVar26;
+  long lVar27;
+  undefined8 unaff_x20;
+  undefined8 *puVar28;
+  ulong uVar29;
+  ulong unaff_x21;
+  ulong uVar30;
+  ulong unaff_x22;
+  undefined8 ****ppppuVar31;
+  undefined1 *puVar32;
+  undefined8 ***pppuVar33;
+  undefined1 **ppuVar34;
+  undefined8 ***pppuVar35;
+  undefined *puVar36;
+  undefined8 unaff_d8;
+  undefined8 unaff_d9;
+  undefined1 auVar37 [16];
+  undefined1 auVar38 [16];
+  undefined1 auVar39 [16];
+  undefined1 auVar40 [16];
+  undefined1 auVar41 [16];
+  undefined1 auVar42 [12];
+  long alStack_150 [2];
+  undefined8 ***apppuStack_140 [2];
+  undefined8 ***pppuStack_110;
+  undefined *puStack_108;
+  undefined8 *puStack_a0;
+  undefined *puStack_98;
+  undefined1 *puStack_90;
+  undefined *puStack_88;
+  undefined1 *puStack_80;
+  undefined *puStack_78;
+  undefined1 **ppuStack_70;
+  undefined *puStack_68;
+  undefined8 **ppuStack_30;
+  undefined *puStack_28;
+  
+  puVar24 = (undefined8 *)0x0;
+  uVar15 = /*FlatBuffers.Table$$__offset*/ func_0x016cf120(param_1,10);
+  if ((int)uVar15 == 0) {
+    return uVar15;
+  }
+  uVar26 = *(ulong *)(param_1 + 2);
+  ppuStack_30 = (undefined8 **)&stack0xfffffffffffffff0;
+  if (uVar26 != 0) {
+    uVar1 = *param_1 + (int)uVar15;
+    uVar15 = (ulong)uVar1;
+    auVar37._8_4_ = uVar1;
+    auVar37._0_8_ = uVar26;
+    auVar37._12_4_ = 0;
+    puVar7 = &stack0xffffffffffffffc0;
+    puStack_28 = (undefined *)0x167d750;
+    ppppuVar31 = (undefined8 ****)&ppuStack_30;
+    uVar29 = 1;
+    puVar36 = &UNK_016ccd18;
+    goto code_r0x016cc7a4;
+  }
+  auVar37 = func_0x00f78af4();
+  lVar21 = auVar37._0_8_;
+  pppuVar13 = (undefined1 ***)&stack0xffffffffffffffa0;
+  puVar12 = &stack0xffffffffffffffa0;
+  puStack_28 = &Core_Services_Match__CreateMatch;
+  pppuVar33 = &ppuStack_30;
+  if (lVar21 == 0) {
+    puVar36 = &Core_Services_Match__AddOtherPlayers;
+    auVar37 = func_0x00f78af4();
+    if (auVar37._0_8_ != 0) {
+      uVar22 = 2;
+      pppuVar35 = pppuVar33;
+FlatBuffers_FlatBufferBuilder__AddOffset:
+      uVar15 = auVar37._0_8_;
+      auVar42._8_4_ = uVar22;
+      auVar42._0_8_ = uVar15;
+      param_4 = 0;
+      *(undefined8 *)((long)pppuVar13 + -0x20) = unaff_x20;
+      *(int **)((long)pppuVar13 + -0x18) = param_1;
+      *(undefined8 ****)((long)pppuVar13 + -0x10) = pppuVar35;
+      *(undefined **)((long)pppuVar13 + -8) = puVar36;
+      if ((auVar37._8_4_ == 0) && (*(char *)(uVar15 + 0x48) == '\0')) {
+        return uVar15;
+      }
+      /*FlatBuffers.FlatBufferBuilder$$AddOffset*/ func_0x016ce0c8(uVar15,auVar37._8_8_,auVar37._8_8_,0,0);
+      ppuVar34 = *(undefined1 ***)((long)pppuVar13 + -0x10);
+      puVar36 = *(undefined **)((long)pppuVar13 + -8);
+      unaff_x20 = *(undefined8 *)((long)pppuVar13 + -0x20);
+      lVar27 = *(long *)((long)pppuVar13 + -0x18);
+      goto code_r0x016ce380;
+    }
+    pppuVar13 = &ppuStack_70;
+    pppuVar35 = (undefined8 ***)&ppuStack_70;
+    puStack_68 = &Core_Services_Match__AddOtherPlayers;
+    puVar36 = &Core_Services_Match__AddId;
+    ppuStack_70 = (undefined1 **)pppuVar33;
+    auVar37 = func_0x00f78af4();
+    if (auVar37._0_8_ != 0) {
+      uVar22 = 0;
+      goto FlatBuffers_FlatBufferBuilder__AddOffset;
+    }
+    ppuVar14 = &puStack_80;
+    ppuVar34 = &puStack_80;
+    puStack_78 = &Core_Services_Match__AddId;
+    puVar36 = &Core_Services_Match__AddHost;
+    puStack_80 = (undefined1 *)&ppuStack_70;
+    auVar38 = func_0x00f78af4();
+    if (auVar38._0_8_ == 0) {
+      puStack_88 = &Core_Services_Match__AddHost;
+      puStack_90 = (undefined1 *)&puStack_80;
+      auVar37 = func_0x00f78af4();
+      uVar30 = auVar37._8_8_;
+      uVar15 = auVar37._0_8_;
+      if (uVar15 != 0) {
+        puVar9 = &stack0xffffffffffffff40;
+        puStack_98 = &Core_Services_Match__AddMatchType;
+        pppuVar33 = (undefined8 ***)&puStack_a0;
+        auVar41._8_8_ = 1;
+        auVar41._0_8_ = uVar15;
+        if ((auVar37._8_4_ == 0) && (*(char *)(uVar15 + 0x48) == '\0')) {
+          return uVar15;
+        }
+        auVar40._8_8_ = 1;
+        auVar40._0_8_ = uVar15;
+        uVar15 = 0;
+        puVar36 = &UNK_016ce4dc;
+        puStack_a0 = &puStack_90;
+        goto code_r0x016cdaac;
+      }
+      puStack_98 = &Core_Services_Match__AddMatchType;
+      puStack_a0 = &puStack_90;
+      lVar21 = func_0x00f78af4();
+      puVar12 = &stack0xffffffffffffff40;
+      pppuVar33 = (undefined8 ***)&stack0xffffffffffffff50;
+      puVar28 = (undefined8 *)0x3eb5000;
+      if ((bRam0000000003eb59e1 & 1) == 0) {
+        func_0x00f78a20(0x3d3f1a8);
+        bRam0000000003eb59e1 = 1;
+      }
+      if (lVar21 != 0) {
+        pppuVar33 = (undefined8 ***)&stack0xffffffffffffff50;
+        auVar41._8_8_ = lVar21;
+        auVar41._0_8_ = 0x3eb5000;
+        if ((bRam0000000003eb5cd8 & 1) == 0) {
+          func_0x00f78a20(0x3d1f100,0);
+          bRam0000000003eb5cd8 = 1;
+        }
+        uVar30 = unaff_x21;
+        if (*(int *)(lVar21 + 0x30) < 0) {
+          func_0x00f78a24(0x3d22a38);
+          puVar36 = (undefined *)func_0x00f78aec();
+          uVar17 = func_0x00f78a24(0x3d6cea8);
+          /*System.InvalidOperationException$$.ctor*/ func_0x02ae6938(puVar36,uVar17);
+          uVar17 = func_0x00f78a24(0x3d56a30);
+          auVar42 = func_0x00f78ac0(puVar36,uVar17);
+          pppuStack_110 = (undefined8 ****)0x3eb5000;
+          pppuVar33 = (undefined8 ***)&stack0xffffffffffffff00;
+          uVar18 = *(ulong *)(auVar42._0_8_ + 0x18);
+          puStack_108 = puVar36;
+          if ((uVar18 != 0) && (*(long *)(uVar18 + 0x10) != 0)) {
+            uVar1 = *(int *)(*(long *)(uVar18 + 0x10) + 0x18) - auVar42._8_4_;
+            uVar15 = (ulong)uVar1;
+            auVar37._8_4_ = uVar1;
+            auVar37._0_8_ = uVar18;
+            auVar37._12_4_ = 0;
+            puVar7 = &stack0xfffffffffffffe90;
+            apppuStack_140[1] = (undefined8 ***)&UNK_016cee20;
+            ppppuVar31 = apppuStack_140;
+            uVar26 = 4;
+            unaff_x22 = 0x3d201a0;
+            apppuStack_140[0] = pppuVar33;
+            if ((bRam0000000003eb5cd0 & 1) == 0) {
+              func_0x00f78a20(0x3d201a0);
+              bRam0000000003eb5cd0 = 1;
+            }
+            uVar29 = 4;
+            puVar36 = &UNK_016cc68c;
+            unaff_x21 = uVar18;
+            goto code_r0x016cc7a4;
+          }
+          func_0x00f78af4();
+          uVar17 = /*System.Int32$$ToString*/ func_0x02ae9b8c(&stack0xfffffffffffffedc,0);
+          uVar19 = func_0x00f78a24(0x3d6ce88);
+          uVar20 = func_0x00f78a24(0x3d66338);
+          lVar21 = /*System.String$$Concat*/ func_0x029be39c(uVar19,uVar17,uVar20,0);
+          func_0x00f78a24(0x3d22a38);
+          uVar17 = func_0x00f78aec();
+          uVar20 = 0;
+          /*System.InvalidOperationException$$.ctor*/ func_0x02ae6938(uVar17,lVar21);
+          uVar19 = func_0x00f78a24(0x3d56a50);
+          puVar36 = &FlatBuffers_FlatBufferBuilder__Finish;
+          auVar37 = func_0x00f78ac0(uVar17,uVar19);
+          puVar9 = &stack0xfffffffffffffed0;
+          while( true ) {
+            uVar19 = auVar37._8_8_;
+            lVar27 = auVar37._0_8_;
+            auVar41._8_8_ = lVar27;
+            auVar41._0_8_ = uVar19;
+            auVar6._8_8_ = lVar27;
+            auVar6._0_8_ = uVar19;
+            *(undefined8 *)(puVar9 + -0x20) = uVar17;
+            *(long *)(puVar9 + -0x18) = lVar21;
+            *(undefined8 ****)(puVar9 + -0x10) = pppuVar33;
+            *(undefined **)(puVar9 + -8) = puVar36;
+            pppuVar33 = (undefined8 ***)(puVar9 + -0x10);
+            uVar22 = *(undefined4 *)(lVar27 + 0x20);
+            auVar40._8_4_ = uVar22;
+            auVar40._0_8_ = lVar27;
+            auVar40._12_4_ = 0;
+            lVar21 = lVar27;
+            if ((int)uVar20 == 0) {
+              lVar21 = 0;
+              uVar22 = 0;
+            }
+            auVar5._8_4_ = uVar22;
+            auVar5._0_8_ = lVar21;
+            auVar5._12_4_ = 0;
+            if ((int)uVar20 == 0) {
+              uVar15 = 4;
+              puVar36 = &UNK_016cef64;
+              puVar9 = puVar9 + -0x20;
+              goto code_r0x016cdaac;
+            }
+            if (lVar21 != 0) break;
+            puVar36 = &FlatBuffers_FlatBufferBuilder__Finish;
+            auVar37 = func_0x00f78af4();
+            uVar20 = 0;
+            puVar9 = puVar9 + -0x20;
+            lVar21 = lVar27;
+            uVar17 = uVar19;
+          }
+          uVar15 = 8;
+          puVar36 = &UNK_016cef10;
+          puVar9 = puVar9 + -0x20;
+          auVar40 = auVar5;
+          auVar41 = auVar6;
+        }
+        else {
+          auVar40._8_8_ = 4;
+          auVar40._0_8_ = lVar21;
+          uVar15 = 0;
+          puVar36 = &UNK_016cea78;
+          puVar9 = &stack0xffffffffffffff10;
+        }
+        goto code_r0x016cdaac;
+      }
+      puVar36 = &Core_Services_Match__StartMatch;
+      lVar21 = func_0x00f78af4();
+      if (lVar21 == 0) {
+        auVar39 = func_0x00f78af4();
+        lVar21 = auVar39._0_8_;
+        if ((auVar39._8_8_ == 0) || (lVar21 == 0)) {
+          auVar39 = func_0x00f78af4();
+          lVar27 = auVar39._8_8_;
+          lVar21 = auVar39._0_8_;
+          puVar9 = &stack0xfffffffffffffed0;
+          puStack_108 = &Core_Services_Match__CreateOtherPlayersVectorBlock;
+          ppppuVar31 = &pppuStack_110;
+          unaff_x21 = 0x3eb5000;
+          pppuStack_110 = (undefined8 ***)&stack0xffffffffffffff20;
+          if ((bRam0000000003eb59e0 & 1) == 0) {
+            func_0x00f78a20(0x3d569d8);
+            bRam0000000003eb59e0 = 1;
+          }
+          if ((lVar27 == 0) || (lVar21 == 0)) {
+            puVar36 = &Core_Services_Match__StartOtherPlayersVector;
+            auVar42 = func_0x00f78af4();
+            iVar23 = auVar42._8_4_;
+            auVar39._8_8_ = lVar27;
+            auVar39._0_8_ = auVar42._0_8_;
+            if (auVar42._0_8_ == 0) {
+              apppuStack_140[1] = (undefined8 ***)&Core_Services_Match__StartOtherPlayersVector;
+              apppuStack_140[0] = ppppuVar31;
+              auVar37 = func_0x00f78af4();
+              uVar15 = auVar37._0_8_;
+              *(undefined8 *)(uVar15 + 0x10) = *puVar24;
+              *(long *)(uVar15 + 0x20) = auVar37._8_8_;
+              *(undefined8 **)(uVar15 + 0x28) = puVar24;
+              return uVar15;
+            }
+          }
+          else {
+            unaff_x21 = 0x3d56000;
+            iVar23 = *(int *)(lVar27 + 0x18);
+            puVar36 = &UNK_0167d9e0;
+            puVar9 = &stack0xfffffffffffffed0;
+          }
+        }
+        else {
+          iVar23 = *(int *)(auVar39._8_8_ + 0x18);
+          puVar36 = &UNK_0167d91c;
+          puVar9 = &stack0xffffffffffffff00;
+          ppppuVar31 = (undefined8 ****)&stack0xffffffffffffff20;
+        }
+        uVar26 = auVar39._0_8_;
+        *(ulong *)(puVar9 + -0x30) = unaff_x22;
+        *(ulong *)(puVar9 + -0x28) = unaff_x21;
+        *(long *)(puVar9 + -0x20) = auVar39._8_8_;
+        *(long *)(puVar9 + -0x18) = lVar21;
+        *(undefined8 *****)(puVar9 + -0x10) = ppppuVar31;
+        *(undefined **)(puVar9 + -8) = puVar36;
+        pppuVar33 = (undefined8 ***)(puVar9 + -0x10);
+        /*FlatBuffers.FlatBufferBuilder$$NotNested*/ func_0x016ce1a4();
+        *(int *)(uVar26 + 0x44) = iVar23;
+        uVar15 = CONCAT44(0,iVar23 * 4);
+        auVar41._8_8_ = 4;
+        auVar41._0_8_ = uVar15;
+        auVar40._8_8_ = 4;
+        auVar40._0_8_ = uVar26;
+        puVar36 = &UNK_016ce188;
+        puVar9 = puVar9 + -0x30;
+        uVar30 = 4;
+        unaff_x22 = uVar26;
+        goto code_r0x016cdaac;
+      }
+      lVar27 = 0;
+      goto code_r0x016ce2a4;
+    }
+    uVar17 = 3;
+    param_4 = 0;
+  }
+  else {
+    puVar36 = &UNK_0167d7a0;
+    lVar27 = lVar21;
+    puVar28 = puVar24;
+    unaff_x21 = param_5;
+    unaff_x22 = auVar37._8_8_;
+code_r0x016ce2a4:
+    puVar8 = puVar12 + -0x30;
+    pppuVar13 = (undefined1 ***)(puVar12 + -0x30);
+    *(ulong *)(puVar12 + -0x30) = unaff_x22;
+    *(ulong *)(puVar12 + -0x28) = unaff_x21;
+    *(undefined8 **)(puVar12 + -0x20) = puVar28;
+    *(long *)(puVar12 + -0x18) = lVar27;
+    *(undefined8 ****)(puVar12 + -0x10) = pppuVar33;
+    *(undefined **)(puVar12 + -8) = puVar36;
+    ppuVar34 = (undefined1 **)(puVar12 + -0x10);
+    unaff_x20 = 4;
+    unaff_x21 = 0x3eb5000;
+    if ((bRam0000000003eb5cd7 & 1) == 0) {
+      func_0x00f78a20(0x3d1f100,4,0);
+      bRam0000000003eb5cd7 = 1;
+    }
+    /*FlatBuffers.FlatBufferBuilder$$NotNested*/ func_0x016ce1a4(lVar21);
+    if (*(long *)(lVar21 + 0x28) != 0) {
+      if (*(int *)(*(long *)(lVar21 + 0x28) + 0x18) < 4) {
+        uVar17 = func_0x00f78a34(/*int[]_TypeInfo*/ uRam0000000003d1f100,4);
+        *(undefined8 *)(lVar21 + 0x28) = uVar17;
+      }
+      *(undefined4 *)(lVar21 + 0x30) = 4;
+      puVar36 = &UNK_016ce320;
+      goto code_r0x016cda04;
+    }
+    puVar36 = &FlatBuffers_FlatBufferBuilder__Slot;
+    auVar42 = func_0x00f78af4();
+    lVar27 = lVar21;
+code_r0x016ce380:
+    lVar21 = auVar42._0_8_;
+    ppuVar14 = (undefined1 **)((long)pppuVar13 + -0x20);
+    puVar8 = (undefined1 *)((long)pppuVar13 + -0x20);
+    *(undefined8 *)((long)pppuVar13 + -0x20) = unaff_x20;
+    *(long *)((long)pppuVar13 + -0x18) = lVar27;
+    *(undefined1 ***)((long)pppuVar13 + -0x10) = ppuVar34;
+    *(undefined **)((long)pppuVar13 + -8) = puVar36;
+    ppuVar34 = (undefined1 **)((long)pppuVar13 + -0x10);
+    if (auVar42._8_4_ < *(int *)(lVar21 + 0x30)) {
+      puVar36 = &UNK_016ce3a4;
+code_r0x016cda04:
+      *(undefined1 ***)(puVar8 + -0x10) = ppuVar34;
+      *(undefined **)(puVar8 + -8) = puVar36;
+      if ((*(long *)(lVar21 + 0x18) != 0) &&
+         (lVar27 = *(long *)(*(long *)(lVar21 + 0x18) + 0x10), lVar27 != 0)) {
+        return (ulong)(uint)(*(int *)(lVar27 + 0x18) - *(int *)(lVar21 + 0x10));
+      }
+      lVar21 = func_0x00f78af4();
+      return (ulong)*(byte *)(lVar21 + 0x48);
+    }
+    func_0x00f78a24(0x3d22738);
+    param_1 = (int *)func_0x00f78aec();
+    uVar17 = func_0x00f78a24(0x3d6ceb8);
+    uVar19 = 0;
+    /*System.IndexOutOfRangeException$$.ctor*/ func_0x02ae8c34(param_1,uVar17);
+    uVar17 = func_0x00f78a24(0x3d56a58);
+    func_0x00f78ac0(param_1,uVar17);
+    func_0x00f78af4();
+    uVar17 = func_0x00f78b24();
+    puVar36 = &FlatBuffers_FlatBufferBuilder__AddBool;
+    auVar37 = func_0x00f78ac0(uVar17,0);
+    uVar17 = auVar37._8_8_;
+    auVar38._8_8_ = uVar19;
+    auVar38._0_8_ = auVar37._0_8_;
+  }
+  uVar15 = auVar38._0_8_;
+  auVar41._8_8_ = uVar17;
+  auVar41._0_8_ = uVar15;
+  *(ulong *)((long)ppuVar14 + -0x30) = unaff_x22;
+  *(ulong *)((long)ppuVar14 + -0x28) = unaff_x21;
+  *(undefined8 *)((long)ppuVar14 + -0x20) = unaff_x20;
+  *(int **)((long)ppuVar14 + -0x18) = param_1;
+  *(undefined1 ***)((long)ppuVar14 + -0x10) = ppuVar34;
+  *(undefined **)((long)ppuVar14 + -8) = puVar36;
+  pppuVar33 = (undefined8 ***)((long)ppuVar14 + -0x10);
+  if ((auVar38._8_4_ == param_4) && (*(char *)(uVar15 + 0x48) == '\0')) {
+    return uVar15;
+  }
+  auVar40._8_8_ = 1;
+  auVar40._0_8_ = uVar15;
+  uVar15 = 0;
+  puVar36 = &UNK_016ce46c;
+  puVar9 = (undefined1 *)((long)ppuVar14 + -0x30);
+  uVar30 = auVar38._8_8_;
+code_r0x016cdaac:
+  do {
+    uVar29 = auVar41._0_8_;
+    uVar18 = auVar40._0_8_;
+    puVar7 = puVar9 + -0x30;
+    *(ulong *)(puVar9 + -0x30) = unaff_x22;
+    *(ulong *)(puVar9 + -0x28) = uVar30;
+    *(undefined1 (*) [16])(puVar9 + -0x20) = auVar41;
+    *(undefined8 ****)(puVar9 + -0x10) = pppuVar33;
+    *(undefined **)(puVar9 + -8) = puVar36;
+    iVar23 = auVar40._8_4_;
+    if (*(int *)(uVar18 + 0x20) < iVar23) {
+      *(int *)(uVar18 + 0x20) = iVar23;
+    }
+    if ((*(long *)(uVar18 + 0x18) != 0) &&
+       (lVar21 = *(long *)(*(long *)(uVar18 + 0x18) + 0x10), lVar21 != 0)) {
+      uVar3 = *(uint *)(lVar21 + 0x18);
+      iVar4 = *(int *)(uVar18 + 0x10);
+      uVar2 = iVar4 - (uVar3 + (int)uVar15) & iVar23 - 1U;
+      uVar29 = (ulong)uVar2;
+      uVar1 = (int)uVar15 + iVar23 + uVar2;
+      unaff_x22 = (ulong)uVar1;
+      uVar26 = uVar18;
+      while (uVar30 = (ulong)uVar3, iVar4 < (int)uVar1) {
+        uVar26 = /*FlatBuffers.FlatBufferBuilder$$GrowBuffer*/ func_0x016cda78(uVar18);
+        if ((*(long *)(uVar18 + 0x18) == 0) ||
+           (lVar21 = *(long *)(*(long *)(uVar18 + 0x18) + 0x10), lVar21 == 0))
+        goto code_r0x016cdb68;
+        iVar4 = *(int *)(uVar18 + 0x10) - uVar3;
+        uVar3 = *(uint *)(lVar21 + 0x18);
+        iVar4 = iVar4 + uVar3;
+        *(int *)(uVar18 + 0x10) = iVar4;
+      }
+      if ((int)uVar2 < 1) {
+        return uVar26;
+      }
+      uVar17 = *(undefined8 *)*(undefined1 (*) [16])(puVar9 + -0x20);
+      uVar19 = *(undefined8 *)(puVar9 + -0x18);
+      auVar41 = *(undefined1 (*) [16])(puVar9 + -0x20);
+      uVar25 = *(ulong *)(puVar9 + -0x30);
+      uVar30 = *(ulong *)(puVar9 + -0x28);
+      *(undefined8 *)(puVar9 + -0x10) = *(undefined8 *)(puVar9 + -0x10);
+      *(undefined8 *)(puVar9 + -8) = *(undefined8 *)(puVar9 + -8);
+      uVar26 = *(ulong *)(uVar18 + 0x18);
+      uVar2 = *(int *)(uVar18 + 0x10) - uVar2;
+      unaff_x22 = (ulong)uVar2;
+      auVar37._8_4_ = uVar2;
+      auVar37._0_8_ = uVar26;
+      auVar37._12_4_ = 0;
+      *(uint *)(uVar18 + 0x10) = uVar2;
+      if (uVar26 != 0) {
+        *(ulong *)(puVar9 + -0x30) = uVar25;
+        *(ulong *)(puVar9 + -0x28) = uVar30;
+        *(undefined8 *)(puVar9 + -0x20) = uVar17;
+        *(undefined8 *)(puVar9 + -0x18) = uVar19;
+        *(undefined8 *)(puVar9 + -0x10) = *(undefined8 *)(puVar9 + -0x10);
+        *(undefined8 *)(puVar9 + -8) = *(undefined8 *)(puVar9 + -8);
+        ppppuVar31 = (undefined8 ****)(puVar9 + -0x10);
+        puVar36 = &UNK_016cc908;
+        uVar15 = 0;
+        unaff_x21 = uVar29;
+        goto code_r0x016cc7a4;
+      }
+      lVar21 = func_0x00f78af4();
+      pppuVar33 = (undefined8 ***)(puVar9 + -0x20);
+      *(undefined1 **)(puVar9 + -0x20) = puVar9 + -0x10;
+      *(undefined **)(puVar9 + -0x18) = &FlatBuffers_FlatBufferBuilder__GrowBuffer;
+      if ((*(long *)(lVar21 + 0x18) != 0) &&
+         (plVar16 = *(long **)(*(long *)(lVar21 + 0x18) + 0x10), plVar16 != (long *)0x0)) {
+                    /* WARNING: Could not recover jumptable at 0x016cdaa4. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+        uVar15 = (**(code **)(*plVar16 + 0x178))
+                           (plVar16,(int)plVar16[3] << 1,*(undefined8 *)(*plVar16 + 0x180));
+        return uVar15;
+      }
+      puVar36 = &FlatBuffers_FlatBufferBuilder__Prep;
+      auVar40 = func_0x00f78af4();
+      puVar9 = puVar9 + -0x20;
+      unaff_x22 = uVar25;
+      goto code_r0x016cdaac;
+    }
+code_r0x016cdb68:
+    auVar37 = func_0x00f78af4();
+    uVar15 = auVar37._8_8_;
+    lVar21 = auVar37._0_8_;
+    *(undefined1 **)(puVar9 + -0x40) = puVar9 + -0x10;
+    *(undefined **)(puVar9 + -0x38) = &FlatBuffers_FlatBufferBuilder__PutBool;
+    unaff_x21 = *(ulong *)(lVar21 + 0x18);
+    uVar1 = *(int *)(lVar21 + 0x10) - 1;
+    *(uint *)(lVar21 + 0x10) = uVar1;
+    if (unaff_x21 != 0) {
+      puVar10 = puVar9 + -0x30;
+      uVar17 = *(undefined8 *)(puVar9 + -0x40);
+      uVar19 = *(undefined8 *)(puVar9 + -0x38);
+FlatBuffers_ByteBuffer__PutByte:
+      uVar26 = (ulong)uVar1;
+      auVar37._8_4_ = uVar1;
+      auVar37._0_8_ = unaff_x21;
+      auVar37._12_4_ = 0;
+      puVar7 = puVar10 + -0x30;
+      *(ulong *)(puVar10 + -0x30) = unaff_x22;
+      *(ulong *)(puVar10 + -0x28) = uVar30;
+      *(ulong *)(puVar10 + -0x20) = uVar29;
+      *(ulong *)(puVar10 + -0x18) = uVar18;
+      *(undefined8 *)(puVar10 + -0x10) = uVar17;
+      *(undefined8 *)(puVar10 + -8) = uVar19;
+      ppppuVar31 = (undefined8 ****)(puVar10 + -0x10);
+      uVar29 = 1;
+      puVar36 = &UNK_016cc89c;
+      goto code_r0x016cc7a4;
+    }
+    auVar37 = func_0x00f78af4();
+    uVar25 = auVar37._8_8_;
+    lVar21 = auVar37._0_8_;
+    *(undefined1 **)(puVar9 + -0x50) = puVar9 + -0x40;
+    *(undefined **)(puVar9 + -0x48) = &FlatBuffers_FlatBufferBuilder__PutSbyte;
+    iVar23 = *(int *)(lVar21 + 0x10) + -1;
+    auVar37._8_4_ = iVar23;
+    auVar37._0_8_ = *(long *)(lVar21 + 0x18);
+    auVar37._12_4_ = 0;
+    *(int *)(lVar21 + 0x10) = iVar23;
+    if (*(long *)(lVar21 + 0x18) != 0) {
+      puVar11 = puVar9 + -0x40;
+      puVar32 = *(undefined1 **)(puVar9 + -0x50);
+      puVar36 = *(undefined **)(puVar9 + -0x48);
+      unaff_x21 = uVar30;
+      goto code_r0x016cc810;
+    }
+    auVar37 = func_0x00f78af4();
+    uVar15 = auVar37._8_8_;
+    lVar21 = auVar37._0_8_;
+    *(undefined1 **)(puVar9 + -0x60) = puVar9 + -0x50;
+    *(undefined **)(puVar9 + -0x58) = &FlatBuffers_FlatBufferBuilder__PutByte;
+    unaff_x21 = *(ulong *)(lVar21 + 0x18);
+    uVar1 = *(int *)(lVar21 + 0x10) - 1;
+    *(uint *)(lVar21 + 0x10) = uVar1;
+    if (unaff_x21 != 0) {
+      puVar10 = puVar9 + -0x50;
+      uVar17 = *(undefined8 *)(puVar9 + -0x60);
+      uVar19 = *(undefined8 *)(puVar9 + -0x58);
+      goto FlatBuffers_ByteBuffer__PutByte;
+    }
+    auVar37 = func_0x00f78af4();
+    uVar15 = auVar37._8_8_;
+    lVar21 = auVar37._0_8_;
+    puVar7 = puVar9 + -0x90;
+    *(ulong *)(puVar9 + -0x90) = unaff_x22;
+    *(ulong *)(puVar9 + -0x88) = uVar30;
+    *(ulong *)(puVar9 + -0x80) = uVar29;
+    *(ulong *)(puVar9 + -0x78) = uVar18;
+    *(undefined1 **)(puVar9 + -0x70) = puVar9 + -0x60;
+    *(undefined **)(puVar9 + -0x68) = &FlatBuffers_FlatBufferBuilder__PutShort;
+    ppppuVar31 = (undefined8 ****)(puVar9 + -0x70);
+    uVar26 = *(ulong *)(lVar21 + 0x18);
+    uVar1 = *(int *)(lVar21 + 0x10) - 2;
+    auVar37._8_4_ = uVar1;
+    auVar37._0_8_ = uVar26;
+    auVar37._12_4_ = 0;
+    *(uint *)(lVar21 + 0x10) = uVar1;
+    if (uVar26 != 0) {
+      uVar29 = 2;
+      puVar36 = &UNK_016cdc34;
+      unaff_x21 = (ulong)uVar1;
+      goto code_r0x016cc7a4;
+    }
+    auVar37 = func_0x00f78af4();
+    uVar15 = auVar37._8_8_;
+    lVar21 = auVar37._0_8_;
+    puVar7 = puVar9 + -0xc0;
+    *(ulong *)(puVar9 + -0xc0) = unaff_x22;
+    *(ulong *)(puVar9 + -0xb8) = (ulong)uVar1;
+    *(undefined8 *)(puVar9 + -0xb0) = 0;
+    *(ulong *)(puVar9 + -0xa8) = uVar18;
+    *(undefined8 *****)(puVar9 + -0xa0) = ppppuVar31;
+    *(undefined **)(puVar9 + -0x98) = &FlatBuffers_FlatBufferBuilder__PutUshort;
+    ppppuVar31 = (undefined8 ****)(puVar9 + -0xa0);
+    uVar26 = *(ulong *)(lVar21 + 0x18);
+    uVar1 = *(int *)(lVar21 + 0x10) - 2;
+    unaff_x21 = (ulong)uVar1;
+    auVar37._8_4_ = uVar1;
+    auVar37._0_8_ = uVar26;
+    auVar37._12_4_ = 0;
+    *(uint *)(lVar21 + 0x10) = uVar1;
+    if (uVar26 != 0) {
+      uVar29 = 2;
+      puVar36 = &UNK_016cdc90;
+      goto code_r0x016cc7a4;
+    }
+    auVar37 = func_0x00f78af4();
+    uVar15 = auVar37._8_8_;
+    lVar21 = auVar37._0_8_;
+    puVar7 = puVar9 + -0xf0;
+    *(ulong *)(puVar9 + -0xf0) = unaff_x22;
+    *(ulong *)(puVar9 + -0xe8) = unaff_x21;
+    *(undefined8 *)(puVar9 + -0xe0) = 0;
+    *(ulong *)(puVar9 + -0xd8) = uVar18;
+    *(undefined8 *****)(puVar9 + -0xd0) = ppppuVar31;
+    *(undefined **)(puVar9 + -200) = &FlatBuffers_FlatBufferBuilder__PutInt;
+    ppppuVar31 = (undefined8 ****)(puVar9 + -0xd0);
+    uVar26 = *(ulong *)(lVar21 + 0x18);
+    uVar1 = *(int *)(lVar21 + 0x10) - 4;
+    unaff_x21 = (ulong)uVar1;
+    auVar37._8_4_ = uVar1;
+    auVar37._0_8_ = uVar26;
+    auVar37._12_4_ = 0;
+    *(uint *)(lVar21 + 0x10) = uVar1;
+    if (uVar26 != 0) {
+      uVar29 = 4;
+      puVar36 = &UNK_016cdcec;
+      goto code_r0x016cc7a4;
+    }
+    auVar37 = func_0x00f78af4();
+    uVar15 = auVar37._8_8_;
+    lVar21 = auVar37._0_8_;
+    puVar7 = puVar9 + -0x120;
+    *(ulong *)(puVar9 + -0x120) = unaff_x22;
+    *(ulong *)(puVar9 + -0x118) = unaff_x21;
+    *(undefined8 *)(puVar9 + -0x110) = 0;
+    *(ulong *)(puVar9 + -0x108) = uVar18;
+    *(undefined8 *****)(puVar9 + -0x100) = ppppuVar31;
+    *(undefined **)(puVar9 + -0xf8) = &FlatBuffers_FlatBufferBuilder__PutUint;
+    ppppuVar31 = (undefined8 ****)(puVar9 + -0x100);
+    uVar26 = *(ulong *)(lVar21 + 0x18);
+    uVar1 = *(int *)(lVar21 + 0x10) - 4;
+    unaff_x21 = (ulong)uVar1;
+    auVar37._8_4_ = uVar1;
+    auVar37._0_8_ = uVar26;
+    auVar37._12_4_ = 0;
+    *(uint *)(lVar21 + 0x10) = uVar1;
+    if (uVar26 != 0) {
+      uVar29 = 4;
+      puVar36 = &UNK_016cdd48;
+      goto code_r0x016cc7a4;
+    }
+    auVar37 = func_0x00f78af4();
+    uVar15 = auVar37._8_8_;
+    lVar21 = auVar37._0_8_;
+    puVar7 = puVar9 + -0x150;
+    *(ulong *)(puVar9 + -0x150) = unaff_x22;
+    *(ulong *)(puVar9 + -0x148) = unaff_x21;
+    *(undefined8 *)(puVar9 + -0x140) = 0;
+    *(ulong *)(puVar9 + -0x138) = uVar18;
+    *(undefined8 *****)(puVar9 + -0x130) = ppppuVar31;
+    *(undefined **)(puVar9 + -0x128) = &FlatBuffers_FlatBufferBuilder__PutLong;
+    ppppuVar31 = (undefined8 ****)(puVar9 + -0x130);
+    uVar26 = *(ulong *)(lVar21 + 0x18);
+    uVar1 = *(int *)(lVar21 + 0x10) - 8;
+    unaff_x21 = (ulong)uVar1;
+    auVar37._8_4_ = uVar1;
+    auVar37._0_8_ = uVar26;
+    auVar37._12_4_ = 0;
+    *(uint *)(lVar21 + 0x10) = uVar1;
+    if (uVar26 != 0) {
+      uVar29 = 8;
+      puVar36 = &UNK_016cdda4;
+      goto code_r0x016cc7a4;
+    }
+    auVar37 = func_0x00f78af4();
+    uVar15 = auVar37._8_8_;
+    lVar21 = auVar37._0_8_;
+    puVar7 = puVar9 + -0x180;
+    *(ulong *)(puVar9 + -0x180) = unaff_x22;
+    *(ulong *)(puVar9 + -0x178) = unaff_x21;
+    *(undefined8 *)(puVar9 + -0x170) = 0;
+    *(ulong *)(puVar9 + -0x168) = uVar18;
+    *(undefined8 *****)(puVar9 + -0x160) = ppppuVar31;
+    *(undefined **)(puVar9 + -0x158) = &FlatBuffers_FlatBufferBuilder__PutUlong;
+    ppppuVar31 = (undefined8 ****)(puVar9 + -0x160);
+    uVar26 = *(ulong *)(lVar21 + 0x18);
+    uVar1 = *(int *)(lVar21 + 0x10) - 8;
+    unaff_x21 = (ulong)uVar1;
+    auVar37._8_4_ = uVar1;
+    auVar37._0_8_ = uVar26;
+    auVar37._12_4_ = 0;
+    *(uint *)(lVar21 + 0x10) = uVar1;
+    if (uVar26 != 0) {
+      uVar29 = 8;
+      puVar36 = &UNK_016cde00;
+      goto code_r0x016cc7a4;
+    }
+    lVar21 = func_0x00f78af4();
+    *(undefined8 *****)(puVar9 + -400) = ppppuVar31;
+    *(undefined **)(puVar9 + -0x188) = &FlatBuffers_FlatBufferBuilder__PutFloat;
+    uVar26 = *(ulong *)(lVar21 + 0x18);
+    uVar1 = *(int *)(lVar21 + 0x10) - 4;
+    uVar15 = (ulong)uVar1;
+    auVar37._8_4_ = uVar1;
+    auVar37._0_8_ = uVar26;
+    auVar37._12_4_ = 0;
+    *(uint *)(lVar21 + 0x10) = uVar1;
+    if (uVar26 != 0) {
+      puVar7 = puVar9 + -0x1b0;
+      *(undefined8 *)(puVar9 + -0x1b0) = unaff_d9;
+      *(undefined8 *)(puVar9 + -0x1a8) = unaff_d8;
+      *(undefined8 *)(puVar9 + -0x1a0) = 0;
+      *(ulong *)(puVar9 + -0x198) = uVar18;
+      *(undefined8 *)(puVar9 + -400) = *(undefined8 *)(puVar9 + -400);
+      *(undefined8 *)(puVar9 + -0x188) = *(undefined8 *)(puVar9 + -0x188);
+      ppppuVar31 = (undefined8 ****)(puVar9 + -400);
+      uVar29 = 4;
+      puVar36 = &UNK_016ccba4;
+      goto code_r0x016cc7a4;
+    }
+    lVar21 = func_0x00f78af4();
+    *(undefined1 **)(puVar9 + -0x1a0) = puVar9 + -400;
+    *(undefined **)(puVar9 + -0x198) = &FlatBuffers_FlatBufferBuilder__PutDouble;
+    uVar26 = *(ulong *)(lVar21 + 0x18);
+    uVar1 = *(int *)(lVar21 + 0x10) - 8;
+    uVar15 = (ulong)uVar1;
+    auVar37._8_4_ = uVar1;
+    auVar37._0_8_ = uVar26;
+    auVar37._12_4_ = 0;
+    *(uint *)(lVar21 + 0x10) = uVar1;
+    if (uVar26 != 0) break;
+    auVar41 = func_0x00f78af4();
+    *(undefined8 *)(puVar9 + -0x1c0) = 0;
+    *(ulong *)(puVar9 + -0x1b8) = uVar18;
+    *(undefined1 **)(puVar9 + -0x1b0) = puVar9 + -0x1a0;
+    *(undefined **)(puVar9 + -0x1a8) = &FlatBuffers_FlatBufferBuilder__AddBool;
+    pppuVar33 = (undefined8 ***)(puVar9 + -0x1b0);
+    auVar40._8_8_ = 1;
+    auVar40._0_8_ = auVar41._0_8_;
+    uVar15 = 0;
+    puVar36 = &UNK_016cde9c;
+    puVar9 = puVar9 + -0x1c0;
+    uVar30 = unaff_x21;
+  } while( true );
+  puVar7 = puVar9 + -0x1c0;
+  *(undefined8 *)(puVar9 + -0x1c0) = unaff_d9;
+  *(undefined8 *)(puVar9 + -0x1b8) = unaff_d8;
+  *(undefined8 *)(puVar9 + -0x1b0) = 0;
+  *(ulong *)(puVar9 + -0x1a8) = uVar18;
+  *(undefined8 *)(puVar9 + -0x1a0) = *(undefined8 *)(puVar9 + -0x1a0);
+  *(undefined8 *)(puVar9 + -0x198) = *(undefined8 *)(puVar9 + -0x198);
+  ppppuVar31 = (undefined8 ****)(puVar9 + -0x1a0);
+  uVar29 = 8;
+  puVar36 = &UNK_016ccc34;
+code_r0x016cc7a4:
+  do {
+    puVar11 = puVar7 + -0x20;
+    *(ulong *)(puVar7 + -0x20) = uVar26;
+    *(ulong *)(puVar7 + -0x18) = uVar15;
+    *(undefined8 *****)(puVar7 + -0x10) = ppppuVar31;
+    *(undefined **)(puVar7 + -8) = puVar36;
+    puVar32 = puVar7 + -0x10;
+    if (auVar37._8_4_ < 0) {
+code_r0x016cc7d8:
+      func_0x00f78a24(0x3d1fcf8);
+      uVar18 = func_0x00f78aec();
+      /*System.ArgumentOutOfRangeException$$.ctor*/ func_0x0292a4d0(uVar18,0);
+      uVar17 = func_0x00f78a24(0x3d52ce8);
+      func_0x00f78ac0(uVar18,uVar17);
+      uVar25 = uVar29;
+    }
+    else {
+      lVar21 = *(long *)(auVar37._0_8_ + 0x10);
+      uVar25 = uVar29;
+      uVar18 = uVar15;
+      if (lVar21 != 0) {
+        if (auVar37._8_4_ <= *(int *)(lVar21 + 0x18) - (int)uVar29) {
+          return auVar37._0_8_;
+        }
+        goto code_r0x016cc7d8;
+      }
+    }
+    puVar36 = &FlatBuffers_ByteBuffer__PutSbyte;
+    auVar37 = func_0x00f78af4();
+    uVar29 = uVar26;
+code_r0x016cc810:
+    uVar26 = auVar37._8_8_;
+    puVar7 = puVar11 + -0x30;
+    *(ulong *)(puVar11 + -0x30) = unaff_x22;
+    *(ulong *)(puVar11 + -0x28) = unaff_x21;
+    *(ulong *)(puVar11 + -0x20) = uVar29;
+    *(ulong *)(puVar11 + -0x18) = uVar18;
+    *(undefined1 **)(puVar11 + -0x10) = puVar32;
+    *(undefined **)(puVar11 + -8) = puVar36;
+    ppppuVar31 = (undefined8 ****)(puVar11 + -0x10);
+    uVar29 = 1;
+    puVar36 = &UNK_016cc834;
+    uVar15 = uVar25;
+    unaff_x21 = auVar37._0_8_;
+  } while( true );
+}
+
+
+
+// ============================================================
+// RVA: 0x167d768 | Core.Services.Match.CreateMatch
+// ============================================================
+
+/* WARNING: Possible PIC construction at 0x0167d79c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x0167d7b4: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x0167d7cc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cea74: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cea88: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ceb04: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ceb50: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ceb74: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cebe4: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cec2c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ced5c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cee1c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cef0c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cef44: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cef60: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cecfc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce31c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce3a0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce468: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x0167d918: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce220: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x0167d9dc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce184: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc898: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc904: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc830: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdc30: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc688: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdc8c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdce8: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdd44: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdda0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cddfc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccba0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccc30: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cccb8: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccd14: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccdc0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cde98: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce4d8: Changing call to branch */
+/* WARNING: Removing unreachable block (ram,0x016cde9c) */
+/* WARNING: Removing unreachable block (ram,0x016ccdc4) */
+/* WARNING: Removing unreachable block (ram,0x016ccd18) */
+/* WARNING: Removing unreachable block (ram,0x016ccd20) */
+/* WARNING: Removing unreachable block (ram,0x016ccd48) */
+/* WARNING: Removing unreachable block (ram,0x016ccd28) */
+/* WARNING: Removing unreachable block (ram,0x016ccd4c) */
+/* WARNING: Removing unreachable block (ram,0x016ccd84) */
+/* WARNING: Removing unreachable block (ram,0x016ccdb0) */
+/* WARNING: Removing unreachable block (ram,0x016ccd88) */
+/* WARNING: Removing unreachable block (ram,0x016ccd34) */
+/* WARNING: Removing unreachable block (ram,0x016cccbc) */
+/* WARNING: Removing unreachable block (ram,0x016cccc4) */
+/* WARNING: Removing unreachable block (ram,0x016cccec) */
+/* WARNING: Removing unreachable block (ram,0x016ccccc) */
+/* WARNING: Removing unreachable block (ram,0x016cccf0) */
+/* WARNING: Removing unreachable block (ram,0x016cccd8) */
+/* WARNING: Removing unreachable block (ram,0x016ccc34) */
+/* WARNING: Removing unreachable block (ram,0x016ccc3c) */
+/* WARNING: Removing unreachable block (ram,0x016ccc44) */
+/* WARNING: Removing unreachable block (ram,0x016ccc90) */
+/* WARNING: Removing unreachable block (ram,0x016ccc68) */
+/* WARNING: Removing unreachable block (ram,0x016ccc94) */
+/* WARNING: Removing unreachable block (ram,0x016ccc70) */
+/* WARNING: Removing unreachable block (ram,0x016ccba4) */
+/* WARNING: Removing unreachable block (ram,0x016ccbac) */
+/* WARNING: Removing unreachable block (ram,0x016ccbb4) */
+/* WARNING: Removing unreachable block (ram,0x016ccc00) */
+/* WARNING: Removing unreachable block (ram,0x016ccbd8) */
+/* WARNING: Removing unreachable block (ram,0x016ccc04) */
+/* WARNING: Removing unreachable block (ram,0x016ccbe0) */
+/* WARNING: Removing unreachable block (ram,0x016cde00) */
+/* WARNING: Removing unreachable block (ram,0x016cdda4) */
+/* WARNING: Removing unreachable block (ram,0x016cdd48) */
+/* WARNING: Removing unreachable block (ram,0x016cdcec) */
+/* WARNING: Removing unreachable block (ram,0x016cdc90) */
+/* WARNING: Removing unreachable block (ram,0x016cc68c) */
+/* WARNING: Removing unreachable block (ram,0x016cc698) */
+/* WARNING: Removing unreachable block (ram,0x016cc6a0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6a8) */
+/* WARNING: Removing unreachable block (ram,0x016cc718) */
+/* WARNING: Removing unreachable block (ram,0x016cc720) */
+/* WARNING: Removing unreachable block (ram,0x016cc728) */
+/* WARNING: Removing unreachable block (ram,0x016cc730) */
+/* WARNING: Removing unreachable block (ram,0x016cc74c) */
+/* WARNING: Removing unreachable block (ram,0x016cc754) */
+/* WARNING: Removing unreachable block (ram,0x016cc778) */
+/* WARNING: Removing unreachable block (ram,0x016cc6b4) */
+/* WARNING: Removing unreachable block (ram,0x016cc77c) */
+/* WARNING: Removing unreachable block (ram,0x016cc6bc) */
+/* WARNING: Removing unreachable block (ram,0x016cc6c4) */
+/* WARNING: Removing unreachable block (ram,0x016cc6cc) */
+/* WARNING: Removing unreachable block (ram,0x016cc6e0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6e8) */
+/* WARNING: Removing unreachable block (ram,0x016cc794) */
+/* WARNING: Removing unreachable block (ram,0x016cc7a0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6f0) */
+/* WARNING: Removing unreachable block (ram,0x016cc714) */
+/* WARNING: Removing unreachable block (ram,0x016cc780) */
+/* WARNING: Removing unreachable block (ram,0x016cdc34) */
+/* WARNING: Removing unreachable block (ram,0x016cc834) */
+/* WARNING: Removing unreachable block (ram,0x016cc83c) */
+/* WARNING: Removing unreachable block (ram,0x016cc868) */
+/* WARNING: Removing unreachable block (ram,0x016cc844) */
+/* WARNING: Removing unreachable block (ram,0x016cc86c) */
+/* WARNING: Removing unreachable block (ram,0x016cc850) */
+/* WARNING: Removing unreachable block (ram,0x016cc908) */
+/* WARNING: Removing unreachable block (ram,0x016cc910) */
+/* WARNING: Removing unreachable block (ram,0x016cc920) */
+/* WARNING: Removing unreachable block (ram,0x016cc928) */
+/* WARNING: Removing unreachable block (ram,0x016cc964) */
+/* WARNING: Removing unreachable block (ram,0x016cc930) */
+/* WARNING: Removing unreachable block (ram,0x016cc968) */
+/* WARNING: Removing unreachable block (ram,0x016cc93c) */
+/* WARNING: Removing unreachable block (ram,0x016cc954) */
+/* WARNING: Removing unreachable block (ram,0x016cc89c) */
+/* WARNING: Removing unreachable block (ram,0x016cc8a4) */
+/* WARNING: Removing unreachable block (ram,0x016cc8d0) */
+/* WARNING: Removing unreachable block (ram,0x016cc8ac) */
+/* WARNING: Removing unreachable block (ram,0x016cc8d4) */
+/* WARNING: Removing unreachable block (ram,0x016cc8b8) */
+/* WARNING: Removing unreachable block (ram,0x016ce188) */
+/* WARNING: Removing unreachable block (ram,0x0167d9e0) */
+/* WARNING: Removing unreachable block (ram,0x016ce224) */
+/* WARNING: Removing unreachable block (ram,0x0167d91c) */
+/* WARNING: Removing unreachable block (ram,0x0167d928) */
+/* WARNING: Removing unreachable block (ram,0x0167d930) */
+/* WARNING: Removing unreachable block (ram,0x0167d94c) */
+/* WARNING: Removing unreachable block (ram,0x0167d958) */
+/* WARNING: Removing unreachable block (ram,0x0167d964) */
+/* WARNING: Removing unreachable block (ram,0x016ce20c) */
+/* WARNING: Removing unreachable block (ram,0x016ce46c) */
+/* WARNING: Removing unreachable block (ram,0x016ce3a4) */
+/* WARNING: Removing unreachable block (ram,0x016ce3a8) */
+/* WARNING: Removing unreachable block (ram,0x016ce3b4) */
+/* WARNING: Removing unreachable block (ram,0x016ce320) */
+/* WARNING: Removing unreachable block (ram,0x016ced00) */
+/* WARNING: Removing unreachable block (ram,0x016ced04) */
+/* WARNING: Removing unreachable block (ram,0x016ced10) */
+/* WARNING: Removing unreachable block (ram,0x016ced20) */
+/* WARNING: Removing unreachable block (ram,0x016ced28) */
+/* WARNING: Removing unreachable block (ram,0x016cef64) */
+/* WARNING: Removing unreachable block (ram,0x016cef48) */
+/* WARNING: Removing unreachable block (ram,0x016cef70) */
+/* WARNING: Removing unreachable block (ram,0x016cef78) */
+/* WARNING: Removing unreachable block (ram,0x016cef10) */
+/* WARNING: Removing unreachable block (ram,0x016cef24) */
+/* WARNING: Removing unreachable block (ram,0x016cef2c) */
+/* WARNING: Removing unreachable block (ram,0x016cee20) */
+/* WARNING: Removing unreachable block (ram,0x016cee2c) */
+/* WARNING: Removing unreachable block (ram,0x016cee44) */
+/* WARNING: Removing unreachable block (ram,0x016ced60) */
+/* WARNING: Removing unreachable block (ram,0x016cec30) */
+/* WARNING: Removing unreachable block (ram,0x016cec38) */
+/* WARNING: Removing unreachable block (ram,0x016cec44) */
+/* WARNING: Removing unreachable block (ram,0x016cebe8) */
+/* WARNING: Removing unreachable block (ram,0x016cec48) */
+/* WARNING: Removing unreachable block (ram,0x016cebf0) */
+/* WARNING: Removing unreachable block (ram,0x016cec64) */
+/* WARNING: Removing unreachable block (ram,0x016cec6c) */
+/* WARNING: Removing unreachable block (ram,0x016cec78) */
+/* WARNING: Removing unreachable block (ram,0x016ceca8) */
+/* WARNING: Removing unreachable block (ram,0x016cec84) */
+/* WARNING: Removing unreachable block (ram,0x016cec8c) */
+/* WARNING: Removing unreachable block (ram,0x016cec94) */
+/* WARNING: Removing unreachable block (ram,0x016ced3c) */
+/* WARNING: Removing unreachable block (ram,0x016cc4e0) */
+/* WARNING: Removing unreachable block (ram,0x016cc518) */
+/* WARNING: Removing unreachable block (ram,0x016cc52c) */
+/* WARNING: Removing unreachable block (ram,0x016cc538) */
+/* WARNING: Removing unreachable block (ram,0x016cc540) */
+/* WARNING: Removing unreachable block (ram,0x016cc548) */
+/* WARNING: Removing unreachable block (ram,0x016cc5b8) */
+/* WARNING: Removing unreachable block (ram,0x016cc5c0) */
+/* WARNING: Removing unreachable block (ram,0x016cc5d4) */
+/* WARNING: Removing unreachable block (ram,0x016cc5dc) */
+/* WARNING: Removing unreachable block (ram,0x016cc5e4) */
+/* WARNING: Removing unreachable block (ram,0x016cc5f0) */
+/* WARNING: Removing unreachable block (ram,0x016cc554) */
+/* WARNING: Removing unreachable block (ram,0x016cc55c) */
+/* WARNING: Removing unreachable block (ram,0x016cc574) */
+/* WARNING: Removing unreachable block (ram,0x016cc57c) */
+/* WARNING: Removing unreachable block (ram,0x016cc624) */
+/* WARNING: Removing unreachable block (ram,0x016cc584) */
+/* WARNING: Removing unreachable block (ram,0x016cc628) */
+/* WARNING: Removing unreachable block (ram,0x016cc590) */
+/* WARNING: Removing unreachable block (ram,0x016cc5b4) */
+/* WARNING: Removing unreachable block (ram,0x016cc610) */
+/* WARNING: Removing unreachable block (ram,0x016cebfc) */
+/* WARNING: Removing unreachable block (ram,0x016cec00) */
+/* WARNING: Removing unreachable block (ram,0x016cec08) */
+/* WARNING: Removing unreachable block (ram,0x016cec20) */
+/* WARNING: Removing unreachable block (ram,0x016ceb78) */
+/* WARNING: Removing unreachable block (ram,0x016cec58) */
+/* WARNING: Removing unreachable block (ram,0x016cecac) */
+/* WARNING: Removing unreachable block (ram,0x016cecb8) */
+/* WARNING: Removing unreachable block (ram,0x016cecd8) */
+/* WARNING: Removing unreachable block (ram,0x016cecf0) */
+/* WARNING: Removing unreachable block (ram,0x016cec60) */
+/* WARNING: Removing unreachable block (ram,0x016ceb84) */
+/* WARNING: Removing unreachable block (ram,0x016ceb88) */
+/* WARNING: Removing unreachable block (ram,0x016ceb90) */
+/* WARNING: Removing unreachable block (ram,0x016ceb98) */
+/* WARNING: Removing unreachable block (ram,0x016ceba0) */
+/* WARNING: Removing unreachable block (ram,0x016cebac) */
+/* WARNING: Removing unreachable block (ram,0x016cebd8) */
+/* WARNING: Removing unreachable block (ram,0x016ceb54) */
+/* WARNING: Removing unreachable block (ram,0x016ceb08) */
+/* WARNING: Removing unreachable block (ram,0x016ceb10) */
+/* WARNING: Removing unreachable block (ram,0x016ceb1c) */
+/* WARNING: Removing unreachable block (ram,0x016ceb2c) */
+/* WARNING: Removing unreachable block (ram,0x016cea8c) */
+/* WARNING: Removing unreachable block (ram,0x016cea9c) */
+/* WARNING: Removing unreachable block (ram,0x016ceaa0) */
+/* WARNING: Removing unreachable block (ram,0x016ceb30) */
+/* WARNING: Removing unreachable block (ram,0x016ceaa8) */
+/* WARNING: Removing unreachable block (ram,0x016ced84) */
+/* WARNING: Removing unreachable block (ram,0x016ceab0) */
+/* WARNING: Removing unreachable block (ram,0x016ceabc) */
+/* WARNING: Removing unreachable block (ram,0x016ceac8) */
+/* WARNING: Removing unreachable block (ram,0x016ceacc) */
+/* WARNING: Removing unreachable block (ram,0x016ced88) */
+/* WARNING: Removing unreachable block (ram,0x016ceadc) */
+/* WARNING: Removing unreachable block (ram,0x016ceae8) */
+/* WARNING: Removing unreachable block (ram,0x016cea78) */
+/* WARNING: Removing unreachable block (ram,0x0167d7d0) */
+/* WARNING: Removing unreachable block (ram,0x0167d7b8) */
+/* WARNING: Removing unreachable block (ram,0x0167d7a0) */
+/* WARNING: Removing unreachable block (ram,0x016ce4dc) */
+/* WARNING: Removing unreachable block (ram,0x016ce334) */
+
+ulong Core_Services_Match__CreateMatch
+                (long param_1,ulong param_2,undefined8 *param_3,int param_4,ulong param_5)
+
+{
+  uint uVar1;
+  uint uVar2;
+  int iVar3;
+  uint uVar4;
+  undefined1 auVar5 [16];
+  undefined1 auVar6 [16];
+  undefined1 auVar7 [16];
+  undefined1 *puVar8;
+  undefined1 *puVar9;
+  undefined1 *puVar10;
+  undefined1 *puVar11;
+  undefined1 *puVar12;
+  undefined1 *puVar13;
+  undefined1 **ppuVar14;
+  undefined1 **ppuVar15;
+  long *plVar16;
+  ulong uVar17;
+  ulong uVar18;
+  undefined8 uVar19;
+  long lVar20;
+  undefined8 uVar21;
+  undefined8 uVar22;
+  undefined4 uVar23;
+  int iVar24;
+  ulong uVar25;
+  undefined8 unaff_x19;
+  undefined8 unaff_x20;
+  undefined8 *puVar26;
+  ulong uVar27;
+  long lVar28;
+  ulong unaff_x21;
+  ulong uVar29;
+  ulong unaff_x22;
+  ulong uVar30;
+  undefined8 ****ppppuVar31;
+  undefined1 *puVar32;
+  undefined8 ***pppuVar33;
+  undefined1 **ppuVar34;
+  undefined *puVar35;
+  undefined8 unaff_d8;
+  undefined8 unaff_d9;
+  undefined1 auVar36 [16];
+  undefined1 auVar37 [16];
+  undefined1 auVar38 [16];
+  undefined1 auVar39 [16];
+  undefined1 auVar40 [16];
+  undefined1 auVar41 [12];
+  long alStack_130 [2];
+  undefined8 ***apppuStack_120 [2];
+  undefined8 ***pppuStack_f0;
+  undefined *puStack_e8;
+  undefined8 *puStack_80;
+  undefined *puStack_78;
+  undefined1 *puStack_70;
+  undefined *puStack_68;
+  undefined1 *puStack_60;
+  undefined *puStack_58;
+  undefined1 *puStack_50;
+  undefined *puStack_48;
+  
+  ppuVar14 = (undefined1 **)&stack0xffffffffffffffc0;
+  puVar13 = &stack0xffffffffffffffc0;
+  puVar10 = &stack0xfffffffffffffff0;
+  if (param_1 == 0) {
+    puVar35 = &Core_Services_Match__AddOtherPlayers;
+    auVar40 = func_0x00f78af4();
+    if (auVar40._0_8_ != 0) {
+      uVar23 = 2;
+      ppuVar34 = (undefined1 **)puVar10;
+FlatBuffers_FlatBufferBuilder__AddOffset:
+      uVar29 = auVar40._0_8_;
+      auVar41._8_4_ = uVar23;
+      auVar41._0_8_ = uVar29;
+      param_4 = 0;
+      *(undefined8 *)((long)ppuVar14 + -0x20) = unaff_x20;
+      *(undefined8 *)((long)ppuVar14 + -0x18) = unaff_x19;
+      *(undefined1 ***)((long)ppuVar14 + -0x10) = ppuVar34;
+      *(undefined **)((long)ppuVar14 + -8) = puVar35;
+      if ((auVar40._8_4_ == 0) && (*(char *)(uVar29 + 0x48) == '\0')) {
+        return uVar29;
+      }
+      /*FlatBuffers.FlatBufferBuilder$$AddOffset*/ func_0x016ce0c8(uVar29,auVar40._8_8_,auVar40._8_8_,0,0);
+      ppuVar34 = *(undefined1 ***)((long)ppuVar14 + -0x10);
+      puVar35 = *(undefined **)((long)ppuVar14 + -8);
+      unaff_x20 = *(undefined8 *)((long)ppuVar14 + -0x20);
+      lVar20 = *(long *)((long)ppuVar14 + -0x18);
+      goto code_r0x016ce380;
+    }
+    ppuVar14 = &puStack_50;
+    ppuVar34 = &puStack_50;
+    puStack_48 = &Core_Services_Match__AddOtherPlayers;
+    puVar35 = &Core_Services_Match__AddId;
+    puStack_50 = puVar10;
+    auVar40 = func_0x00f78af4();
+    if (auVar40._0_8_ != 0) {
+      uVar23 = 0;
+      goto FlatBuffers_FlatBufferBuilder__AddOffset;
+    }
+    ppuVar15 = &puStack_60;
+    ppuVar34 = &puStack_60;
+    puStack_58 = &Core_Services_Match__AddId;
+    puVar35 = &Core_Services_Match__AddHost;
+    puStack_60 = (undefined1 *)&puStack_50;
+    auVar40 = func_0x00f78af4();
+    if (auVar40._0_8_ == 0) {
+      puStack_68 = &Core_Services_Match__AddHost;
+      puStack_70 = (undefined1 *)&puStack_60;
+      auVar40 = func_0x00f78af4();
+      uVar29 = auVar40._8_8_;
+      uVar25 = auVar40._0_8_;
+      if (uVar25 != 0) {
+        puVar10 = &stack0xffffffffffffff60;
+        puStack_78 = &Core_Services_Match__AddMatchType;
+        pppuVar33 = (undefined8 ***)&puStack_80;
+        auVar39._8_8_ = 1;
+        auVar39._0_8_ = uVar25;
+        if ((auVar40._8_4_ == 0) && (*(char *)(uVar25 + 0x48) == '\0')) {
+          return uVar25;
+        }
+        auVar38._8_8_ = 1;
+        auVar38._0_8_ = uVar25;
+        uVar25 = 0;
+        puVar35 = &UNK_016ce4dc;
+        puStack_80 = &puStack_70;
+        goto code_r0x016cdaac;
+      }
+      puStack_78 = &Core_Services_Match__AddMatchType;
+      puStack_80 = &puStack_70;
+      lVar20 = func_0x00f78af4();
+      puVar13 = &stack0xffffffffffffff60;
+      puVar10 = &stack0xffffffffffffff70;
+      puVar26 = (undefined8 *)0x3eb5000;
+      if ((bRam0000000003eb59e1 & 1) == 0) {
+        func_0x00f78a20(0x3d3f1a8);
+        bRam0000000003eb59e1 = 1;
+      }
+      if (lVar20 != 0) {
+        pppuVar33 = (undefined8 ***)&stack0xffffffffffffff70;
+        auVar39._8_8_ = lVar20;
+        auVar39._0_8_ = 0x3eb5000;
+        if ((bRam0000000003eb5cd8 & 1) == 0) {
+          func_0x00f78a20(0x3d1f100,0);
+          bRam0000000003eb5cd8 = 1;
+        }
+        uVar29 = unaff_x21;
+        if (*(int *)(lVar20 + 0x30) < 0) {
+          func_0x00f78a24(0x3d22a38);
+          puVar35 = (undefined *)func_0x00f78aec();
+          uVar19 = func_0x00f78a24(0x3d6cea8);
+          /*System.InvalidOperationException$$.ctor*/ func_0x02ae6938(puVar35,uVar19);
+          uVar19 = func_0x00f78a24(0x3d56a30);
+          auVar41 = func_0x00f78ac0(puVar35,uVar19);
+          pppuStack_f0 = (undefined8 ****)0x3eb5000;
+          pppuVar33 = (undefined8 ***)&stack0xffffffffffffff20;
+          lVar20 = *(long *)(auVar41._0_8_ + 0x18);
+          puStack_e8 = puVar35;
+          if ((lVar20 != 0) && (*(long *)(lVar20 + 0x10) != 0)) {
+            uVar4 = *(int *)(*(long *)(lVar20 + 0x10) + 0x18) - auVar41._8_4_;
+            uVar25 = (ulong)uVar4;
+            auVar37._8_4_ = uVar4;
+            auVar37._0_8_ = lVar20;
+            auVar37._12_4_ = 0;
+            puVar8 = &stack0xfffffffffffffeb0;
+            apppuStack_120[1] = (undefined8 ***)&UNK_016cee20;
+            ppppuVar31 = apppuStack_120;
+            auVar7._8_8_ = 4;
+            auVar7._0_8_ = lVar20;
+            uVar30 = 0x3d201a0;
+            apppuStack_120[0] = pppuVar33;
+            if ((bRam0000000003eb5cd0 & 1) == 0) {
+              func_0x00f78a20(0x3d201a0);
+              bRam0000000003eb5cd0 = 1;
+            }
+            uVar27 = 4;
+            puVar35 = &UNK_016cc68c;
+            goto code_r0x016cc7a4;
+          }
+          func_0x00f78af4();
+          uVar19 = /*System.Int32$$ToString*/ func_0x02ae9b8c(&stack0xfffffffffffffefc,0);
+          uVar21 = func_0x00f78a24(0x3d6ce88);
+          uVar22 = func_0x00f78a24(0x3d66338);
+          lVar20 = /*System.String$$Concat*/ func_0x029be39c(uVar21,uVar19,uVar22,0);
+          func_0x00f78a24(0x3d22a38);
+          uVar19 = func_0x00f78aec();
+          uVar22 = 0;
+          /*System.InvalidOperationException$$.ctor*/ func_0x02ae6938(uVar19,lVar20);
+          uVar21 = func_0x00f78a24(0x3d56a50);
+          puVar35 = &FlatBuffers_FlatBufferBuilder__Finish;
+          auVar40 = func_0x00f78ac0(uVar19,uVar21);
+          puVar10 = &stack0xfffffffffffffef0;
+          while( true ) {
+            uVar21 = auVar40._8_8_;
+            lVar28 = auVar40._0_8_;
+            auVar39._8_8_ = lVar28;
+            auVar39._0_8_ = uVar21;
+            auVar6._8_8_ = lVar28;
+            auVar6._0_8_ = uVar21;
+            *(undefined8 *)(puVar10 + -0x20) = uVar19;
+            *(long *)(puVar10 + -0x18) = lVar20;
+            *(undefined8 ****)(puVar10 + -0x10) = pppuVar33;
+            *(undefined **)(puVar10 + -8) = puVar35;
+            pppuVar33 = (undefined8 ***)(puVar10 + -0x10);
+            uVar23 = *(undefined4 *)(lVar28 + 0x20);
+            auVar38._8_4_ = uVar23;
+            auVar38._0_8_ = lVar28;
+            auVar38._12_4_ = 0;
+            lVar20 = lVar28;
+            if ((int)uVar22 == 0) {
+              lVar20 = 0;
+              uVar23 = 0;
+            }
+            auVar5._8_4_ = uVar23;
+            auVar5._0_8_ = lVar20;
+            auVar5._12_4_ = 0;
+            if ((int)uVar22 == 0) {
+              uVar25 = 4;
+              puVar35 = &UNK_016cef64;
+              puVar10 = puVar10 + -0x20;
+              goto code_r0x016cdaac;
+            }
+            if (lVar20 != 0) break;
+            puVar35 = &FlatBuffers_FlatBufferBuilder__Finish;
+            auVar40 = func_0x00f78af4();
+            uVar22 = 0;
+            puVar10 = puVar10 + -0x20;
+            lVar20 = lVar28;
+            uVar19 = uVar21;
+          }
+          uVar25 = 8;
+          puVar35 = &UNK_016cef10;
+          puVar10 = puVar10 + -0x20;
+          auVar38 = auVar5;
+          auVar39 = auVar6;
+        }
+        else {
+          auVar38._8_8_ = 4;
+          auVar38._0_8_ = lVar20;
+          uVar25 = 0;
+          puVar35 = &UNK_016cea78;
+          puVar10 = &stack0xffffffffffffff30;
+        }
+        goto code_r0x016cdaac;
+      }
+      puVar35 = &Core_Services_Match__StartMatch;
+      param_1 = func_0x00f78af4();
+      if (param_1 == 0) {
+        auVar36 = func_0x00f78af4();
+        lVar20 = auVar36._0_8_;
+        if ((auVar36._8_8_ == 0) || (lVar20 == 0)) {
+          auVar36 = func_0x00f78af4();
+          lVar28 = auVar36._8_8_;
+          lVar20 = auVar36._0_8_;
+          puVar10 = &stack0xfffffffffffffef0;
+          puStack_e8 = &Core_Services_Match__CreateOtherPlayersVectorBlock;
+          ppppuVar31 = &pppuStack_f0;
+          unaff_x21 = 0x3eb5000;
+          pppuStack_f0 = (undefined8 ***)&stack0xffffffffffffff40;
+          if ((bRam0000000003eb59e0 & 1) == 0) {
+            func_0x00f78a20(0x3d569d8);
+            bRam0000000003eb59e0 = 1;
+          }
+          if ((lVar28 == 0) || (lVar20 == 0)) {
+            puVar35 = &Core_Services_Match__StartOtherPlayersVector;
+            auVar41 = func_0x00f78af4();
+            iVar24 = auVar41._8_4_;
+            auVar36._8_8_ = lVar28;
+            auVar36._0_8_ = auVar41._0_8_;
+            if (auVar41._0_8_ == 0) {
+              apppuStack_120[1] = (undefined8 ***)&Core_Services_Match__StartOtherPlayersVector;
+              apppuStack_120[0] = ppppuVar31;
+              auVar40 = func_0x00f78af4();
+              uVar29 = auVar40._0_8_;
+              *(undefined8 *)(uVar29 + 0x10) = *param_3;
+              *(long *)(uVar29 + 0x20) = auVar40._8_8_;
+              *(undefined8 **)(uVar29 + 0x28) = param_3;
+              return uVar29;
+            }
+          }
+          else {
+            unaff_x21 = 0x3d56000;
+            iVar24 = *(int *)(lVar28 + 0x18);
+            puVar35 = &UNK_0167d9e0;
+            puVar10 = &stack0xfffffffffffffef0;
+          }
+        }
+        else {
+          iVar24 = *(int *)(auVar36._8_8_ + 0x18);
+          puVar35 = &UNK_0167d91c;
+          puVar10 = &stack0xffffffffffffff20;
+          ppppuVar31 = (undefined8 ****)&stack0xffffffffffffff40;
+        }
+        uVar30 = auVar36._0_8_;
+        *(ulong *)(puVar10 + -0x30) = unaff_x22;
+        *(ulong *)(puVar10 + -0x28) = unaff_x21;
+        *(long *)(puVar10 + -0x20) = auVar36._8_8_;
+        *(long *)(puVar10 + -0x18) = lVar20;
+        *(undefined8 *****)(puVar10 + -0x10) = ppppuVar31;
+        *(undefined **)(puVar10 + -8) = puVar35;
+        pppuVar33 = (undefined8 ***)(puVar10 + -0x10);
+        uVar29 = 4;
+        /*FlatBuffers.FlatBufferBuilder$$NotNested*/ func_0x016ce1a4();
+        *(int *)(uVar30 + 0x44) = iVar24;
+        uVar25 = CONCAT44(0,iVar24 * 4);
+        auVar39._8_8_ = 4;
+        auVar39._0_8_ = uVar25;
+        auVar38._8_8_ = 4;
+        auVar38._0_8_ = uVar30;
+        puVar35 = &UNK_016ce188;
+        puVar10 = puVar10 + -0x30;
+        unaff_x22 = uVar30;
+        goto code_r0x016cdaac;
+      }
+      lVar20 = 0;
+      goto code_r0x016ce2a4;
+    }
+    uVar19 = 3;
+    param_4 = 0;
+  }
+  else {
+    puVar35 = (undefined *)0x167d7a0;
+    lVar20 = param_1;
+    puVar26 = param_3;
+    unaff_x21 = param_5;
+    unaff_x22 = param_2;
+code_r0x016ce2a4:
+    puVar9 = puVar13 + -0x30;
+    ppuVar14 = (undefined1 **)(puVar13 + -0x30);
+    *(ulong *)(puVar13 + -0x30) = unaff_x22;
+    *(ulong *)(puVar13 + -0x28) = unaff_x21;
+    *(undefined8 **)(puVar13 + -0x20) = puVar26;
+    *(long *)(puVar13 + -0x18) = lVar20;
+    *(undefined1 **)(puVar13 + -0x10) = puVar10;
+    *(undefined **)(puVar13 + -8) = puVar35;
+    ppuVar34 = (undefined1 **)(puVar13 + -0x10);
+    unaff_x20 = 4;
+    unaff_x21 = 0x3eb5000;
+    if ((bRam0000000003eb5cd7 & 1) == 0) {
+      func_0x00f78a20(0x3d1f100,4,0);
+      bRam0000000003eb5cd7 = 1;
+    }
+    /*FlatBuffers.FlatBufferBuilder$$NotNested*/ func_0x016ce1a4(param_1);
+    if (*(long *)(param_1 + 0x28) != 0) {
+      if (*(int *)(*(long *)(param_1 + 0x28) + 0x18) < 4) {
+        uVar19 = func_0x00f78a34(/*int[]_TypeInfo*/ uRam0000000003d1f100,4);
+        *(undefined8 *)(param_1 + 0x28) = uVar19;
+      }
+      *(undefined4 *)(param_1 + 0x30) = 4;
+      puVar35 = &UNK_016ce320;
+      goto code_r0x016cda04;
+    }
+    puVar35 = &FlatBuffers_FlatBufferBuilder__Slot;
+    auVar41 = func_0x00f78af4();
+    lVar20 = param_1;
+code_r0x016ce380:
+    param_1 = auVar41._0_8_;
+    ppuVar15 = (undefined1 **)((long)ppuVar14 + -0x20);
+    puVar9 = (undefined1 *)((long)ppuVar14 + -0x20);
+    *(undefined8 *)((long)ppuVar14 + -0x20) = unaff_x20;
+    *(long *)((long)ppuVar14 + -0x18) = lVar20;
+    *(undefined1 ***)((long)ppuVar14 + -0x10) = ppuVar34;
+    *(undefined **)((long)ppuVar14 + -8) = puVar35;
+    ppuVar34 = (undefined1 **)((long)ppuVar14 + -0x10);
+    if (auVar41._8_4_ < *(int *)(param_1 + 0x30)) {
+      puVar35 = &UNK_016ce3a4;
+code_r0x016cda04:
+      *(undefined1 ***)(puVar9 + -0x10) = ppuVar34;
+      *(undefined **)(puVar9 + -8) = puVar35;
+      if ((*(long *)(param_1 + 0x18) != 0) &&
+         (lVar20 = *(long *)(*(long *)(param_1 + 0x18) + 0x10), lVar20 != 0)) {
+        return (ulong)(uint)(*(int *)(lVar20 + 0x18) - *(int *)(param_1 + 0x10));
+      }
+      lVar20 = func_0x00f78af4();
+      return (ulong)*(byte *)(lVar20 + 0x48);
+    }
+    func_0x00f78a24(0x3d22738);
+    unaff_x19 = func_0x00f78aec();
+    uVar19 = func_0x00f78a24(0x3d6ceb8);
+    uVar21 = 0;
+    /*System.IndexOutOfRangeException$$.ctor*/ func_0x02ae8c34(unaff_x19,uVar19);
+    uVar19 = func_0x00f78a24(0x3d56a58);
+    func_0x00f78ac0(unaff_x19,uVar19);
+    func_0x00f78af4();
+    uVar19 = func_0x00f78b24();
+    puVar35 = &FlatBuffers_FlatBufferBuilder__AddBool;
+    auVar39 = func_0x00f78ac0(uVar19,0);
+    uVar19 = auVar39._8_8_;
+    auVar40._8_8_ = uVar21;
+    auVar40._0_8_ = auVar39._0_8_;
+  }
+  uVar29 = auVar40._8_8_;
+  uVar25 = auVar40._0_8_;
+  auVar39._8_8_ = uVar19;
+  auVar39._0_8_ = uVar25;
+  *(ulong *)((long)ppuVar15 + -0x30) = unaff_x22;
+  *(ulong *)((long)ppuVar15 + -0x28) = unaff_x21;
+  *(undefined8 *)((long)ppuVar15 + -0x20) = unaff_x20;
+  *(undefined8 *)((long)ppuVar15 + -0x18) = unaff_x19;
+  *(undefined1 ***)((long)ppuVar15 + -0x10) = ppuVar34;
+  *(undefined **)((long)ppuVar15 + -8) = puVar35;
+  pppuVar33 = (undefined8 ***)((long)ppuVar15 + -0x10);
+  if ((auVar40._8_4_ == param_4) && (*(char *)(uVar25 + 0x48) == '\0')) {
+    return uVar25;
+  }
+  auVar38._8_8_ = 1;
+  auVar38._0_8_ = uVar25;
+  uVar25 = 0;
+  puVar35 = &UNK_016ce46c;
+  puVar10 = (undefined1 *)((long)ppuVar15 + -0x30);
+code_r0x016cdaac:
+  do {
+    uVar27 = auVar39._0_8_;
+    uVar17 = auVar38._0_8_;
+    puVar8 = puVar10 + -0x30;
+    *(ulong *)(puVar10 + -0x30) = unaff_x22;
+    *(ulong *)(puVar10 + -0x28) = uVar29;
+    *(undefined1 (*) [16])(puVar10 + -0x20) = auVar39;
+    *(undefined8 ****)(puVar10 + -0x10) = pppuVar33;
+    *(undefined **)(puVar10 + -8) = puVar35;
+    iVar24 = auVar38._8_4_;
+    if (*(int *)(uVar17 + 0x20) < iVar24) {
+      *(int *)(uVar17 + 0x20) = iVar24;
+    }
+    uVar30 = unaff_x22;
+    if ((*(long *)(uVar17 + 0x18) != 0) &&
+       (lVar20 = *(long *)(*(long *)(uVar17 + 0x18) + 0x10), lVar20 != 0)) {
+      uVar2 = *(uint *)(lVar20 + 0x18);
+      iVar3 = *(int *)(uVar17 + 0x10);
+      uVar1 = iVar3 - (uVar2 + (int)uVar25) & iVar24 - 1U;
+      uVar27 = CONCAT44(0,uVar1);
+      uVar4 = (int)uVar25 + iVar24 + uVar1;
+      uVar30 = (ulong)uVar4;
+      uVar18 = uVar17;
+      while (uVar29 = (ulong)uVar2, iVar3 < (int)uVar4) {
+        uVar18 = /*FlatBuffers.FlatBufferBuilder$$GrowBuffer*/ func_0x016cda78(uVar17);
+        if ((*(long *)(uVar17 + 0x18) == 0) ||
+           (lVar20 = *(long *)(*(long *)(uVar17 + 0x18) + 0x10), lVar20 == 0))
+        goto code_r0x016cdb68;
+        iVar3 = *(int *)(uVar17 + 0x10) - uVar2;
+        uVar2 = *(uint *)(lVar20 + 0x18);
+        iVar3 = iVar3 + uVar2;
+        *(int *)(uVar17 + 0x10) = iVar3;
+      }
+      if ((int)uVar1 < 1) {
+        return uVar18;
+      }
+      uVar19 = *(undefined8 *)*(undefined1 (*) [16])(puVar10 + -0x20);
+      uVar21 = *(undefined8 *)(puVar10 + -0x18);
+      auVar39 = *(undefined1 (*) [16])(puVar10 + -0x20);
+      unaff_x22 = *(ulong *)(puVar10 + -0x30);
+      uVar29 = *(ulong *)(puVar10 + -0x28);
+      *(undefined8 *)(puVar10 + -0x10) = *(undefined8 *)(puVar10 + -0x10);
+      *(undefined8 *)(puVar10 + -8) = *(undefined8 *)(puVar10 + -8);
+      lVar20 = *(long *)(uVar17 + 0x18);
+      auVar7._8_8_ = lVar20;
+      auVar7._0_8_ = uVar27;
+      uVar1 = *(int *)(uVar17 + 0x10) - uVar1;
+      uVar30 = (ulong)uVar1;
+      auVar37._8_4_ = uVar1;
+      auVar37._0_8_ = lVar20;
+      auVar37._12_4_ = 0;
+      *(uint *)(uVar17 + 0x10) = uVar1;
+      if (lVar20 != 0) {
+        *(ulong *)(puVar10 + -0x30) = unaff_x22;
+        *(ulong *)(puVar10 + -0x28) = uVar29;
+        *(undefined8 *)(puVar10 + -0x20) = uVar19;
+        *(undefined8 *)(puVar10 + -0x18) = uVar21;
+        *(undefined8 *)(puVar10 + -0x10) = *(undefined8 *)(puVar10 + -0x10);
+        *(undefined8 *)(puVar10 + -8) = *(undefined8 *)(puVar10 + -8);
+        ppppuVar31 = (undefined8 ****)(puVar10 + -0x10);
+        puVar35 = &UNK_016cc908;
+        uVar25 = 0;
+        goto code_r0x016cc7a4;
+      }
+      lVar20 = func_0x00f78af4();
+      pppuVar33 = (undefined8 ***)(puVar10 + -0x20);
+      *(undefined1 **)(puVar10 + -0x20) = puVar10 + -0x10;
+      *(undefined **)(puVar10 + -0x18) = &FlatBuffers_FlatBufferBuilder__GrowBuffer;
+      if ((*(long *)(lVar20 + 0x18) != 0) &&
+         (plVar16 = *(long **)(*(long *)(lVar20 + 0x18) + 0x10), plVar16 != (long *)0x0)) {
+                    /* WARNING: Could not recover jumptable at 0x016cdaa4. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+        uVar29 = (**(code **)(*plVar16 + 0x178))
+                           (plVar16,(int)plVar16[3] << 1,*(undefined8 *)(*plVar16 + 0x180));
+        return uVar29;
+      }
+      puVar35 = &FlatBuffers_FlatBufferBuilder__Prep;
+      auVar38 = func_0x00f78af4();
+      puVar10 = puVar10 + -0x20;
+      goto code_r0x016cdaac;
+    }
+code_r0x016cdb68:
+    auVar7._8_8_ = uVar27;
+    auVar7._0_8_ = uVar29;
+    auVar40 = func_0x00f78af4();
+    uVar25 = auVar40._8_8_;
+    lVar28 = auVar40._0_8_;
+    *(undefined1 **)(puVar10 + -0x40) = puVar10 + -0x10;
+    *(undefined **)(puVar10 + -0x38) = &FlatBuffers_FlatBufferBuilder__PutBool;
+    lVar20 = *(long *)(lVar28 + 0x18);
+    iVar24 = *(int *)(lVar28 + 0x10) + -1;
+    *(int *)(lVar28 + 0x10) = iVar24;
+    if (lVar20 != 0) {
+      puVar11 = puVar10 + -0x30;
+      uVar19 = *(undefined8 *)(puVar10 + -0x40);
+      uVar21 = *(undefined8 *)(puVar10 + -0x38);
+FlatBuffers_ByteBuffer__PutByte:
+      auVar7._8_4_ = iVar24;
+      auVar7._0_8_ = lVar20;
+      auVar7._12_4_ = 0;
+      auVar37._8_4_ = iVar24;
+      auVar37._0_8_ = lVar20;
+      auVar37._12_4_ = 0;
+      puVar8 = puVar11 + -0x30;
+      *(ulong *)(puVar11 + -0x30) = uVar30;
+      *(ulong *)(puVar11 + -0x28) = uVar29;
+      *(ulong *)(puVar11 + -0x20) = uVar27;
+      *(ulong *)(puVar11 + -0x18) = uVar17;
+      *(undefined8 *)(puVar11 + -0x10) = uVar19;
+      *(undefined8 *)(puVar11 + -8) = uVar21;
+      ppppuVar31 = (undefined8 ****)(puVar11 + -0x10);
+      uVar27 = 1;
+      puVar35 = &UNK_016cc89c;
+      goto code_r0x016cc7a4;
+    }
+    auVar40 = func_0x00f78af4();
+    uVar18 = auVar40._8_8_;
+    lVar20 = auVar40._0_8_;
+    *(undefined1 **)(puVar10 + -0x50) = puVar10 + -0x40;
+    *(undefined **)(puVar10 + -0x48) = &FlatBuffers_FlatBufferBuilder__PutSbyte;
+    iVar24 = *(int *)(lVar20 + 0x10) + -1;
+    auVar37._8_4_ = iVar24;
+    auVar37._0_8_ = *(long *)(lVar20 + 0x18);
+    auVar37._12_4_ = 0;
+    *(int *)(lVar20 + 0x10) = iVar24;
+    if (*(long *)(lVar20 + 0x18) != 0) {
+      puVar12 = puVar10 + -0x40;
+      puVar32 = *(undefined1 **)(puVar10 + -0x50);
+      puVar35 = *(undefined **)(puVar10 + -0x48);
+      uVar25 = uVar17;
+      goto code_r0x016cc810;
+    }
+    auVar40 = func_0x00f78af4();
+    uVar25 = auVar40._8_8_;
+    lVar28 = auVar40._0_8_;
+    *(undefined1 **)(puVar10 + -0x60) = puVar10 + -0x50;
+    *(undefined **)(puVar10 + -0x58) = &FlatBuffers_FlatBufferBuilder__PutByte;
+    lVar20 = *(long *)(lVar28 + 0x18);
+    iVar24 = *(int *)(lVar28 + 0x10) + -1;
+    *(int *)(lVar28 + 0x10) = iVar24;
+    if (lVar20 != 0) {
+      puVar11 = puVar10 + -0x50;
+      uVar19 = *(undefined8 *)(puVar10 + -0x60);
+      uVar21 = *(undefined8 *)(puVar10 + -0x58);
+      goto FlatBuffers_ByteBuffer__PutByte;
+    }
+    auVar40 = func_0x00f78af4();
+    uVar25 = auVar40._8_8_;
+    lVar20 = auVar40._0_8_;
+    puVar8 = puVar10 + -0x90;
+    *(ulong *)(puVar10 + -0x90) = uVar30;
+    *(ulong *)(puVar10 + -0x88) = uVar29;
+    *(ulong *)(puVar10 + -0x80) = uVar27;
+    *(ulong *)(puVar10 + -0x78) = uVar17;
+    *(undefined1 **)(puVar10 + -0x70) = puVar10 + -0x60;
+    *(undefined **)(puVar10 + -0x68) = &FlatBuffers_FlatBufferBuilder__PutShort;
+    ppppuVar31 = (undefined8 ****)(puVar10 + -0x70);
+    lVar28 = *(long *)(lVar20 + 0x18);
+    uVar4 = *(int *)(lVar20 + 0x10) - 2;
+    auVar7._8_8_ = lVar28;
+    auVar7._0_8_ = CONCAT44(0,uVar4);
+    auVar37._8_4_ = uVar4;
+    auVar37._0_8_ = lVar28;
+    auVar37._12_4_ = 0;
+    *(uint *)(lVar20 + 0x10) = uVar4;
+    if (lVar28 != 0) {
+      uVar27 = 2;
+      puVar35 = &UNK_016cdc34;
+      goto code_r0x016cc7a4;
+    }
+    auVar40 = func_0x00f78af4();
+    uVar25 = auVar40._8_8_;
+    lVar20 = auVar40._0_8_;
+    puVar8 = puVar10 + -0xc0;
+    *(ulong *)(puVar10 + -0xc0) = uVar30;
+    *(ulong *)(puVar10 + -0xb8) = CONCAT44(0,uVar4);
+    *(undefined8 *)(puVar10 + -0xb0) = 0;
+    *(ulong *)(puVar10 + -0xa8) = uVar17;
+    *(undefined8 *****)(puVar10 + -0xa0) = ppppuVar31;
+    *(undefined **)(puVar10 + -0x98) = &FlatBuffers_FlatBufferBuilder__PutUshort;
+    ppppuVar31 = (undefined8 ****)(puVar10 + -0xa0);
+    lVar28 = *(long *)(lVar20 + 0x18);
+    uVar4 = *(int *)(lVar20 + 0x10) - 2;
+    auVar7._8_8_ = lVar28;
+    auVar7._0_8_ = CONCAT44(0,uVar4);
+    auVar37._8_4_ = uVar4;
+    auVar37._0_8_ = lVar28;
+    auVar37._12_4_ = 0;
+    *(uint *)(lVar20 + 0x10) = uVar4;
+    if (lVar28 != 0) {
+      uVar27 = 2;
+      puVar35 = &UNK_016cdc90;
+      goto code_r0x016cc7a4;
+    }
+    auVar40 = func_0x00f78af4();
+    uVar25 = auVar40._8_8_;
+    lVar20 = auVar40._0_8_;
+    puVar8 = puVar10 + -0xf0;
+    *(ulong *)(puVar10 + -0xf0) = uVar30;
+    *(ulong *)(puVar10 + -0xe8) = CONCAT44(0,uVar4);
+    *(undefined8 *)(puVar10 + -0xe0) = 0;
+    *(ulong *)(puVar10 + -0xd8) = uVar17;
+    *(undefined8 *****)(puVar10 + -0xd0) = ppppuVar31;
+    *(undefined **)(puVar10 + -200) = &FlatBuffers_FlatBufferBuilder__PutInt;
+    ppppuVar31 = (undefined8 ****)(puVar10 + -0xd0);
+    lVar28 = *(long *)(lVar20 + 0x18);
+    uVar4 = *(int *)(lVar20 + 0x10) - 4;
+    auVar7._8_8_ = lVar28;
+    auVar7._0_8_ = CONCAT44(0,uVar4);
+    auVar37._8_4_ = uVar4;
+    auVar37._0_8_ = lVar28;
+    auVar37._12_4_ = 0;
+    *(uint *)(lVar20 + 0x10) = uVar4;
+    if (lVar28 != 0) {
+      uVar27 = 4;
+      puVar35 = &UNK_016cdcec;
+      goto code_r0x016cc7a4;
+    }
+    auVar40 = func_0x00f78af4();
+    uVar25 = auVar40._8_8_;
+    lVar20 = auVar40._0_8_;
+    puVar8 = puVar10 + -0x120;
+    *(ulong *)(puVar10 + -0x120) = uVar30;
+    *(ulong *)(puVar10 + -0x118) = CONCAT44(0,uVar4);
+    *(undefined8 *)(puVar10 + -0x110) = 0;
+    *(ulong *)(puVar10 + -0x108) = uVar17;
+    *(undefined8 *****)(puVar10 + -0x100) = ppppuVar31;
+    *(undefined **)(puVar10 + -0xf8) = &FlatBuffers_FlatBufferBuilder__PutUint;
+    ppppuVar31 = (undefined8 ****)(puVar10 + -0x100);
+    lVar28 = *(long *)(lVar20 + 0x18);
+    uVar4 = *(int *)(lVar20 + 0x10) - 4;
+    auVar7._8_8_ = lVar28;
+    auVar7._0_8_ = CONCAT44(0,uVar4);
+    auVar37._8_4_ = uVar4;
+    auVar37._0_8_ = lVar28;
+    auVar37._12_4_ = 0;
+    *(uint *)(lVar20 + 0x10) = uVar4;
+    if (lVar28 != 0) {
+      uVar27 = 4;
+      puVar35 = &UNK_016cdd48;
+      goto code_r0x016cc7a4;
+    }
+    auVar40 = func_0x00f78af4();
+    uVar25 = auVar40._8_8_;
+    lVar20 = auVar40._0_8_;
+    puVar8 = puVar10 + -0x150;
+    *(ulong *)(puVar10 + -0x150) = uVar30;
+    *(ulong *)(puVar10 + -0x148) = CONCAT44(0,uVar4);
+    *(undefined8 *)(puVar10 + -0x140) = 0;
+    *(ulong *)(puVar10 + -0x138) = uVar17;
+    *(undefined8 *****)(puVar10 + -0x130) = ppppuVar31;
+    *(undefined **)(puVar10 + -0x128) = &FlatBuffers_FlatBufferBuilder__PutLong;
+    ppppuVar31 = (undefined8 ****)(puVar10 + -0x130);
+    lVar28 = *(long *)(lVar20 + 0x18);
+    uVar4 = *(int *)(lVar20 + 0x10) - 8;
+    auVar7._8_8_ = lVar28;
+    auVar7._0_8_ = CONCAT44(0,uVar4);
+    auVar37._8_4_ = uVar4;
+    auVar37._0_8_ = lVar28;
+    auVar37._12_4_ = 0;
+    *(uint *)(lVar20 + 0x10) = uVar4;
+    if (lVar28 != 0) {
+      uVar27 = 8;
+      puVar35 = &UNK_016cdda4;
+      goto code_r0x016cc7a4;
+    }
+    auVar40 = func_0x00f78af4();
+    uVar25 = auVar40._8_8_;
+    lVar20 = auVar40._0_8_;
+    puVar8 = puVar10 + -0x180;
+    *(ulong *)(puVar10 + -0x180) = uVar30;
+    *(ulong *)(puVar10 + -0x178) = CONCAT44(0,uVar4);
+    *(undefined8 *)(puVar10 + -0x170) = 0;
+    *(ulong *)(puVar10 + -0x168) = uVar17;
+    *(undefined8 *****)(puVar10 + -0x160) = ppppuVar31;
+    *(undefined **)(puVar10 + -0x158) = &FlatBuffers_FlatBufferBuilder__PutUlong;
+    ppppuVar31 = (undefined8 ****)(puVar10 + -0x160);
+    lVar28 = *(long *)(lVar20 + 0x18);
+    uVar4 = *(int *)(lVar20 + 0x10) - 8;
+    uVar29 = CONCAT44(0,uVar4);
+    auVar7._8_8_ = lVar28;
+    auVar7._0_8_ = uVar29;
+    auVar37._8_4_ = uVar4;
+    auVar37._0_8_ = lVar28;
+    auVar37._12_4_ = 0;
+    *(uint *)(lVar20 + 0x10) = uVar4;
+    if (lVar28 != 0) {
+      uVar27 = 8;
+      puVar35 = &UNK_016cde00;
+      goto code_r0x016cc7a4;
+    }
+    lVar20 = func_0x00f78af4();
+    *(undefined8 *****)(puVar10 + -400) = ppppuVar31;
+    *(undefined **)(puVar10 + -0x188) = &FlatBuffers_FlatBufferBuilder__PutFloat;
+    lVar28 = *(long *)(lVar20 + 0x18);
+    auVar7._8_8_ = lVar28;
+    uVar4 = *(int *)(lVar20 + 0x10) - 4;
+    uVar25 = (ulong)uVar4;
+    auVar37._8_4_ = uVar4;
+    auVar37._0_8_ = lVar28;
+    auVar37._12_4_ = 0;
+    *(uint *)(lVar20 + 0x10) = uVar4;
+    if (lVar28 != 0) {
+      puVar8 = puVar10 + -0x1b0;
+      *(undefined8 *)(puVar10 + -0x1b0) = unaff_d9;
+      *(undefined8 *)(puVar10 + -0x1a8) = unaff_d8;
+      *(undefined8 *)(puVar10 + -0x1a0) = 0;
+      *(ulong *)(puVar10 + -0x198) = uVar17;
+      *(undefined8 *)(puVar10 + -400) = *(undefined8 *)(puVar10 + -400);
+      *(undefined8 *)(puVar10 + -0x188) = *(undefined8 *)(puVar10 + -0x188);
+      ppppuVar31 = (undefined8 ****)(puVar10 + -400);
+      uVar27 = 4;
+      puVar35 = &UNK_016ccba4;
+      goto code_r0x016cc7a4;
+    }
+    lVar20 = func_0x00f78af4();
+    *(undefined1 **)(puVar10 + -0x1a0) = puVar10 + -400;
+    *(undefined **)(puVar10 + -0x198) = &FlatBuffers_FlatBufferBuilder__PutDouble;
+    lVar28 = *(long *)(lVar20 + 0x18);
+    auVar7._8_8_ = lVar28;
+    uVar4 = *(int *)(lVar20 + 0x10) - 8;
+    uVar25 = (ulong)uVar4;
+    auVar37._8_4_ = uVar4;
+    auVar37._0_8_ = lVar28;
+    auVar37._12_4_ = 0;
+    *(uint *)(lVar20 + 0x10) = uVar4;
+    if (lVar28 != 0) break;
+    auVar39 = func_0x00f78af4();
+    *(undefined8 *)(puVar10 + -0x1c0) = 0;
+    *(ulong *)(puVar10 + -0x1b8) = uVar17;
+    *(undefined1 **)(puVar10 + -0x1b0) = puVar10 + -0x1a0;
+    *(undefined **)(puVar10 + -0x1a8) = &FlatBuffers_FlatBufferBuilder__AddBool;
+    pppuVar33 = (undefined8 ***)(puVar10 + -0x1b0);
+    auVar38._8_8_ = 1;
+    auVar38._0_8_ = auVar39._0_8_;
+    uVar25 = 0;
+    puVar35 = &UNK_016cde9c;
+    puVar10 = puVar10 + -0x1c0;
+    unaff_x22 = uVar30;
+  } while( true );
+  puVar8 = puVar10 + -0x1c0;
+  *(undefined8 *)(puVar10 + -0x1c0) = unaff_d9;
+  *(undefined8 *)(puVar10 + -0x1b8) = unaff_d8;
+  *(undefined8 *)(puVar10 + -0x1b0) = 0;
+  *(ulong *)(puVar10 + -0x1a8) = uVar17;
+  *(undefined8 *)(puVar10 + -0x1a0) = *(undefined8 *)(puVar10 + -0x1a0);
+  *(undefined8 *)(puVar10 + -0x198) = *(undefined8 *)(puVar10 + -0x198);
+  ppppuVar31 = (undefined8 ****)(puVar10 + -0x1a0);
+  uVar27 = 8;
+  puVar35 = &UNK_016ccc34;
+code_r0x016cc7a4:
+  do {
+    puVar12 = puVar8 + -0x20;
+    *(long *)(puVar8 + -0x20) = auVar7._8_8_;
+    *(ulong *)(puVar8 + -0x18) = uVar25;
+    *(undefined8 *****)(puVar8 + -0x10) = ppppuVar31;
+    *(undefined **)(puVar8 + -8) = puVar35;
+    puVar32 = puVar8 + -0x10;
+    if (auVar37._8_4_ < 0) {
+code_r0x016cc7d8:
+      func_0x00f78a24(0x3d1fcf8);
+      uVar25 = func_0x00f78aec();
+      /*System.ArgumentOutOfRangeException$$.ctor*/ func_0x0292a4d0(uVar25,0);
+      uVar19 = func_0x00f78a24(0x3d52ce8);
+      func_0x00f78ac0(uVar25,uVar19);
+      uVar18 = uVar27;
+    }
+    else {
+      lVar20 = *(long *)(auVar37._0_8_ + 0x10);
+      uVar18 = uVar27;
+      if (lVar20 != 0) {
+        if (auVar37._8_4_ <= *(int *)(lVar20 + 0x18) - (int)uVar27) {
+          return auVar37._0_8_;
+        }
+        goto code_r0x016cc7d8;
+      }
+    }
+    puVar35 = &FlatBuffers_ByteBuffer__PutSbyte;
+    auVar37 = func_0x00f78af4();
+code_r0x016cc810:
+    puVar8 = puVar12 + -0x30;
+    *(ulong *)(puVar12 + -0x30) = uVar30;
+    *(undefined1 (*) [16])(puVar12 + -0x28) = auVar7;
+    *(ulong *)(puVar12 + -0x18) = uVar25;
+    *(undefined1 **)(puVar12 + -0x10) = puVar32;
+    *(undefined **)(puVar12 + -8) = puVar35;
+    ppppuVar31 = (undefined8 ****)(puVar12 + -0x10);
+    uVar27 = 1;
+    puVar35 = &UNK_016cc834;
+    uVar25 = uVar18;
+    auVar7 = auVar37;
+  } while( true );
+}
+
+
+
+// ============================================================
+// RVA: 0x167d7ec | Core.Services.Match.AddOtherPlayers
+// ============================================================
+
+/* WARNING: Possible PIC construction at 0x016ce3a0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce468: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce4d8: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cea74: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cea88: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ceb04: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ceb50: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ceb74: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cebe4: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cec2c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ced5c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cee1c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cef0c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cef44: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cef60: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cecfc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce31c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x0167d918: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce220: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x0167d9dc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce184: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc898: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc904: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc830: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdc30: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc688: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdc8c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdce8: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdd44: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdda0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cddfc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccba0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccc30: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cccb8: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccd14: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccdc0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cde98: Changing call to branch */
+/* WARNING: Removing unreachable block (ram,0x016ccdc4) */
+/* WARNING: Removing unreachable block (ram,0x016ccd18) */
+/* WARNING: Removing unreachable block (ram,0x016ccd20) */
+/* WARNING: Removing unreachable block (ram,0x016ccd48) */
+/* WARNING: Removing unreachable block (ram,0x016ccd28) */
+/* WARNING: Removing unreachable block (ram,0x016ccd4c) */
+/* WARNING: Removing unreachable block (ram,0x016ccd84) */
+/* WARNING: Removing unreachable block (ram,0x016ccdb0) */
+/* WARNING: Removing unreachable block (ram,0x016ccd88) */
+/* WARNING: Removing unreachable block (ram,0x016ccd34) */
+/* WARNING: Removing unreachable block (ram,0x016cccbc) */
+/* WARNING: Removing unreachable block (ram,0x016cccc4) */
+/* WARNING: Removing unreachable block (ram,0x016cccec) */
+/* WARNING: Removing unreachable block (ram,0x016ccccc) */
+/* WARNING: Removing unreachable block (ram,0x016cccf0) */
+/* WARNING: Removing unreachable block (ram,0x016cccd8) */
+/* WARNING: Removing unreachable block (ram,0x016ccc34) */
+/* WARNING: Removing unreachable block (ram,0x016ccc3c) */
+/* WARNING: Removing unreachable block (ram,0x016ccc44) */
+/* WARNING: Removing unreachable block (ram,0x016ccc90) */
+/* WARNING: Removing unreachable block (ram,0x016ccc68) */
+/* WARNING: Removing unreachable block (ram,0x016ccc94) */
+/* WARNING: Removing unreachable block (ram,0x016ccc70) */
+/* WARNING: Removing unreachable block (ram,0x016ccba4) */
+/* WARNING: Removing unreachable block (ram,0x016ccbac) */
+/* WARNING: Removing unreachable block (ram,0x016ccbb4) */
+/* WARNING: Removing unreachable block (ram,0x016ccc00) */
+/* WARNING: Removing unreachable block (ram,0x016ccbd8) */
+/* WARNING: Removing unreachable block (ram,0x016ccc04) */
+/* WARNING: Removing unreachable block (ram,0x016ccbe0) */
+/* WARNING: Removing unreachable block (ram,0x016cde00) */
+/* WARNING: Removing unreachable block (ram,0x016cdda4) */
+/* WARNING: Removing unreachable block (ram,0x016cdd48) */
+/* WARNING: Removing unreachable block (ram,0x016cdcec) */
+/* WARNING: Removing unreachable block (ram,0x016cdc90) */
+/* WARNING: Removing unreachable block (ram,0x016cc68c) */
+/* WARNING: Removing unreachable block (ram,0x016cc698) */
+/* WARNING: Removing unreachable block (ram,0x016cc6a0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6a8) */
+/* WARNING: Removing unreachable block (ram,0x016cc718) */
+/* WARNING: Removing unreachable block (ram,0x016cc720) */
+/* WARNING: Removing unreachable block (ram,0x016cc728) */
+/* WARNING: Removing unreachable block (ram,0x016cc730) */
+/* WARNING: Removing unreachable block (ram,0x016cc74c) */
+/* WARNING: Removing unreachable block (ram,0x016cc754) */
+/* WARNING: Removing unreachable block (ram,0x016cc778) */
+/* WARNING: Removing unreachable block (ram,0x016cc6b4) */
+/* WARNING: Removing unreachable block (ram,0x016cc77c) */
+/* WARNING: Removing unreachable block (ram,0x016cc6bc) */
+/* WARNING: Removing unreachable block (ram,0x016cc6c4) */
+/* WARNING: Removing unreachable block (ram,0x016cc6cc) */
+/* WARNING: Removing unreachable block (ram,0x016cc6e0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6e8) */
+/* WARNING: Removing unreachable block (ram,0x016cc794) */
+/* WARNING: Removing unreachable block (ram,0x016cc7a0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6f0) */
+/* WARNING: Removing unreachable block (ram,0x016cc714) */
+/* WARNING: Removing unreachable block (ram,0x016cc780) */
+/* WARNING: Removing unreachable block (ram,0x016cdc34) */
+/* WARNING: Removing unreachable block (ram,0x016cc834) */
+/* WARNING: Removing unreachable block (ram,0x016cc83c) */
+/* WARNING: Removing unreachable block (ram,0x016cc868) */
+/* WARNING: Removing unreachable block (ram,0x016cc844) */
+/* WARNING: Removing unreachable block (ram,0x016cc86c) */
+/* WARNING: Removing unreachable block (ram,0x016cc850) */
+/* WARNING: Removing unreachable block (ram,0x016cc908) */
+/* WARNING: Removing unreachable block (ram,0x016cc910) */
+/* WARNING: Removing unreachable block (ram,0x016cc920) */
+/* WARNING: Removing unreachable block (ram,0x016cc928) */
+/* WARNING: Removing unreachable block (ram,0x016cc964) */
+/* WARNING: Removing unreachable block (ram,0x016cc930) */
+/* WARNING: Removing unreachable block (ram,0x016cc968) */
+/* WARNING: Removing unreachable block (ram,0x016cc93c) */
+/* WARNING: Removing unreachable block (ram,0x016cc954) */
+/* WARNING: Removing unreachable block (ram,0x016cc89c) */
+/* WARNING: Removing unreachable block (ram,0x016cc8a4) */
+/* WARNING: Removing unreachable block (ram,0x016cc8d0) */
+/* WARNING: Removing unreachable block (ram,0x016cc8ac) */
+/* WARNING: Removing unreachable block (ram,0x016cc8d4) */
+/* WARNING: Removing unreachable block (ram,0x016cc8b8) */
+/* WARNING: Removing unreachable block (ram,0x016ce188) */
+/* WARNING: Removing unreachable block (ram,0x0167d9e0) */
+/* WARNING: Removing unreachable block (ram,0x016ce224) */
+/* WARNING: Removing unreachable block (ram,0x0167d91c) */
+/* WARNING: Removing unreachable block (ram,0x0167d928) */
+/* WARNING: Removing unreachable block (ram,0x0167d930) */
+/* WARNING: Removing unreachable block (ram,0x0167d94c) */
+/* WARNING: Removing unreachable block (ram,0x0167d958) */
+/* WARNING: Removing unreachable block (ram,0x0167d964) */
+/* WARNING: Removing unreachable block (ram,0x016ce20c) */
+/* WARNING: Removing unreachable block (ram,0x016ce320) */
+/* WARNING: Removing unreachable block (ram,0x016ced00) */
+/* WARNING: Removing unreachable block (ram,0x016ced04) */
+/* WARNING: Removing unreachable block (ram,0x016ced10) */
+/* WARNING: Removing unreachable block (ram,0x016ced20) */
+/* WARNING: Removing unreachable block (ram,0x016ced28) */
+/* WARNING: Removing unreachable block (ram,0x016cef64) */
+/* WARNING: Removing unreachable block (ram,0x016cef48) */
+/* WARNING: Removing unreachable block (ram,0x016cef70) */
+/* WARNING: Removing unreachable block (ram,0x016cef78) */
+/* WARNING: Removing unreachable block (ram,0x016cef10) */
+/* WARNING: Removing unreachable block (ram,0x016cef24) */
+/* WARNING: Removing unreachable block (ram,0x016cef2c) */
+/* WARNING: Removing unreachable block (ram,0x016cee20) */
+/* WARNING: Removing unreachable block (ram,0x016cee2c) */
+/* WARNING: Removing unreachable block (ram,0x016cee44) */
+/* WARNING: Removing unreachable block (ram,0x016ced60) */
+/* WARNING: Removing unreachable block (ram,0x016cec30) */
+/* WARNING: Removing unreachable block (ram,0x016cec38) */
+/* WARNING: Removing unreachable block (ram,0x016cec44) */
+/* WARNING: Removing unreachable block (ram,0x016cebe8) */
+/* WARNING: Removing unreachable block (ram,0x016cec48) */
+/* WARNING: Removing unreachable block (ram,0x016cebf0) */
+/* WARNING: Removing unreachable block (ram,0x016cec64) */
+/* WARNING: Removing unreachable block (ram,0x016cec6c) */
+/* WARNING: Removing unreachable block (ram,0x016cec78) */
+/* WARNING: Removing unreachable block (ram,0x016ceca8) */
+/* WARNING: Removing unreachable block (ram,0x016cec84) */
+/* WARNING: Removing unreachable block (ram,0x016cec8c) */
+/* WARNING: Removing unreachable block (ram,0x016cec94) */
+/* WARNING: Removing unreachable block (ram,0x016ced3c) */
+/* WARNING: Removing unreachable block (ram,0x016cc4e0) */
+/* WARNING: Removing unreachable block (ram,0x016cc518) */
+/* WARNING: Removing unreachable block (ram,0x016cc52c) */
+/* WARNING: Removing unreachable block (ram,0x016cc538) */
+/* WARNING: Removing unreachable block (ram,0x016cc540) */
+/* WARNING: Removing unreachable block (ram,0x016cc548) */
+/* WARNING: Removing unreachable block (ram,0x016cc5b8) */
+/* WARNING: Removing unreachable block (ram,0x016cc5c0) */
+/* WARNING: Removing unreachable block (ram,0x016cc5d4) */
+/* WARNING: Removing unreachable block (ram,0x016cc5dc) */
+/* WARNING: Removing unreachable block (ram,0x016cc5e4) */
+/* WARNING: Removing unreachable block (ram,0x016cc5f0) */
+/* WARNING: Removing unreachable block (ram,0x016cc554) */
+/* WARNING: Removing unreachable block (ram,0x016cc55c) */
+/* WARNING: Removing unreachable block (ram,0x016cc574) */
+/* WARNING: Removing unreachable block (ram,0x016cc57c) */
+/* WARNING: Removing unreachable block (ram,0x016cc624) */
+/* WARNING: Removing unreachable block (ram,0x016cc584) */
+/* WARNING: Removing unreachable block (ram,0x016cc628) */
+/* WARNING: Removing unreachable block (ram,0x016cc590) */
+/* WARNING: Removing unreachable block (ram,0x016cc5b4) */
+/* WARNING: Removing unreachable block (ram,0x016cc610) */
+/* WARNING: Removing unreachable block (ram,0x016cebfc) */
+/* WARNING: Removing unreachable block (ram,0x016cec00) */
+/* WARNING: Removing unreachable block (ram,0x016cec08) */
+/* WARNING: Removing unreachable block (ram,0x016cec20) */
+/* WARNING: Removing unreachable block (ram,0x016ceb78) */
+/* WARNING: Removing unreachable block (ram,0x016cec58) */
+/* WARNING: Removing unreachable block (ram,0x016cecac) */
+/* WARNING: Removing unreachable block (ram,0x016cecb8) */
+/* WARNING: Removing unreachable block (ram,0x016cecd8) */
+/* WARNING: Removing unreachable block (ram,0x016cecf0) */
+/* WARNING: Removing unreachable block (ram,0x016cec60) */
+/* WARNING: Removing unreachable block (ram,0x016ceb84) */
+/* WARNING: Removing unreachable block (ram,0x016ceb88) */
+/* WARNING: Removing unreachable block (ram,0x016ceb90) */
+/* WARNING: Removing unreachable block (ram,0x016ceb98) */
+/* WARNING: Removing unreachable block (ram,0x016ceba0) */
+/* WARNING: Removing unreachable block (ram,0x016cebac) */
+/* WARNING: Removing unreachable block (ram,0x016cebd8) */
+/* WARNING: Removing unreachable block (ram,0x016ceb54) */
+/* WARNING: Removing unreachable block (ram,0x016ceb08) */
+/* WARNING: Removing unreachable block (ram,0x016ceb10) */
+/* WARNING: Removing unreachable block (ram,0x016ceb1c) */
+/* WARNING: Removing unreachable block (ram,0x016ceb2c) */
+/* WARNING: Removing unreachable block (ram,0x016cea8c) */
+/* WARNING: Removing unreachable block (ram,0x016cea9c) */
+/* WARNING: Removing unreachable block (ram,0x016ceaa0) */
+/* WARNING: Removing unreachable block (ram,0x016ceb30) */
+/* WARNING: Removing unreachable block (ram,0x016ceaa8) */
+/* WARNING: Removing unreachable block (ram,0x016ced84) */
+/* WARNING: Removing unreachable block (ram,0x016ceab0) */
+/* WARNING: Removing unreachable block (ram,0x016ceabc) */
+/* WARNING: Removing unreachable block (ram,0x016ceac8) */
+/* WARNING: Removing unreachable block (ram,0x016ceacc) */
+/* WARNING: Removing unreachable block (ram,0x016ced88) */
+/* WARNING: Removing unreachable block (ram,0x016ceadc) */
+/* WARNING: Removing unreachable block (ram,0x016ceae8) */
+/* WARNING: Removing unreachable block (ram,0x016cea78) */
+/* WARNING: Removing unreachable block (ram,0x016ce4dc) */
+/* WARNING: Removing unreachable block (ram,0x016ce46c) */
+/* WARNING: Removing unreachable block (ram,0x016ce3a4) */
+/* WARNING: Removing unreachable block (ram,0x016ce3a8) */
+/* WARNING: Removing unreachable block (ram,0x016ce3b4) */
+/* WARNING: Removing unreachable block (ram,0x016cde9c) */
+/* WARNING: Removing unreachable block (ram,0x016ce334) */
+
+ulong Core_Services_Match__AddOtherPlayers
+                (long param_1,undefined8 param_2,undefined8 *param_3,int param_4)
+
+{
+  uint uVar1;
+  uint uVar2;
+  int iVar3;
+  uint uVar4;
+  undefined1 auVar5 [16];
+  undefined1 auVar6 [16];
+  undefined1 auVar7 [16];
+  undefined1 *puVar8;
+  undefined1 *puVar9;
+  undefined1 *puVar10;
+  undefined1 *puVar11;
+  undefined1 *puVar12;
+  undefined1 **ppuVar13;
+  long lVar14;
+  long *plVar15;
+  ulong uVar16;
+  ulong uVar17;
+  undefined8 uVar18;
+  undefined8 uVar19;
+  undefined4 uVar20;
+  int iVar21;
+  undefined8 uVar22;
+  ulong uVar23;
+  long lVar24;
+  undefined8 unaff_x19;
+  undefined8 unaff_x20;
+  ulong uVar25;
+  ulong unaff_x21;
+  ulong unaff_x22;
+  ulong uVar26;
+  undefined1 *unaff_x29;
+  undefined8 ****ppppuVar27;
+  undefined1 *puVar28;
+  undefined8 ***pppuVar29;
+  undefined1 **ppuVar30;
+  undefined *unaff_x30;
+  undefined *puVar31;
+  undefined8 unaff_d8;
+  undefined8 unaff_d9;
+  undefined1 auVar32 [16];
+  undefined1 auVar33 [16];
+  undefined1 auVar34 [16];
+  undefined1 auVar35 [16];
+  undefined1 auVar36 [16];
+  undefined1 auVar37 [16];
+  undefined1 auVar38 [12];
+  long alStack_f0 [2];
+  undefined8 ***apppuStack_e0 [2];
+  undefined8 ***pppuStack_b0;
+  undefined *puStack_a8;
+  undefined8 *puStack_40;
+  undefined *puStack_38;
+  undefined1 *puStack_30;
+  undefined *puStack_28;
+  undefined1 *puStack_20;
+  undefined *puStack_18;
+  
+  auVar37._8_8_ = param_2;
+  auVar37._0_8_ = param_1;
+  if (param_1 == 0) {
+    puVar10 = &stack0xfffffffffffffff0;
+    unaff_x29 = &stack0xfffffffffffffff0;
+    unaff_x30 = &Core_Services_Match__AddId;
+    auVar37 = func_0x00f78af4();
+    if (auVar37._0_8_ != 0) {
+      uVar20 = 0;
+      goto FlatBuffers_FlatBufferBuilder__AddOffset;
+    }
+    ppuVar13 = &puStack_20;
+    ppuVar30 = &puStack_20;
+    puStack_18 = &Core_Services_Match__AddId;
+    puVar31 = &Core_Services_Match__AddHost;
+    puStack_20 = &stack0xfffffffffffffff0;
+    auVar32 = func_0x00f78af4();
+    if (auVar32._0_8_ == 0) {
+      puStack_28 = &Core_Services_Match__AddHost;
+      puStack_30 = (undefined1 *)&puStack_20;
+      auVar37 = func_0x00f78af4();
+      uVar23 = auVar37._0_8_;
+      if (uVar23 != 0) {
+        puStack_38 = &Core_Services_Match__AddMatchType;
+        pppuVar29 = (undefined8 ***)&puStack_40;
+        auVar36._8_8_ = 1;
+        auVar36._0_8_ = uVar23;
+        if ((auVar37._8_4_ == 0) && (*(char *)(uVar23 + 0x48) == '\0')) {
+          return uVar23;
+        }
+        auVar35._8_8_ = 1;
+        auVar35._0_8_ = uVar23;
+        uVar23 = 0;
+        puVar31 = &UNK_016ce4dc;
+        puVar10 = &stack0xffffffffffffffa0;
+        unaff_x21 = auVar37._8_8_;
+        puStack_40 = &puStack_30;
+        goto code_r0x016cdaac;
+      }
+      puStack_38 = &Core_Services_Match__AddMatchType;
+      puStack_40 = &puStack_30;
+      lVar14 = func_0x00f78af4();
+      if ((bRam0000000003eb59e1 & 1) == 0) {
+        func_0x00f78a20(0x3d3f1a8);
+        bRam0000000003eb59e1 = 1;
+      }
+      if (lVar14 != 0) {
+        pppuVar29 = (undefined8 ***)&stack0xffffffffffffffb0;
+        auVar36._8_8_ = lVar14;
+        auVar36._0_8_ = 0x3eb5000;
+        if ((bRam0000000003eb5cd8 & 1) == 0) {
+          func_0x00f78a20(0x3d1f100,0);
+          bRam0000000003eb5cd8 = 1;
+        }
+        if (*(int *)(lVar14 + 0x30) < 0) {
+          func_0x00f78a24(0x3d22a38);
+          puVar31 = (undefined *)func_0x00f78aec();
+          uVar18 = func_0x00f78a24(0x3d6cea8);
+          /*System.InvalidOperationException$$.ctor*/ func_0x02ae6938(puVar31,uVar18);
+          uVar18 = func_0x00f78a24(0x3d56a30);
+          auVar38 = func_0x00f78ac0(puVar31,uVar18);
+          pppuStack_b0 = (undefined8 ****)0x3eb5000;
+          pppuVar29 = (undefined8 ***)&stack0xffffffffffffff60;
+          lVar14 = *(long *)(auVar38._0_8_ + 0x18);
+          puStack_a8 = puVar31;
+          if ((lVar14 != 0) && (*(long *)(lVar14 + 0x10) != 0)) {
+            uVar4 = *(int *)(*(long *)(lVar14 + 0x10) + 0x18) - auVar38._8_4_;
+            uVar23 = (ulong)uVar4;
+            auVar34._8_4_ = uVar4;
+            auVar34._0_8_ = lVar14;
+            auVar34._12_4_ = 0;
+            puVar8 = &stack0xfffffffffffffef0;
+            apppuStack_e0[1] = (undefined8 ***)&UNK_016cee20;
+            ppppuVar27 = apppuStack_e0;
+            auVar7._8_8_ = 4;
+            auVar7._0_8_ = lVar14;
+            uVar26 = 0x3d201a0;
+            apppuStack_e0[0] = pppuVar29;
+            if ((bRam0000000003eb5cd0 & 1) == 0) {
+              func_0x00f78a20(0x3d201a0);
+              bRam0000000003eb5cd0 = 1;
+            }
+            uVar25 = 4;
+            puVar31 = &UNK_016cc68c;
+            goto code_r0x016cc7a4;
+          }
+          func_0x00f78af4();
+          uVar18 = /*System.Int32$$ToString*/ func_0x02ae9b8c(&stack0xffffffffffffff3c,0);
+          uVar22 = func_0x00f78a24(0x3d6ce88);
+          uVar19 = func_0x00f78a24(0x3d66338);
+          lVar14 = /*System.String$$Concat*/ func_0x029be39c(uVar22,uVar18,uVar19,0);
+          func_0x00f78a24(0x3d22a38);
+          uVar18 = func_0x00f78aec();
+          uVar19 = 0;
+          /*System.InvalidOperationException$$.ctor*/ func_0x02ae6938(uVar18,lVar14);
+          uVar22 = func_0x00f78a24(0x3d56a50);
+          puVar31 = &FlatBuffers_FlatBufferBuilder__Finish;
+          auVar37 = func_0x00f78ac0(uVar18,uVar22);
+          puVar10 = &stack0xffffffffffffff30;
+          while( true ) {
+            uVar22 = auVar37._8_8_;
+            lVar24 = auVar37._0_8_;
+            auVar36._8_8_ = lVar24;
+            auVar36._0_8_ = uVar22;
+            auVar6._8_8_ = lVar24;
+            auVar6._0_8_ = uVar22;
+            *(undefined8 *)(puVar10 + -0x20) = uVar18;
+            *(long *)(puVar10 + -0x18) = lVar14;
+            *(undefined8 ****)(puVar10 + -0x10) = pppuVar29;
+            *(undefined **)(puVar10 + -8) = puVar31;
+            pppuVar29 = (undefined8 ***)(puVar10 + -0x10);
+            uVar20 = *(undefined4 *)(lVar24 + 0x20);
+            auVar35._8_4_ = uVar20;
+            auVar35._0_8_ = lVar24;
+            auVar35._12_4_ = 0;
+            lVar14 = lVar24;
+            if ((int)uVar19 == 0) {
+              lVar14 = 0;
+              uVar20 = 0;
+            }
+            auVar5._8_4_ = uVar20;
+            auVar5._0_8_ = lVar14;
+            auVar5._12_4_ = 0;
+            if ((int)uVar19 == 0) {
+              uVar23 = 4;
+              puVar31 = &UNK_016cef64;
+              puVar10 = puVar10 + -0x20;
+              goto code_r0x016cdaac;
+            }
+            if (lVar14 != 0) break;
+            puVar31 = &FlatBuffers_FlatBufferBuilder__Finish;
+            auVar37 = func_0x00f78af4();
+            uVar19 = 0;
+            puVar10 = puVar10 + -0x20;
+            lVar14 = lVar24;
+            uVar18 = uVar22;
+          }
+          uVar23 = 8;
+          puVar31 = &UNK_016cef10;
+          puVar10 = puVar10 + -0x20;
+          auVar35 = auVar5;
+          auVar36 = auVar6;
+        }
+        else {
+          auVar35._8_8_ = 4;
+          auVar35._0_8_ = lVar14;
+          uVar23 = 0;
+          puVar31 = &UNK_016cea78;
+          puVar10 = &stack0xffffffffffffff70;
+        }
+        goto code_r0x016cdaac;
+      }
+      lVar14 = func_0x00f78af4();
+      if (lVar14 == 0) {
+        auVar33 = func_0x00f78af4();
+        lVar14 = auVar33._0_8_;
+        if ((auVar33._8_8_ == 0) || (lVar14 == 0)) {
+          auVar33 = func_0x00f78af4();
+          lVar24 = auVar33._8_8_;
+          lVar14 = auVar33._0_8_;
+          puVar10 = &stack0xffffffffffffff30;
+          puStack_a8 = &Core_Services_Match__CreateOtherPlayersVectorBlock;
+          ppppuVar27 = &pppuStack_b0;
+          unaff_x21 = 0x3eb5000;
+          pppuStack_b0 = (undefined8 ***)&stack0xffffffffffffff80;
+          if ((bRam0000000003eb59e0 & 1) == 0) {
+            func_0x00f78a20(0x3d569d8);
+            bRam0000000003eb59e0 = 1;
+          }
+          if ((lVar24 == 0) || (lVar14 == 0)) {
+            puVar31 = &Core_Services_Match__StartOtherPlayersVector;
+            auVar38 = func_0x00f78af4();
+            iVar21 = auVar38._8_4_;
+            auVar33._8_8_ = lVar24;
+            auVar33._0_8_ = auVar38._0_8_;
+            if (auVar38._0_8_ == 0) {
+              apppuStack_e0[1] = (undefined8 ***)&Core_Services_Match__StartOtherPlayersVector;
+              apppuStack_e0[0] = ppppuVar27;
+              auVar37 = func_0x00f78af4();
+              uVar23 = auVar37._0_8_;
+              *(undefined8 *)(uVar23 + 0x10) = *param_3;
+              *(long *)(uVar23 + 0x20) = auVar37._8_8_;
+              *(undefined8 **)(uVar23 + 0x28) = param_3;
+              return uVar23;
+            }
+          }
+          else {
+            unaff_x21 = 0x3d56000;
+            iVar21 = *(int *)(lVar24 + 0x18);
+            puVar31 = &UNK_0167d9e0;
+            puVar10 = &stack0xffffffffffffff30;
+          }
+        }
+        else {
+          iVar21 = *(int *)(auVar33._8_8_ + 0x18);
+          puVar31 = &UNK_0167d91c;
+          puVar10 = &stack0xffffffffffffff60;
+          ppppuVar27 = (undefined8 ****)&stack0xffffffffffffff80;
+        }
+        uVar26 = auVar33._0_8_;
+        *(ulong *)(puVar10 + -0x30) = unaff_x22;
+        *(ulong *)(puVar10 + -0x28) = unaff_x21;
+        *(long *)(puVar10 + -0x20) = auVar33._8_8_;
+        *(long *)(puVar10 + -0x18) = lVar14;
+        *(undefined8 *****)(puVar10 + -0x10) = ppppuVar27;
+        *(undefined **)(puVar10 + -8) = puVar31;
+        pppuVar29 = (undefined8 ***)(puVar10 + -0x10);
+        unaff_x21 = 4;
+        /*FlatBuffers.FlatBufferBuilder$$NotNested*/ func_0x016ce1a4();
+        *(int *)(uVar26 + 0x44) = iVar21;
+        uVar23 = CONCAT44(0,iVar21 * 4);
+        auVar36._8_8_ = 4;
+        auVar36._0_8_ = uVar23;
+        auVar35._8_8_ = 4;
+        auVar35._0_8_ = uVar26;
+        puVar31 = &UNK_016ce188;
+        puVar10 = puVar10 + -0x30;
+        unaff_x22 = uVar26;
+        goto code_r0x016cdaac;
+      }
+      puVar9 = &stack0xffffffffffffff70;
+      puVar10 = &stack0xffffffffffffff70;
+      ppuVar30 = (undefined1 **)&stack0xffffffffffffff90;
+      unaff_x20 = 4;
+      unaff_x21 = 0x3eb5000;
+      if ((bRam0000000003eb5cd7 & 1) == 0) {
+        func_0x00f78a20(0x3d1f100,4,0);
+        bRam0000000003eb5cd7 = 1;
+      }
+      /*FlatBuffers.FlatBufferBuilder$$NotNested*/ func_0x016ce1a4(lVar14);
+      if (*(long *)(lVar14 + 0x28) != 0) {
+        if (*(int *)(*(long *)(lVar14 + 0x28) + 0x18) < 4) {
+          uVar18 = func_0x00f78a34(/*int[]_TypeInfo*/ uRam0000000003d1f100,4);
+          *(undefined8 *)(lVar14 + 0x28) = uVar18;
+        }
+        *(undefined4 *)(lVar14 + 0x30) = 4;
+        puVar31 = &UNK_016ce320;
+        goto code_r0x016cda04;
+      }
+      puVar31 = &FlatBuffers_FlatBufferBuilder__Slot;
+      auVar38 = func_0x00f78af4();
+      lVar24 = lVar14;
+      goto code_r0x016ce380;
+    }
+    uVar18 = 3;
+    param_4 = 0;
+  }
+  else {
+    uVar20 = 2;
+    puVar10 = (undefined1 *)register0x00000008;
+FlatBuffers_FlatBufferBuilder__AddOffset:
+    uVar23 = auVar37._0_8_;
+    auVar38._8_4_ = uVar20;
+    auVar38._0_8_ = uVar23;
+    param_4 = 0;
+    *(undefined8 *)(puVar10 + -0x20) = unaff_x20;
+    *(undefined8 *)(puVar10 + -0x18) = unaff_x19;
+    *(undefined1 **)(puVar10 + -0x10) = unaff_x29;
+    *(undefined **)(puVar10 + -8) = unaff_x30;
+    if ((auVar37._8_4_ == 0) && (*(char *)(uVar23 + 0x48) == '\0')) {
+      return uVar23;
+    }
+    /*FlatBuffers.FlatBufferBuilder$$AddOffset*/ func_0x016ce0c8(uVar23,auVar37._8_8_,auVar37._8_8_,0,0);
+    ppuVar30 = *(undefined1 ***)(puVar10 + -0x10);
+    puVar31 = *(undefined **)(puVar10 + -8);
+    unaff_x20 = *(undefined8 *)(puVar10 + -0x20);
+    lVar24 = *(long *)(puVar10 + -0x18);
+code_r0x016ce380:
+    lVar14 = auVar38._0_8_;
+    ppuVar13 = (undefined1 **)(puVar10 + -0x20);
+    puVar9 = puVar10 + -0x20;
+    *(undefined8 *)(puVar10 + -0x20) = unaff_x20;
+    *(long *)(puVar10 + -0x18) = lVar24;
+    *(undefined1 ***)(puVar10 + -0x10) = ppuVar30;
+    *(undefined **)(puVar10 + -8) = puVar31;
+    ppuVar30 = (undefined1 **)(puVar10 + -0x10);
+    if (auVar38._8_4_ < *(int *)(lVar14 + 0x30)) {
+      puVar31 = &UNK_016ce3a4;
+code_r0x016cda04:
+      *(undefined1 ***)(puVar9 + -0x10) = ppuVar30;
+      *(undefined **)(puVar9 + -8) = puVar31;
+      if ((*(long *)(lVar14 + 0x18) != 0) &&
+         (lVar24 = *(long *)(*(long *)(lVar14 + 0x18) + 0x10), lVar24 != 0)) {
+        return (ulong)(uint)(*(int *)(lVar24 + 0x18) - *(int *)(lVar14 + 0x10));
+      }
+      lVar14 = func_0x00f78af4();
+      return (ulong)*(byte *)(lVar14 + 0x48);
+    }
+    func_0x00f78a24(0x3d22738);
+    unaff_x19 = func_0x00f78aec();
+    uVar18 = func_0x00f78a24(0x3d6ceb8);
+    uVar22 = 0;
+    /*System.IndexOutOfRangeException$$.ctor*/ func_0x02ae8c34(unaff_x19,uVar18);
+    uVar18 = func_0x00f78a24(0x3d56a58);
+    func_0x00f78ac0(unaff_x19,uVar18);
+    func_0x00f78af4();
+    uVar18 = func_0x00f78b24();
+    puVar31 = &FlatBuffers_FlatBufferBuilder__AddBool;
+    auVar37 = func_0x00f78ac0(uVar18,0);
+    uVar18 = auVar37._8_8_;
+    auVar32._8_8_ = uVar22;
+    auVar32._0_8_ = auVar37._0_8_;
+  }
+  uVar23 = auVar32._0_8_;
+  auVar36._8_8_ = uVar18;
+  auVar36._0_8_ = uVar23;
+  *(ulong *)((long)ppuVar13 + -0x30) = unaff_x22;
+  *(ulong *)((long)ppuVar13 + -0x28) = unaff_x21;
+  *(undefined8 *)((long)ppuVar13 + -0x20) = unaff_x20;
+  *(undefined8 *)((long)ppuVar13 + -0x18) = unaff_x19;
+  *(undefined1 ***)((long)ppuVar13 + -0x10) = ppuVar30;
+  *(undefined **)((long)ppuVar13 + -8) = puVar31;
+  pppuVar29 = (undefined8 ***)((long)ppuVar13 + -0x10);
+  if ((auVar32._8_4_ == param_4) && (*(char *)(uVar23 + 0x48) == '\0')) {
+    return uVar23;
+  }
+  auVar35._8_8_ = 1;
+  auVar35._0_8_ = uVar23;
+  uVar23 = 0;
+  puVar31 = &UNK_016ce46c;
+  puVar10 = (undefined1 *)((long)ppuVar13 + -0x30);
+  unaff_x21 = auVar32._8_8_;
+code_r0x016cdaac:
+  do {
+    uVar25 = auVar36._0_8_;
+    uVar16 = auVar35._0_8_;
+    puVar8 = puVar10 + -0x30;
+    *(ulong *)(puVar10 + -0x30) = unaff_x22;
+    *(ulong *)(puVar10 + -0x28) = unaff_x21;
+    *(undefined1 (*) [16])(puVar10 + -0x20) = auVar36;
+    *(undefined8 ****)(puVar10 + -0x10) = pppuVar29;
+    *(undefined **)(puVar10 + -8) = puVar31;
+    iVar21 = auVar35._8_4_;
+    if (*(int *)(uVar16 + 0x20) < iVar21) {
+      *(int *)(uVar16 + 0x20) = iVar21;
+    }
+    uVar26 = unaff_x22;
+    if ((*(long *)(uVar16 + 0x18) != 0) &&
+       (lVar14 = *(long *)(*(long *)(uVar16 + 0x18) + 0x10), lVar14 != 0)) {
+      uVar2 = *(uint *)(lVar14 + 0x18);
+      iVar3 = *(int *)(uVar16 + 0x10);
+      uVar1 = iVar3 - (uVar2 + (int)uVar23) & iVar21 - 1U;
+      uVar25 = CONCAT44(0,uVar1);
+      uVar4 = (int)uVar23 + iVar21 + uVar1;
+      uVar26 = (ulong)uVar4;
+      uVar17 = uVar16;
+      while (unaff_x21 = (ulong)uVar2, iVar3 < (int)uVar4) {
+        uVar17 = /*FlatBuffers.FlatBufferBuilder$$GrowBuffer*/ func_0x016cda78(uVar16);
+        if ((*(long *)(uVar16 + 0x18) == 0) ||
+           (lVar14 = *(long *)(*(long *)(uVar16 + 0x18) + 0x10), lVar14 == 0))
+        goto code_r0x016cdb68;
+        iVar3 = *(int *)(uVar16 + 0x10) - uVar2;
+        uVar2 = *(uint *)(lVar14 + 0x18);
+        iVar3 = iVar3 + uVar2;
+        *(int *)(uVar16 + 0x10) = iVar3;
+      }
+      if ((int)uVar1 < 1) {
+        return uVar17;
+      }
+      uVar18 = *(undefined8 *)*(undefined1 (*) [16])(puVar10 + -0x20);
+      uVar22 = *(undefined8 *)(puVar10 + -0x18);
+      auVar36 = *(undefined1 (*) [16])(puVar10 + -0x20);
+      unaff_x22 = *(ulong *)(puVar10 + -0x30);
+      unaff_x21 = *(ulong *)(puVar10 + -0x28);
+      *(undefined8 *)(puVar10 + -0x10) = *(undefined8 *)(puVar10 + -0x10);
+      *(undefined8 *)(puVar10 + -8) = *(undefined8 *)(puVar10 + -8);
+      lVar14 = *(long *)(uVar16 + 0x18);
+      auVar7._8_8_ = lVar14;
+      auVar7._0_8_ = uVar25;
+      uVar1 = *(int *)(uVar16 + 0x10) - uVar1;
+      uVar26 = (ulong)uVar1;
+      auVar34._8_4_ = uVar1;
+      auVar34._0_8_ = lVar14;
+      auVar34._12_4_ = 0;
+      *(uint *)(uVar16 + 0x10) = uVar1;
+      if (lVar14 != 0) {
+        *(ulong *)(puVar10 + -0x30) = unaff_x22;
+        *(ulong *)(puVar10 + -0x28) = unaff_x21;
+        *(undefined8 *)(puVar10 + -0x20) = uVar18;
+        *(undefined8 *)(puVar10 + -0x18) = uVar22;
+        *(undefined8 *)(puVar10 + -0x10) = *(undefined8 *)(puVar10 + -0x10);
+        *(undefined8 *)(puVar10 + -8) = *(undefined8 *)(puVar10 + -8);
+        ppppuVar27 = (undefined8 ****)(puVar10 + -0x10);
+        puVar31 = &UNK_016cc908;
+        uVar23 = 0;
+        goto code_r0x016cc7a4;
+      }
+      lVar14 = func_0x00f78af4();
+      pppuVar29 = (undefined8 ***)(puVar10 + -0x20);
+      *(undefined1 **)(puVar10 + -0x20) = puVar10 + -0x10;
+      *(undefined **)(puVar10 + -0x18) = &FlatBuffers_FlatBufferBuilder__GrowBuffer;
+      if ((*(long *)(lVar14 + 0x18) != 0) &&
+         (plVar15 = *(long **)(*(long *)(lVar14 + 0x18) + 0x10), plVar15 != (long *)0x0)) {
+                    /* WARNING: Could not recover jumptable at 0x016cdaa4. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+        uVar23 = (**(code **)(*plVar15 + 0x178))
+                           (plVar15,(int)plVar15[3] << 1,*(undefined8 *)(*plVar15 + 0x180));
+        return uVar23;
+      }
+      puVar31 = &FlatBuffers_FlatBufferBuilder__Prep;
+      auVar35 = func_0x00f78af4();
+      puVar10 = puVar10 + -0x20;
+      goto code_r0x016cdaac;
+    }
+code_r0x016cdb68:
+    auVar7._8_8_ = uVar25;
+    auVar7._0_8_ = unaff_x21;
+    auVar37 = func_0x00f78af4();
+    uVar23 = auVar37._8_8_;
+    lVar24 = auVar37._0_8_;
+    *(undefined1 **)(puVar10 + -0x40) = puVar10 + -0x10;
+    *(undefined **)(puVar10 + -0x38) = &FlatBuffers_FlatBufferBuilder__PutBool;
+    lVar14 = *(long *)(lVar24 + 0x18);
+    iVar21 = *(int *)(lVar24 + 0x10) + -1;
+    *(int *)(lVar24 + 0x10) = iVar21;
+    if (lVar14 != 0) {
+      puVar11 = puVar10 + -0x30;
+      uVar18 = *(undefined8 *)(puVar10 + -0x40);
+      uVar22 = *(undefined8 *)(puVar10 + -0x38);
+FlatBuffers_ByteBuffer__PutByte:
+      auVar7._8_4_ = iVar21;
+      auVar7._0_8_ = lVar14;
+      auVar7._12_4_ = 0;
+      auVar34._8_4_ = iVar21;
+      auVar34._0_8_ = lVar14;
+      auVar34._12_4_ = 0;
+      puVar8 = puVar11 + -0x30;
+      *(ulong *)(puVar11 + -0x30) = uVar26;
+      *(ulong *)(puVar11 + -0x28) = unaff_x21;
+      *(ulong *)(puVar11 + -0x20) = uVar25;
+      *(ulong *)(puVar11 + -0x18) = uVar16;
+      *(undefined8 *)(puVar11 + -0x10) = uVar18;
+      *(undefined8 *)(puVar11 + -8) = uVar22;
+      ppppuVar27 = (undefined8 ****)(puVar11 + -0x10);
+      uVar25 = 1;
+      puVar31 = &UNK_016cc89c;
+      goto code_r0x016cc7a4;
+    }
+    auVar37 = func_0x00f78af4();
+    uVar17 = auVar37._8_8_;
+    lVar14 = auVar37._0_8_;
+    *(undefined1 **)(puVar10 + -0x50) = puVar10 + -0x40;
+    *(undefined **)(puVar10 + -0x48) = &FlatBuffers_FlatBufferBuilder__PutSbyte;
+    iVar21 = *(int *)(lVar14 + 0x10) + -1;
+    auVar34._8_4_ = iVar21;
+    auVar34._0_8_ = *(long *)(lVar14 + 0x18);
+    auVar34._12_4_ = 0;
+    *(int *)(lVar14 + 0x10) = iVar21;
+    if (*(long *)(lVar14 + 0x18) != 0) {
+      puVar12 = puVar10 + -0x40;
+      puVar28 = *(undefined1 **)(puVar10 + -0x50);
+      puVar31 = *(undefined **)(puVar10 + -0x48);
+      uVar23 = uVar16;
+      goto code_r0x016cc810;
+    }
+    auVar37 = func_0x00f78af4();
+    uVar23 = auVar37._8_8_;
+    lVar24 = auVar37._0_8_;
+    *(undefined1 **)(puVar10 + -0x60) = puVar10 + -0x50;
+    *(undefined **)(puVar10 + -0x58) = &FlatBuffers_FlatBufferBuilder__PutByte;
+    lVar14 = *(long *)(lVar24 + 0x18);
+    iVar21 = *(int *)(lVar24 + 0x10) + -1;
+    *(int *)(lVar24 + 0x10) = iVar21;
+    if (lVar14 != 0) {
+      puVar11 = puVar10 + -0x50;
+      uVar18 = *(undefined8 *)(puVar10 + -0x60);
+      uVar22 = *(undefined8 *)(puVar10 + -0x58);
+      goto FlatBuffers_ByteBuffer__PutByte;
+    }
+    auVar37 = func_0x00f78af4();
+    uVar23 = auVar37._8_8_;
+    lVar14 = auVar37._0_8_;
+    puVar8 = puVar10 + -0x90;
+    *(ulong *)(puVar10 + -0x90) = uVar26;
+    *(ulong *)(puVar10 + -0x88) = unaff_x21;
+    *(ulong *)(puVar10 + -0x80) = uVar25;
+    *(ulong *)(puVar10 + -0x78) = uVar16;
+    *(undefined1 **)(puVar10 + -0x70) = puVar10 + -0x60;
+    *(undefined **)(puVar10 + -0x68) = &FlatBuffers_FlatBufferBuilder__PutShort;
+    ppppuVar27 = (undefined8 ****)(puVar10 + -0x70);
+    lVar24 = *(long *)(lVar14 + 0x18);
+    uVar4 = *(int *)(lVar14 + 0x10) - 2;
+    auVar7._8_8_ = lVar24;
+    auVar7._0_8_ = CONCAT44(0,uVar4);
+    auVar34._8_4_ = uVar4;
+    auVar34._0_8_ = lVar24;
+    auVar34._12_4_ = 0;
+    *(uint *)(lVar14 + 0x10) = uVar4;
+    if (lVar24 != 0) {
+      uVar25 = 2;
+      puVar31 = &UNK_016cdc34;
+      goto code_r0x016cc7a4;
+    }
+    auVar37 = func_0x00f78af4();
+    uVar23 = auVar37._8_8_;
+    lVar14 = auVar37._0_8_;
+    puVar8 = puVar10 + -0xc0;
+    *(ulong *)(puVar10 + -0xc0) = uVar26;
+    *(ulong *)(puVar10 + -0xb8) = CONCAT44(0,uVar4);
+    *(undefined8 *)(puVar10 + -0xb0) = 0;
+    *(ulong *)(puVar10 + -0xa8) = uVar16;
+    *(undefined8 *****)(puVar10 + -0xa0) = ppppuVar27;
+    *(undefined **)(puVar10 + -0x98) = &FlatBuffers_FlatBufferBuilder__PutUshort;
+    ppppuVar27 = (undefined8 ****)(puVar10 + -0xa0);
+    lVar24 = *(long *)(lVar14 + 0x18);
+    uVar4 = *(int *)(lVar14 + 0x10) - 2;
+    auVar7._8_8_ = lVar24;
+    auVar7._0_8_ = CONCAT44(0,uVar4);
+    auVar34._8_4_ = uVar4;
+    auVar34._0_8_ = lVar24;
+    auVar34._12_4_ = 0;
+    *(uint *)(lVar14 + 0x10) = uVar4;
+    if (lVar24 != 0) {
+      uVar25 = 2;
+      puVar31 = &UNK_016cdc90;
+      goto code_r0x016cc7a4;
+    }
+    auVar37 = func_0x00f78af4();
+    uVar23 = auVar37._8_8_;
+    lVar14 = auVar37._0_8_;
+    puVar8 = puVar10 + -0xf0;
+    *(ulong *)(puVar10 + -0xf0) = uVar26;
+    *(ulong *)(puVar10 + -0xe8) = CONCAT44(0,uVar4);
+    *(undefined8 *)(puVar10 + -0xe0) = 0;
+    *(ulong *)(puVar10 + -0xd8) = uVar16;
+    *(undefined8 *****)(puVar10 + -0xd0) = ppppuVar27;
+    *(undefined **)(puVar10 + -200) = &FlatBuffers_FlatBufferBuilder__PutInt;
+    ppppuVar27 = (undefined8 ****)(puVar10 + -0xd0);
+    lVar24 = *(long *)(lVar14 + 0x18);
+    uVar4 = *(int *)(lVar14 + 0x10) - 4;
+    auVar7._8_8_ = lVar24;
+    auVar7._0_8_ = CONCAT44(0,uVar4);
+    auVar34._8_4_ = uVar4;
+    auVar34._0_8_ = lVar24;
+    auVar34._12_4_ = 0;
+    *(uint *)(lVar14 + 0x10) = uVar4;
+    if (lVar24 != 0) {
+      uVar25 = 4;
+      puVar31 = &UNK_016cdcec;
+      goto code_r0x016cc7a4;
+    }
+    auVar37 = func_0x00f78af4();
+    uVar23 = auVar37._8_8_;
+    lVar14 = auVar37._0_8_;
+    puVar8 = puVar10 + -0x120;
+    *(ulong *)(puVar10 + -0x120) = uVar26;
+    *(ulong *)(puVar10 + -0x118) = CONCAT44(0,uVar4);
+    *(undefined8 *)(puVar10 + -0x110) = 0;
+    *(ulong *)(puVar10 + -0x108) = uVar16;
+    *(undefined8 *****)(puVar10 + -0x100) = ppppuVar27;
+    *(undefined **)(puVar10 + -0xf8) = &FlatBuffers_FlatBufferBuilder__PutUint;
+    ppppuVar27 = (undefined8 ****)(puVar10 + -0x100);
+    lVar24 = *(long *)(lVar14 + 0x18);
+    uVar4 = *(int *)(lVar14 + 0x10) - 4;
+    auVar7._8_8_ = lVar24;
+    auVar7._0_8_ = CONCAT44(0,uVar4);
+    auVar34._8_4_ = uVar4;
+    auVar34._0_8_ = lVar24;
+    auVar34._12_4_ = 0;
+    *(uint *)(lVar14 + 0x10) = uVar4;
+    if (lVar24 != 0) {
+      uVar25 = 4;
+      puVar31 = &UNK_016cdd48;
+      goto code_r0x016cc7a4;
+    }
+    auVar37 = func_0x00f78af4();
+    uVar23 = auVar37._8_8_;
+    lVar14 = auVar37._0_8_;
+    puVar8 = puVar10 + -0x150;
+    *(ulong *)(puVar10 + -0x150) = uVar26;
+    *(ulong *)(puVar10 + -0x148) = CONCAT44(0,uVar4);
+    *(undefined8 *)(puVar10 + -0x140) = 0;
+    *(ulong *)(puVar10 + -0x138) = uVar16;
+    *(undefined8 *****)(puVar10 + -0x130) = ppppuVar27;
+    *(undefined **)(puVar10 + -0x128) = &FlatBuffers_FlatBufferBuilder__PutLong;
+    ppppuVar27 = (undefined8 ****)(puVar10 + -0x130);
+    lVar24 = *(long *)(lVar14 + 0x18);
+    uVar4 = *(int *)(lVar14 + 0x10) - 8;
+    auVar7._8_8_ = lVar24;
+    auVar7._0_8_ = CONCAT44(0,uVar4);
+    auVar34._8_4_ = uVar4;
+    auVar34._0_8_ = lVar24;
+    auVar34._12_4_ = 0;
+    *(uint *)(lVar14 + 0x10) = uVar4;
+    if (lVar24 != 0) {
+      uVar25 = 8;
+      puVar31 = &UNK_016cdda4;
+      goto code_r0x016cc7a4;
+    }
+    auVar37 = func_0x00f78af4();
+    uVar23 = auVar37._8_8_;
+    lVar14 = auVar37._0_8_;
+    puVar8 = puVar10 + -0x180;
+    *(ulong *)(puVar10 + -0x180) = uVar26;
+    *(ulong *)(puVar10 + -0x178) = CONCAT44(0,uVar4);
+    *(undefined8 *)(puVar10 + -0x170) = 0;
+    *(ulong *)(puVar10 + -0x168) = uVar16;
+    *(undefined8 *****)(puVar10 + -0x160) = ppppuVar27;
+    *(undefined **)(puVar10 + -0x158) = &FlatBuffers_FlatBufferBuilder__PutUlong;
+    ppppuVar27 = (undefined8 ****)(puVar10 + -0x160);
+    lVar24 = *(long *)(lVar14 + 0x18);
+    uVar4 = *(int *)(lVar14 + 0x10) - 8;
+    unaff_x21 = CONCAT44(0,uVar4);
+    auVar7._8_8_ = lVar24;
+    auVar7._0_8_ = unaff_x21;
+    auVar34._8_4_ = uVar4;
+    auVar34._0_8_ = lVar24;
+    auVar34._12_4_ = 0;
+    *(uint *)(lVar14 + 0x10) = uVar4;
+    if (lVar24 != 0) {
+      uVar25 = 8;
+      puVar31 = &UNK_016cde00;
+      goto code_r0x016cc7a4;
+    }
+    lVar14 = func_0x00f78af4();
+    *(undefined8 *****)(puVar10 + -400) = ppppuVar27;
+    *(undefined **)(puVar10 + -0x188) = &FlatBuffers_FlatBufferBuilder__PutFloat;
+    lVar24 = *(long *)(lVar14 + 0x18);
+    auVar7._8_8_ = lVar24;
+    uVar4 = *(int *)(lVar14 + 0x10) - 4;
+    uVar23 = (ulong)uVar4;
+    auVar34._8_4_ = uVar4;
+    auVar34._0_8_ = lVar24;
+    auVar34._12_4_ = 0;
+    *(uint *)(lVar14 + 0x10) = uVar4;
+    if (lVar24 != 0) {
+      puVar8 = puVar10 + -0x1b0;
+      *(undefined8 *)(puVar10 + -0x1b0) = unaff_d9;
+      *(undefined8 *)(puVar10 + -0x1a8) = unaff_d8;
+      *(undefined8 *)(puVar10 + -0x1a0) = 0;
+      *(ulong *)(puVar10 + -0x198) = uVar16;
+      *(undefined8 *)(puVar10 + -400) = *(undefined8 *)(puVar10 + -400);
+      *(undefined8 *)(puVar10 + -0x188) = *(undefined8 *)(puVar10 + -0x188);
+      ppppuVar27 = (undefined8 ****)(puVar10 + -400);
+      uVar25 = 4;
+      puVar31 = &UNK_016ccba4;
+      goto code_r0x016cc7a4;
+    }
+    lVar14 = func_0x00f78af4();
+    *(undefined1 **)(puVar10 + -0x1a0) = puVar10 + -400;
+    *(undefined **)(puVar10 + -0x198) = &FlatBuffers_FlatBufferBuilder__PutDouble;
+    lVar24 = *(long *)(lVar14 + 0x18);
+    auVar7._8_8_ = lVar24;
+    uVar4 = *(int *)(lVar14 + 0x10) - 8;
+    uVar23 = (ulong)uVar4;
+    auVar34._8_4_ = uVar4;
+    auVar34._0_8_ = lVar24;
+    auVar34._12_4_ = 0;
+    *(uint *)(lVar14 + 0x10) = uVar4;
+    if (lVar24 != 0) break;
+    auVar36 = func_0x00f78af4();
+    *(undefined8 *)(puVar10 + -0x1c0) = 0;
+    *(ulong *)(puVar10 + -0x1b8) = uVar16;
+    *(undefined1 **)(puVar10 + -0x1b0) = puVar10 + -0x1a0;
+    *(undefined **)(puVar10 + -0x1a8) = &FlatBuffers_FlatBufferBuilder__AddBool;
+    pppuVar29 = (undefined8 ***)(puVar10 + -0x1b0);
+    auVar35._8_8_ = 1;
+    auVar35._0_8_ = auVar36._0_8_;
+    uVar23 = 0;
+    puVar31 = &UNK_016cde9c;
+    puVar10 = puVar10 + -0x1c0;
+    unaff_x22 = uVar26;
+  } while( true );
+  puVar8 = puVar10 + -0x1c0;
+  *(undefined8 *)(puVar10 + -0x1c0) = unaff_d9;
+  *(undefined8 *)(puVar10 + -0x1b8) = unaff_d8;
+  *(undefined8 *)(puVar10 + -0x1b0) = 0;
+  *(ulong *)(puVar10 + -0x1a8) = uVar16;
+  *(undefined8 *)(puVar10 + -0x1a0) = *(undefined8 *)(puVar10 + -0x1a0);
+  *(undefined8 *)(puVar10 + -0x198) = *(undefined8 *)(puVar10 + -0x198);
+  ppppuVar27 = (undefined8 ****)(puVar10 + -0x1a0);
+  uVar25 = 8;
+  puVar31 = &UNK_016ccc34;
+code_r0x016cc7a4:
+  do {
+    puVar12 = puVar8 + -0x20;
+    *(long *)(puVar8 + -0x20) = auVar7._8_8_;
+    *(ulong *)(puVar8 + -0x18) = uVar23;
+    *(undefined8 *****)(puVar8 + -0x10) = ppppuVar27;
+    *(undefined **)(puVar8 + -8) = puVar31;
+    puVar28 = puVar8 + -0x10;
+    if (auVar34._8_4_ < 0) {
+code_r0x016cc7d8:
+      func_0x00f78a24(0x3d1fcf8);
+      uVar23 = func_0x00f78aec();
+      /*System.ArgumentOutOfRangeException$$.ctor*/ func_0x0292a4d0(uVar23,0);
+      uVar18 = func_0x00f78a24(0x3d52ce8);
+      func_0x00f78ac0(uVar23,uVar18);
+      uVar17 = uVar25;
+    }
+    else {
+      lVar14 = *(long *)(auVar34._0_8_ + 0x10);
+      uVar17 = uVar25;
+      if (lVar14 != 0) {
+        if (auVar34._8_4_ <= *(int *)(lVar14 + 0x18) - (int)uVar25) {
+          return auVar34._0_8_;
+        }
+        goto code_r0x016cc7d8;
+      }
+    }
+    puVar31 = &FlatBuffers_ByteBuffer__PutSbyte;
+    auVar34 = func_0x00f78af4();
+code_r0x016cc810:
+    puVar8 = puVar12 + -0x30;
+    *(ulong *)(puVar12 + -0x30) = uVar26;
+    *(undefined1 (*) [16])(puVar12 + -0x28) = auVar7;
+    *(ulong *)(puVar12 + -0x18) = uVar23;
+    *(undefined1 **)(puVar12 + -0x10) = puVar28;
+    *(undefined **)(puVar12 + -8) = puVar31;
+    ppppuVar27 = (undefined8 ****)(puVar12 + -0x10);
+    uVar25 = 1;
+    puVar31 = &UNK_016cc834;
+    uVar23 = uVar17;
+    auVar7 = auVar34;
+  } while( true );
+}
+
+
+
+// ============================================================
+// RVA: 0x167d810 | Core.Services.Match.AddId
+// ============================================================
+
+/* WARNING: Possible PIC construction at 0x016ce3a0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce468: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce4d8: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cea74: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cea88: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ceb04: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ceb50: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ceb74: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cebe4: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cec2c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ced5c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cee1c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cef0c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cef44: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cef60: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cecfc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce31c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x0167d918: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce220: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x0167d9dc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce184: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc898: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc904: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc830: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdc30: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc688: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdc8c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdce8: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdd44: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdda0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cddfc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccba0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccc30: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cccb8: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccd14: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccdc0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cde98: Changing call to branch */
+/* WARNING: Removing unreachable block (ram,0x016ccdc4) */
+/* WARNING: Removing unreachable block (ram,0x016ccd18) */
+/* WARNING: Removing unreachable block (ram,0x016ccd20) */
+/* WARNING: Removing unreachable block (ram,0x016ccd48) */
+/* WARNING: Removing unreachable block (ram,0x016ccd28) */
+/* WARNING: Removing unreachable block (ram,0x016ccd4c) */
+/* WARNING: Removing unreachable block (ram,0x016ccd84) */
+/* WARNING: Removing unreachable block (ram,0x016ccdb0) */
+/* WARNING: Removing unreachable block (ram,0x016ccd88) */
+/* WARNING: Removing unreachable block (ram,0x016ccd34) */
+/* WARNING: Removing unreachable block (ram,0x016cccbc) */
+/* WARNING: Removing unreachable block (ram,0x016cccc4) */
+/* WARNING: Removing unreachable block (ram,0x016cccec) */
+/* WARNING: Removing unreachable block (ram,0x016ccccc) */
+/* WARNING: Removing unreachable block (ram,0x016cccf0) */
+/* WARNING: Removing unreachable block (ram,0x016cccd8) */
+/* WARNING: Removing unreachable block (ram,0x016ccc34) */
+/* WARNING: Removing unreachable block (ram,0x016ccc3c) */
+/* WARNING: Removing unreachable block (ram,0x016ccc44) */
+/* WARNING: Removing unreachable block (ram,0x016ccc90) */
+/* WARNING: Removing unreachable block (ram,0x016ccc68) */
+/* WARNING: Removing unreachable block (ram,0x016ccc94) */
+/* WARNING: Removing unreachable block (ram,0x016ccc70) */
+/* WARNING: Removing unreachable block (ram,0x016ccba4) */
+/* WARNING: Removing unreachable block (ram,0x016ccbac) */
+/* WARNING: Removing unreachable block (ram,0x016ccbb4) */
+/* WARNING: Removing unreachable block (ram,0x016ccc00) */
+/* WARNING: Removing unreachable block (ram,0x016ccbd8) */
+/* WARNING: Removing unreachable block (ram,0x016ccc04) */
+/* WARNING: Removing unreachable block (ram,0x016ccbe0) */
+/* WARNING: Removing unreachable block (ram,0x016cde00) */
+/* WARNING: Removing unreachable block (ram,0x016cdda4) */
+/* WARNING: Removing unreachable block (ram,0x016cdd48) */
+/* WARNING: Removing unreachable block (ram,0x016cdcec) */
+/* WARNING: Removing unreachable block (ram,0x016cdc90) */
+/* WARNING: Removing unreachable block (ram,0x016cc68c) */
+/* WARNING: Removing unreachable block (ram,0x016cc698) */
+/* WARNING: Removing unreachable block (ram,0x016cc6a0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6a8) */
+/* WARNING: Removing unreachable block (ram,0x016cc718) */
+/* WARNING: Removing unreachable block (ram,0x016cc720) */
+/* WARNING: Removing unreachable block (ram,0x016cc728) */
+/* WARNING: Removing unreachable block (ram,0x016cc730) */
+/* WARNING: Removing unreachable block (ram,0x016cc74c) */
+/* WARNING: Removing unreachable block (ram,0x016cc754) */
+/* WARNING: Removing unreachable block (ram,0x016cc778) */
+/* WARNING: Removing unreachable block (ram,0x016cc6b4) */
+/* WARNING: Removing unreachable block (ram,0x016cc77c) */
+/* WARNING: Removing unreachable block (ram,0x016cc6bc) */
+/* WARNING: Removing unreachable block (ram,0x016cc6c4) */
+/* WARNING: Removing unreachable block (ram,0x016cc6cc) */
+/* WARNING: Removing unreachable block (ram,0x016cc6e0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6e8) */
+/* WARNING: Removing unreachable block (ram,0x016cc794) */
+/* WARNING: Removing unreachable block (ram,0x016cc7a0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6f0) */
+/* WARNING: Removing unreachable block (ram,0x016cc714) */
+/* WARNING: Removing unreachable block (ram,0x016cc780) */
+/* WARNING: Removing unreachable block (ram,0x016cdc34) */
+/* WARNING: Removing unreachable block (ram,0x016cc834) */
+/* WARNING: Removing unreachable block (ram,0x016cc83c) */
+/* WARNING: Removing unreachable block (ram,0x016cc868) */
+/* WARNING: Removing unreachable block (ram,0x016cc844) */
+/* WARNING: Removing unreachable block (ram,0x016cc86c) */
+/* WARNING: Removing unreachable block (ram,0x016cc850) */
+/* WARNING: Removing unreachable block (ram,0x016cc908) */
+/* WARNING: Removing unreachable block (ram,0x016cc910) */
+/* WARNING: Removing unreachable block (ram,0x016cc920) */
+/* WARNING: Removing unreachable block (ram,0x016cc928) */
+/* WARNING: Removing unreachable block (ram,0x016cc964) */
+/* WARNING: Removing unreachable block (ram,0x016cc930) */
+/* WARNING: Removing unreachable block (ram,0x016cc968) */
+/* WARNING: Removing unreachable block (ram,0x016cc93c) */
+/* WARNING: Removing unreachable block (ram,0x016cc954) */
+/* WARNING: Removing unreachable block (ram,0x016cc89c) */
+/* WARNING: Removing unreachable block (ram,0x016cc8a4) */
+/* WARNING: Removing unreachable block (ram,0x016cc8d0) */
+/* WARNING: Removing unreachable block (ram,0x016cc8ac) */
+/* WARNING: Removing unreachable block (ram,0x016cc8d4) */
+/* WARNING: Removing unreachable block (ram,0x016cc8b8) */
+/* WARNING: Removing unreachable block (ram,0x016ce188) */
+/* WARNING: Removing unreachable block (ram,0x0167d9e0) */
+/* WARNING: Removing unreachable block (ram,0x016ce224) */
+/* WARNING: Removing unreachable block (ram,0x0167d91c) */
+/* WARNING: Removing unreachable block (ram,0x0167d928) */
+/* WARNING: Removing unreachable block (ram,0x0167d930) */
+/* WARNING: Removing unreachable block (ram,0x0167d94c) */
+/* WARNING: Removing unreachable block (ram,0x0167d958) */
+/* WARNING: Removing unreachable block (ram,0x0167d964) */
+/* WARNING: Removing unreachable block (ram,0x016ce20c) */
+/* WARNING: Removing unreachable block (ram,0x016ce320) */
+/* WARNING: Removing unreachable block (ram,0x016ced00) */
+/* WARNING: Removing unreachable block (ram,0x016ced04) */
+/* WARNING: Removing unreachable block (ram,0x016ced10) */
+/* WARNING: Removing unreachable block (ram,0x016ced20) */
+/* WARNING: Removing unreachable block (ram,0x016ced28) */
+/* WARNING: Removing unreachable block (ram,0x016cef64) */
+/* WARNING: Removing unreachable block (ram,0x016cef48) */
+/* WARNING: Removing unreachable block (ram,0x016cef70) */
+/* WARNING: Removing unreachable block (ram,0x016cef78) */
+/* WARNING: Removing unreachable block (ram,0x016cef10) */
+/* WARNING: Removing unreachable block (ram,0x016cef24) */
+/* WARNING: Removing unreachable block (ram,0x016cef2c) */
+/* WARNING: Removing unreachable block (ram,0x016cee20) */
+/* WARNING: Removing unreachable block (ram,0x016cee2c) */
+/* WARNING: Removing unreachable block (ram,0x016cee44) */
+/* WARNING: Removing unreachable block (ram,0x016ced60) */
+/* WARNING: Removing unreachable block (ram,0x016cec30) */
+/* WARNING: Removing unreachable block (ram,0x016cec38) */
+/* WARNING: Removing unreachable block (ram,0x016cec44) */
+/* WARNING: Removing unreachable block (ram,0x016cebe8) */
+/* WARNING: Removing unreachable block (ram,0x016cec48) */
+/* WARNING: Removing unreachable block (ram,0x016cebf0) */
+/* WARNING: Removing unreachable block (ram,0x016cec64) */
+/* WARNING: Removing unreachable block (ram,0x016cec6c) */
+/* WARNING: Removing unreachable block (ram,0x016cec78) */
+/* WARNING: Removing unreachable block (ram,0x016ceca8) */
+/* WARNING: Removing unreachable block (ram,0x016cec84) */
+/* WARNING: Removing unreachable block (ram,0x016cec8c) */
+/* WARNING: Removing unreachable block (ram,0x016cec94) */
+/* WARNING: Removing unreachable block (ram,0x016ced3c) */
+/* WARNING: Removing unreachable block (ram,0x016cc4e0) */
+/* WARNING: Removing unreachable block (ram,0x016cc518) */
+/* WARNING: Removing unreachable block (ram,0x016cc52c) */
+/* WARNING: Removing unreachable block (ram,0x016cc538) */
+/* WARNING: Removing unreachable block (ram,0x016cc540) */
+/* WARNING: Removing unreachable block (ram,0x016cc548) */
+/* WARNING: Removing unreachable block (ram,0x016cc5b8) */
+/* WARNING: Removing unreachable block (ram,0x016cc5c0) */
+/* WARNING: Removing unreachable block (ram,0x016cc5d4) */
+/* WARNING: Removing unreachable block (ram,0x016cc5dc) */
+/* WARNING: Removing unreachable block (ram,0x016cc5e4) */
+/* WARNING: Removing unreachable block (ram,0x016cc5f0) */
+/* WARNING: Removing unreachable block (ram,0x016cc554) */
+/* WARNING: Removing unreachable block (ram,0x016cc55c) */
+/* WARNING: Removing unreachable block (ram,0x016cc574) */
+/* WARNING: Removing unreachable block (ram,0x016cc57c) */
+/* WARNING: Removing unreachable block (ram,0x016cc624) */
+/* WARNING: Removing unreachable block (ram,0x016cc584) */
+/* WARNING: Removing unreachable block (ram,0x016cc628) */
+/* WARNING: Removing unreachable block (ram,0x016cc590) */
+/* WARNING: Removing unreachable block (ram,0x016cc5b4) */
+/* WARNING: Removing unreachable block (ram,0x016cc610) */
+/* WARNING: Removing unreachable block (ram,0x016cebfc) */
+/* WARNING: Removing unreachable block (ram,0x016cec00) */
+/* WARNING: Removing unreachable block (ram,0x016cec08) */
+/* WARNING: Removing unreachable block (ram,0x016cec20) */
+/* WARNING: Removing unreachable block (ram,0x016ceb78) */
+/* WARNING: Removing unreachable block (ram,0x016cec58) */
+/* WARNING: Removing unreachable block (ram,0x016cecac) */
+/* WARNING: Removing unreachable block (ram,0x016cecb8) */
+/* WARNING: Removing unreachable block (ram,0x016cecd8) */
+/* WARNING: Removing unreachable block (ram,0x016cecf0) */
+/* WARNING: Removing unreachable block (ram,0x016cec60) */
+/* WARNING: Removing unreachable block (ram,0x016ceb84) */
+/* WARNING: Removing unreachable block (ram,0x016ceb88) */
+/* WARNING: Removing unreachable block (ram,0x016ceb90) */
+/* WARNING: Removing unreachable block (ram,0x016ceb98) */
+/* WARNING: Removing unreachable block (ram,0x016ceba0) */
+/* WARNING: Removing unreachable block (ram,0x016cebac) */
+/* WARNING: Removing unreachable block (ram,0x016cebd8) */
+/* WARNING: Removing unreachable block (ram,0x016ceb54) */
+/* WARNING: Removing unreachable block (ram,0x016ceb08) */
+/* WARNING: Removing unreachable block (ram,0x016ceb10) */
+/* WARNING: Removing unreachable block (ram,0x016ceb1c) */
+/* WARNING: Removing unreachable block (ram,0x016ceb2c) */
+/* WARNING: Removing unreachable block (ram,0x016cea8c) */
+/* WARNING: Removing unreachable block (ram,0x016cea9c) */
+/* WARNING: Removing unreachable block (ram,0x016ceaa0) */
+/* WARNING: Removing unreachable block (ram,0x016ceb30) */
+/* WARNING: Removing unreachable block (ram,0x016ceaa8) */
+/* WARNING: Removing unreachable block (ram,0x016ced84) */
+/* WARNING: Removing unreachable block (ram,0x016ceab0) */
+/* WARNING: Removing unreachable block (ram,0x016ceabc) */
+/* WARNING: Removing unreachable block (ram,0x016ceac8) */
+/* WARNING: Removing unreachable block (ram,0x016ceacc) */
+/* WARNING: Removing unreachable block (ram,0x016ced88) */
+/* WARNING: Removing unreachable block (ram,0x016ceadc) */
+/* WARNING: Removing unreachable block (ram,0x016ceae8) */
+/* WARNING: Removing unreachable block (ram,0x016cea78) */
+/* WARNING: Removing unreachable block (ram,0x016ce4dc) */
+/* WARNING: Removing unreachable block (ram,0x016ce46c) */
+/* WARNING: Removing unreachable block (ram,0x016ce3a4) */
+/* WARNING: Removing unreachable block (ram,0x016ce3a8) */
+/* WARNING: Removing unreachable block (ram,0x016ce3b4) */
+/* WARNING: Removing unreachable block (ram,0x016cde9c) */
+/* WARNING: Removing unreachable block (ram,0x016ce334) */
+
+ulong Core_Services_Match__AddId(ulong param_1,undefined8 param_2,undefined8 *param_3,int param_4)
+
+{
+  uint uVar1;
+  uint uVar2;
+  int iVar3;
+  undefined4 uVar4;
+  uint uVar5;
+  undefined1 auVar6 [16];
+  undefined1 auVar7 [16];
+  undefined1 auVar8 [16];
+  undefined1 *puVar9;
+  undefined1 *puVar10;
+  undefined1 *puVar11;
+  undefined1 *puVar12;
+  undefined1 *puVar13;
+  undefined1 *puVar14;
+  long lVar15;
+  long *plVar16;
+  ulong uVar17;
+  ulong uVar18;
+  undefined8 uVar19;
+  undefined8 uVar20;
+  int iVar21;
+  undefined8 uVar22;
+  ulong uVar23;
+  ulong unaff_x19;
+  undefined8 unaff_x20;
+  ulong uVar24;
+  long lVar25;
+  ulong unaff_x21;
+  ulong unaff_x22;
+  ulong uVar26;
+  undefined1 *unaff_x29;
+  undefined8 ****ppppuVar27;
+  undefined1 *puVar28;
+  undefined8 ***pppuVar29;
+  undefined *unaff_x30;
+  undefined *puVar30;
+  undefined8 unaff_d8;
+  undefined8 unaff_d9;
+  undefined1 auVar31 [16];
+  undefined1 auVar32 [16];
+  undefined1 auVar33 [16];
+  undefined1 auVar34 [16];
+  undefined1 auVar35 [16];
+  undefined1 auVar36 [12];
+  long alStack_e0 [2];
+  undefined8 ***apppuStack_d0 [2];
+  undefined8 ***pppuStack_a0;
+  undefined *puStack_98;
+  undefined8 *puStack_30;
+  undefined *puStack_28;
+  
+  if (param_1 == 0) {
+    puVar14 = &stack0xfffffffffffffff0;
+    unaff_x29 = &stack0xfffffffffffffff0;
+    puVar30 = &Core_Services_Match__AddHost;
+    auVar31 = func_0x00f78af4();
+    if (auVar31._0_8_ == 0) {
+      auVar31 = func_0x00f78af4();
+      uVar23 = auVar31._0_8_;
+      if (uVar23 != 0) {
+        puStack_28 = &Core_Services_Match__AddMatchType;
+        pppuVar29 = (undefined8 ***)&puStack_30;
+        auVar35._8_8_ = 1;
+        auVar35._0_8_ = uVar23;
+        if ((auVar31._8_4_ == 0) && (*(char *)(uVar23 + 0x48) == '\0')) {
+          return uVar23;
+        }
+        auVar34._8_8_ = 1;
+        auVar34._0_8_ = uVar23;
+        uVar23 = 0;
+        puVar30 = &UNK_016ce4dc;
+        puVar11 = &stack0xffffffffffffffb0;
+        unaff_x21 = auVar31._8_8_;
+        puStack_30 = (undefined8 *)&stack0xffffffffffffffe0;
+        goto code_r0x016cdaac;
+      }
+      puStack_28 = &Core_Services_Match__AddMatchType;
+      puStack_30 = (undefined8 *)&stack0xffffffffffffffe0;
+      lVar15 = func_0x00f78af4();
+      if ((bRam0000000003eb59e1 & 1) == 0) {
+        func_0x00f78a20(0x3d3f1a8);
+        bRam0000000003eb59e1 = 1;
+      }
+      if (lVar15 != 0) {
+        pppuVar29 = (undefined8 ***)&stack0xffffffffffffffc0;
+        auVar35._8_8_ = lVar15;
+        auVar35._0_8_ = 0x3eb5000;
+        if ((bRam0000000003eb5cd8 & 1) == 0) {
+          func_0x00f78a20(0x3d1f100,0);
+          bRam0000000003eb5cd8 = 1;
+        }
+        if (*(int *)(lVar15 + 0x30) < 0) {
+          func_0x00f78a24(0x3d22a38);
+          puVar30 = (undefined *)func_0x00f78aec();
+          uVar19 = func_0x00f78a24(0x3d6cea8);
+          /*System.InvalidOperationException$$.ctor*/ func_0x02ae6938(puVar30,uVar19);
+          uVar19 = func_0x00f78a24(0x3d56a30);
+          auVar36 = func_0x00f78ac0(puVar30,uVar19);
+          pppuStack_a0 = (undefined8 ****)0x3eb5000;
+          pppuVar29 = (undefined8 ***)&stack0xffffffffffffff70;
+          lVar15 = *(long *)(auVar36._0_8_ + 0x18);
+          puStack_98 = puVar30;
+          if ((lVar15 != 0) && (*(long *)(lVar15 + 0x10) != 0)) {
+            uVar5 = *(int *)(*(long *)(lVar15 + 0x10) + 0x18) - auVar36._8_4_;
+            uVar23 = (ulong)uVar5;
+            auVar33._8_4_ = uVar5;
+            auVar33._0_8_ = lVar15;
+            auVar33._12_4_ = 0;
+            puVar9 = &stack0xffffffffffffff00;
+            apppuStack_d0[1] = (undefined8 ***)&UNK_016cee20;
+            ppppuVar27 = apppuStack_d0;
+            auVar8._8_8_ = 4;
+            auVar8._0_8_ = lVar15;
+            uVar26 = 0x3d201a0;
+            apppuStack_d0[0] = pppuVar29;
+            if ((bRam0000000003eb5cd0 & 1) == 0) {
+              func_0x00f78a20(0x3d201a0);
+              bRam0000000003eb5cd0 = 1;
+            }
+            uVar24 = 4;
+            puVar30 = &UNK_016cc68c;
+            goto code_r0x016cc7a4;
+          }
+          func_0x00f78af4();
+          uVar19 = /*System.Int32$$ToString*/ func_0x02ae9b8c(&stack0xffffffffffffff4c,0);
+          uVar22 = func_0x00f78a24(0x3d6ce88);
+          uVar20 = func_0x00f78a24(0x3d66338);
+          lVar15 = /*System.String$$Concat*/ func_0x029be39c(uVar22,uVar19,uVar20,0);
+          func_0x00f78a24(0x3d22a38);
+          uVar19 = func_0x00f78aec();
+          uVar20 = 0;
+          /*System.InvalidOperationException$$.ctor*/ func_0x02ae6938(uVar19,lVar15);
+          uVar22 = func_0x00f78a24(0x3d56a50);
+          puVar30 = &FlatBuffers_FlatBufferBuilder__Finish;
+          auVar31 = func_0x00f78ac0(uVar19,uVar22);
+          puVar11 = &stack0xffffffffffffff40;
+          while( true ) {
+            uVar22 = auVar31._8_8_;
+            lVar25 = auVar31._0_8_;
+            auVar35._8_8_ = lVar25;
+            auVar35._0_8_ = uVar22;
+            auVar7._8_8_ = lVar25;
+            auVar7._0_8_ = uVar22;
+            *(undefined8 *)(puVar11 + -0x20) = uVar19;
+            *(long *)(puVar11 + -0x18) = lVar15;
+            *(undefined8 ****)(puVar11 + -0x10) = pppuVar29;
+            *(undefined **)(puVar11 + -8) = puVar30;
+            pppuVar29 = (undefined8 ***)(puVar11 + -0x10);
+            uVar4 = *(undefined4 *)(lVar25 + 0x20);
+            auVar34._8_4_ = uVar4;
+            auVar34._0_8_ = lVar25;
+            auVar34._12_4_ = 0;
+            lVar15 = lVar25;
+            if ((int)uVar20 == 0) {
+              lVar15 = 0;
+              uVar4 = 0;
+            }
+            auVar6._8_4_ = uVar4;
+            auVar6._0_8_ = lVar15;
+            auVar6._12_4_ = 0;
+            if ((int)uVar20 == 0) {
+              uVar23 = 4;
+              puVar30 = &UNK_016cef64;
+              puVar11 = puVar11 + -0x20;
+              goto code_r0x016cdaac;
+            }
+            if (lVar15 != 0) break;
+            puVar30 = &FlatBuffers_FlatBufferBuilder__Finish;
+            auVar31 = func_0x00f78af4();
+            uVar20 = 0;
+            puVar11 = puVar11 + -0x20;
+            lVar15 = lVar25;
+            uVar19 = uVar22;
+          }
+          uVar23 = 8;
+          puVar30 = &UNK_016cef10;
+          puVar11 = puVar11 + -0x20;
+          auVar34 = auVar6;
+          auVar35 = auVar7;
+        }
+        else {
+          auVar34._8_8_ = 4;
+          auVar34._0_8_ = lVar15;
+          uVar23 = 0;
+          puVar30 = &UNK_016cea78;
+          puVar11 = &stack0xffffffffffffff80;
+        }
+        goto code_r0x016cdaac;
+      }
+      uVar23 = func_0x00f78af4();
+      if (uVar23 == 0) {
+        auVar32 = func_0x00f78af4();
+        lVar15 = auVar32._0_8_;
+        if ((auVar32._8_8_ == 0) || (lVar15 == 0)) {
+          auVar32 = func_0x00f78af4();
+          lVar25 = auVar32._8_8_;
+          lVar15 = auVar32._0_8_;
+          puVar11 = &stack0xffffffffffffff40;
+          puStack_98 = &Core_Services_Match__CreateOtherPlayersVectorBlock;
+          ppppuVar27 = &pppuStack_a0;
+          unaff_x21 = 0x3eb5000;
+          pppuStack_a0 = (undefined8 ***)&stack0xffffffffffffff90;
+          if ((bRam0000000003eb59e0 & 1) == 0) {
+            func_0x00f78a20(0x3d569d8);
+            bRam0000000003eb59e0 = 1;
+          }
+          if ((lVar25 == 0) || (lVar15 == 0)) {
+            puVar30 = &Core_Services_Match__StartOtherPlayersVector;
+            auVar36 = func_0x00f78af4();
+            iVar21 = auVar36._8_4_;
+            auVar32._8_8_ = lVar25;
+            auVar32._0_8_ = auVar36._0_8_;
+            if (auVar36._0_8_ == 0) {
+              apppuStack_d0[1] = (undefined8 ***)&Core_Services_Match__StartOtherPlayersVector;
+              apppuStack_d0[0] = ppppuVar27;
+              auVar31 = func_0x00f78af4();
+              uVar23 = auVar31._0_8_;
+              *(undefined8 *)(uVar23 + 0x10) = *param_3;
+              *(long *)(uVar23 + 0x20) = auVar31._8_8_;
+              *(undefined8 **)(uVar23 + 0x28) = param_3;
+              return uVar23;
+            }
+          }
+          else {
+            unaff_x21 = 0x3d56000;
+            iVar21 = *(int *)(lVar25 + 0x18);
+            puVar30 = &UNK_0167d9e0;
+            puVar11 = &stack0xffffffffffffff40;
+          }
+        }
+        else {
+          iVar21 = *(int *)(auVar32._8_8_ + 0x18);
+          puVar30 = &UNK_0167d91c;
+          puVar11 = &stack0xffffffffffffff70;
+          ppppuVar27 = (undefined8 ****)&stack0xffffffffffffff90;
+        }
+        uVar26 = auVar32._0_8_;
+        *(ulong *)(puVar11 + -0x30) = unaff_x22;
+        *(ulong *)(puVar11 + -0x28) = unaff_x21;
+        *(long *)(puVar11 + -0x20) = auVar32._8_8_;
+        *(long *)(puVar11 + -0x18) = lVar15;
+        *(undefined8 *****)(puVar11 + -0x10) = ppppuVar27;
+        *(undefined **)(puVar11 + -8) = puVar30;
+        pppuVar29 = (undefined8 ***)(puVar11 + -0x10);
+        unaff_x21 = 4;
+        /*FlatBuffers.FlatBufferBuilder$$NotNested*/ func_0x016ce1a4();
+        *(int *)(uVar26 + 0x44) = iVar21;
+        uVar23 = CONCAT44(0,iVar21 * 4);
+        auVar35._8_8_ = 4;
+        auVar35._0_8_ = uVar23;
+        auVar34._8_8_ = 4;
+        auVar34._0_8_ = uVar26;
+        puVar30 = &UNK_016ce188;
+        puVar11 = puVar11 + -0x30;
+        unaff_x22 = uVar26;
+        goto code_r0x016cdaac;
+      }
+      puVar10 = &stack0xffffffffffffff80;
+      puVar11 = &stack0xffffffffffffff80;
+      unaff_x29 = &stack0xffffffffffffffa0;
+      unaff_x20 = 4;
+      unaff_x21 = 0x3eb5000;
+      if ((bRam0000000003eb5cd7 & 1) == 0) {
+        func_0x00f78a20(0x3d1f100,4,0);
+        bRam0000000003eb5cd7 = 1;
+      }
+      /*FlatBuffers.FlatBufferBuilder$$NotNested*/ func_0x016ce1a4(uVar23);
+      if (*(long *)(uVar23 + 0x28) != 0) {
+        if (*(int *)(*(long *)(uVar23 + 0x28) + 0x18) < 4) {
+          uVar19 = func_0x00f78a34(/*int[]_TypeInfo*/ uRam0000000003d1f100,4);
+          *(undefined8 *)(uVar23 + 0x28) = uVar19;
+        }
+        *(undefined4 *)(uVar23 + 0x30) = 4;
+        puVar30 = &UNK_016ce320;
+        goto code_r0x016cda04;
+      }
+      unaff_x30 = &FlatBuffers_FlatBufferBuilder__Slot;
+      auVar36 = func_0x00f78af4();
+      iVar21 = auVar36._8_4_;
+      param_1 = auVar36._0_8_;
+      unaff_x19 = uVar23;
+      goto code_r0x016ce380;
+    }
+    uVar19 = 3;
+    param_4 = 0;
+  }
+  else {
+    param_4 = 0;
+    iVar21 = 0;
+    if (((int)param_2 == 0) && (*(char *)(param_1 + 0x48) == '\0')) {
+      return param_1;
+    }
+    /*FlatBuffers.FlatBufferBuilder$$AddOffset*/ func_0x016ce0c8(param_1,param_2,param_2,0,0);
+    puVar11 = (undefined1 *)register0x00000008;
+code_r0x016ce380:
+    uVar23 = param_1;
+    puVar14 = puVar11 + -0x20;
+    puVar10 = puVar11 + -0x20;
+    *(undefined8 *)(puVar11 + -0x20) = unaff_x20;
+    *(ulong *)(puVar11 + -0x18) = unaff_x19;
+    *(undefined1 **)(puVar11 + -0x10) = unaff_x29;
+    *(undefined **)(puVar11 + -8) = unaff_x30;
+    unaff_x29 = puVar11 + -0x10;
+    if (iVar21 < *(int *)(uVar23 + 0x30)) {
+      puVar30 = &UNK_016ce3a4;
+code_r0x016cda04:
+      *(undefined1 **)(puVar10 + -0x10) = unaff_x29;
+      *(undefined **)(puVar10 + -8) = puVar30;
+      if ((*(long *)(uVar23 + 0x18) != 0) &&
+         (lVar15 = *(long *)(*(long *)(uVar23 + 0x18) + 0x10), lVar15 != 0)) {
+        return (ulong)(uint)(*(int *)(lVar15 + 0x18) - *(int *)(uVar23 + 0x10));
+      }
+      lVar15 = func_0x00f78af4();
+      return (ulong)*(byte *)(lVar15 + 0x48);
+    }
+    func_0x00f78a24(0x3d22738);
+    unaff_x19 = func_0x00f78aec();
+    uVar19 = func_0x00f78a24(0x3d6ceb8);
+    uVar22 = 0;
+    /*System.IndexOutOfRangeException$$.ctor*/ func_0x02ae8c34(unaff_x19,uVar19);
+    uVar19 = func_0x00f78a24(0x3d56a58);
+    func_0x00f78ac0(unaff_x19,uVar19);
+    func_0x00f78af4();
+    uVar19 = func_0x00f78b24();
+    puVar30 = &FlatBuffers_FlatBufferBuilder__AddBool;
+    auVar35 = func_0x00f78ac0(uVar19,0);
+    uVar19 = auVar35._8_8_;
+    auVar31._8_8_ = uVar22;
+    auVar31._0_8_ = auVar35._0_8_;
+  }
+  uVar23 = auVar31._0_8_;
+  auVar35._8_8_ = uVar19;
+  auVar35._0_8_ = uVar23;
+  *(ulong *)(puVar14 + -0x30) = unaff_x22;
+  *(ulong *)(puVar14 + -0x28) = unaff_x21;
+  *(undefined8 *)(puVar14 + -0x20) = unaff_x20;
+  *(ulong *)(puVar14 + -0x18) = unaff_x19;
+  *(undefined1 **)(puVar14 + -0x10) = unaff_x29;
+  *(undefined **)(puVar14 + -8) = puVar30;
+  pppuVar29 = (undefined8 ***)(puVar14 + -0x10);
+  if ((auVar31._8_4_ == param_4) && (*(char *)(uVar23 + 0x48) == '\0')) {
+    return uVar23;
+  }
+  auVar34._8_8_ = 1;
+  auVar34._0_8_ = uVar23;
+  uVar23 = 0;
+  puVar30 = &UNK_016ce46c;
+  puVar11 = puVar14 + -0x30;
+  unaff_x21 = auVar31._8_8_;
+code_r0x016cdaac:
+  do {
+    uVar24 = auVar35._0_8_;
+    uVar17 = auVar34._0_8_;
+    puVar9 = puVar11 + -0x30;
+    *(ulong *)(puVar11 + -0x30) = unaff_x22;
+    *(ulong *)(puVar11 + -0x28) = unaff_x21;
+    *(undefined1 (*) [16])(puVar11 + -0x20) = auVar35;
+    *(undefined8 ****)(puVar11 + -0x10) = pppuVar29;
+    *(undefined **)(puVar11 + -8) = puVar30;
+    iVar21 = auVar34._8_4_;
+    if (*(int *)(uVar17 + 0x20) < iVar21) {
+      *(int *)(uVar17 + 0x20) = iVar21;
+    }
+    uVar26 = unaff_x22;
+    if ((*(long *)(uVar17 + 0x18) != 0) &&
+       (lVar15 = *(long *)(*(long *)(uVar17 + 0x18) + 0x10), lVar15 != 0)) {
+      uVar2 = *(uint *)(lVar15 + 0x18);
+      iVar3 = *(int *)(uVar17 + 0x10);
+      uVar1 = iVar3 - (uVar2 + (int)uVar23) & iVar21 - 1U;
+      uVar24 = CONCAT44(0,uVar1);
+      uVar5 = (int)uVar23 + iVar21 + uVar1;
+      uVar26 = (ulong)uVar5;
+      uVar18 = uVar17;
+      while (unaff_x21 = (ulong)uVar2, iVar3 < (int)uVar5) {
+        uVar18 = /*FlatBuffers.FlatBufferBuilder$$GrowBuffer*/ func_0x016cda78(uVar17);
+        if ((*(long *)(uVar17 + 0x18) == 0) ||
+           (lVar15 = *(long *)(*(long *)(uVar17 + 0x18) + 0x10), lVar15 == 0))
+        goto code_r0x016cdb68;
+        iVar3 = *(int *)(uVar17 + 0x10) - uVar2;
+        uVar2 = *(uint *)(lVar15 + 0x18);
+        iVar3 = iVar3 + uVar2;
+        *(int *)(uVar17 + 0x10) = iVar3;
+      }
+      if ((int)uVar1 < 1) {
+        return uVar18;
+      }
+      uVar19 = *(undefined8 *)*(undefined1 (*) [16])(puVar11 + -0x20);
+      uVar22 = *(undefined8 *)(puVar11 + -0x18);
+      auVar35 = *(undefined1 (*) [16])(puVar11 + -0x20);
+      unaff_x22 = *(ulong *)(puVar11 + -0x30);
+      unaff_x21 = *(ulong *)(puVar11 + -0x28);
+      *(undefined8 *)(puVar11 + -0x10) = *(undefined8 *)(puVar11 + -0x10);
+      *(undefined8 *)(puVar11 + -8) = *(undefined8 *)(puVar11 + -8);
+      lVar15 = *(long *)(uVar17 + 0x18);
+      auVar8._8_8_ = lVar15;
+      auVar8._0_8_ = uVar24;
+      uVar1 = *(int *)(uVar17 + 0x10) - uVar1;
+      uVar26 = (ulong)uVar1;
+      auVar33._8_4_ = uVar1;
+      auVar33._0_8_ = lVar15;
+      auVar33._12_4_ = 0;
+      *(uint *)(uVar17 + 0x10) = uVar1;
+      if (lVar15 != 0) {
+        *(ulong *)(puVar11 + -0x30) = unaff_x22;
+        *(ulong *)(puVar11 + -0x28) = unaff_x21;
+        *(undefined8 *)(puVar11 + -0x20) = uVar19;
+        *(undefined8 *)(puVar11 + -0x18) = uVar22;
+        *(undefined8 *)(puVar11 + -0x10) = *(undefined8 *)(puVar11 + -0x10);
+        *(undefined8 *)(puVar11 + -8) = *(undefined8 *)(puVar11 + -8);
+        ppppuVar27 = (undefined8 ****)(puVar11 + -0x10);
+        puVar30 = &UNK_016cc908;
+        uVar23 = 0;
+        goto code_r0x016cc7a4;
+      }
+      lVar15 = func_0x00f78af4();
+      pppuVar29 = (undefined8 ***)(puVar11 + -0x20);
+      *(undefined1 **)(puVar11 + -0x20) = puVar11 + -0x10;
+      *(undefined **)(puVar11 + -0x18) = &FlatBuffers_FlatBufferBuilder__GrowBuffer;
+      if ((*(long *)(lVar15 + 0x18) != 0) &&
+         (plVar16 = *(long **)(*(long *)(lVar15 + 0x18) + 0x10), plVar16 != (long *)0x0)) {
+                    /* WARNING: Could not recover jumptable at 0x016cdaa4. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+        uVar23 = (**(code **)(*plVar16 + 0x178))
+                           (plVar16,(int)plVar16[3] << 1,*(undefined8 *)(*plVar16 + 0x180));
+        return uVar23;
+      }
+      puVar30 = &FlatBuffers_FlatBufferBuilder__Prep;
+      auVar34 = func_0x00f78af4();
+      puVar11 = puVar11 + -0x20;
+      goto code_r0x016cdaac;
+    }
+code_r0x016cdb68:
+    auVar8._8_8_ = uVar24;
+    auVar8._0_8_ = unaff_x21;
+    auVar31 = func_0x00f78af4();
+    uVar23 = auVar31._8_8_;
+    lVar25 = auVar31._0_8_;
+    *(undefined1 **)(puVar11 + -0x40) = puVar11 + -0x10;
+    *(undefined **)(puVar11 + -0x38) = &FlatBuffers_FlatBufferBuilder__PutBool;
+    lVar15 = *(long *)(lVar25 + 0x18);
+    iVar21 = *(int *)(lVar25 + 0x10) + -1;
+    *(int *)(lVar25 + 0x10) = iVar21;
+    if (lVar15 != 0) {
+      puVar12 = puVar11 + -0x30;
+      uVar19 = *(undefined8 *)(puVar11 + -0x40);
+      uVar22 = *(undefined8 *)(puVar11 + -0x38);
+FlatBuffers_ByteBuffer__PutByte:
+      auVar8._8_4_ = iVar21;
+      auVar8._0_8_ = lVar15;
+      auVar8._12_4_ = 0;
+      auVar33._8_4_ = iVar21;
+      auVar33._0_8_ = lVar15;
+      auVar33._12_4_ = 0;
+      puVar9 = puVar12 + -0x30;
+      *(ulong *)(puVar12 + -0x30) = uVar26;
+      *(ulong *)(puVar12 + -0x28) = unaff_x21;
+      *(ulong *)(puVar12 + -0x20) = uVar24;
+      *(ulong *)(puVar12 + -0x18) = uVar17;
+      *(undefined8 *)(puVar12 + -0x10) = uVar19;
+      *(undefined8 *)(puVar12 + -8) = uVar22;
+      ppppuVar27 = (undefined8 ****)(puVar12 + -0x10);
+      uVar24 = 1;
+      puVar30 = &UNK_016cc89c;
+      goto code_r0x016cc7a4;
+    }
+    auVar31 = func_0x00f78af4();
+    uVar18 = auVar31._8_8_;
+    lVar15 = auVar31._0_8_;
+    *(undefined1 **)(puVar11 + -0x50) = puVar11 + -0x40;
+    *(undefined **)(puVar11 + -0x48) = &FlatBuffers_FlatBufferBuilder__PutSbyte;
+    iVar21 = *(int *)(lVar15 + 0x10) + -1;
+    auVar33._8_4_ = iVar21;
+    auVar33._0_8_ = *(long *)(lVar15 + 0x18);
+    auVar33._12_4_ = 0;
+    *(int *)(lVar15 + 0x10) = iVar21;
+    if (*(long *)(lVar15 + 0x18) != 0) {
+      puVar13 = puVar11 + -0x40;
+      puVar28 = *(undefined1 **)(puVar11 + -0x50);
+      puVar30 = *(undefined **)(puVar11 + -0x48);
+      uVar23 = uVar17;
+      goto code_r0x016cc810;
+    }
+    auVar31 = func_0x00f78af4();
+    uVar23 = auVar31._8_8_;
+    lVar25 = auVar31._0_8_;
+    *(undefined1 **)(puVar11 + -0x60) = puVar11 + -0x50;
+    *(undefined **)(puVar11 + -0x58) = &FlatBuffers_FlatBufferBuilder__PutByte;
+    lVar15 = *(long *)(lVar25 + 0x18);
+    iVar21 = *(int *)(lVar25 + 0x10) + -1;
+    *(int *)(lVar25 + 0x10) = iVar21;
+    if (lVar15 != 0) {
+      puVar12 = puVar11 + -0x50;
+      uVar19 = *(undefined8 *)(puVar11 + -0x60);
+      uVar22 = *(undefined8 *)(puVar11 + -0x58);
+      goto FlatBuffers_ByteBuffer__PutByte;
+    }
+    auVar31 = func_0x00f78af4();
+    uVar23 = auVar31._8_8_;
+    lVar15 = auVar31._0_8_;
+    puVar9 = puVar11 + -0x90;
+    *(ulong *)(puVar11 + -0x90) = uVar26;
+    *(ulong *)(puVar11 + -0x88) = unaff_x21;
+    *(ulong *)(puVar11 + -0x80) = uVar24;
+    *(ulong *)(puVar11 + -0x78) = uVar17;
+    *(undefined1 **)(puVar11 + -0x70) = puVar11 + -0x60;
+    *(undefined **)(puVar11 + -0x68) = &FlatBuffers_FlatBufferBuilder__PutShort;
+    ppppuVar27 = (undefined8 ****)(puVar11 + -0x70);
+    lVar25 = *(long *)(lVar15 + 0x18);
+    uVar5 = *(int *)(lVar15 + 0x10) - 2;
+    auVar8._8_8_ = lVar25;
+    auVar8._0_8_ = CONCAT44(0,uVar5);
+    auVar33._8_4_ = uVar5;
+    auVar33._0_8_ = lVar25;
+    auVar33._12_4_ = 0;
+    *(uint *)(lVar15 + 0x10) = uVar5;
+    if (lVar25 != 0) {
+      uVar24 = 2;
+      puVar30 = &UNK_016cdc34;
+      goto code_r0x016cc7a4;
+    }
+    auVar31 = func_0x00f78af4();
+    uVar23 = auVar31._8_8_;
+    lVar15 = auVar31._0_8_;
+    puVar9 = puVar11 + -0xc0;
+    *(ulong *)(puVar11 + -0xc0) = uVar26;
+    *(ulong *)(puVar11 + -0xb8) = CONCAT44(0,uVar5);
+    *(undefined8 *)(puVar11 + -0xb0) = 0;
+    *(ulong *)(puVar11 + -0xa8) = uVar17;
+    *(undefined8 *****)(puVar11 + -0xa0) = ppppuVar27;
+    *(undefined **)(puVar11 + -0x98) = &FlatBuffers_FlatBufferBuilder__PutUshort;
+    ppppuVar27 = (undefined8 ****)(puVar11 + -0xa0);
+    lVar25 = *(long *)(lVar15 + 0x18);
+    uVar5 = *(int *)(lVar15 + 0x10) - 2;
+    auVar8._8_8_ = lVar25;
+    auVar8._0_8_ = CONCAT44(0,uVar5);
+    auVar33._8_4_ = uVar5;
+    auVar33._0_8_ = lVar25;
+    auVar33._12_4_ = 0;
+    *(uint *)(lVar15 + 0x10) = uVar5;
+    if (lVar25 != 0) {
+      uVar24 = 2;
+      puVar30 = &UNK_016cdc90;
+      goto code_r0x016cc7a4;
+    }
+    auVar31 = func_0x00f78af4();
+    uVar23 = auVar31._8_8_;
+    lVar15 = auVar31._0_8_;
+    puVar9 = puVar11 + -0xf0;
+    *(ulong *)(puVar11 + -0xf0) = uVar26;
+    *(ulong *)(puVar11 + -0xe8) = CONCAT44(0,uVar5);
+    *(undefined8 *)(puVar11 + -0xe0) = 0;
+    *(ulong *)(puVar11 + -0xd8) = uVar17;
+    *(undefined8 *****)(puVar11 + -0xd0) = ppppuVar27;
+    *(undefined **)(puVar11 + -200) = &FlatBuffers_FlatBufferBuilder__PutInt;
+    ppppuVar27 = (undefined8 ****)(puVar11 + -0xd0);
+    lVar25 = *(long *)(lVar15 + 0x18);
+    uVar5 = *(int *)(lVar15 + 0x10) - 4;
+    auVar8._8_8_ = lVar25;
+    auVar8._0_8_ = CONCAT44(0,uVar5);
+    auVar33._8_4_ = uVar5;
+    auVar33._0_8_ = lVar25;
+    auVar33._12_4_ = 0;
+    *(uint *)(lVar15 + 0x10) = uVar5;
+    if (lVar25 != 0) {
+      uVar24 = 4;
+      puVar30 = &UNK_016cdcec;
+      goto code_r0x016cc7a4;
+    }
+    auVar31 = func_0x00f78af4();
+    uVar23 = auVar31._8_8_;
+    lVar15 = auVar31._0_8_;
+    puVar9 = puVar11 + -0x120;
+    *(ulong *)(puVar11 + -0x120) = uVar26;
+    *(ulong *)(puVar11 + -0x118) = CONCAT44(0,uVar5);
+    *(undefined8 *)(puVar11 + -0x110) = 0;
+    *(ulong *)(puVar11 + -0x108) = uVar17;
+    *(undefined8 *****)(puVar11 + -0x100) = ppppuVar27;
+    *(undefined **)(puVar11 + -0xf8) = &FlatBuffers_FlatBufferBuilder__PutUint;
+    ppppuVar27 = (undefined8 ****)(puVar11 + -0x100);
+    lVar25 = *(long *)(lVar15 + 0x18);
+    uVar5 = *(int *)(lVar15 + 0x10) - 4;
+    auVar8._8_8_ = lVar25;
+    auVar8._0_8_ = CONCAT44(0,uVar5);
+    auVar33._8_4_ = uVar5;
+    auVar33._0_8_ = lVar25;
+    auVar33._12_4_ = 0;
+    *(uint *)(lVar15 + 0x10) = uVar5;
+    if (lVar25 != 0) {
+      uVar24 = 4;
+      puVar30 = &UNK_016cdd48;
+      goto code_r0x016cc7a4;
+    }
+    auVar31 = func_0x00f78af4();
+    uVar23 = auVar31._8_8_;
+    lVar15 = auVar31._0_8_;
+    puVar9 = puVar11 + -0x150;
+    *(ulong *)(puVar11 + -0x150) = uVar26;
+    *(ulong *)(puVar11 + -0x148) = CONCAT44(0,uVar5);
+    *(undefined8 *)(puVar11 + -0x140) = 0;
+    *(ulong *)(puVar11 + -0x138) = uVar17;
+    *(undefined8 *****)(puVar11 + -0x130) = ppppuVar27;
+    *(undefined **)(puVar11 + -0x128) = &FlatBuffers_FlatBufferBuilder__PutLong;
+    ppppuVar27 = (undefined8 ****)(puVar11 + -0x130);
+    lVar25 = *(long *)(lVar15 + 0x18);
+    uVar5 = *(int *)(lVar15 + 0x10) - 8;
+    auVar8._8_8_ = lVar25;
+    auVar8._0_8_ = CONCAT44(0,uVar5);
+    auVar33._8_4_ = uVar5;
+    auVar33._0_8_ = lVar25;
+    auVar33._12_4_ = 0;
+    *(uint *)(lVar15 + 0x10) = uVar5;
+    if (lVar25 != 0) {
+      uVar24 = 8;
+      puVar30 = &UNK_016cdda4;
+      goto code_r0x016cc7a4;
+    }
+    auVar31 = func_0x00f78af4();
+    uVar23 = auVar31._8_8_;
+    lVar15 = auVar31._0_8_;
+    puVar9 = puVar11 + -0x180;
+    *(ulong *)(puVar11 + -0x180) = uVar26;
+    *(ulong *)(puVar11 + -0x178) = CONCAT44(0,uVar5);
+    *(undefined8 *)(puVar11 + -0x170) = 0;
+    *(ulong *)(puVar11 + -0x168) = uVar17;
+    *(undefined8 *****)(puVar11 + -0x160) = ppppuVar27;
+    *(undefined **)(puVar11 + -0x158) = &FlatBuffers_FlatBufferBuilder__PutUlong;
+    ppppuVar27 = (undefined8 ****)(puVar11 + -0x160);
+    lVar25 = *(long *)(lVar15 + 0x18);
+    uVar5 = *(int *)(lVar15 + 0x10) - 8;
+    unaff_x21 = CONCAT44(0,uVar5);
+    auVar8._8_8_ = lVar25;
+    auVar8._0_8_ = unaff_x21;
+    auVar33._8_4_ = uVar5;
+    auVar33._0_8_ = lVar25;
+    auVar33._12_4_ = 0;
+    *(uint *)(lVar15 + 0x10) = uVar5;
+    if (lVar25 != 0) {
+      uVar24 = 8;
+      puVar30 = &UNK_016cde00;
+      goto code_r0x016cc7a4;
+    }
+    lVar15 = func_0x00f78af4();
+    *(undefined8 *****)(puVar11 + -400) = ppppuVar27;
+    *(undefined **)(puVar11 + -0x188) = &FlatBuffers_FlatBufferBuilder__PutFloat;
+    lVar25 = *(long *)(lVar15 + 0x18);
+    auVar8._8_8_ = lVar25;
+    uVar5 = *(int *)(lVar15 + 0x10) - 4;
+    uVar23 = (ulong)uVar5;
+    auVar33._8_4_ = uVar5;
+    auVar33._0_8_ = lVar25;
+    auVar33._12_4_ = 0;
+    *(uint *)(lVar15 + 0x10) = uVar5;
+    if (lVar25 != 0) {
+      puVar9 = puVar11 + -0x1b0;
+      *(undefined8 *)(puVar11 + -0x1b0) = unaff_d9;
+      *(undefined8 *)(puVar11 + -0x1a8) = unaff_d8;
+      *(undefined8 *)(puVar11 + -0x1a0) = 0;
+      *(ulong *)(puVar11 + -0x198) = uVar17;
+      *(undefined8 *)(puVar11 + -400) = *(undefined8 *)(puVar11 + -400);
+      *(undefined8 *)(puVar11 + -0x188) = *(undefined8 *)(puVar11 + -0x188);
+      ppppuVar27 = (undefined8 ****)(puVar11 + -400);
+      uVar24 = 4;
+      puVar30 = &UNK_016ccba4;
+      goto code_r0x016cc7a4;
+    }
+    lVar15 = func_0x00f78af4();
+    *(undefined1 **)(puVar11 + -0x1a0) = puVar11 + -400;
+    *(undefined **)(puVar11 + -0x198) = &FlatBuffers_FlatBufferBuilder__PutDouble;
+    lVar25 = *(long *)(lVar15 + 0x18);
+    auVar8._8_8_ = lVar25;
+    uVar5 = *(int *)(lVar15 + 0x10) - 8;
+    uVar23 = (ulong)uVar5;
+    auVar33._8_4_ = uVar5;
+    auVar33._0_8_ = lVar25;
+    auVar33._12_4_ = 0;
+    *(uint *)(lVar15 + 0x10) = uVar5;
+    if (lVar25 != 0) break;
+    auVar35 = func_0x00f78af4();
+    *(undefined8 *)(puVar11 + -0x1c0) = 0;
+    *(ulong *)(puVar11 + -0x1b8) = uVar17;
+    *(undefined1 **)(puVar11 + -0x1b0) = puVar11 + -0x1a0;
+    *(undefined **)(puVar11 + -0x1a8) = &FlatBuffers_FlatBufferBuilder__AddBool;
+    pppuVar29 = (undefined8 ***)(puVar11 + -0x1b0);
+    auVar34._8_8_ = 1;
+    auVar34._0_8_ = auVar35._0_8_;
+    uVar23 = 0;
+    puVar30 = &UNK_016cde9c;
+    puVar11 = puVar11 + -0x1c0;
+    unaff_x22 = uVar26;
+  } while( true );
+  puVar9 = puVar11 + -0x1c0;
+  *(undefined8 *)(puVar11 + -0x1c0) = unaff_d9;
+  *(undefined8 *)(puVar11 + -0x1b8) = unaff_d8;
+  *(undefined8 *)(puVar11 + -0x1b0) = 0;
+  *(ulong *)(puVar11 + -0x1a8) = uVar17;
+  *(undefined8 *)(puVar11 + -0x1a0) = *(undefined8 *)(puVar11 + -0x1a0);
+  *(undefined8 *)(puVar11 + -0x198) = *(undefined8 *)(puVar11 + -0x198);
+  ppppuVar27 = (undefined8 ****)(puVar11 + -0x1a0);
+  uVar24 = 8;
+  puVar30 = &UNK_016ccc34;
+code_r0x016cc7a4:
+  do {
+    puVar13 = puVar9 + -0x20;
+    *(long *)(puVar9 + -0x20) = auVar8._8_8_;
+    *(ulong *)(puVar9 + -0x18) = uVar23;
+    *(undefined8 *****)(puVar9 + -0x10) = ppppuVar27;
+    *(undefined **)(puVar9 + -8) = puVar30;
+    puVar28 = puVar9 + -0x10;
+    if (auVar33._8_4_ < 0) {
+code_r0x016cc7d8:
+      func_0x00f78a24(0x3d1fcf8);
+      uVar23 = func_0x00f78aec();
+      /*System.ArgumentOutOfRangeException$$.ctor*/ func_0x0292a4d0(uVar23,0);
+      uVar19 = func_0x00f78a24(0x3d52ce8);
+      func_0x00f78ac0(uVar23,uVar19);
+      uVar18 = uVar24;
+    }
+    else {
+      lVar15 = *(long *)(auVar33._0_8_ + 0x10);
+      uVar18 = uVar24;
+      if (lVar15 != 0) {
+        if (auVar33._8_4_ <= *(int *)(lVar15 + 0x18) - (int)uVar24) {
+          return auVar33._0_8_;
+        }
+        goto code_r0x016cc7d8;
+      }
+    }
+    puVar30 = &FlatBuffers_ByteBuffer__PutSbyte;
+    auVar33 = func_0x00f78af4();
+code_r0x016cc810:
+    puVar9 = puVar13 + -0x30;
+    *(ulong *)(puVar13 + -0x30) = uVar26;
+    *(undefined1 (*) [16])(puVar13 + -0x28) = auVar8;
+    *(ulong *)(puVar13 + -0x18) = uVar23;
+    *(undefined1 **)(puVar13 + -0x10) = puVar28;
+    *(undefined **)(puVar13 + -8) = puVar30;
+    ppppuVar27 = (undefined8 ****)(puVar13 + -0x10);
+    uVar24 = 1;
+    puVar30 = &UNK_016cc834;
+    uVar23 = uVar18;
+    auVar8 = auVar33;
+  } while( true );
+}
+
+
+
+// ============================================================
+// RVA: 0x167d834 | Core.Services.Match.AddHost
+// ============================================================
+
+/* WARNING: Possible PIC construction at 0x016ce468: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce3a0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce4d8: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cea74: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cea88: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ceb04: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ceb50: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ceb74: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cebe4: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cec2c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ced5c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cee1c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cef0c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cef44: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cef60: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cecfc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce31c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x0167d918: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce220: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x0167d9dc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce184: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc898: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc904: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc830: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdc30: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc688: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdc8c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdce8: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdd44: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdda0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cddfc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccba0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccc30: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cccb8: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccd14: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccdc0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cde98: Changing call to branch */
+/* WARNING: Removing unreachable block (ram,0x016ccdc4) */
+/* WARNING: Removing unreachable block (ram,0x016ccd18) */
+/* WARNING: Removing unreachable block (ram,0x016ccd20) */
+/* WARNING: Removing unreachable block (ram,0x016ccd48) */
+/* WARNING: Removing unreachable block (ram,0x016ccd28) */
+/* WARNING: Removing unreachable block (ram,0x016ccd4c) */
+/* WARNING: Removing unreachable block (ram,0x016ccd84) */
+/* WARNING: Removing unreachable block (ram,0x016ccdb0) */
+/* WARNING: Removing unreachable block (ram,0x016ccd88) */
+/* WARNING: Removing unreachable block (ram,0x016ccd34) */
+/* WARNING: Removing unreachable block (ram,0x016cccbc) */
+/* WARNING: Removing unreachable block (ram,0x016cccc4) */
+/* WARNING: Removing unreachable block (ram,0x016cccec) */
+/* WARNING: Removing unreachable block (ram,0x016ccccc) */
+/* WARNING: Removing unreachable block (ram,0x016cccf0) */
+/* WARNING: Removing unreachable block (ram,0x016cccd8) */
+/* WARNING: Removing unreachable block (ram,0x016ccc34) */
+/* WARNING: Removing unreachable block (ram,0x016ccc3c) */
+/* WARNING: Removing unreachable block (ram,0x016ccc44) */
+/* WARNING: Removing unreachable block (ram,0x016ccc90) */
+/* WARNING: Removing unreachable block (ram,0x016ccc68) */
+/* WARNING: Removing unreachable block (ram,0x016ccc94) */
+/* WARNING: Removing unreachable block (ram,0x016ccc70) */
+/* WARNING: Removing unreachable block (ram,0x016ccba4) */
+/* WARNING: Removing unreachable block (ram,0x016ccbac) */
+/* WARNING: Removing unreachable block (ram,0x016ccbb4) */
+/* WARNING: Removing unreachable block (ram,0x016ccc00) */
+/* WARNING: Removing unreachable block (ram,0x016ccbd8) */
+/* WARNING: Removing unreachable block (ram,0x016ccc04) */
+/* WARNING: Removing unreachable block (ram,0x016ccbe0) */
+/* WARNING: Removing unreachable block (ram,0x016cde00) */
+/* WARNING: Removing unreachable block (ram,0x016cdda4) */
+/* WARNING: Removing unreachable block (ram,0x016cdd48) */
+/* WARNING: Removing unreachable block (ram,0x016cdcec) */
+/* WARNING: Removing unreachable block (ram,0x016cdc90) */
+/* WARNING: Removing unreachable block (ram,0x016cc68c) */
+/* WARNING: Removing unreachable block (ram,0x016cc698) */
+/* WARNING: Removing unreachable block (ram,0x016cc6a0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6a8) */
+/* WARNING: Removing unreachable block (ram,0x016cc718) */
+/* WARNING: Removing unreachable block (ram,0x016cc720) */
+/* WARNING: Removing unreachable block (ram,0x016cc728) */
+/* WARNING: Removing unreachable block (ram,0x016cc730) */
+/* WARNING: Removing unreachable block (ram,0x016cc74c) */
+/* WARNING: Removing unreachable block (ram,0x016cc754) */
+/* WARNING: Removing unreachable block (ram,0x016cc778) */
+/* WARNING: Removing unreachable block (ram,0x016cc6b4) */
+/* WARNING: Removing unreachable block (ram,0x016cc77c) */
+/* WARNING: Removing unreachable block (ram,0x016cc6bc) */
+/* WARNING: Removing unreachable block (ram,0x016cc6c4) */
+/* WARNING: Removing unreachable block (ram,0x016cc6cc) */
+/* WARNING: Removing unreachable block (ram,0x016cc6e0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6e8) */
+/* WARNING: Removing unreachable block (ram,0x016cc794) */
+/* WARNING: Removing unreachable block (ram,0x016cc7a0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6f0) */
+/* WARNING: Removing unreachable block (ram,0x016cc714) */
+/* WARNING: Removing unreachable block (ram,0x016cc780) */
+/* WARNING: Removing unreachable block (ram,0x016cdc34) */
+/* WARNING: Removing unreachable block (ram,0x016cc834) */
+/* WARNING: Removing unreachable block (ram,0x016cc83c) */
+/* WARNING: Removing unreachable block (ram,0x016cc868) */
+/* WARNING: Removing unreachable block (ram,0x016cc844) */
+/* WARNING: Removing unreachable block (ram,0x016cc86c) */
+/* WARNING: Removing unreachable block (ram,0x016cc850) */
+/* WARNING: Removing unreachable block (ram,0x016cc908) */
+/* WARNING: Removing unreachable block (ram,0x016cc910) */
+/* WARNING: Removing unreachable block (ram,0x016cc920) */
+/* WARNING: Removing unreachable block (ram,0x016cc928) */
+/* WARNING: Removing unreachable block (ram,0x016cc964) */
+/* WARNING: Removing unreachable block (ram,0x016cc930) */
+/* WARNING: Removing unreachable block (ram,0x016cc968) */
+/* WARNING: Removing unreachable block (ram,0x016cc93c) */
+/* WARNING: Removing unreachable block (ram,0x016cc954) */
+/* WARNING: Removing unreachable block (ram,0x016cc89c) */
+/* WARNING: Removing unreachable block (ram,0x016cc8a4) */
+/* WARNING: Removing unreachable block (ram,0x016cc8d0) */
+/* WARNING: Removing unreachable block (ram,0x016cc8ac) */
+/* WARNING: Removing unreachable block (ram,0x016cc8d4) */
+/* WARNING: Removing unreachable block (ram,0x016cc8b8) */
+/* WARNING: Removing unreachable block (ram,0x016ce188) */
+/* WARNING: Removing unreachable block (ram,0x0167d9e0) */
+/* WARNING: Removing unreachable block (ram,0x016ce224) */
+/* WARNING: Removing unreachable block (ram,0x0167d91c) */
+/* WARNING: Removing unreachable block (ram,0x0167d928) */
+/* WARNING: Removing unreachable block (ram,0x0167d930) */
+/* WARNING: Removing unreachable block (ram,0x0167d94c) */
+/* WARNING: Removing unreachable block (ram,0x0167d958) */
+/* WARNING: Removing unreachable block (ram,0x0167d964) */
+/* WARNING: Removing unreachable block (ram,0x016ce20c) */
+/* WARNING: Removing unreachable block (ram,0x016ce320) */
+/* WARNING: Removing unreachable block (ram,0x016ced00) */
+/* WARNING: Removing unreachable block (ram,0x016ced04) */
+/* WARNING: Removing unreachable block (ram,0x016ced10) */
+/* WARNING: Removing unreachable block (ram,0x016ced20) */
+/* WARNING: Removing unreachable block (ram,0x016ced28) */
+/* WARNING: Removing unreachable block (ram,0x016cef64) */
+/* WARNING: Removing unreachable block (ram,0x016cef48) */
+/* WARNING: Removing unreachable block (ram,0x016cef70) */
+/* WARNING: Removing unreachable block (ram,0x016cef78) */
+/* WARNING: Removing unreachable block (ram,0x016cef10) */
+/* WARNING: Removing unreachable block (ram,0x016cef24) */
+/* WARNING: Removing unreachable block (ram,0x016cef2c) */
+/* WARNING: Removing unreachable block (ram,0x016cee20) */
+/* WARNING: Removing unreachable block (ram,0x016cee2c) */
+/* WARNING: Removing unreachable block (ram,0x016cee44) */
+/* WARNING: Removing unreachable block (ram,0x016ced60) */
+/* WARNING: Removing unreachable block (ram,0x016cec30) */
+/* WARNING: Removing unreachable block (ram,0x016cec38) */
+/* WARNING: Removing unreachable block (ram,0x016cec44) */
+/* WARNING: Removing unreachable block (ram,0x016cebe8) */
+/* WARNING: Removing unreachable block (ram,0x016cec48) */
+/* WARNING: Removing unreachable block (ram,0x016cebf0) */
+/* WARNING: Removing unreachable block (ram,0x016cec64) */
+/* WARNING: Removing unreachable block (ram,0x016cec6c) */
+/* WARNING: Removing unreachable block (ram,0x016cec78) */
+/* WARNING: Removing unreachable block (ram,0x016ceca8) */
+/* WARNING: Removing unreachable block (ram,0x016cec84) */
+/* WARNING: Removing unreachable block (ram,0x016cec8c) */
+/* WARNING: Removing unreachable block (ram,0x016cec94) */
+/* WARNING: Removing unreachable block (ram,0x016ced3c) */
+/* WARNING: Removing unreachable block (ram,0x016cc4e0) */
+/* WARNING: Removing unreachable block (ram,0x016cc518) */
+/* WARNING: Removing unreachable block (ram,0x016cc52c) */
+/* WARNING: Removing unreachable block (ram,0x016cc538) */
+/* WARNING: Removing unreachable block (ram,0x016cc540) */
+/* WARNING: Removing unreachable block (ram,0x016cc548) */
+/* WARNING: Removing unreachable block (ram,0x016cc5b8) */
+/* WARNING: Removing unreachable block (ram,0x016cc5c0) */
+/* WARNING: Removing unreachable block (ram,0x016cc5d4) */
+/* WARNING: Removing unreachable block (ram,0x016cc5dc) */
+/* WARNING: Removing unreachable block (ram,0x016cc5e4) */
+/* WARNING: Removing unreachable block (ram,0x016cc5f0) */
+/* WARNING: Removing unreachable block (ram,0x016cc554) */
+/* WARNING: Removing unreachable block (ram,0x016cc55c) */
+/* WARNING: Removing unreachable block (ram,0x016cc574) */
+/* WARNING: Removing unreachable block (ram,0x016cc57c) */
+/* WARNING: Removing unreachable block (ram,0x016cc624) */
+/* WARNING: Removing unreachable block (ram,0x016cc584) */
+/* WARNING: Removing unreachable block (ram,0x016cc628) */
+/* WARNING: Removing unreachable block (ram,0x016cc590) */
+/* WARNING: Removing unreachable block (ram,0x016cc5b4) */
+/* WARNING: Removing unreachable block (ram,0x016cc610) */
+/* WARNING: Removing unreachable block (ram,0x016cebfc) */
+/* WARNING: Removing unreachable block (ram,0x016cec00) */
+/* WARNING: Removing unreachable block (ram,0x016cec08) */
+/* WARNING: Removing unreachable block (ram,0x016cec20) */
+/* WARNING: Removing unreachable block (ram,0x016ceb78) */
+/* WARNING: Removing unreachable block (ram,0x016cec58) */
+/* WARNING: Removing unreachable block (ram,0x016cecac) */
+/* WARNING: Removing unreachable block (ram,0x016cecb8) */
+/* WARNING: Removing unreachable block (ram,0x016cecd8) */
+/* WARNING: Removing unreachable block (ram,0x016cecf0) */
+/* WARNING: Removing unreachable block (ram,0x016cec60) */
+/* WARNING: Removing unreachable block (ram,0x016ceb84) */
+/* WARNING: Removing unreachable block (ram,0x016ceb88) */
+/* WARNING: Removing unreachable block (ram,0x016ceb90) */
+/* WARNING: Removing unreachable block (ram,0x016ceb98) */
+/* WARNING: Removing unreachable block (ram,0x016ceba0) */
+/* WARNING: Removing unreachable block (ram,0x016cebac) */
+/* WARNING: Removing unreachable block (ram,0x016cebd8) */
+/* WARNING: Removing unreachable block (ram,0x016ceb54) */
+/* WARNING: Removing unreachable block (ram,0x016ceb08) */
+/* WARNING: Removing unreachable block (ram,0x016ceb10) */
+/* WARNING: Removing unreachable block (ram,0x016ceb1c) */
+/* WARNING: Removing unreachable block (ram,0x016ceb2c) */
+/* WARNING: Removing unreachable block (ram,0x016cea8c) */
+/* WARNING: Removing unreachable block (ram,0x016cea9c) */
+/* WARNING: Removing unreachable block (ram,0x016ceaa0) */
+/* WARNING: Removing unreachable block (ram,0x016ceb30) */
+/* WARNING: Removing unreachable block (ram,0x016ceaa8) */
+/* WARNING: Removing unreachable block (ram,0x016ced84) */
+/* WARNING: Removing unreachable block (ram,0x016ceab0) */
+/* WARNING: Removing unreachable block (ram,0x016ceabc) */
+/* WARNING: Removing unreachable block (ram,0x016ceac8) */
+/* WARNING: Removing unreachable block (ram,0x016ceacc) */
+/* WARNING: Removing unreachable block (ram,0x016ced88) */
+/* WARNING: Removing unreachable block (ram,0x016ceadc) */
+/* WARNING: Removing unreachable block (ram,0x016ceae8) */
+/* WARNING: Removing unreachable block (ram,0x016cea78) */
+/* WARNING: Removing unreachable block (ram,0x016ce4dc) */
+/* WARNING: Removing unreachable block (ram,0x016ce3a4) */
+/* WARNING: Removing unreachable block (ram,0x016ce3a8) */
+/* WARNING: Removing unreachable block (ram,0x016ce3b4) */
+/* WARNING: Removing unreachable block (ram,0x016ce46c) */
+/* WARNING: Removing unreachable block (ram,0x016cde9c) */
+/* WARNING: Removing unreachable block (ram,0x016ce334) */
+
+ulong Core_Services_Match__AddHost(ulong param_1,ulong param_2,undefined8 *param_3,int param_4)
+
+{
+  uint uVar1;
+  uint uVar2;
+  int iVar3;
+  undefined4 uVar4;
+  uint uVar5;
+  undefined1 auVar6 [16];
+  undefined1 auVar7 [16];
+  undefined1 auVar8 [16];
+  undefined1 *puVar9;
+  dword **ppdVar10;
+  undefined1 *puVar11;
+  undefined1 *puVar12;
+  undefined1 *puVar13;
+  dword **ppdVar14;
+  long lVar15;
+  long *plVar16;
+  ulong uVar17;
+  ulong uVar18;
+  undefined8 uVar19;
+  undefined8 uVar20;
+  int iVar21;
+  undefined8 uVar22;
+  ulong uVar23;
+  undefined8 unaff_x19;
+  undefined8 unaff_x20;
+  ulong uVar24;
+  long lVar25;
+  ulong unaff_x21;
+  ulong unaff_x22;
+  ulong uVar26;
+  undefined1 *unaff_x29;
+  undefined1 *puVar27;
+  undefined1 **ppuVar28;
+  dword *pdVar29;
+  undefined *unaff_x30;
+  undefined *puVar30;
+  undefined *puVar31;
+  undefined8 unaff_d8;
+  undefined8 unaff_d9;
+  undefined1 auVar32 [16];
+  undefined1 auVar33 [16];
+  undefined1 auVar34 [16];
+  undefined1 auVar35 [16];
+  undefined1 auVar36 [12];
+  long alStack_d0 [2];
+  dword *apdStack_c0 [2];
+  dword *pdStack_90;
+  undefined *puStack_88;
+  undefined1 *puStack_20;
+  undefined *puStack_18;
+  
+  if (param_1 == 0) {
+    auVar35 = func_0x00f78af4();
+    uVar23 = auVar35._0_8_;
+    if (uVar23 != 0) {
+      puStack_18 = &Core_Services_Match__AddMatchType;
+      ppuVar28 = &puStack_20;
+      auVar34._8_8_ = 1;
+      auVar34._0_8_ = uVar23;
+      if ((auVar35._8_4_ == 0) && (*(char *)(uVar23 + 0x48) == '\0')) {
+        return uVar23;
+      }
+      auVar33._8_8_ = 1;
+      auVar33._0_8_ = uVar23;
+      uVar23 = 0;
+      puVar31 = &UNK_016ce4dc;
+      puVar11 = &stack0xffffffffffffffc0;
+      unaff_x21 = auVar35._8_8_;
+      puStack_20 = &stack0xfffffffffffffff0;
+      goto code_r0x016cdaac;
+    }
+    puStack_18 = &Core_Services_Match__AddMatchType;
+    puStack_20 = &stack0xfffffffffffffff0;
+    lVar15 = func_0x00f78af4();
+    if ((bRam0000000003eb59e1 & 1) == 0) {
+      func_0x00f78a20(0x3d3f1a8);
+      bRam0000000003eb59e1 = 1;
+    }
+    if (lVar15 != 0) {
+      ppuVar28 = (undefined1 **)&stack0xffffffffffffffd0;
+      auVar34._8_8_ = lVar15;
+      auVar34._0_8_ = 0x3eb5000;
+      if ((bRam0000000003eb5cd8 & 1) == 0) {
+        func_0x00f78a20(0x3d1f100,0);
+        bRam0000000003eb5cd8 = 1;
+      }
+      if (*(int *)(lVar15 + 0x30) < 0) {
+        func_0x00f78a24(0x3d22a38);
+        puVar31 = (undefined *)func_0x00f78aec();
+        uVar22 = func_0x00f78a24(0x3d6cea8);
+        /*System.InvalidOperationException$$.ctor*/ func_0x02ae6938(puVar31,uVar22);
+        uVar22 = func_0x00f78a24(0x3d56a30);
+        auVar36 = func_0x00f78ac0(puVar31,uVar22);
+        pdStack_90 = (dword *)0x3eb5000;
+        ppuVar28 = (undefined1 **)&stack0xffffffffffffff80;
+        lVar15 = *(long *)(auVar36._0_8_ + 0x18);
+        puStack_88 = puVar31;
+        if ((lVar15 != 0) && (*(long *)(lVar15 + 0x10) != 0)) {
+          uVar5 = *(int *)(*(long *)(lVar15 + 0x10) + 0x18) - auVar36._8_4_;
+          uVar23 = (ulong)uVar5;
+          auVar35._8_4_ = uVar5;
+          auVar35._0_8_ = lVar15;
+          auVar35._12_4_ = 0;
+          puVar9 = &stack0xffffffffffffff10;
+          apdStack_c0[1] = (dword *)&UNK_016cee20;
+          ppdVar14 = apdStack_c0;
+          auVar8._8_8_ = 4;
+          auVar8._0_8_ = lVar15;
+          uVar26 = 0x3d201a0;
+          apdStack_c0[0] = (dword *)ppuVar28;
+          if ((bRam0000000003eb5cd0 & 1) == 0) {
+            func_0x00f78a20(0x3d201a0);
+            bRam0000000003eb5cd0 = 1;
+          }
+          uVar24 = 4;
+          puVar31 = &UNK_016cc68c;
+          goto code_r0x016cc7a4;
+        }
+        func_0x00f78af4();
+        uVar22 = /*System.Int32$$ToString*/ func_0x02ae9b8c(&stack0xffffffffffffff5c,0);
+        uVar19 = func_0x00f78a24(0x3d6ce88);
+        uVar20 = func_0x00f78a24(0x3d66338);
+        lVar15 = /*System.String$$Concat*/ func_0x029be39c(uVar19,uVar22,uVar20,0);
+        func_0x00f78a24(0x3d22a38);
+        uVar22 = func_0x00f78aec();
+        uVar20 = 0;
+        /*System.InvalidOperationException$$.ctor*/ func_0x02ae6938(uVar22,lVar15);
+        uVar19 = func_0x00f78a24(0x3d56a50);
+        puVar31 = &FlatBuffers_FlatBufferBuilder__Finish;
+        auVar35 = func_0x00f78ac0(uVar22,uVar19);
+        puVar11 = &stack0xffffffffffffff50;
+        while( true ) {
+          uVar19 = auVar35._8_8_;
+          lVar25 = auVar35._0_8_;
+          auVar34._8_8_ = lVar25;
+          auVar34._0_8_ = uVar19;
+          auVar7._8_8_ = lVar25;
+          auVar7._0_8_ = uVar19;
+          *(undefined8 *)(puVar11 + -0x20) = uVar22;
+          *(long *)(puVar11 + -0x18) = lVar15;
+          *(undefined1 ***)(puVar11 + -0x10) = ppuVar28;
+          *(undefined **)(puVar11 + -8) = puVar31;
+          ppuVar28 = (undefined1 **)(puVar11 + -0x10);
+          uVar4 = *(undefined4 *)(lVar25 + 0x20);
+          auVar33._8_4_ = uVar4;
+          auVar33._0_8_ = lVar25;
+          auVar33._12_4_ = 0;
+          lVar15 = lVar25;
+          if ((int)uVar20 == 0) {
+            lVar15 = 0;
+            uVar4 = 0;
+          }
+          auVar6._8_4_ = uVar4;
+          auVar6._0_8_ = lVar15;
+          auVar6._12_4_ = 0;
+          if ((int)uVar20 == 0) {
+            uVar23 = 4;
+            puVar31 = &UNK_016cef64;
+            puVar11 = puVar11 + -0x20;
+            goto code_r0x016cdaac;
+          }
+          if (lVar15 != 0) break;
+          puVar31 = &FlatBuffers_FlatBufferBuilder__Finish;
+          auVar35 = func_0x00f78af4();
+          uVar20 = 0;
+          puVar11 = puVar11 + -0x20;
+          lVar15 = lVar25;
+          uVar22 = uVar19;
+        }
+        uVar23 = 8;
+        puVar31 = &UNK_016cef10;
+        puVar11 = puVar11 + -0x20;
+        auVar33 = auVar6;
+        auVar34 = auVar7;
+      }
+      else {
+        auVar33._8_8_ = 4;
+        auVar33._0_8_ = lVar15;
+        uVar23 = 0;
+        puVar31 = &UNK_016cea78;
+        puVar11 = &stack0xffffffffffffff90;
+      }
+      goto code_r0x016cdaac;
+    }
+    puVar31 = (undefined *)func_0x00f78af4();
+    if (puVar31 == (undefined *)0x0) {
+      auVar32 = func_0x00f78af4();
+      lVar15 = auVar32._0_8_;
+      if ((auVar32._8_8_ == 0) || (lVar15 == 0)) {
+        auVar32 = func_0x00f78af4();
+        lVar25 = auVar32._8_8_;
+        lVar15 = auVar32._0_8_;
+        puVar11 = &stack0xffffffffffffff50;
+        puStack_88 = &Core_Services_Match__CreateOtherPlayersVectorBlock;
+        pdVar29 = (dword *)&pdStack_90;
+        unaff_x21 = 0x3eb5000;
+        pdStack_90 = (dword *)&stack0xffffffffffffffa0;
+        if ((bRam0000000003eb59e0 & 1) == 0) {
+          func_0x00f78a20(0x3d569d8);
+          bRam0000000003eb59e0 = 1;
+        }
+        if ((lVar25 == 0) || (lVar15 == 0)) {
+          puVar31 = &Core_Services_Match__StartOtherPlayersVector;
+          auVar36 = func_0x00f78af4();
+          iVar21 = auVar36._8_4_;
+          auVar32._8_8_ = lVar25;
+          auVar32._0_8_ = auVar36._0_8_;
+          if (auVar36._0_8_ == 0) {
+            apdStack_c0[1] = (dword *)&Core_Services_Match__StartOtherPlayersVector;
+            apdStack_c0[0] = pdVar29;
+            auVar35 = func_0x00f78af4();
+            uVar23 = auVar35._0_8_;
+            *(undefined8 *)(uVar23 + 0x10) = *param_3;
+            *(long *)(uVar23 + 0x20) = auVar35._8_8_;
+            *(undefined8 **)(uVar23 + 0x28) = param_3;
+            return uVar23;
+          }
+        }
+        else {
+          unaff_x21 = 0x3d56000;
+          iVar21 = *(int *)(lVar25 + 0x18);
+          puVar31 = &UNK_0167d9e0;
+          puVar11 = &stack0xffffffffffffff50;
+        }
+      }
+      else {
+        iVar21 = *(int *)(auVar32._8_8_ + 0x18);
+        puVar31 = &UNK_0167d91c;
+        puVar11 = &stack0xffffffffffffff80;
+        pdVar29 = (dword *)&stack0xffffffffffffffa0;
+      }
+      uVar26 = auVar32._0_8_;
+      *(ulong *)(puVar11 + -0x30) = unaff_x22;
+      *(ulong *)(puVar11 + -0x28) = unaff_x21;
+      *(long *)(puVar11 + -0x20) = auVar32._8_8_;
+      *(long *)(puVar11 + -0x18) = lVar15;
+      *(dword **)(puVar11 + -0x10) = pdVar29;
+      *(undefined **)(puVar11 + -8) = puVar31;
+      ppuVar28 = (undefined1 **)(puVar11 + -0x10);
+      unaff_x21 = 4;
+      /*FlatBuffers.FlatBufferBuilder$$NotNested*/ func_0x016ce1a4();
+      *(int *)(uVar26 + 0x44) = iVar21;
+      uVar23 = CONCAT44(0,iVar21 * 4);
+      auVar34._8_8_ = 4;
+      auVar34._0_8_ = uVar23;
+      auVar33._8_8_ = 4;
+      auVar33._0_8_ = uVar26;
+      puVar31 = &UNK_016ce188;
+      puVar11 = puVar11 + -0x30;
+      unaff_x22 = uVar26;
+      goto code_r0x016cdaac;
+    }
+    ppdVar10 = (dword **)&stack0xffffffffffffff90;
+    unaff_x29 = &stack0xffffffffffffffb0;
+    unaff_x20 = 4;
+    unaff_x21 = 0x3eb5000;
+    if ((bRam0000000003eb5cd7 & 1) == 0) {
+      func_0x00f78a20(0x3d1f100,4,0);
+      bRam0000000003eb5cd7 = 1;
+    }
+    /*FlatBuffers.FlatBufferBuilder$$NotNested*/ func_0x016ce1a4(puVar31);
+    if (*(long *)(puVar31 + 0x28) != 0) {
+      if (*(int *)(*(long *)(puVar31 + 0x28) + 0x18) < 4) {
+        uVar22 = func_0x00f78a34(/*int[]_TypeInfo*/ uRam0000000003d1f100,4);
+        *(undefined8 *)(puVar31 + 0x28) = uVar22;
+      }
+      *(undefined4 *)(puVar31 + 0x30) = 4;
+      puVar30 = &UNK_016ce320;
+code_r0x016cda04:
+      *(undefined1 **)((long)ppdVar10 + -0x10) = unaff_x29;
+      *(undefined **)((long)ppdVar10 + -8) = puVar30;
+      if ((*(long *)(puVar31 + 0x18) != 0) &&
+         (lVar15 = *(long *)(*(long *)(puVar31 + 0x18) + 0x10), lVar15 != 0)) {
+        return (ulong)(uint)(*(int *)(lVar15 + 0x18) - *(int *)(puVar31 + 0x10));
+      }
+      lVar15 = func_0x00f78af4();
+      return (ulong)*(byte *)(lVar15 + 0x48);
+    }
+    auVar36 = func_0x00f78af4();
+    ppdVar14 = &pdStack_90;
+    ppdVar10 = &pdStack_90;
+    pdStack_90 = &MACH_HEADER.cputype;
+    unaff_x29 = &stack0xffffffffffffff80;
+    puStack_88 = puVar31;
+    if (auVar36._8_4_ < *(int *)(auVar36._0_8_ + 0x30)) {
+      puVar30 = &UNK_016ce3a4;
+      puVar31 = auVar36._0_8_;
+      goto code_r0x016cda04;
+    }
+    func_0x00f78a24(0x3d22738);
+    unaff_x19 = func_0x00f78aec();
+    uVar22 = func_0x00f78a24(0x3d6ceb8);
+    param_2 = 0;
+    /*System.IndexOutOfRangeException$$.ctor*/ func_0x02ae8c34(unaff_x19,uVar22);
+    uVar22 = func_0x00f78a24(0x3d56a58);
+    func_0x00f78ac0(unaff_x19,uVar22);
+    func_0x00f78af4();
+    uVar22 = func_0x00f78b24();
+    unaff_x30 = &FlatBuffers_FlatBufferBuilder__AddBool;
+    auVar35 = func_0x00f78ac0(uVar22,0);
+    uVar22 = auVar35._8_8_;
+    param_1 = auVar35._0_8_;
+  }
+  else {
+    uVar22 = 3;
+    param_4 = 0;
+    ppdVar14 = (dword **)register0x00000008;
+  }
+  auVar34._8_8_ = uVar22;
+  auVar34._0_8_ = param_1;
+  *(ulong *)((long)ppdVar14 + -0x30) = unaff_x22;
+  *(ulong *)((long)ppdVar14 + -0x28) = unaff_x21;
+  *(undefined8 *)((long)ppdVar14 + -0x20) = unaff_x20;
+  *(undefined8 *)((long)ppdVar14 + -0x18) = unaff_x19;
+  *(undefined1 **)((long)ppdVar14 + -0x10) = unaff_x29;
+  *(undefined **)((long)ppdVar14 + -8) = unaff_x30;
+  ppuVar28 = (undefined1 **)((long)ppdVar14 + -0x10);
+  if (((int)param_2 == param_4) && (*(char *)(param_1 + 0x48) == '\0')) {
+    return param_1;
+  }
+  auVar33._8_8_ = 1;
+  auVar33._0_8_ = param_1;
+  uVar23 = 0;
+  puVar31 = &UNK_016ce46c;
+  puVar11 = (undefined1 *)((long)ppdVar14 + -0x30);
+  unaff_x21 = param_2;
+code_r0x016cdaac:
+  do {
+    uVar24 = auVar34._0_8_;
+    uVar17 = auVar33._0_8_;
+    puVar9 = puVar11 + -0x30;
+    *(ulong *)(puVar11 + -0x30) = unaff_x22;
+    *(ulong *)(puVar11 + -0x28) = unaff_x21;
+    *(undefined1 (*) [16])(puVar11 + -0x20) = auVar34;
+    *(undefined1 ***)(puVar11 + -0x10) = ppuVar28;
+    *(undefined **)(puVar11 + -8) = puVar31;
+    iVar21 = auVar33._8_4_;
+    if (*(int *)(uVar17 + 0x20) < iVar21) {
+      *(int *)(uVar17 + 0x20) = iVar21;
+    }
+    uVar26 = unaff_x22;
+    if ((*(long *)(uVar17 + 0x18) != 0) &&
+       (lVar15 = *(long *)(*(long *)(uVar17 + 0x18) + 0x10), lVar15 != 0)) {
+      uVar2 = *(uint *)(lVar15 + 0x18);
+      iVar3 = *(int *)(uVar17 + 0x10);
+      uVar1 = iVar3 - (uVar2 + (int)uVar23) & iVar21 - 1U;
+      uVar24 = CONCAT44(0,uVar1);
+      uVar5 = (int)uVar23 + iVar21 + uVar1;
+      uVar26 = (ulong)uVar5;
+      uVar18 = uVar17;
+      while (unaff_x21 = (ulong)uVar2, iVar3 < (int)uVar5) {
+        uVar18 = /*FlatBuffers.FlatBufferBuilder$$GrowBuffer*/ func_0x016cda78(uVar17);
+        if ((*(long *)(uVar17 + 0x18) == 0) ||
+           (lVar15 = *(long *)(*(long *)(uVar17 + 0x18) + 0x10), lVar15 == 0))
+        goto code_r0x016cdb68;
+        iVar3 = *(int *)(uVar17 + 0x10) - uVar2;
+        uVar2 = *(uint *)(lVar15 + 0x18);
+        iVar3 = iVar3 + uVar2;
+        *(int *)(uVar17 + 0x10) = iVar3;
+      }
+      if ((int)uVar1 < 1) {
+        return uVar18;
+      }
+      uVar22 = *(undefined8 *)*(undefined1 (*) [16])(puVar11 + -0x20);
+      uVar19 = *(undefined8 *)(puVar11 + -0x18);
+      auVar34 = *(undefined1 (*) [16])(puVar11 + -0x20);
+      unaff_x22 = *(ulong *)(puVar11 + -0x30);
+      unaff_x21 = *(ulong *)(puVar11 + -0x28);
+      *(undefined8 *)(puVar11 + -0x10) = *(undefined8 *)(puVar11 + -0x10);
+      *(undefined8 *)(puVar11 + -8) = *(undefined8 *)(puVar11 + -8);
+      lVar15 = *(long *)(uVar17 + 0x18);
+      auVar8._8_8_ = lVar15;
+      auVar8._0_8_ = uVar24;
+      uVar1 = *(int *)(uVar17 + 0x10) - uVar1;
+      uVar26 = (ulong)uVar1;
+      auVar35._8_4_ = uVar1;
+      auVar35._0_8_ = lVar15;
+      auVar35._12_4_ = 0;
+      *(uint *)(uVar17 + 0x10) = uVar1;
+      if (lVar15 != 0) {
+        *(ulong *)(puVar11 + -0x30) = unaff_x22;
+        *(ulong *)(puVar11 + -0x28) = unaff_x21;
+        *(undefined8 *)(puVar11 + -0x20) = uVar22;
+        *(undefined8 *)(puVar11 + -0x18) = uVar19;
+        *(undefined8 *)(puVar11 + -0x10) = *(undefined8 *)(puVar11 + -0x10);
+        *(undefined8 *)(puVar11 + -8) = *(undefined8 *)(puVar11 + -8);
+        ppdVar14 = (dword **)(puVar11 + -0x10);
+        puVar31 = &UNK_016cc908;
+        uVar23 = 0;
+        goto code_r0x016cc7a4;
+      }
+      lVar15 = func_0x00f78af4();
+      ppuVar28 = (undefined1 **)(puVar11 + -0x20);
+      *(undefined1 **)(puVar11 + -0x20) = puVar11 + -0x10;
+      *(undefined **)(puVar11 + -0x18) = &FlatBuffers_FlatBufferBuilder__GrowBuffer;
+      if ((*(long *)(lVar15 + 0x18) != 0) &&
+         (plVar16 = *(long **)(*(long *)(lVar15 + 0x18) + 0x10), plVar16 != (long *)0x0)) {
+                    /* WARNING: Could not recover jumptable at 0x016cdaa4. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+        uVar23 = (**(code **)(*plVar16 + 0x178))
+                           (plVar16,(int)plVar16[3] << 1,*(undefined8 *)(*plVar16 + 0x180));
+        return uVar23;
+      }
+      puVar31 = &FlatBuffers_FlatBufferBuilder__Prep;
+      auVar33 = func_0x00f78af4();
+      puVar11 = puVar11 + -0x20;
+      goto code_r0x016cdaac;
+    }
+code_r0x016cdb68:
+    auVar8._8_8_ = uVar24;
+    auVar8._0_8_ = unaff_x21;
+    auVar35 = func_0x00f78af4();
+    uVar23 = auVar35._8_8_;
+    lVar25 = auVar35._0_8_;
+    *(undefined1 **)(puVar11 + -0x40) = puVar11 + -0x10;
+    *(undefined **)(puVar11 + -0x38) = &FlatBuffers_FlatBufferBuilder__PutBool;
+    lVar15 = *(long *)(lVar25 + 0x18);
+    iVar21 = *(int *)(lVar25 + 0x10) + -1;
+    *(int *)(lVar25 + 0x10) = iVar21;
+    if (lVar15 != 0) {
+      puVar12 = puVar11 + -0x30;
+      uVar22 = *(undefined8 *)(puVar11 + -0x40);
+      uVar19 = *(undefined8 *)(puVar11 + -0x38);
+FlatBuffers_ByteBuffer__PutByte:
+      auVar8._8_4_ = iVar21;
+      auVar8._0_8_ = lVar15;
+      auVar8._12_4_ = 0;
+      auVar35._8_4_ = iVar21;
+      auVar35._0_8_ = lVar15;
+      auVar35._12_4_ = 0;
+      puVar9 = puVar12 + -0x30;
+      *(ulong *)(puVar12 + -0x30) = uVar26;
+      *(ulong *)(puVar12 + -0x28) = unaff_x21;
+      *(ulong *)(puVar12 + -0x20) = uVar24;
+      *(ulong *)(puVar12 + -0x18) = uVar17;
+      *(undefined8 *)(puVar12 + -0x10) = uVar22;
+      *(undefined8 *)(puVar12 + -8) = uVar19;
+      ppdVar14 = (dword **)(puVar12 + -0x10);
+      uVar24 = 1;
+      puVar31 = &UNK_016cc89c;
+      goto code_r0x016cc7a4;
+    }
+    auVar35 = func_0x00f78af4();
+    uVar18 = auVar35._8_8_;
+    lVar15 = auVar35._0_8_;
+    *(undefined1 **)(puVar11 + -0x50) = puVar11 + -0x40;
+    *(undefined **)(puVar11 + -0x48) = &FlatBuffers_FlatBufferBuilder__PutSbyte;
+    iVar21 = *(int *)(lVar15 + 0x10) + -1;
+    auVar35._8_4_ = iVar21;
+    auVar35._0_8_ = *(long *)(lVar15 + 0x18);
+    auVar35._12_4_ = 0;
+    *(int *)(lVar15 + 0x10) = iVar21;
+    if (*(long *)(lVar15 + 0x18) != 0) {
+      puVar13 = puVar11 + -0x40;
+      puVar27 = *(undefined1 **)(puVar11 + -0x50);
+      puVar31 = *(undefined **)(puVar11 + -0x48);
+      uVar23 = uVar17;
+      goto code_r0x016cc810;
+    }
+    auVar35 = func_0x00f78af4();
+    uVar23 = auVar35._8_8_;
+    lVar25 = auVar35._0_8_;
+    *(undefined1 **)(puVar11 + -0x60) = puVar11 + -0x50;
+    *(undefined **)(puVar11 + -0x58) = &FlatBuffers_FlatBufferBuilder__PutByte;
+    lVar15 = *(long *)(lVar25 + 0x18);
+    iVar21 = *(int *)(lVar25 + 0x10) + -1;
+    *(int *)(lVar25 + 0x10) = iVar21;
+    if (lVar15 != 0) {
+      puVar12 = puVar11 + -0x50;
+      uVar22 = *(undefined8 *)(puVar11 + -0x60);
+      uVar19 = *(undefined8 *)(puVar11 + -0x58);
+      goto FlatBuffers_ByteBuffer__PutByte;
+    }
+    auVar35 = func_0x00f78af4();
+    uVar23 = auVar35._8_8_;
+    lVar15 = auVar35._0_8_;
+    puVar9 = puVar11 + -0x90;
+    *(ulong *)(puVar11 + -0x90) = uVar26;
+    *(ulong *)(puVar11 + -0x88) = unaff_x21;
+    *(ulong *)(puVar11 + -0x80) = uVar24;
+    *(ulong *)(puVar11 + -0x78) = uVar17;
+    *(undefined1 **)(puVar11 + -0x70) = puVar11 + -0x60;
+    *(undefined **)(puVar11 + -0x68) = &FlatBuffers_FlatBufferBuilder__PutShort;
+    ppdVar14 = (dword **)(puVar11 + -0x70);
+    lVar25 = *(long *)(lVar15 + 0x18);
+    uVar5 = *(int *)(lVar15 + 0x10) - 2;
+    auVar8._8_8_ = lVar25;
+    auVar8._0_8_ = CONCAT44(0,uVar5);
+    auVar35._8_4_ = uVar5;
+    auVar35._0_8_ = lVar25;
+    auVar35._12_4_ = 0;
+    *(uint *)(lVar15 + 0x10) = uVar5;
+    if (lVar25 != 0) {
+      uVar24 = 2;
+      puVar31 = &UNK_016cdc34;
+      goto code_r0x016cc7a4;
+    }
+    auVar35 = func_0x00f78af4();
+    uVar23 = auVar35._8_8_;
+    lVar15 = auVar35._0_8_;
+    puVar9 = puVar11 + -0xc0;
+    *(ulong *)(puVar11 + -0xc0) = uVar26;
+    *(ulong *)(puVar11 + -0xb8) = CONCAT44(0,uVar5);
+    *(undefined8 *)(puVar11 + -0xb0) = 0;
+    *(ulong *)(puVar11 + -0xa8) = uVar17;
+    *(dword ***)(puVar11 + -0xa0) = ppdVar14;
+    *(undefined **)(puVar11 + -0x98) = &FlatBuffers_FlatBufferBuilder__PutUshort;
+    ppdVar14 = (dword **)(puVar11 + -0xa0);
+    lVar25 = *(long *)(lVar15 + 0x18);
+    uVar5 = *(int *)(lVar15 + 0x10) - 2;
+    auVar8._8_8_ = lVar25;
+    auVar8._0_8_ = CONCAT44(0,uVar5);
+    auVar35._8_4_ = uVar5;
+    auVar35._0_8_ = lVar25;
+    auVar35._12_4_ = 0;
+    *(uint *)(lVar15 + 0x10) = uVar5;
+    if (lVar25 != 0) {
+      uVar24 = 2;
+      puVar31 = &UNK_016cdc90;
+      goto code_r0x016cc7a4;
+    }
+    auVar35 = func_0x00f78af4();
+    uVar23 = auVar35._8_8_;
+    lVar15 = auVar35._0_8_;
+    puVar9 = puVar11 + -0xf0;
+    *(ulong *)(puVar11 + -0xf0) = uVar26;
+    *(ulong *)(puVar11 + -0xe8) = CONCAT44(0,uVar5);
+    *(undefined8 *)(puVar11 + -0xe0) = 0;
+    *(ulong *)(puVar11 + -0xd8) = uVar17;
+    *(dword ***)(puVar11 + -0xd0) = ppdVar14;
+    *(undefined **)(puVar11 + -200) = &FlatBuffers_FlatBufferBuilder__PutInt;
+    ppdVar14 = (dword **)(puVar11 + -0xd0);
+    lVar25 = *(long *)(lVar15 + 0x18);
+    uVar5 = *(int *)(lVar15 + 0x10) - 4;
+    auVar8._8_8_ = lVar25;
+    auVar8._0_8_ = CONCAT44(0,uVar5);
+    auVar35._8_4_ = uVar5;
+    auVar35._0_8_ = lVar25;
+    auVar35._12_4_ = 0;
+    *(uint *)(lVar15 + 0x10) = uVar5;
+    if (lVar25 != 0) {
+      uVar24 = 4;
+      puVar31 = &UNK_016cdcec;
+      goto code_r0x016cc7a4;
+    }
+    auVar35 = func_0x00f78af4();
+    uVar23 = auVar35._8_8_;
+    lVar15 = auVar35._0_8_;
+    puVar9 = puVar11 + -0x120;
+    *(ulong *)(puVar11 + -0x120) = uVar26;
+    *(ulong *)(puVar11 + -0x118) = CONCAT44(0,uVar5);
+    *(undefined8 *)(puVar11 + -0x110) = 0;
+    *(ulong *)(puVar11 + -0x108) = uVar17;
+    *(dword ***)(puVar11 + -0x100) = ppdVar14;
+    *(undefined **)(puVar11 + -0xf8) = &FlatBuffers_FlatBufferBuilder__PutUint;
+    ppdVar14 = (dword **)(puVar11 + -0x100);
+    lVar25 = *(long *)(lVar15 + 0x18);
+    uVar5 = *(int *)(lVar15 + 0x10) - 4;
+    auVar8._8_8_ = lVar25;
+    auVar8._0_8_ = CONCAT44(0,uVar5);
+    auVar35._8_4_ = uVar5;
+    auVar35._0_8_ = lVar25;
+    auVar35._12_4_ = 0;
+    *(uint *)(lVar15 + 0x10) = uVar5;
+    if (lVar25 != 0) {
+      uVar24 = 4;
+      puVar31 = &UNK_016cdd48;
+      goto code_r0x016cc7a4;
+    }
+    auVar35 = func_0x00f78af4();
+    uVar23 = auVar35._8_8_;
+    lVar15 = auVar35._0_8_;
+    puVar9 = puVar11 + -0x150;
+    *(ulong *)(puVar11 + -0x150) = uVar26;
+    *(ulong *)(puVar11 + -0x148) = CONCAT44(0,uVar5);
+    *(undefined8 *)(puVar11 + -0x140) = 0;
+    *(ulong *)(puVar11 + -0x138) = uVar17;
+    *(dword ***)(puVar11 + -0x130) = ppdVar14;
+    *(undefined **)(puVar11 + -0x128) = &FlatBuffers_FlatBufferBuilder__PutLong;
+    ppdVar14 = (dword **)(puVar11 + -0x130);
+    lVar25 = *(long *)(lVar15 + 0x18);
+    uVar5 = *(int *)(lVar15 + 0x10) - 8;
+    auVar8._8_8_ = lVar25;
+    auVar8._0_8_ = CONCAT44(0,uVar5);
+    auVar35._8_4_ = uVar5;
+    auVar35._0_8_ = lVar25;
+    auVar35._12_4_ = 0;
+    *(uint *)(lVar15 + 0x10) = uVar5;
+    if (lVar25 != 0) {
+      uVar24 = 8;
+      puVar31 = &UNK_016cdda4;
+      goto code_r0x016cc7a4;
+    }
+    auVar35 = func_0x00f78af4();
+    uVar23 = auVar35._8_8_;
+    lVar15 = auVar35._0_8_;
+    puVar9 = puVar11 + -0x180;
+    *(ulong *)(puVar11 + -0x180) = uVar26;
+    *(ulong *)(puVar11 + -0x178) = CONCAT44(0,uVar5);
+    *(undefined8 *)(puVar11 + -0x170) = 0;
+    *(ulong *)(puVar11 + -0x168) = uVar17;
+    *(dword ***)(puVar11 + -0x160) = ppdVar14;
+    *(undefined **)(puVar11 + -0x158) = &FlatBuffers_FlatBufferBuilder__PutUlong;
+    ppdVar14 = (dword **)(puVar11 + -0x160);
+    lVar25 = *(long *)(lVar15 + 0x18);
+    uVar5 = *(int *)(lVar15 + 0x10) - 8;
+    unaff_x21 = CONCAT44(0,uVar5);
+    auVar8._8_8_ = lVar25;
+    auVar8._0_8_ = unaff_x21;
+    auVar35._8_4_ = uVar5;
+    auVar35._0_8_ = lVar25;
+    auVar35._12_4_ = 0;
+    *(uint *)(lVar15 + 0x10) = uVar5;
+    if (lVar25 != 0) {
+      uVar24 = 8;
+      puVar31 = &UNK_016cde00;
+      goto code_r0x016cc7a4;
+    }
+    lVar15 = func_0x00f78af4();
+    *(dword ***)(puVar11 + -400) = ppdVar14;
+    *(undefined **)(puVar11 + -0x188) = &FlatBuffers_FlatBufferBuilder__PutFloat;
+    lVar25 = *(long *)(lVar15 + 0x18);
+    auVar8._8_8_ = lVar25;
+    uVar5 = *(int *)(lVar15 + 0x10) - 4;
+    uVar23 = (ulong)uVar5;
+    auVar35._8_4_ = uVar5;
+    auVar35._0_8_ = lVar25;
+    auVar35._12_4_ = 0;
+    *(uint *)(lVar15 + 0x10) = uVar5;
+    if (lVar25 != 0) {
+      puVar9 = puVar11 + -0x1b0;
+      *(undefined8 *)(puVar11 + -0x1b0) = unaff_d9;
+      *(undefined8 *)(puVar11 + -0x1a8) = unaff_d8;
+      *(undefined8 *)(puVar11 + -0x1a0) = 0;
+      *(ulong *)(puVar11 + -0x198) = uVar17;
+      *(undefined8 *)(puVar11 + -400) = *(undefined8 *)(puVar11 + -400);
+      *(undefined8 *)(puVar11 + -0x188) = *(undefined8 *)(puVar11 + -0x188);
+      ppdVar14 = (dword **)(puVar11 + -400);
+      uVar24 = 4;
+      puVar31 = &UNK_016ccba4;
+      goto code_r0x016cc7a4;
+    }
+    lVar15 = func_0x00f78af4();
+    *(undefined1 **)(puVar11 + -0x1a0) = puVar11 + -400;
+    *(undefined **)(puVar11 + -0x198) = &FlatBuffers_FlatBufferBuilder__PutDouble;
+    lVar25 = *(long *)(lVar15 + 0x18);
+    auVar8._8_8_ = lVar25;
+    uVar5 = *(int *)(lVar15 + 0x10) - 8;
+    uVar23 = (ulong)uVar5;
+    auVar35._8_4_ = uVar5;
+    auVar35._0_8_ = lVar25;
+    auVar35._12_4_ = 0;
+    *(uint *)(lVar15 + 0x10) = uVar5;
+    if (lVar25 != 0) break;
+    auVar34 = func_0x00f78af4();
+    *(undefined8 *)(puVar11 + -0x1c0) = 0;
+    *(ulong *)(puVar11 + -0x1b8) = uVar17;
+    *(undefined1 **)(puVar11 + -0x1b0) = puVar11 + -0x1a0;
+    *(undefined **)(puVar11 + -0x1a8) = &FlatBuffers_FlatBufferBuilder__AddBool;
+    ppuVar28 = (undefined1 **)(puVar11 + -0x1b0);
+    auVar33._8_8_ = 1;
+    auVar33._0_8_ = auVar34._0_8_;
+    uVar23 = 0;
+    puVar31 = &UNK_016cde9c;
+    puVar11 = puVar11 + -0x1c0;
+    unaff_x22 = uVar26;
+  } while( true );
+  puVar9 = puVar11 + -0x1c0;
+  *(undefined8 *)(puVar11 + -0x1c0) = unaff_d9;
+  *(undefined8 *)(puVar11 + -0x1b8) = unaff_d8;
+  *(undefined8 *)(puVar11 + -0x1b0) = 0;
+  *(ulong *)(puVar11 + -0x1a8) = uVar17;
+  *(undefined8 *)(puVar11 + -0x1a0) = *(undefined8 *)(puVar11 + -0x1a0);
+  *(undefined8 *)(puVar11 + -0x198) = *(undefined8 *)(puVar11 + -0x198);
+  ppdVar14 = (dword **)(puVar11 + -0x1a0);
+  uVar24 = 8;
+  puVar31 = &UNK_016ccc34;
+code_r0x016cc7a4:
+  do {
+    puVar13 = puVar9 + -0x20;
+    *(long *)(puVar9 + -0x20) = auVar8._8_8_;
+    *(ulong *)(puVar9 + -0x18) = uVar23;
+    *(dword ***)(puVar9 + -0x10) = ppdVar14;
+    *(undefined **)(puVar9 + -8) = puVar31;
+    puVar27 = puVar9 + -0x10;
+    if (auVar35._8_4_ < 0) {
+code_r0x016cc7d8:
+      func_0x00f78a24(0x3d1fcf8);
+      uVar23 = func_0x00f78aec();
+      /*System.ArgumentOutOfRangeException$$.ctor*/ func_0x0292a4d0(uVar23,0);
+      uVar22 = func_0x00f78a24(0x3d52ce8);
+      func_0x00f78ac0(uVar23,uVar22);
+      uVar18 = uVar24;
+    }
+    else {
+      lVar15 = *(long *)(auVar35._0_8_ + 0x10);
+      uVar18 = uVar24;
+      if (lVar15 != 0) {
+        if (auVar35._8_4_ <= *(int *)(lVar15 + 0x18) - (int)uVar24) {
+          return auVar35._0_8_;
+        }
+        goto code_r0x016cc7d8;
+      }
+    }
+    puVar31 = &FlatBuffers_ByteBuffer__PutSbyte;
+    auVar35 = func_0x00f78af4();
+code_r0x016cc810:
+    puVar9 = puVar13 + -0x30;
+    *(ulong *)(puVar13 + -0x30) = uVar26;
+    *(undefined1 (*) [16])(puVar13 + -0x28) = auVar8;
+    *(ulong *)(puVar13 + -0x18) = uVar23;
+    *(undefined1 **)(puVar13 + -0x10) = puVar27;
+    *(undefined **)(puVar13 + -8) = puVar31;
+    ppdVar14 = (dword **)(puVar13 + -0x10);
+    uVar24 = 1;
+    puVar31 = &UNK_016cc834;
+    uVar23 = uVar18;
+    auVar8 = auVar35;
+  } while( true );
+}
+
+
+
+// ============================================================
+// RVA: 0x167d858 | Core.Services.Match.AddMatchType
+// ============================================================
+
+/* WARNING: Possible PIC construction at 0x016ce4d8: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce3a0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce468: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cea74: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cea88: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ceb04: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ceb50: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ceb74: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cebe4: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cec2c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ced5c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cee1c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cef0c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cef44: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cef60: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cecfc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce31c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x0167d918: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce220: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x0167d9dc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce184: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc898: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc904: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc830: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdc30: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc688: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdc8c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdce8: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdd44: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdda0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cddfc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccba0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccc30: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cccb8: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccd14: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccdc0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cde98: Changing call to branch */
+/* WARNING: Removing unreachable block (ram,0x016ccdc4) */
+/* WARNING: Removing unreachable block (ram,0x016ccd18) */
+/* WARNING: Removing unreachable block (ram,0x016ccd20) */
+/* WARNING: Removing unreachable block (ram,0x016ccd48) */
+/* WARNING: Removing unreachable block (ram,0x016ccd28) */
+/* WARNING: Removing unreachable block (ram,0x016ccd4c) */
+/* WARNING: Removing unreachable block (ram,0x016ccd84) */
+/* WARNING: Removing unreachable block (ram,0x016ccdb0) */
+/* WARNING: Removing unreachable block (ram,0x016ccd88) */
+/* WARNING: Removing unreachable block (ram,0x016ccd34) */
+/* WARNING: Removing unreachable block (ram,0x016cccbc) */
+/* WARNING: Removing unreachable block (ram,0x016cccc4) */
+/* WARNING: Removing unreachable block (ram,0x016cccec) */
+/* WARNING: Removing unreachable block (ram,0x016ccccc) */
+/* WARNING: Removing unreachable block (ram,0x016cccf0) */
+/* WARNING: Removing unreachable block (ram,0x016cccd8) */
+/* WARNING: Removing unreachable block (ram,0x016ccc34) */
+/* WARNING: Removing unreachable block (ram,0x016ccc3c) */
+/* WARNING: Removing unreachable block (ram,0x016ccc44) */
+/* WARNING: Removing unreachable block (ram,0x016ccc90) */
+/* WARNING: Removing unreachable block (ram,0x016ccc68) */
+/* WARNING: Removing unreachable block (ram,0x016ccc94) */
+/* WARNING: Removing unreachable block (ram,0x016ccc70) */
+/* WARNING: Removing unreachable block (ram,0x016ccba4) */
+/* WARNING: Removing unreachable block (ram,0x016ccbac) */
+/* WARNING: Removing unreachable block (ram,0x016ccbb4) */
+/* WARNING: Removing unreachable block (ram,0x016ccc00) */
+/* WARNING: Removing unreachable block (ram,0x016ccbd8) */
+/* WARNING: Removing unreachable block (ram,0x016ccc04) */
+/* WARNING: Removing unreachable block (ram,0x016ccbe0) */
+/* WARNING: Removing unreachable block (ram,0x016cde00) */
+/* WARNING: Removing unreachable block (ram,0x016cdda4) */
+/* WARNING: Removing unreachable block (ram,0x016cdd48) */
+/* WARNING: Removing unreachable block (ram,0x016cdcec) */
+/* WARNING: Removing unreachable block (ram,0x016cdc90) */
+/* WARNING: Removing unreachable block (ram,0x016cc68c) */
+/* WARNING: Removing unreachable block (ram,0x016cc698) */
+/* WARNING: Removing unreachable block (ram,0x016cc6a0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6a8) */
+/* WARNING: Removing unreachable block (ram,0x016cc718) */
+/* WARNING: Removing unreachable block (ram,0x016cc720) */
+/* WARNING: Removing unreachable block (ram,0x016cc728) */
+/* WARNING: Removing unreachable block (ram,0x016cc730) */
+/* WARNING: Removing unreachable block (ram,0x016cc74c) */
+/* WARNING: Removing unreachable block (ram,0x016cc754) */
+/* WARNING: Removing unreachable block (ram,0x016cc778) */
+/* WARNING: Removing unreachable block (ram,0x016cc6b4) */
+/* WARNING: Removing unreachable block (ram,0x016cc77c) */
+/* WARNING: Removing unreachable block (ram,0x016cc6bc) */
+/* WARNING: Removing unreachable block (ram,0x016cc6c4) */
+/* WARNING: Removing unreachable block (ram,0x016cc6cc) */
+/* WARNING: Removing unreachable block (ram,0x016cc6e0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6e8) */
+/* WARNING: Removing unreachable block (ram,0x016cc794) */
+/* WARNING: Removing unreachable block (ram,0x016cc7a0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6f0) */
+/* WARNING: Removing unreachable block (ram,0x016cc714) */
+/* WARNING: Removing unreachable block (ram,0x016cc780) */
+/* WARNING: Removing unreachable block (ram,0x016cdc34) */
+/* WARNING: Removing unreachable block (ram,0x016cc834) */
+/* WARNING: Removing unreachable block (ram,0x016cc83c) */
+/* WARNING: Removing unreachable block (ram,0x016cc868) */
+/* WARNING: Removing unreachable block (ram,0x016cc844) */
+/* WARNING: Removing unreachable block (ram,0x016cc86c) */
+/* WARNING: Removing unreachable block (ram,0x016cc850) */
+/* WARNING: Removing unreachable block (ram,0x016cc908) */
+/* WARNING: Removing unreachable block (ram,0x016cc910) */
+/* WARNING: Removing unreachable block (ram,0x016cc920) */
+/* WARNING: Removing unreachable block (ram,0x016cc928) */
+/* WARNING: Removing unreachable block (ram,0x016cc964) */
+/* WARNING: Removing unreachable block (ram,0x016cc930) */
+/* WARNING: Removing unreachable block (ram,0x016cc968) */
+/* WARNING: Removing unreachable block (ram,0x016cc93c) */
+/* WARNING: Removing unreachable block (ram,0x016cc954) */
+/* WARNING: Removing unreachable block (ram,0x016cc89c) */
+/* WARNING: Removing unreachable block (ram,0x016cc8a4) */
+/* WARNING: Removing unreachable block (ram,0x016cc8d0) */
+/* WARNING: Removing unreachable block (ram,0x016cc8ac) */
+/* WARNING: Removing unreachable block (ram,0x016cc8d4) */
+/* WARNING: Removing unreachable block (ram,0x016cc8b8) */
+/* WARNING: Removing unreachable block (ram,0x016ce188) */
+/* WARNING: Removing unreachable block (ram,0x0167d9e0) */
+/* WARNING: Removing unreachable block (ram,0x016ce224) */
+/* WARNING: Removing unreachable block (ram,0x0167d91c) */
+/* WARNING: Removing unreachable block (ram,0x0167d928) */
+/* WARNING: Removing unreachable block (ram,0x0167d930) */
+/* WARNING: Removing unreachable block (ram,0x0167d94c) */
+/* WARNING: Removing unreachable block (ram,0x0167d958) */
+/* WARNING: Removing unreachable block (ram,0x0167d964) */
+/* WARNING: Removing unreachable block (ram,0x016ce20c) */
+/* WARNING: Removing unreachable block (ram,0x016ce320) */
+/* WARNING: Removing unreachable block (ram,0x016ced00) */
+/* WARNING: Removing unreachable block (ram,0x016ced04) */
+/* WARNING: Removing unreachable block (ram,0x016ced10) */
+/* WARNING: Removing unreachable block (ram,0x016ced20) */
+/* WARNING: Removing unreachable block (ram,0x016ced28) */
+/* WARNING: Removing unreachable block (ram,0x016cef64) */
+/* WARNING: Removing unreachable block (ram,0x016cef48) */
+/* WARNING: Removing unreachable block (ram,0x016cef70) */
+/* WARNING: Removing unreachable block (ram,0x016cef78) */
+/* WARNING: Removing unreachable block (ram,0x016cef10) */
+/* WARNING: Removing unreachable block (ram,0x016cef24) */
+/* WARNING: Removing unreachable block (ram,0x016cef2c) */
+/* WARNING: Removing unreachable block (ram,0x016cee20) */
+/* WARNING: Removing unreachable block (ram,0x016cee2c) */
+/* WARNING: Removing unreachable block (ram,0x016cee44) */
+/* WARNING: Removing unreachable block (ram,0x016ced60) */
+/* WARNING: Removing unreachable block (ram,0x016cec30) */
+/* WARNING: Removing unreachable block (ram,0x016cec38) */
+/* WARNING: Removing unreachable block (ram,0x016cec44) */
+/* WARNING: Removing unreachable block (ram,0x016cebe8) */
+/* WARNING: Removing unreachable block (ram,0x016cec48) */
+/* WARNING: Removing unreachable block (ram,0x016cebf0) */
+/* WARNING: Removing unreachable block (ram,0x016cec64) */
+/* WARNING: Removing unreachable block (ram,0x016cec6c) */
+/* WARNING: Removing unreachable block (ram,0x016cec78) */
+/* WARNING: Removing unreachable block (ram,0x016ceca8) */
+/* WARNING: Removing unreachable block (ram,0x016cec84) */
+/* WARNING: Removing unreachable block (ram,0x016cec8c) */
+/* WARNING: Removing unreachable block (ram,0x016cec94) */
+/* WARNING: Removing unreachable block (ram,0x016ced3c) */
+/* WARNING: Removing unreachable block (ram,0x016cc4e0) */
+/* WARNING: Removing unreachable block (ram,0x016cc518) */
+/* WARNING: Removing unreachable block (ram,0x016cc52c) */
+/* WARNING: Removing unreachable block (ram,0x016cc538) */
+/* WARNING: Removing unreachable block (ram,0x016cc540) */
+/* WARNING: Removing unreachable block (ram,0x016cc548) */
+/* WARNING: Removing unreachable block (ram,0x016cc5b8) */
+/* WARNING: Removing unreachable block (ram,0x016cc5c0) */
+/* WARNING: Removing unreachable block (ram,0x016cc5d4) */
+/* WARNING: Removing unreachable block (ram,0x016cc5dc) */
+/* WARNING: Removing unreachable block (ram,0x016cc5e4) */
+/* WARNING: Removing unreachable block (ram,0x016cc5f0) */
+/* WARNING: Removing unreachable block (ram,0x016cc554) */
+/* WARNING: Removing unreachable block (ram,0x016cc55c) */
+/* WARNING: Removing unreachable block (ram,0x016cc574) */
+/* WARNING: Removing unreachable block (ram,0x016cc57c) */
+/* WARNING: Removing unreachable block (ram,0x016cc624) */
+/* WARNING: Removing unreachable block (ram,0x016cc584) */
+/* WARNING: Removing unreachable block (ram,0x016cc628) */
+/* WARNING: Removing unreachable block (ram,0x016cc590) */
+/* WARNING: Removing unreachable block (ram,0x016cc5b4) */
+/* WARNING: Removing unreachable block (ram,0x016cc610) */
+/* WARNING: Removing unreachable block (ram,0x016cebfc) */
+/* WARNING: Removing unreachable block (ram,0x016cec00) */
+/* WARNING: Removing unreachable block (ram,0x016cec08) */
+/* WARNING: Removing unreachable block (ram,0x016cec20) */
+/* WARNING: Removing unreachable block (ram,0x016ceb78) */
+/* WARNING: Removing unreachable block (ram,0x016cec58) */
+/* WARNING: Removing unreachable block (ram,0x016cecac) */
+/* WARNING: Removing unreachable block (ram,0x016cecb8) */
+/* WARNING: Removing unreachable block (ram,0x016cecd8) */
+/* WARNING: Removing unreachable block (ram,0x016cecf0) */
+/* WARNING: Removing unreachable block (ram,0x016cec60) */
+/* WARNING: Removing unreachable block (ram,0x016ceb84) */
+/* WARNING: Removing unreachable block (ram,0x016ceb88) */
+/* WARNING: Removing unreachable block (ram,0x016ceb90) */
+/* WARNING: Removing unreachable block (ram,0x016ceb98) */
+/* WARNING: Removing unreachable block (ram,0x016ceba0) */
+/* WARNING: Removing unreachable block (ram,0x016cebac) */
+/* WARNING: Removing unreachable block (ram,0x016cebd8) */
+/* WARNING: Removing unreachable block (ram,0x016ceb54) */
+/* WARNING: Removing unreachable block (ram,0x016ceb08) */
+/* WARNING: Removing unreachable block (ram,0x016ceb10) */
+/* WARNING: Removing unreachable block (ram,0x016ceb1c) */
+/* WARNING: Removing unreachable block (ram,0x016ceb2c) */
+/* WARNING: Removing unreachable block (ram,0x016cea8c) */
+/* WARNING: Removing unreachable block (ram,0x016cea9c) */
+/* WARNING: Removing unreachable block (ram,0x016ceaa0) */
+/* WARNING: Removing unreachable block (ram,0x016ceb30) */
+/* WARNING: Removing unreachable block (ram,0x016ceaa8) */
+/* WARNING: Removing unreachable block (ram,0x016ced84) */
+/* WARNING: Removing unreachable block (ram,0x016ceab0) */
+/* WARNING: Removing unreachable block (ram,0x016ceabc) */
+/* WARNING: Removing unreachable block (ram,0x016ceac8) */
+/* WARNING: Removing unreachable block (ram,0x016ceacc) */
+/* WARNING: Removing unreachable block (ram,0x016ced88) */
+/* WARNING: Removing unreachable block (ram,0x016ceadc) */
+/* WARNING: Removing unreachable block (ram,0x016ceae8) */
+/* WARNING: Removing unreachable block (ram,0x016cea78) */
+/* WARNING: Removing unreachable block (ram,0x016ce46c) */
+/* WARNING: Removing unreachable block (ram,0x016ce3a4) */
+/* WARNING: Removing unreachable block (ram,0x016ce3a8) */
+/* WARNING: Removing unreachable block (ram,0x016ce3b4) */
+/* WARNING: Removing unreachable block (ram,0x016ce4dc) */
+/* WARNING: Removing unreachable block (ram,0x016cde9c) */
+/* WARNING: Removing unreachable block (ram,0x016ce334) */
+
+ulong Core_Services_Match__AddMatchType(ulong param_1,ulong param_2,undefined8 *param_3,int param_4)
+
+{
+  uint uVar1;
+  uint uVar2;
+  int iVar3;
+  uint uVar4;
+  undefined1 auVar5 [16];
+  undefined1 auVar6 [16];
+  undefined1 *puVar7;
+  dword **ppdVar8;
+  undefined1 *puVar9;
+  undefined1 *puVar10;
+  undefined1 *puVar11;
+  long *plVar12;
+  undefined8 uVar13;
+  undefined8 uVar14;
+  long lVar15;
+  undefined8 uVar16;
+  int iVar17;
+  ulong uVar18;
+  ulong uVar19;
+  ulong uVar20;
+  ulong uVar21;
+  long lVar22;
+  ulong unaff_x21;
+  ulong unaff_x22;
+  ulong uVar23;
+  undefined1 *puVar24;
+  dword *pdVar25;
+  undefined *puVar26;
+  undefined *puVar27;
+  undefined8 unaff_d8;
+  undefined8 unaff_d9;
+  undefined1 auVar28 [16];
+  undefined1 auVar29 [16];
+  undefined1 auVar30 [12];
+  undefined8 auStack_c0 [2];
+  dword *pdStack_80;
+  undefined *puStack_78;
+  
+  if (param_1 == 0) {
+    uVar18 = func_0x00f78af4();
+    if ((bRam0000000003eb59e1 & 1) == 0) {
+      func_0x00f78a20(0x3d3f1a8);
+      bRam0000000003eb59e1 = 1;
+    }
+    if (uVar18 == 0) {
+      puVar27 = (undefined *)func_0x00f78af4();
+      if (puVar27 != (undefined *)0x0) {
+        ppdVar8 = (dword **)&stack0xffffffffffffffa0;
+        puVar24 = &stack0xffffffffffffffc0;
+        if ((bRam0000000003eb5cd7 & 1) == 0) {
+          func_0x00f78a20(0x3d1f100,4,0);
+          bRam0000000003eb5cd7 = 1;
+        }
+        /*FlatBuffers.FlatBufferBuilder$$NotNested*/ func_0x016ce1a4(puVar27);
+        if (*(long *)(puVar27 + 0x28) == 0) {
+          auVar30 = func_0x00f78af4();
+          ppdVar8 = &pdStack_80;
+          pdStack_80 = &MACH_HEADER.cputype;
+          puVar24 = &stack0xffffffffffffff90;
+          puStack_78 = puVar27;
+          if (*(int *)(auVar30._0_8_ + 0x30) <= auVar30._8_4_) {
+            func_0x00f78a24(0x3d22738);
+            uVar14 = func_0x00f78aec();
+            uVar13 = func_0x00f78a24(0x3d6ceb8);
+            unaff_x21 = 0;
+            /*System.IndexOutOfRangeException$$.ctor*/ func_0x02ae8c34(uVar14,uVar13);
+            uVar13 = func_0x00f78a24(0x3d56a58);
+            func_0x00f78ac0(uVar14,uVar13);
+            func_0x00f78af4();
+            uVar14 = func_0x00f78b24();
+            auVar29 = func_0x00f78ac0(uVar14,0);
+            uVar18 = auVar29._8_8_;
+            param_1 = auVar29._0_8_;
+            puVar24 = &stack0xffffffffffffff70;
+            if (((int)unaff_x21 == param_4) && (*(char *)(param_1 + 0x48) == '\0')) {
+              return param_1;
+            }
+            uVar21 = 0;
+            puVar27 = &UNK_016ce46c;
+            puVar9 = &stack0xffffffffffffff50;
+            uVar19 = 1;
+            uVar20 = param_1;
+            goto code_r0x016cdaac;
+          }
+          puVar26 = &UNK_016ce3a4;
+          puVar27 = auVar30._0_8_;
+        }
+        else {
+          if (*(int *)(*(long *)(puVar27 + 0x28) + 0x18) < 4) {
+            uVar14 = func_0x00f78a34(/*int[]_TypeInfo*/ uRam0000000003d1f100,4);
+            *(undefined8 *)(puVar27 + 0x28) = uVar14;
+          }
+          *(undefined4 *)(puVar27 + 0x30) = 4;
+          puVar26 = &UNK_016ce320;
+        }
+        *(undefined1 **)((long)ppdVar8 + -0x10) = puVar24;
+        *(undefined **)((long)ppdVar8 + -8) = puVar26;
+        if ((*(long *)(puVar27 + 0x18) != 0) &&
+           (lVar15 = *(long *)(*(long *)(puVar27 + 0x18) + 0x10), lVar15 != 0)) {
+          return (ulong)(uint)(*(int *)(lVar15 + 0x18) - *(int *)(puVar27 + 0x10));
+        }
+        lVar15 = func_0x00f78af4();
+        return (ulong)*(byte *)(lVar15 + 0x48);
+      }
+      auVar28 = func_0x00f78af4();
+      lVar15 = auVar28._0_8_;
+      if ((auVar28._8_8_ == 0) || (lVar15 == 0)) {
+        auVar28 = func_0x00f78af4();
+        lVar22 = auVar28._8_8_;
+        lVar15 = auVar28._0_8_;
+        puVar9 = &stack0xffffffffffffff60;
+        puStack_78 = &Core_Services_Match__CreateOtherPlayersVectorBlock;
+        pdVar25 = (dword *)&pdStack_80;
+        unaff_x21 = 0x3eb5000;
+        pdStack_80 = (dword *)&stack0xffffffffffffffb0;
+        if ((bRam0000000003eb59e0 & 1) == 0) {
+          func_0x00f78a20(0x3d569d8);
+          bRam0000000003eb59e0 = 1;
+        }
+        if ((lVar22 == 0) || (lVar15 == 0)) {
+          puVar27 = &Core_Services_Match__StartOtherPlayersVector;
+          auVar30 = func_0x00f78af4();
+          iVar17 = auVar30._8_4_;
+          auVar28._8_8_ = lVar22;
+          auVar28._0_8_ = auVar30._0_8_;
+          if (auVar30._0_8_ == 0) {
+            auVar29 = func_0x00f78af4();
+            uVar18 = auVar29._0_8_;
+            *(undefined8 *)(uVar18 + 0x10) = *param_3;
+            *(long *)(uVar18 + 0x20) = auVar29._8_8_;
+            *(undefined8 **)(uVar18 + 0x28) = param_3;
+            return uVar18;
+          }
+        }
+        else {
+          unaff_x21 = 0x3d56000;
+          iVar17 = *(int *)(lVar22 + 0x18);
+          puVar27 = &UNK_0167d9e0;
+          puVar9 = &stack0xffffffffffffff60;
+        }
+      }
+      else {
+        iVar17 = *(int *)(auVar28._8_8_ + 0x18);
+        puVar27 = &UNK_0167d91c;
+        puVar9 = &stack0xffffffffffffff90;
+        pdVar25 = (dword *)&stack0xffffffffffffffb0;
+      }
+      param_1 = auVar28._0_8_;
+      *(ulong *)(puVar9 + -0x30) = unaff_x22;
+      *(ulong *)(puVar9 + -0x28) = unaff_x21;
+      *(long *)(puVar9 + -0x20) = auVar28._8_8_;
+      *(long *)(puVar9 + -0x18) = lVar15;
+      *(dword **)(puVar9 + -0x10) = pdVar25;
+      *(undefined **)(puVar9 + -8) = puVar27;
+      puVar24 = puVar9 + -0x10;
+      uVar18 = 4;
+      unaff_x21 = 4;
+      /*FlatBuffers.FlatBufferBuilder$$NotNested*/ func_0x016ce1a4();
+      *(int *)(param_1 + 0x44) = iVar17;
+      uVar21 = (ulong)(uint)(iVar17 * 4);
+      uVar19 = 4;
+      puVar27 = &UNK_016ce188;
+      puVar9 = puVar9 + -0x30;
+      uVar20 = uVar21;
+      unaff_x22 = param_1;
+    }
+    else {
+      puVar24 = &stack0xffffffffffffffe0;
+      if ((bRam0000000003eb5cd8 & 1) == 0) {
+        func_0x00f78a20(0x3d1f100,0);
+        bRam0000000003eb5cd8 = 1;
+      }
+      if (*(int *)(uVar18 + 0x30) < 0) {
+        func_0x00f78a24(0x3d22a38);
+        puVar27 = (undefined *)func_0x00f78aec();
+        uVar14 = func_0x00f78a24(0x3d6cea8);
+        /*System.InvalidOperationException$$.ctor*/ func_0x02ae6938(puVar27,uVar14);
+        uVar14 = func_0x00f78a24(0x3d56a30);
+        auVar30 = func_0x00f78ac0(puVar27,uVar14);
+        pdStack_80 = (dword *)0x3eb5000;
+        puVar24 = &stack0xffffffffffffff90;
+        lVar15 = *(long *)(auVar30._0_8_ + 0x18);
+        puStack_78 = puVar27;
+        if ((lVar15 != 0) && (*(long *)(lVar15 + 0x10) != 0)) {
+          uVar4 = *(int *)(*(long *)(lVar15 + 0x10) + 0x18) - auVar30._8_4_;
+          uVar18 = (ulong)uVar4;
+          auVar29._8_4_ = uVar4;
+          auVar29._0_8_ = lVar15;
+          auVar29._12_4_ = 0;
+          puVar7 = &stack0xffffffffffffff20;
+          puVar24 = &stack0xffffffffffffff50;
+          auVar6._8_8_ = 4;
+          auVar6._0_8_ = lVar15;
+          uVar23 = 0x3d201a0;
+          if ((bRam0000000003eb5cd0 & 1) == 0) {
+            func_0x00f78a20(0x3d201a0);
+            bRam0000000003eb5cd0 = 1;
+          }
+          uVar19 = 4;
+          puVar27 = &UNK_016cc68c;
+          goto code_r0x016cc7a4;
+        }
+        func_0x00f78af4();
+        uVar14 = /*System.Int32$$ToString*/ func_0x02ae9b8c(&stack0xffffffffffffff6c,0);
+        uVar13 = func_0x00f78a24(0x3d6ce88);
+        uVar16 = func_0x00f78a24(0x3d66338);
+        uVar14 = /*System.String$$Concat*/ func_0x029be39c(uVar13,uVar14,uVar16,0);
+        func_0x00f78a24(0x3d22a38);
+        uVar13 = func_0x00f78aec();
+        auVar5._8_8_ = uVar13;
+        auVar5._0_8_ = uVar14;
+        uVar16 = 0;
+        /*System.InvalidOperationException$$.ctor*/ func_0x02ae6938(uVar13,uVar14);
+        uVar14 = func_0x00f78a24(0x3d56a50);
+        puVar27 = &FlatBuffers_FlatBufferBuilder__Finish;
+        auVar29 = func_0x00f78ac0(uVar13,uVar14);
+        puVar9 = &stack0xffffffffffffff60;
+        while( true ) {
+          auVar6 = auVar29;
+          uVar18 = auVar6._0_8_;
+          *(long *)(puVar9 + -0x20) = auVar5._8_8_;
+          *(long *)(puVar9 + -0x18) = auVar5._0_8_;
+          *(undefined1 **)(puVar9 + -0x10) = puVar24;
+          *(undefined **)(puVar9 + -8) = puVar27;
+          puVar24 = puVar9 + -0x10;
+          uVar4 = *(uint *)(uVar18 + 0x20);
+          uVar19 = (ulong)uVar4;
+          param_1 = uVar18;
+          if ((int)uVar16 == 0) {
+            param_1 = 0;
+            uVar4 = 0;
+          }
+          uVar20 = auVar6._8_8_;
+          if ((int)uVar16 == 0) {
+            uVar21 = 4;
+            puVar27 = &UNK_016cef64;
+            puVar9 = puVar9 + -0x20;
+            param_1 = uVar18;
+            goto code_r0x016cdaac;
+          }
+          if (param_1 != 0) break;
+          puVar27 = &FlatBuffers_FlatBufferBuilder__Finish;
+          auVar29 = func_0x00f78af4();
+          uVar16 = 0;
+          puVar9 = puVar9 + -0x20;
+          auVar5 = auVar6;
+        }
+        uVar21 = 8;
+        puVar27 = &UNK_016cef10;
+        puVar9 = puVar9 + -0x20;
+        uVar19 = (ulong)uVar4;
+      }
+      else {
+        uVar21 = 0;
+        puVar27 = &UNK_016cea78;
+        puVar9 = &stack0xffffffffffffffa0;
+        param_1 = uVar18;
+        uVar19 = 4;
+        uVar20 = 0x3eb5000;
+      }
+    }
+  }
+  else {
+    uVar18 = 1;
+    puVar24 = &stack0xfffffffffffffff0;
+    if (((int)param_2 == 0) && (*(char *)(param_1 + 0x48) == '\0')) {
+      return param_1;
+    }
+    uVar21 = 0;
+    puVar27 = &UNK_016ce4dc;
+    puVar9 = &stack0xffffffffffffffd0;
+    uVar19 = 1;
+    uVar20 = param_1;
+    unaff_x21 = param_2;
+  }
+code_r0x016cdaac:
+  do {
+    puVar7 = puVar9 + -0x30;
+    *(ulong *)(puVar9 + -0x30) = unaff_x22;
+    *(ulong *)(puVar9 + -0x28) = unaff_x21;
+    *(ulong *)(puVar9 + -0x20) = uVar20;
+    *(ulong *)(puVar9 + -0x18) = uVar18;
+    *(undefined1 **)(puVar9 + -0x10) = puVar24;
+    *(undefined **)(puVar9 + -8) = puVar27;
+    iVar17 = (int)uVar19;
+    if (*(int *)(param_1 + 0x20) < iVar17) {
+      *(int *)(param_1 + 0x20) = iVar17;
+    }
+    uVar19 = uVar20;
+    uVar23 = unaff_x22;
+    if ((*(long *)(param_1 + 0x18) != 0) &&
+       (lVar15 = *(long *)(*(long *)(param_1 + 0x18) + 0x10), lVar15 != 0)) {
+      uVar2 = *(uint *)(lVar15 + 0x18);
+      iVar3 = *(int *)(param_1 + 0x10);
+      uVar1 = iVar3 - (uVar2 + (int)uVar21) & iVar17 - 1U;
+      uVar19 = CONCAT44(0,uVar1);
+      uVar4 = (int)uVar21 + iVar17 + uVar1;
+      uVar23 = (ulong)uVar4;
+      uVar18 = param_1;
+      while (unaff_x21 = (ulong)uVar2, iVar3 < (int)uVar4) {
+        uVar18 = /*FlatBuffers.FlatBufferBuilder$$GrowBuffer*/ func_0x016cda78(param_1);
+        if ((*(long *)(param_1 + 0x18) == 0) ||
+           (lVar15 = *(long *)(*(long *)(param_1 + 0x18) + 0x10), lVar15 == 0))
+        goto code_r0x016cdb68;
+        iVar3 = *(int *)(param_1 + 0x10) - uVar2;
+        uVar2 = *(uint *)(lVar15 + 0x18);
+        iVar3 = iVar3 + uVar2;
+        *(int *)(param_1 + 0x10) = iVar3;
+      }
+      if ((int)uVar1 < 1) {
+        return uVar18;
+      }
+      uVar20 = *(ulong *)(puVar9 + -0x20);
+      uVar18 = *(ulong *)(puVar9 + -0x18);
+      unaff_x22 = *(ulong *)(puVar9 + -0x30);
+      unaff_x21 = *(ulong *)(puVar9 + -0x28);
+      *(undefined8 *)(puVar9 + -0x10) = *(undefined8 *)(puVar9 + -0x10);
+      *(undefined8 *)(puVar9 + -8) = *(undefined8 *)(puVar9 + -8);
+      lVar15 = *(long *)(param_1 + 0x18);
+      auVar6._8_8_ = lVar15;
+      auVar6._0_8_ = uVar19;
+      uVar1 = *(int *)(param_1 + 0x10) - uVar1;
+      uVar23 = (ulong)uVar1;
+      auVar29._8_4_ = uVar1;
+      auVar29._0_8_ = lVar15;
+      auVar29._12_4_ = 0;
+      *(uint *)(param_1 + 0x10) = uVar1;
+      if (lVar15 != 0) {
+        *(ulong *)(puVar9 + -0x30) = unaff_x22;
+        *(ulong *)(puVar9 + -0x28) = unaff_x21;
+        *(ulong *)(puVar9 + -0x20) = uVar20;
+        *(ulong *)(puVar9 + -0x18) = uVar18;
+        *(undefined8 *)(puVar9 + -0x10) = *(undefined8 *)(puVar9 + -0x10);
+        *(undefined8 *)(puVar9 + -8) = *(undefined8 *)(puVar9 + -8);
+        puVar24 = puVar9 + -0x10;
+        puVar27 = &UNK_016cc908;
+        uVar18 = 0;
+        goto code_r0x016cc7a4;
+      }
+      lVar15 = func_0x00f78af4();
+      puVar24 = puVar9 + -0x20;
+      *(undefined1 **)(puVar9 + -0x20) = puVar9 + -0x10;
+      *(undefined **)(puVar9 + -0x18) = &FlatBuffers_FlatBufferBuilder__GrowBuffer;
+      if ((*(long *)(lVar15 + 0x18) != 0) &&
+         (plVar12 = *(long **)(*(long *)(lVar15 + 0x18) + 0x10), plVar12 != (long *)0x0)) {
+                    /* WARNING: Could not recover jumptable at 0x016cdaa4. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+        uVar18 = (**(code **)(*plVar12 + 0x178))
+                           (plVar12,(int)plVar12[3] << 1,*(undefined8 *)(*plVar12 + 0x180));
+        return uVar18;
+      }
+      puVar27 = &FlatBuffers_FlatBufferBuilder__Prep;
+      auVar29 = func_0x00f78af4();
+      uVar19 = auVar29._8_8_;
+      param_1 = auVar29._0_8_;
+      puVar9 = puVar9 + -0x20;
+      goto code_r0x016cdaac;
+    }
+code_r0x016cdb68:
+    auVar6._8_8_ = uVar19;
+    auVar6._0_8_ = unaff_x21;
+    auVar29 = func_0x00f78af4();
+    uVar18 = auVar29._8_8_;
+    lVar22 = auVar29._0_8_;
+    *(undefined1 **)(puVar9 + -0x40) = puVar9 + -0x10;
+    *(undefined **)(puVar9 + -0x38) = &FlatBuffers_FlatBufferBuilder__PutBool;
+    lVar15 = *(long *)(lVar22 + 0x18);
+    iVar17 = *(int *)(lVar22 + 0x10) + -1;
+    *(int *)(lVar22 + 0x10) = iVar17;
+    if (lVar15 != 0) {
+      puVar10 = puVar9 + -0x30;
+      uVar14 = *(undefined8 *)(puVar9 + -0x40);
+      uVar13 = *(undefined8 *)(puVar9 + -0x38);
+FlatBuffers_ByteBuffer__PutByte:
+      auVar6._8_4_ = iVar17;
+      auVar6._0_8_ = lVar15;
+      auVar6._12_4_ = 0;
+      auVar29._8_4_ = iVar17;
+      auVar29._0_8_ = lVar15;
+      auVar29._12_4_ = 0;
+      puVar7 = puVar10 + -0x30;
+      *(ulong *)(puVar10 + -0x30) = uVar23;
+      *(ulong *)(puVar10 + -0x28) = unaff_x21;
+      *(ulong *)(puVar10 + -0x20) = uVar19;
+      *(ulong *)(puVar10 + -0x18) = param_1;
+      *(undefined8 *)(puVar10 + -0x10) = uVar14;
+      *(undefined8 *)(puVar10 + -8) = uVar13;
+      puVar24 = puVar10 + -0x10;
+      uVar19 = 1;
+      puVar27 = &UNK_016cc89c;
+      goto code_r0x016cc7a4;
+    }
+    auVar29 = func_0x00f78af4();
+    uVar20 = auVar29._8_8_;
+    lVar15 = auVar29._0_8_;
+    *(undefined1 **)(puVar9 + -0x50) = puVar9 + -0x40;
+    *(undefined **)(puVar9 + -0x48) = &FlatBuffers_FlatBufferBuilder__PutSbyte;
+    iVar17 = *(int *)(lVar15 + 0x10) + -1;
+    auVar29._8_4_ = iVar17;
+    auVar29._0_8_ = *(long *)(lVar15 + 0x18);
+    auVar29._12_4_ = 0;
+    *(int *)(lVar15 + 0x10) = iVar17;
+    if (*(long *)(lVar15 + 0x18) != 0) {
+      puVar11 = puVar9 + -0x40;
+      puVar24 = *(undefined1 **)(puVar9 + -0x50);
+      puVar27 = *(undefined **)(puVar9 + -0x48);
+      uVar18 = param_1;
+      goto code_r0x016cc810;
+    }
+    auVar29 = func_0x00f78af4();
+    uVar18 = auVar29._8_8_;
+    lVar22 = auVar29._0_8_;
+    *(undefined1 **)(puVar9 + -0x60) = puVar9 + -0x50;
+    *(undefined **)(puVar9 + -0x58) = &FlatBuffers_FlatBufferBuilder__PutByte;
+    lVar15 = *(long *)(lVar22 + 0x18);
+    iVar17 = *(int *)(lVar22 + 0x10) + -1;
+    *(int *)(lVar22 + 0x10) = iVar17;
+    if (lVar15 != 0) {
+      puVar10 = puVar9 + -0x50;
+      uVar14 = *(undefined8 *)(puVar9 + -0x60);
+      uVar13 = *(undefined8 *)(puVar9 + -0x58);
+      goto FlatBuffers_ByteBuffer__PutByte;
+    }
+    auVar29 = func_0x00f78af4();
+    uVar18 = auVar29._8_8_;
+    lVar15 = auVar29._0_8_;
+    puVar7 = puVar9 + -0x90;
+    *(ulong *)(puVar9 + -0x90) = uVar23;
+    *(ulong *)(puVar9 + -0x88) = unaff_x21;
+    *(ulong *)(puVar9 + -0x80) = uVar19;
+    *(ulong *)(puVar9 + -0x78) = param_1;
+    *(undefined1 **)(puVar9 + -0x70) = puVar9 + -0x60;
+    *(undefined **)(puVar9 + -0x68) = &FlatBuffers_FlatBufferBuilder__PutShort;
+    puVar24 = puVar9 + -0x70;
+    lVar22 = *(long *)(lVar15 + 0x18);
+    uVar4 = *(int *)(lVar15 + 0x10) - 2;
+    auVar6._8_8_ = lVar22;
+    auVar6._0_8_ = CONCAT44(0,uVar4);
+    auVar29._8_4_ = uVar4;
+    auVar29._0_8_ = lVar22;
+    auVar29._12_4_ = 0;
+    *(uint *)(lVar15 + 0x10) = uVar4;
+    if (lVar22 != 0) {
+      uVar19 = 2;
+      puVar27 = &UNK_016cdc34;
+      goto code_r0x016cc7a4;
+    }
+    auVar29 = func_0x00f78af4();
+    uVar18 = auVar29._8_8_;
+    lVar15 = auVar29._0_8_;
+    puVar7 = puVar9 + -0xc0;
+    *(ulong *)(puVar9 + -0xc0) = uVar23;
+    *(ulong *)(puVar9 + -0xb8) = CONCAT44(0,uVar4);
+    *(undefined8 *)(puVar9 + -0xb0) = 0;
+    *(ulong *)(puVar9 + -0xa8) = param_1;
+    *(undefined1 **)(puVar9 + -0xa0) = puVar24;
+    *(undefined **)(puVar9 + -0x98) = &FlatBuffers_FlatBufferBuilder__PutUshort;
+    puVar24 = puVar9 + -0xa0;
+    lVar22 = *(long *)(lVar15 + 0x18);
+    uVar4 = *(int *)(lVar15 + 0x10) - 2;
+    auVar6._8_8_ = lVar22;
+    auVar6._0_8_ = CONCAT44(0,uVar4);
+    auVar29._8_4_ = uVar4;
+    auVar29._0_8_ = lVar22;
+    auVar29._12_4_ = 0;
+    *(uint *)(lVar15 + 0x10) = uVar4;
+    if (lVar22 != 0) {
+      uVar19 = 2;
+      puVar27 = &UNK_016cdc90;
+      goto code_r0x016cc7a4;
+    }
+    auVar29 = func_0x00f78af4();
+    uVar18 = auVar29._8_8_;
+    lVar15 = auVar29._0_8_;
+    puVar7 = puVar9 + -0xf0;
+    *(ulong *)(puVar9 + -0xf0) = uVar23;
+    *(ulong *)(puVar9 + -0xe8) = CONCAT44(0,uVar4);
+    *(undefined8 *)(puVar9 + -0xe0) = 0;
+    *(ulong *)(puVar9 + -0xd8) = param_1;
+    *(undefined1 **)(puVar9 + -0xd0) = puVar24;
+    *(undefined **)(puVar9 + -200) = &FlatBuffers_FlatBufferBuilder__PutInt;
+    puVar24 = puVar9 + -0xd0;
+    lVar22 = *(long *)(lVar15 + 0x18);
+    uVar4 = *(int *)(lVar15 + 0x10) - 4;
+    auVar6._8_8_ = lVar22;
+    auVar6._0_8_ = CONCAT44(0,uVar4);
+    auVar29._8_4_ = uVar4;
+    auVar29._0_8_ = lVar22;
+    auVar29._12_4_ = 0;
+    *(uint *)(lVar15 + 0x10) = uVar4;
+    if (lVar22 != 0) {
+      uVar19 = 4;
+      puVar27 = &UNK_016cdcec;
+      goto code_r0x016cc7a4;
+    }
+    auVar29 = func_0x00f78af4();
+    uVar18 = auVar29._8_8_;
+    lVar15 = auVar29._0_8_;
+    puVar7 = puVar9 + -0x120;
+    *(ulong *)(puVar9 + -0x120) = uVar23;
+    *(ulong *)(puVar9 + -0x118) = CONCAT44(0,uVar4);
+    *(undefined8 *)(puVar9 + -0x110) = 0;
+    *(ulong *)(puVar9 + -0x108) = param_1;
+    *(undefined1 **)(puVar9 + -0x100) = puVar24;
+    *(undefined **)(puVar9 + -0xf8) = &FlatBuffers_FlatBufferBuilder__PutUint;
+    puVar24 = puVar9 + -0x100;
+    lVar22 = *(long *)(lVar15 + 0x18);
+    uVar4 = *(int *)(lVar15 + 0x10) - 4;
+    auVar6._8_8_ = lVar22;
+    auVar6._0_8_ = CONCAT44(0,uVar4);
+    auVar29._8_4_ = uVar4;
+    auVar29._0_8_ = lVar22;
+    auVar29._12_4_ = 0;
+    *(uint *)(lVar15 + 0x10) = uVar4;
+    if (lVar22 != 0) {
+      uVar19 = 4;
+      puVar27 = &UNK_016cdd48;
+      goto code_r0x016cc7a4;
+    }
+    auVar29 = func_0x00f78af4();
+    uVar18 = auVar29._8_8_;
+    lVar15 = auVar29._0_8_;
+    puVar7 = puVar9 + -0x150;
+    *(ulong *)(puVar9 + -0x150) = uVar23;
+    *(ulong *)(puVar9 + -0x148) = CONCAT44(0,uVar4);
+    *(undefined8 *)(puVar9 + -0x140) = 0;
+    *(ulong *)(puVar9 + -0x138) = param_1;
+    *(undefined1 **)(puVar9 + -0x130) = puVar24;
+    *(undefined **)(puVar9 + -0x128) = &FlatBuffers_FlatBufferBuilder__PutLong;
+    puVar24 = puVar9 + -0x130;
+    lVar22 = *(long *)(lVar15 + 0x18);
+    uVar4 = *(int *)(lVar15 + 0x10) - 8;
+    auVar6._8_8_ = lVar22;
+    auVar6._0_8_ = CONCAT44(0,uVar4);
+    auVar29._8_4_ = uVar4;
+    auVar29._0_8_ = lVar22;
+    auVar29._12_4_ = 0;
+    *(uint *)(lVar15 + 0x10) = uVar4;
+    if (lVar22 != 0) {
+      uVar19 = 8;
+      puVar27 = &UNK_016cdda4;
+      goto code_r0x016cc7a4;
+    }
+    auVar29 = func_0x00f78af4();
+    uVar18 = auVar29._8_8_;
+    lVar15 = auVar29._0_8_;
+    puVar7 = puVar9 + -0x180;
+    *(ulong *)(puVar9 + -0x180) = uVar23;
+    *(ulong *)(puVar9 + -0x178) = CONCAT44(0,uVar4);
+    *(undefined8 *)(puVar9 + -0x170) = 0;
+    *(ulong *)(puVar9 + -0x168) = param_1;
+    *(undefined1 **)(puVar9 + -0x160) = puVar24;
+    *(undefined **)(puVar9 + -0x158) = &FlatBuffers_FlatBufferBuilder__PutUlong;
+    puVar24 = puVar9 + -0x160;
+    lVar22 = *(long *)(lVar15 + 0x18);
+    uVar4 = *(int *)(lVar15 + 0x10) - 8;
+    unaff_x21 = CONCAT44(0,uVar4);
+    auVar6._8_8_ = lVar22;
+    auVar6._0_8_ = unaff_x21;
+    auVar29._8_4_ = uVar4;
+    auVar29._0_8_ = lVar22;
+    auVar29._12_4_ = 0;
+    *(uint *)(lVar15 + 0x10) = uVar4;
+    if (lVar22 != 0) {
+      uVar19 = 8;
+      puVar27 = &UNK_016cde00;
+      goto code_r0x016cc7a4;
+    }
+    lVar15 = func_0x00f78af4();
+    *(undefined1 **)(puVar9 + -400) = puVar24;
+    *(undefined **)(puVar9 + -0x188) = &FlatBuffers_FlatBufferBuilder__PutFloat;
+    lVar22 = *(long *)(lVar15 + 0x18);
+    auVar6._8_8_ = lVar22;
+    uVar4 = *(int *)(lVar15 + 0x10) - 4;
+    uVar18 = (ulong)uVar4;
+    auVar29._8_4_ = uVar4;
+    auVar29._0_8_ = lVar22;
+    auVar29._12_4_ = 0;
+    *(uint *)(lVar15 + 0x10) = uVar4;
+    if (lVar22 != 0) {
+      puVar7 = puVar9 + -0x1b0;
+      *(undefined8 *)(puVar9 + -0x1b0) = unaff_d9;
+      *(undefined8 *)(puVar9 + -0x1a8) = unaff_d8;
+      *(undefined8 *)(puVar9 + -0x1a0) = 0;
+      *(ulong *)(puVar9 + -0x198) = param_1;
+      *(undefined8 *)(puVar9 + -400) = *(undefined8 *)(puVar9 + -400);
+      *(undefined8 *)(puVar9 + -0x188) = *(undefined8 *)(puVar9 + -0x188);
+      puVar24 = puVar9 + -400;
+      uVar19 = 4;
+      puVar27 = &UNK_016ccba4;
+      goto code_r0x016cc7a4;
+    }
+    lVar15 = func_0x00f78af4();
+    *(undefined1 **)(puVar9 + -0x1a0) = puVar9 + -400;
+    *(undefined **)(puVar9 + -0x198) = &FlatBuffers_FlatBufferBuilder__PutDouble;
+    lVar22 = *(long *)(lVar15 + 0x18);
+    auVar6._8_8_ = lVar22;
+    uVar4 = *(int *)(lVar15 + 0x10) - 8;
+    uVar18 = (ulong)uVar4;
+    auVar29._8_4_ = uVar4;
+    auVar29._0_8_ = lVar22;
+    auVar29._12_4_ = 0;
+    *(uint *)(lVar15 + 0x10) = uVar4;
+    if (lVar22 != 0) break;
+    auVar29 = func_0x00f78af4();
+    uVar18 = auVar29._8_8_;
+    uVar20 = auVar29._0_8_;
+    *(undefined8 *)(puVar9 + -0x1c0) = 0;
+    *(ulong *)(puVar9 + -0x1b8) = param_1;
+    *(undefined1 **)(puVar9 + -0x1b0) = puVar9 + -0x1a0;
+    *(undefined **)(puVar9 + -0x1a8) = &FlatBuffers_FlatBufferBuilder__AddBool;
+    puVar24 = puVar9 + -0x1b0;
+    uVar19 = 1;
+    uVar21 = 0;
+    puVar27 = &UNK_016cde9c;
+    puVar9 = puVar9 + -0x1c0;
+    param_1 = uVar20;
+    unaff_x22 = uVar23;
+  } while( true );
+  puVar7 = puVar9 + -0x1c0;
+  *(undefined8 *)(puVar9 + -0x1c0) = unaff_d9;
+  *(undefined8 *)(puVar9 + -0x1b8) = unaff_d8;
+  *(undefined8 *)(puVar9 + -0x1b0) = 0;
+  *(ulong *)(puVar9 + -0x1a8) = param_1;
+  *(undefined8 *)(puVar9 + -0x1a0) = *(undefined8 *)(puVar9 + -0x1a0);
+  *(undefined8 *)(puVar9 + -0x198) = *(undefined8 *)(puVar9 + -0x198);
+  puVar24 = puVar9 + -0x1a0;
+  uVar19 = 8;
+  puVar27 = &UNK_016ccc34;
+code_r0x016cc7a4:
+  do {
+    puVar11 = puVar7 + -0x20;
+    *(long *)(puVar7 + -0x20) = auVar6._8_8_;
+    *(ulong *)(puVar7 + -0x18) = uVar18;
+    *(undefined1 **)(puVar7 + -0x10) = puVar24;
+    *(undefined **)(puVar7 + -8) = puVar27;
+    puVar24 = puVar7 + -0x10;
+    if (auVar29._8_4_ < 0) {
+code_r0x016cc7d8:
+      func_0x00f78a24(0x3d1fcf8);
+      uVar18 = func_0x00f78aec();
+      /*System.ArgumentOutOfRangeException$$.ctor*/ func_0x0292a4d0(uVar18,0);
+      uVar14 = func_0x00f78a24(0x3d52ce8);
+      func_0x00f78ac0(uVar18,uVar14);
+      uVar20 = uVar19;
+    }
+    else {
+      lVar15 = *(long *)(auVar29._0_8_ + 0x10);
+      uVar20 = uVar19;
+      if (lVar15 != 0) {
+        if (auVar29._8_4_ <= *(int *)(lVar15 + 0x18) - (int)uVar19) {
+          return auVar29._0_8_;
+        }
+        goto code_r0x016cc7d8;
+      }
+    }
+    puVar27 = &FlatBuffers_ByteBuffer__PutSbyte;
+    auVar29 = func_0x00f78af4();
+code_r0x016cc810:
+    puVar7 = puVar11 + -0x30;
+    *(ulong *)(puVar11 + -0x30) = uVar23;
+    *(undefined1 (*) [16])(puVar11 + -0x28) = auVar6;
+    *(ulong *)(puVar11 + -0x18) = uVar18;
+    *(undefined1 **)(puVar11 + -0x10) = puVar24;
+    *(undefined **)(puVar11 + -8) = puVar27;
+    puVar24 = puVar11 + -0x10;
+    uVar19 = 1;
+    puVar27 = &UNK_016cc834;
+    uVar18 = uVar20;
+    auVar6 = auVar29;
+  } while( true );
+}
+
+
+
+// ============================================================
+// RVA: 0x167d87c | Core.Services.Match.EndMatch
+// ============================================================
+
+/* WARNING: Possible PIC construction at 0x016cea74: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cea88: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ceb04: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ceb50: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ceb74: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cebe4: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cec2c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ced5c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cee1c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cef0c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cef44: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cef60: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cecfc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce31c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce3a0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce468: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x0167d918: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce220: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x0167d9dc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce184: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc898: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc904: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc830: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdc30: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc688: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdc8c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdce8: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdd44: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdda0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cddfc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccba0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccc30: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cccb8: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccd14: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccdc0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cde98: Changing call to branch */
+/* WARNING: Removing unreachable block (ram,0x016ccdc4) */
+/* WARNING: Removing unreachable block (ram,0x016ccd18) */
+/* WARNING: Removing unreachable block (ram,0x016ccd20) */
+/* WARNING: Removing unreachable block (ram,0x016ccd48) */
+/* WARNING: Removing unreachable block (ram,0x016ccd28) */
+/* WARNING: Removing unreachable block (ram,0x016ccd4c) */
+/* WARNING: Removing unreachable block (ram,0x016ccd84) */
+/* WARNING: Removing unreachable block (ram,0x016ccdb0) */
+/* WARNING: Removing unreachable block (ram,0x016ccd88) */
+/* WARNING: Removing unreachable block (ram,0x016ccd34) */
+/* WARNING: Removing unreachable block (ram,0x016cccbc) */
+/* WARNING: Removing unreachable block (ram,0x016cccc4) */
+/* WARNING: Removing unreachable block (ram,0x016cccec) */
+/* WARNING: Removing unreachable block (ram,0x016ccccc) */
+/* WARNING: Removing unreachable block (ram,0x016cccf0) */
+/* WARNING: Removing unreachable block (ram,0x016cccd8) */
+/* WARNING: Removing unreachable block (ram,0x016ccc34) */
+/* WARNING: Removing unreachable block (ram,0x016ccc3c) */
+/* WARNING: Removing unreachable block (ram,0x016ccc44) */
+/* WARNING: Removing unreachable block (ram,0x016ccc90) */
+/* WARNING: Removing unreachable block (ram,0x016ccc68) */
+/* WARNING: Removing unreachable block (ram,0x016ccc94) */
+/* WARNING: Removing unreachable block (ram,0x016ccc70) */
+/* WARNING: Removing unreachable block (ram,0x016ccba4) */
+/* WARNING: Removing unreachable block (ram,0x016ccbac) */
+/* WARNING: Removing unreachable block (ram,0x016ccbb4) */
+/* WARNING: Removing unreachable block (ram,0x016ccc00) */
+/* WARNING: Removing unreachable block (ram,0x016ccbd8) */
+/* WARNING: Removing unreachable block (ram,0x016ccc04) */
+/* WARNING: Removing unreachable block (ram,0x016ccbe0) */
+/* WARNING: Removing unreachable block (ram,0x016cde00) */
+/* WARNING: Removing unreachable block (ram,0x016cdda4) */
+/* WARNING: Removing unreachable block (ram,0x016cdd48) */
+/* WARNING: Removing unreachable block (ram,0x016cdcec) */
+/* WARNING: Removing unreachable block (ram,0x016cdc90) */
+/* WARNING: Removing unreachable block (ram,0x016cc68c) */
+/* WARNING: Removing unreachable block (ram,0x016cc698) */
+/* WARNING: Removing unreachable block (ram,0x016cc6a0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6a8) */
+/* WARNING: Removing unreachable block (ram,0x016cc718) */
+/* WARNING: Removing unreachable block (ram,0x016cc720) */
+/* WARNING: Removing unreachable block (ram,0x016cc728) */
+/* WARNING: Removing unreachable block (ram,0x016cc730) */
+/* WARNING: Removing unreachable block (ram,0x016cc74c) */
+/* WARNING: Removing unreachable block (ram,0x016cc754) */
+/* WARNING: Removing unreachable block (ram,0x016cc778) */
+/* WARNING: Removing unreachable block (ram,0x016cc6b4) */
+/* WARNING: Removing unreachable block (ram,0x016cc77c) */
+/* WARNING: Removing unreachable block (ram,0x016cc6bc) */
+/* WARNING: Removing unreachable block (ram,0x016cc6c4) */
+/* WARNING: Removing unreachable block (ram,0x016cc6cc) */
+/* WARNING: Removing unreachable block (ram,0x016cc6e0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6e8) */
+/* WARNING: Removing unreachable block (ram,0x016cc794) */
+/* WARNING: Removing unreachable block (ram,0x016cc7a0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6f0) */
+/* WARNING: Removing unreachable block (ram,0x016cc714) */
+/* WARNING: Removing unreachable block (ram,0x016cc780) */
+/* WARNING: Removing unreachable block (ram,0x016cdc34) */
+/* WARNING: Removing unreachable block (ram,0x016cc834) */
+/* WARNING: Removing unreachable block (ram,0x016cc83c) */
+/* WARNING: Removing unreachable block (ram,0x016cc868) */
+/* WARNING: Removing unreachable block (ram,0x016cc844) */
+/* WARNING: Removing unreachable block (ram,0x016cc86c) */
+/* WARNING: Removing unreachable block (ram,0x016cc850) */
+/* WARNING: Removing unreachable block (ram,0x016cc908) */
+/* WARNING: Removing unreachable block (ram,0x016cc910) */
+/* WARNING: Removing unreachable block (ram,0x016cc920) */
+/* WARNING: Removing unreachable block (ram,0x016cc928) */
+/* WARNING: Removing unreachable block (ram,0x016cc964) */
+/* WARNING: Removing unreachable block (ram,0x016cc930) */
+/* WARNING: Removing unreachable block (ram,0x016cc968) */
+/* WARNING: Removing unreachable block (ram,0x016cc93c) */
+/* WARNING: Removing unreachable block (ram,0x016cc954) */
+/* WARNING: Removing unreachable block (ram,0x016cc89c) */
+/* WARNING: Removing unreachable block (ram,0x016cc8a4) */
+/* WARNING: Removing unreachable block (ram,0x016cc8d0) */
+/* WARNING: Removing unreachable block (ram,0x016cc8ac) */
+/* WARNING: Removing unreachable block (ram,0x016cc8d4) */
+/* WARNING: Removing unreachable block (ram,0x016cc8b8) */
+/* WARNING: Removing unreachable block (ram,0x016ce188) */
+/* WARNING: Removing unreachable block (ram,0x0167d9e0) */
+/* WARNING: Removing unreachable block (ram,0x016ce224) */
+/* WARNING: Removing unreachable block (ram,0x0167d91c) */
+/* WARNING: Removing unreachable block (ram,0x0167d928) */
+/* WARNING: Removing unreachable block (ram,0x0167d930) */
+/* WARNING: Removing unreachable block (ram,0x0167d94c) */
+/* WARNING: Removing unreachable block (ram,0x0167d958) */
+/* WARNING: Removing unreachable block (ram,0x0167d964) */
+/* WARNING: Removing unreachable block (ram,0x016ce20c) */
+/* WARNING: Removing unreachable block (ram,0x016ce46c) */
+/* WARNING: Removing unreachable block (ram,0x016ce3a4) */
+/* WARNING: Removing unreachable block (ram,0x016ce3a8) */
+/* WARNING: Removing unreachable block (ram,0x016ce3b4) */
+/* WARNING: Removing unreachable block (ram,0x016ce320) */
+/* WARNING: Removing unreachable block (ram,0x016ced00) */
+/* WARNING: Removing unreachable block (ram,0x016ced04) */
+/* WARNING: Removing unreachable block (ram,0x016ced10) */
+/* WARNING: Removing unreachable block (ram,0x016ced20) */
+/* WARNING: Removing unreachable block (ram,0x016ced28) */
+/* WARNING: Removing unreachable block (ram,0x016cef64) */
+/* WARNING: Removing unreachable block (ram,0x016cef48) */
+/* WARNING: Removing unreachable block (ram,0x016cef70) */
+/* WARNING: Removing unreachable block (ram,0x016cef78) */
+/* WARNING: Removing unreachable block (ram,0x016cef10) */
+/* WARNING: Removing unreachable block (ram,0x016cef24) */
+/* WARNING: Removing unreachable block (ram,0x016cef2c) */
+/* WARNING: Removing unreachable block (ram,0x016cee20) */
+/* WARNING: Removing unreachable block (ram,0x016cee2c) */
+/* WARNING: Removing unreachable block (ram,0x016cee44) */
+/* WARNING: Removing unreachable block (ram,0x016ced60) */
+/* WARNING: Removing unreachable block (ram,0x016cec30) */
+/* WARNING: Removing unreachable block (ram,0x016cec38) */
+/* WARNING: Removing unreachable block (ram,0x016cec44) */
+/* WARNING: Removing unreachable block (ram,0x016cebe8) */
+/* WARNING: Removing unreachable block (ram,0x016cec48) */
+/* WARNING: Removing unreachable block (ram,0x016cebf0) */
+/* WARNING: Removing unreachable block (ram,0x016cec64) */
+/* WARNING: Removing unreachable block (ram,0x016cec6c) */
+/* WARNING: Removing unreachable block (ram,0x016cec78) */
+/* WARNING: Removing unreachable block (ram,0x016ceca8) */
+/* WARNING: Removing unreachable block (ram,0x016cec84) */
+/* WARNING: Removing unreachable block (ram,0x016cec8c) */
+/* WARNING: Removing unreachable block (ram,0x016cec94) */
+/* WARNING: Removing unreachable block (ram,0x016ced3c) */
+/* WARNING: Removing unreachable block (ram,0x016cc4e0) */
+/* WARNING: Removing unreachable block (ram,0x016cc518) */
+/* WARNING: Removing unreachable block (ram,0x016cc52c) */
+/* WARNING: Removing unreachable block (ram,0x016cc538) */
+/* WARNING: Removing unreachable block (ram,0x016cc540) */
+/* WARNING: Removing unreachable block (ram,0x016cc548) */
+/* WARNING: Removing unreachable block (ram,0x016cc5b8) */
+/* WARNING: Removing unreachable block (ram,0x016cc5c0) */
+/* WARNING: Removing unreachable block (ram,0x016cc5d4) */
+/* WARNING: Removing unreachable block (ram,0x016cc5dc) */
+/* WARNING: Removing unreachable block (ram,0x016cc5e4) */
+/* WARNING: Removing unreachable block (ram,0x016cc5f0) */
+/* WARNING: Removing unreachable block (ram,0x016cc554) */
+/* WARNING: Removing unreachable block (ram,0x016cc55c) */
+/* WARNING: Removing unreachable block (ram,0x016cc574) */
+/* WARNING: Removing unreachable block (ram,0x016cc57c) */
+/* WARNING: Removing unreachable block (ram,0x016cc624) */
+/* WARNING: Removing unreachable block (ram,0x016cc584) */
+/* WARNING: Removing unreachable block (ram,0x016cc628) */
+/* WARNING: Removing unreachable block (ram,0x016cc590) */
+/* WARNING: Removing unreachable block (ram,0x016cc5b4) */
+/* WARNING: Removing unreachable block (ram,0x016cc610) */
+/* WARNING: Removing unreachable block (ram,0x016cebfc) */
+/* WARNING: Removing unreachable block (ram,0x016cec00) */
+/* WARNING: Removing unreachable block (ram,0x016cec08) */
+/* WARNING: Removing unreachable block (ram,0x016cec20) */
+/* WARNING: Removing unreachable block (ram,0x016ceb78) */
+/* WARNING: Removing unreachable block (ram,0x016cec58) */
+/* WARNING: Removing unreachable block (ram,0x016cecac) */
+/* WARNING: Removing unreachable block (ram,0x016cecb8) */
+/* WARNING: Removing unreachable block (ram,0x016cecd8) */
+/* WARNING: Removing unreachable block (ram,0x016cecf0) */
+/* WARNING: Removing unreachable block (ram,0x016cec60) */
+/* WARNING: Removing unreachable block (ram,0x016ceb84) */
+/* WARNING: Removing unreachable block (ram,0x016ceb88) */
+/* WARNING: Removing unreachable block (ram,0x016ceb90) */
+/* WARNING: Removing unreachable block (ram,0x016ceb98) */
+/* WARNING: Removing unreachable block (ram,0x016ceba0) */
+/* WARNING: Removing unreachable block (ram,0x016cebac) */
+/* WARNING: Removing unreachable block (ram,0x016cebd8) */
+/* WARNING: Removing unreachable block (ram,0x016ceb54) */
+/* WARNING: Removing unreachable block (ram,0x016ceb08) */
+/* WARNING: Removing unreachable block (ram,0x016ceb10) */
+/* WARNING: Removing unreachable block (ram,0x016ceb1c) */
+/* WARNING: Removing unreachable block (ram,0x016ceb2c) */
+/* WARNING: Removing unreachable block (ram,0x016cea8c) */
+/* WARNING: Removing unreachable block (ram,0x016cea9c) */
+/* WARNING: Removing unreachable block (ram,0x016ceaa0) */
+/* WARNING: Removing unreachable block (ram,0x016ceb30) */
+/* WARNING: Removing unreachable block (ram,0x016ceaa8) */
+/* WARNING: Removing unreachable block (ram,0x016ced84) */
+/* WARNING: Removing unreachable block (ram,0x016ceab0) */
+/* WARNING: Removing unreachable block (ram,0x016ceabc) */
+/* WARNING: Removing unreachable block (ram,0x016ceac8) */
+/* WARNING: Removing unreachable block (ram,0x016ceacc) */
+/* WARNING: Removing unreachable block (ram,0x016ced88) */
+/* WARNING: Removing unreachable block (ram,0x016ceadc) */
+/* WARNING: Removing unreachable block (ram,0x016ceae8) */
+/* WARNING: Removing unreachable block (ram,0x016cea78) */
+/* WARNING: Removing unreachable block (ram,0x016cde9c) */
+/* WARNING: Removing unreachable block (ram,0x016ce334) */
+
+ulong Core_Services_Match__EndMatch(long param_1,undefined8 param_2,undefined8 *param_3,int param_4)
+
+{
+  uint uVar1;
+  uint uVar2;
+  int iVar3;
+  uint uVar4;
+  undefined1 auVar5 [16];
+  undefined1 auVar6 [16];
+  undefined1 *puVar7;
+  dword **ppdVar8;
+  undefined1 *puVar9;
+  undefined1 *puVar10;
+  undefined1 *puVar11;
+  undefined *puVar12;
+  long *plVar13;
+  ulong uVar14;
+  undefined8 uVar15;
+  long lVar16;
+  undefined8 uVar17;
+  undefined8 uVar18;
+  ulong uVar19;
+  int iVar20;
+  ulong uVar21;
+  long lVar22;
+  ulong unaff_x21;
+  ulong uVar23;
+  ulong unaff_x22;
+  ulong uVar24;
+  undefined1 *puVar25;
+  dword *pdVar26;
+  undefined *puVar27;
+  undefined *puVar28;
+  undefined8 unaff_d8;
+  undefined8 unaff_d9;
+  undefined1 auVar29 [16];
+  undefined1 auVar30 [16];
+  undefined1 auVar31 [16];
+  undefined1 auVar32 [12];
+  ulong auStack_b0 [2];
+  dword *pdStack_70;
+  undefined *puStack_68;
+  
+  auVar31._8_8_ = param_1;
+  auVar31._0_8_ = param_1;
+  if ((bRam0000000003eb59e1 & 1) == 0) {
+    func_0x00f78a20(0x3d3f1a8);
+    bRam0000000003eb59e1 = 1;
+  }
+  if (param_1 == 0) {
+    puVar28 = (undefined *)func_0x00f78af4();
+    if (puVar28 != (undefined *)0x0) {
+      ppdVar8 = (dword **)&stack0xffffffffffffffb0;
+      puVar25 = &stack0xffffffffffffffd0;
+      if ((bRam0000000003eb5cd7 & 1) == 0) {
+        func_0x00f78a20(0x3d1f100,4,0);
+        bRam0000000003eb5cd7 = 1;
+      }
+      /*FlatBuffers.FlatBufferBuilder$$NotNested*/ func_0x016ce1a4(puVar28);
+      if (*(long *)(puVar28 + 0x28) == 0) {
+        auVar32 = func_0x00f78af4();
+        puVar12 = auVar32._0_8_;
+        ppdVar8 = &pdStack_70;
+        pdStack_70 = &MACH_HEADER.cputype;
+        puVar25 = &stack0xffffffffffffffa0;
+        puStack_68 = puVar28;
+        if (*(int *)(puVar12 + 0x30) <= auVar32._8_4_) {
+          func_0x00f78a24(0x3d22738);
+          uVar15 = func_0x00f78aec();
+          uVar17 = func_0x00f78a24(0x3d6ceb8);
+          unaff_x21 = 0;
+          /*System.IndexOutOfRangeException$$.ctor*/ func_0x02ae8c34(uVar15,uVar17);
+          uVar17 = func_0x00f78a24(0x3d56a58);
+          func_0x00f78ac0(uVar15,uVar17);
+          func_0x00f78af4();
+          uVar15 = func_0x00f78b24();
+          auVar31 = func_0x00f78ac0(uVar15,0);
+          uVar23 = auVar31._0_8_;
+          puVar25 = &stack0xffffffffffffff80;
+          if (((int)unaff_x21 == param_4) && (*(char *)(uVar23 + 0x48) == '\0')) {
+            return uVar23;
+          }
+          uVar19 = 1;
+          uVar21 = 0;
+          puVar28 = &UNK_016ce46c;
+          puVar9 = &stack0xffffffffffffff60;
+          goto code_r0x016cdaac;
+        }
+        puVar27 = &UNK_016ce3a4;
+      }
+      else {
+        if (*(int *)(*(long *)(puVar28 + 0x28) + 0x18) < 4) {
+          uVar15 = func_0x00f78a34(/*int[]_TypeInfo*/ uRam0000000003d1f100,4);
+          *(undefined8 *)(puVar28 + 0x28) = uVar15;
+        }
+        *(undefined4 *)(puVar28 + 0x30) = 4;
+        puVar27 = &UNK_016ce320;
+        puVar12 = puVar28;
+      }
+      *(undefined1 **)((long)ppdVar8 + -0x10) = puVar25;
+      *(undefined **)((long)ppdVar8 + -8) = puVar27;
+      if ((*(long *)(puVar12 + 0x18) != 0) &&
+         (lVar16 = *(long *)(*(long *)(puVar12 + 0x18) + 0x10), lVar16 != 0)) {
+        return (ulong)(uint)(*(int *)(lVar16 + 0x18) - *(int *)(puVar12 + 0x10));
+      }
+      lVar16 = func_0x00f78af4();
+      return (ulong)*(byte *)(lVar16 + 0x48);
+    }
+    auVar29 = func_0x00f78af4();
+    lVar16 = auVar29._0_8_;
+    if ((auVar29._8_8_ == 0) || (lVar16 == 0)) {
+      auVar29 = func_0x00f78af4();
+      lVar22 = auVar29._8_8_;
+      lVar16 = auVar29._0_8_;
+      puVar9 = &stack0xffffffffffffff70;
+      puStack_68 = &Core_Services_Match__CreateOtherPlayersVectorBlock;
+      pdVar26 = (dword *)&pdStack_70;
+      unaff_x21 = 0x3eb5000;
+      pdStack_70 = (dword *)&stack0xffffffffffffffc0;
+      if ((bRam0000000003eb59e0 & 1) == 0) {
+        func_0x00f78a20(0x3d569d8);
+        bRam0000000003eb59e0 = 1;
+      }
+      if ((lVar22 == 0) || (lVar16 == 0)) {
+        puVar28 = &Core_Services_Match__StartOtherPlayersVector;
+        auVar32 = func_0x00f78af4();
+        iVar20 = auVar32._8_4_;
+        auVar29._8_8_ = lVar22;
+        auVar29._0_8_ = auVar32._0_8_;
+        if (auVar32._0_8_ == 0) {
+          auVar31 = func_0x00f78af4();
+          uVar23 = auVar31._0_8_;
+          *(undefined8 *)(uVar23 + 0x10) = *param_3;
+          *(long *)(uVar23 + 0x20) = auVar31._8_8_;
+          *(undefined8 **)(uVar23 + 0x28) = param_3;
+          return uVar23;
+        }
+      }
+      else {
+        unaff_x21 = 0x3d56000;
+        iVar20 = *(int *)(lVar22 + 0x18);
+        puVar28 = &UNK_0167d9e0;
+        puVar9 = &stack0xffffffffffffff70;
+      }
+    }
+    else {
+      iVar20 = *(int *)(auVar29._8_8_ + 0x18);
+      puVar28 = &UNK_0167d91c;
+      puVar9 = &stack0xffffffffffffffa0;
+      pdVar26 = (dword *)&stack0xffffffffffffffc0;
+    }
+    uVar24 = auVar29._0_8_;
+    *(ulong *)(puVar9 + -0x30) = unaff_x22;
+    *(ulong *)(puVar9 + -0x28) = unaff_x21;
+    *(long *)(puVar9 + -0x20) = auVar29._8_8_;
+    *(long *)(puVar9 + -0x18) = lVar16;
+    *(dword **)(puVar9 + -0x10) = pdVar26;
+    *(undefined **)(puVar9 + -8) = puVar28;
+    puVar25 = puVar9 + -0x10;
+    auVar31._8_8_ = 4;
+    auVar31._0_8_ = uVar24;
+    unaff_x21 = 4;
+    /*FlatBuffers.FlatBufferBuilder$$NotNested*/ func_0x016ce1a4();
+    *(int *)(uVar24 + 0x44) = iVar20;
+    uVar21 = (ulong)(uint)(iVar20 * 4);
+    uVar19 = 4;
+    puVar28 = &UNK_016ce188;
+    puVar9 = puVar9 + -0x30;
+    uVar23 = uVar21;
+    unaff_x22 = uVar24;
+  }
+  else {
+    puVar25 = &stack0xfffffffffffffff0;
+    if ((bRam0000000003eb5cd8 & 1) == 0) {
+      func_0x00f78a20(0x3d1f100,0);
+      bRam0000000003eb5cd8 = 1;
+    }
+    if (*(int *)(param_1 + 0x30) < 0) {
+      func_0x00f78a24(0x3d22a38);
+      puVar28 = (undefined *)func_0x00f78aec();
+      uVar15 = func_0x00f78a24(0x3d6cea8);
+      /*System.InvalidOperationException$$.ctor*/ func_0x02ae6938(puVar28,uVar15);
+      uVar15 = func_0x00f78a24(0x3d56a30);
+      auVar32 = func_0x00f78ac0(puVar28,uVar15);
+      pdStack_70 = (dword *)0x3eb5000;
+      puVar25 = &stack0xffffffffffffffa0;
+      lVar16 = *(long *)(auVar32._0_8_ + 0x18);
+      puStack_68 = puVar28;
+      if ((lVar16 != 0) && (*(long *)(lVar16 + 0x10) != 0)) {
+        uVar4 = *(int *)(*(long *)(lVar16 + 0x10) + 0x18) - auVar32._8_4_;
+        uVar23 = (ulong)uVar4;
+        auVar30._8_4_ = uVar4;
+        auVar30._0_8_ = lVar16;
+        auVar30._12_4_ = 0;
+        puVar7 = &stack0xffffffffffffff30;
+        puVar25 = &stack0xffffffffffffff60;
+        auVar6._8_8_ = 4;
+        auVar6._0_8_ = lVar16;
+        uVar24 = 0x3d201a0;
+        if ((bRam0000000003eb5cd0 & 1) == 0) {
+          func_0x00f78a20(0x3d201a0);
+          bRam0000000003eb5cd0 = 1;
+        }
+        uVar19 = 4;
+        puVar28 = &UNK_016cc68c;
+        goto code_r0x016cc7a4;
+      }
+      func_0x00f78af4();
+      uVar15 = /*System.Int32$$ToString*/ func_0x02ae9b8c(&stack0xffffffffffffff7c,0);
+      uVar17 = func_0x00f78a24(0x3d6ce88);
+      uVar18 = func_0x00f78a24(0x3d66338);
+      lVar16 = /*System.String$$Concat*/ func_0x029be39c(uVar17,uVar15,uVar18,0);
+      func_0x00f78a24(0x3d22a38);
+      uVar19 = func_0x00f78aec();
+      uVar17 = 0;
+      /*System.InvalidOperationException$$.ctor*/ func_0x02ae6938(uVar19,lVar16);
+      uVar15 = func_0x00f78a24(0x3d56a50);
+      puVar28 = &FlatBuffers_FlatBufferBuilder__Finish;
+      auVar31 = func_0x00f78ac0(uVar19,uVar15);
+      puVar9 = &stack0xffffffffffffff70;
+      while( true ) {
+        uVar23 = auVar31._8_8_;
+        lVar22 = auVar31._0_8_;
+        auVar31._8_8_ = lVar22;
+        auVar31._0_8_ = lVar22;
+        *(ulong *)(puVar9 + -0x20) = uVar19;
+        *(long *)(puVar9 + -0x18) = lVar16;
+        *(undefined1 **)(puVar9 + -0x10) = puVar25;
+        *(undefined **)(puVar9 + -8) = puVar28;
+        puVar25 = puVar9 + -0x10;
+        uVar4 = *(uint *)(lVar22 + 0x20);
+        uVar19 = (ulong)uVar4;
+        lVar16 = lVar22;
+        if ((int)uVar17 == 0) {
+          lVar16 = 0;
+          uVar4 = 0;
+        }
+        auVar5._8_8_ = lVar22;
+        auVar5._0_8_ = lVar16;
+        if ((int)uVar17 == 0) {
+          uVar21 = 4;
+          puVar28 = &UNK_016cef64;
+          puVar9 = puVar9 + -0x20;
+          goto code_r0x016cdaac;
+        }
+        if (lVar16 != 0) break;
+        puVar28 = &FlatBuffers_FlatBufferBuilder__Finish;
+        auVar31 = func_0x00f78af4();
+        uVar17 = 0;
+        puVar9 = puVar9 + -0x20;
+        lVar16 = lVar22;
+        uVar19 = uVar23;
+      }
+      uVar21 = 8;
+      puVar28 = &UNK_016cef10;
+      puVar9 = puVar9 + -0x20;
+      uVar19 = (ulong)uVar4;
+      auVar31 = auVar5;
+    }
+    else {
+      uVar21 = 0;
+      puVar28 = &UNK_016cea78;
+      puVar9 = &stack0xffffffffffffffb0;
+      uVar19 = 4;
+      uVar23 = 0x3eb5000;
+    }
+  }
+code_r0x016cdaac:
+  do {
+    uVar14 = auVar31._0_8_;
+    puVar7 = puVar9 + -0x30;
+    *(ulong *)(puVar9 + -0x30) = unaff_x22;
+    *(ulong *)(puVar9 + -0x28) = unaff_x21;
+    *(ulong *)(puVar9 + -0x20) = uVar23;
+    *(long *)(puVar9 + -0x18) = auVar31._8_8_;
+    *(undefined1 **)(puVar9 + -0x10) = puVar25;
+    *(undefined **)(puVar9 + -8) = puVar28;
+    iVar20 = (int)uVar19;
+    if (*(int *)(uVar14 + 0x20) < iVar20) {
+      *(int *)(uVar14 + 0x20) = iVar20;
+    }
+    uVar19 = uVar23;
+    uVar24 = unaff_x22;
+    if ((*(long *)(uVar14 + 0x18) != 0) &&
+       (lVar16 = *(long *)(*(long *)(uVar14 + 0x18) + 0x10), lVar16 != 0)) {
+      uVar2 = *(uint *)(lVar16 + 0x18);
+      iVar3 = *(int *)(uVar14 + 0x10);
+      uVar1 = iVar3 - (uVar2 + (int)uVar21) & iVar20 - 1U;
+      uVar19 = CONCAT44(0,uVar1);
+      uVar4 = (int)uVar21 + iVar20 + uVar1;
+      uVar24 = (ulong)uVar4;
+      uVar23 = uVar14;
+      while (unaff_x21 = (ulong)uVar2, iVar3 < (int)uVar4) {
+        uVar23 = /*FlatBuffers.FlatBufferBuilder$$GrowBuffer*/ func_0x016cda78(uVar14);
+        if ((*(long *)(uVar14 + 0x18) == 0) ||
+           (lVar16 = *(long *)(*(long *)(uVar14 + 0x18) + 0x10), lVar16 == 0))
+        goto code_r0x016cdb68;
+        iVar3 = *(int *)(uVar14 + 0x10) - uVar2;
+        uVar2 = *(uint *)(lVar16 + 0x18);
+        iVar3 = iVar3 + uVar2;
+        *(int *)(uVar14 + 0x10) = iVar3;
+      }
+      if ((int)uVar1 < 1) {
+        return uVar23;
+      }
+      uVar23 = *(ulong *)(puVar9 + -0x20);
+      uVar15 = *(undefined8 *)(puVar9 + -0x18);
+      unaff_x22 = *(ulong *)(puVar9 + -0x30);
+      unaff_x21 = *(ulong *)(puVar9 + -0x28);
+      *(undefined8 *)(puVar9 + -0x10) = *(undefined8 *)(puVar9 + -0x10);
+      *(undefined8 *)(puVar9 + -8) = *(undefined8 *)(puVar9 + -8);
+      lVar16 = *(long *)(uVar14 + 0x18);
+      auVar6._8_8_ = lVar16;
+      auVar6._0_8_ = uVar19;
+      uVar1 = *(int *)(uVar14 + 0x10) - uVar1;
+      uVar24 = (ulong)uVar1;
+      auVar30._8_4_ = uVar1;
+      auVar30._0_8_ = lVar16;
+      auVar30._12_4_ = 0;
+      *(uint *)(uVar14 + 0x10) = uVar1;
+      if (lVar16 != 0) {
+        *(ulong *)(puVar9 + -0x30) = unaff_x22;
+        *(ulong *)(puVar9 + -0x28) = unaff_x21;
+        *(ulong *)(puVar9 + -0x20) = uVar23;
+        *(undefined8 *)(puVar9 + -0x18) = uVar15;
+        *(undefined8 *)(puVar9 + -0x10) = *(undefined8 *)(puVar9 + -0x10);
+        *(undefined8 *)(puVar9 + -8) = *(undefined8 *)(puVar9 + -8);
+        puVar25 = puVar9 + -0x10;
+        puVar28 = &UNK_016cc908;
+        uVar23 = 0;
+        goto code_r0x016cc7a4;
+      }
+      lVar16 = func_0x00f78af4();
+      puVar25 = puVar9 + -0x20;
+      *(undefined1 **)(puVar9 + -0x20) = puVar9 + -0x10;
+      *(undefined **)(puVar9 + -0x18) = &FlatBuffers_FlatBufferBuilder__GrowBuffer;
+      if ((*(long *)(lVar16 + 0x18) != 0) &&
+         (plVar13 = *(long **)(*(long *)(lVar16 + 0x18) + 0x10), plVar13 != (long *)0x0)) {
+                    /* WARNING: Could not recover jumptable at 0x016cdaa4. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+        uVar23 = (**(code **)(*plVar13 + 0x178))
+                           (plVar13,(int)plVar13[3] << 1,*(undefined8 *)(*plVar13 + 0x180));
+        return uVar23;
+      }
+      puVar28 = &FlatBuffers_FlatBufferBuilder__Prep;
+      auVar29 = func_0x00f78af4();
+      uVar19 = auVar29._8_8_;
+      auVar31._8_8_ = uVar15;
+      auVar31._0_8_ = auVar29._0_8_;
+      puVar9 = puVar9 + -0x20;
+      goto code_r0x016cdaac;
+    }
+code_r0x016cdb68:
+    auVar6._8_8_ = uVar19;
+    auVar6._0_8_ = unaff_x21;
+    auVar31 = func_0x00f78af4();
+    uVar23 = auVar31._8_8_;
+    lVar22 = auVar31._0_8_;
+    *(undefined1 **)(puVar9 + -0x40) = puVar9 + -0x10;
+    *(undefined **)(puVar9 + -0x38) = &FlatBuffers_FlatBufferBuilder__PutBool;
+    lVar16 = *(long *)(lVar22 + 0x18);
+    iVar20 = *(int *)(lVar22 + 0x10) + -1;
+    *(int *)(lVar22 + 0x10) = iVar20;
+    if (lVar16 != 0) {
+      puVar10 = puVar9 + -0x30;
+      uVar15 = *(undefined8 *)(puVar9 + -0x40);
+      uVar17 = *(undefined8 *)(puVar9 + -0x38);
+FlatBuffers_ByteBuffer__PutByte:
+      auVar6._8_4_ = iVar20;
+      auVar6._0_8_ = lVar16;
+      auVar6._12_4_ = 0;
+      auVar30._8_4_ = iVar20;
+      auVar30._0_8_ = lVar16;
+      auVar30._12_4_ = 0;
+      puVar7 = puVar10 + -0x30;
+      *(ulong *)(puVar10 + -0x30) = uVar24;
+      *(ulong *)(puVar10 + -0x28) = unaff_x21;
+      *(ulong *)(puVar10 + -0x20) = uVar19;
+      *(ulong *)(puVar10 + -0x18) = uVar14;
+      *(undefined8 *)(puVar10 + -0x10) = uVar15;
+      *(undefined8 *)(puVar10 + -8) = uVar17;
+      puVar25 = puVar10 + -0x10;
+      uVar19 = 1;
+      puVar28 = &UNK_016cc89c;
+      goto code_r0x016cc7a4;
+    }
+    auVar31 = func_0x00f78af4();
+    uVar21 = auVar31._8_8_;
+    lVar16 = auVar31._0_8_;
+    *(undefined1 **)(puVar9 + -0x50) = puVar9 + -0x40;
+    *(undefined **)(puVar9 + -0x48) = &FlatBuffers_FlatBufferBuilder__PutSbyte;
+    iVar20 = *(int *)(lVar16 + 0x10) + -1;
+    auVar30._8_4_ = iVar20;
+    auVar30._0_8_ = *(long *)(lVar16 + 0x18);
+    auVar30._12_4_ = 0;
+    *(int *)(lVar16 + 0x10) = iVar20;
+    if (*(long *)(lVar16 + 0x18) != 0) {
+      puVar11 = puVar9 + -0x40;
+      puVar25 = *(undefined1 **)(puVar9 + -0x50);
+      puVar28 = *(undefined **)(puVar9 + -0x48);
+      uVar23 = uVar14;
+      goto code_r0x016cc810;
+    }
+    auVar31 = func_0x00f78af4();
+    uVar23 = auVar31._8_8_;
+    lVar22 = auVar31._0_8_;
+    *(undefined1 **)(puVar9 + -0x60) = puVar9 + -0x50;
+    *(undefined **)(puVar9 + -0x58) = &FlatBuffers_FlatBufferBuilder__PutByte;
+    lVar16 = *(long *)(lVar22 + 0x18);
+    iVar20 = *(int *)(lVar22 + 0x10) + -1;
+    *(int *)(lVar22 + 0x10) = iVar20;
+    if (lVar16 != 0) {
+      puVar10 = puVar9 + -0x50;
+      uVar15 = *(undefined8 *)(puVar9 + -0x60);
+      uVar17 = *(undefined8 *)(puVar9 + -0x58);
+      goto FlatBuffers_ByteBuffer__PutByte;
+    }
+    auVar31 = func_0x00f78af4();
+    uVar23 = auVar31._8_8_;
+    lVar16 = auVar31._0_8_;
+    puVar7 = puVar9 + -0x90;
+    *(ulong *)(puVar9 + -0x90) = uVar24;
+    *(ulong *)(puVar9 + -0x88) = unaff_x21;
+    *(ulong *)(puVar9 + -0x80) = uVar19;
+    *(ulong *)(puVar9 + -0x78) = uVar14;
+    *(undefined1 **)(puVar9 + -0x70) = puVar9 + -0x60;
+    *(undefined **)(puVar9 + -0x68) = &FlatBuffers_FlatBufferBuilder__PutShort;
+    puVar25 = puVar9 + -0x70;
+    lVar22 = *(long *)(lVar16 + 0x18);
+    uVar4 = *(int *)(lVar16 + 0x10) - 2;
+    auVar6._8_8_ = lVar22;
+    auVar6._0_8_ = CONCAT44(0,uVar4);
+    auVar30._8_4_ = uVar4;
+    auVar30._0_8_ = lVar22;
+    auVar30._12_4_ = 0;
+    *(uint *)(lVar16 + 0x10) = uVar4;
+    if (lVar22 != 0) {
+      uVar19 = 2;
+      puVar28 = &UNK_016cdc34;
+      goto code_r0x016cc7a4;
+    }
+    auVar31 = func_0x00f78af4();
+    uVar23 = auVar31._8_8_;
+    lVar16 = auVar31._0_8_;
+    puVar7 = puVar9 + -0xc0;
+    *(ulong *)(puVar9 + -0xc0) = uVar24;
+    *(ulong *)(puVar9 + -0xb8) = CONCAT44(0,uVar4);
+    *(undefined8 *)(puVar9 + -0xb0) = 0;
+    *(ulong *)(puVar9 + -0xa8) = uVar14;
+    *(undefined1 **)(puVar9 + -0xa0) = puVar25;
+    *(undefined **)(puVar9 + -0x98) = &FlatBuffers_FlatBufferBuilder__PutUshort;
+    puVar25 = puVar9 + -0xa0;
+    lVar22 = *(long *)(lVar16 + 0x18);
+    uVar4 = *(int *)(lVar16 + 0x10) - 2;
+    auVar6._8_8_ = lVar22;
+    auVar6._0_8_ = CONCAT44(0,uVar4);
+    auVar30._8_4_ = uVar4;
+    auVar30._0_8_ = lVar22;
+    auVar30._12_4_ = 0;
+    *(uint *)(lVar16 + 0x10) = uVar4;
+    if (lVar22 != 0) {
+      uVar19 = 2;
+      puVar28 = &UNK_016cdc90;
+      goto code_r0x016cc7a4;
+    }
+    auVar31 = func_0x00f78af4();
+    uVar23 = auVar31._8_8_;
+    lVar16 = auVar31._0_8_;
+    puVar7 = puVar9 + -0xf0;
+    *(ulong *)(puVar9 + -0xf0) = uVar24;
+    *(ulong *)(puVar9 + -0xe8) = CONCAT44(0,uVar4);
+    *(undefined8 *)(puVar9 + -0xe0) = 0;
+    *(ulong *)(puVar9 + -0xd8) = uVar14;
+    *(undefined1 **)(puVar9 + -0xd0) = puVar25;
+    *(undefined **)(puVar9 + -200) = &FlatBuffers_FlatBufferBuilder__PutInt;
+    puVar25 = puVar9 + -0xd0;
+    lVar22 = *(long *)(lVar16 + 0x18);
+    uVar4 = *(int *)(lVar16 + 0x10) - 4;
+    auVar6._8_8_ = lVar22;
+    auVar6._0_8_ = CONCAT44(0,uVar4);
+    auVar30._8_4_ = uVar4;
+    auVar30._0_8_ = lVar22;
+    auVar30._12_4_ = 0;
+    *(uint *)(lVar16 + 0x10) = uVar4;
+    if (lVar22 != 0) {
+      uVar19 = 4;
+      puVar28 = &UNK_016cdcec;
+      goto code_r0x016cc7a4;
+    }
+    auVar31 = func_0x00f78af4();
+    uVar23 = auVar31._8_8_;
+    lVar16 = auVar31._0_8_;
+    puVar7 = puVar9 + -0x120;
+    *(ulong *)(puVar9 + -0x120) = uVar24;
+    *(ulong *)(puVar9 + -0x118) = CONCAT44(0,uVar4);
+    *(undefined8 *)(puVar9 + -0x110) = 0;
+    *(ulong *)(puVar9 + -0x108) = uVar14;
+    *(undefined1 **)(puVar9 + -0x100) = puVar25;
+    *(undefined **)(puVar9 + -0xf8) = &FlatBuffers_FlatBufferBuilder__PutUint;
+    puVar25 = puVar9 + -0x100;
+    lVar22 = *(long *)(lVar16 + 0x18);
+    uVar4 = *(int *)(lVar16 + 0x10) - 4;
+    auVar6._8_8_ = lVar22;
+    auVar6._0_8_ = CONCAT44(0,uVar4);
+    auVar30._8_4_ = uVar4;
+    auVar30._0_8_ = lVar22;
+    auVar30._12_4_ = 0;
+    *(uint *)(lVar16 + 0x10) = uVar4;
+    if (lVar22 != 0) {
+      uVar19 = 4;
+      puVar28 = &UNK_016cdd48;
+      goto code_r0x016cc7a4;
+    }
+    auVar31 = func_0x00f78af4();
+    uVar23 = auVar31._8_8_;
+    lVar16 = auVar31._0_8_;
+    puVar7 = puVar9 + -0x150;
+    *(ulong *)(puVar9 + -0x150) = uVar24;
+    *(ulong *)(puVar9 + -0x148) = CONCAT44(0,uVar4);
+    *(undefined8 *)(puVar9 + -0x140) = 0;
+    *(ulong *)(puVar9 + -0x138) = uVar14;
+    *(undefined1 **)(puVar9 + -0x130) = puVar25;
+    *(undefined **)(puVar9 + -0x128) = &FlatBuffers_FlatBufferBuilder__PutLong;
+    puVar25 = puVar9 + -0x130;
+    lVar22 = *(long *)(lVar16 + 0x18);
+    uVar4 = *(int *)(lVar16 + 0x10) - 8;
+    auVar6._8_8_ = lVar22;
+    auVar6._0_8_ = CONCAT44(0,uVar4);
+    auVar30._8_4_ = uVar4;
+    auVar30._0_8_ = lVar22;
+    auVar30._12_4_ = 0;
+    *(uint *)(lVar16 + 0x10) = uVar4;
+    if (lVar22 != 0) {
+      uVar19 = 8;
+      puVar28 = &UNK_016cdda4;
+      goto code_r0x016cc7a4;
+    }
+    auVar31 = func_0x00f78af4();
+    uVar23 = auVar31._8_8_;
+    lVar16 = auVar31._0_8_;
+    puVar7 = puVar9 + -0x180;
+    *(ulong *)(puVar9 + -0x180) = uVar24;
+    *(ulong *)(puVar9 + -0x178) = CONCAT44(0,uVar4);
+    *(undefined8 *)(puVar9 + -0x170) = 0;
+    *(ulong *)(puVar9 + -0x168) = uVar14;
+    *(undefined1 **)(puVar9 + -0x160) = puVar25;
+    *(undefined **)(puVar9 + -0x158) = &FlatBuffers_FlatBufferBuilder__PutUlong;
+    puVar25 = puVar9 + -0x160;
+    lVar22 = *(long *)(lVar16 + 0x18);
+    uVar4 = *(int *)(lVar16 + 0x10) - 8;
+    unaff_x21 = CONCAT44(0,uVar4);
+    auVar6._8_8_ = lVar22;
+    auVar6._0_8_ = unaff_x21;
+    auVar30._8_4_ = uVar4;
+    auVar30._0_8_ = lVar22;
+    auVar30._12_4_ = 0;
+    *(uint *)(lVar16 + 0x10) = uVar4;
+    if (lVar22 != 0) {
+      uVar19 = 8;
+      puVar28 = &UNK_016cde00;
+      goto code_r0x016cc7a4;
+    }
+    lVar16 = func_0x00f78af4();
+    *(undefined1 **)(puVar9 + -400) = puVar25;
+    *(undefined **)(puVar9 + -0x188) = &FlatBuffers_FlatBufferBuilder__PutFloat;
+    lVar22 = *(long *)(lVar16 + 0x18);
+    auVar6._8_8_ = lVar22;
+    uVar4 = *(int *)(lVar16 + 0x10) - 4;
+    uVar23 = (ulong)uVar4;
+    auVar30._8_4_ = uVar4;
+    auVar30._0_8_ = lVar22;
+    auVar30._12_4_ = 0;
+    *(uint *)(lVar16 + 0x10) = uVar4;
+    if (lVar22 != 0) {
+      puVar7 = puVar9 + -0x1b0;
+      *(undefined8 *)(puVar9 + -0x1b0) = unaff_d9;
+      *(undefined8 *)(puVar9 + -0x1a8) = unaff_d8;
+      *(undefined8 *)(puVar9 + -0x1a0) = 0;
+      *(ulong *)(puVar9 + -0x198) = uVar14;
+      *(undefined8 *)(puVar9 + -400) = *(undefined8 *)(puVar9 + -400);
+      *(undefined8 *)(puVar9 + -0x188) = *(undefined8 *)(puVar9 + -0x188);
+      puVar25 = puVar9 + -400;
+      uVar19 = 4;
+      puVar28 = &UNK_016ccba4;
+      goto code_r0x016cc7a4;
+    }
+    lVar16 = func_0x00f78af4();
+    *(undefined1 **)(puVar9 + -0x1a0) = puVar9 + -400;
+    *(undefined **)(puVar9 + -0x198) = &FlatBuffers_FlatBufferBuilder__PutDouble;
+    lVar22 = *(long *)(lVar16 + 0x18);
+    auVar6._8_8_ = lVar22;
+    uVar4 = *(int *)(lVar16 + 0x10) - 8;
+    uVar23 = (ulong)uVar4;
+    auVar30._8_4_ = uVar4;
+    auVar30._0_8_ = lVar22;
+    auVar30._12_4_ = 0;
+    *(uint *)(lVar16 + 0x10) = uVar4;
+    if (lVar22 != 0) break;
+    auVar31 = func_0x00f78af4();
+    uVar23 = auVar31._0_8_;
+    *(undefined8 *)(puVar9 + -0x1c0) = 0;
+    *(ulong *)(puVar9 + -0x1b8) = uVar14;
+    *(undefined1 **)(puVar9 + -0x1b0) = puVar9 + -0x1a0;
+    *(undefined **)(puVar9 + -0x1a8) = &FlatBuffers_FlatBufferBuilder__AddBool;
+    puVar25 = puVar9 + -0x1b0;
+    uVar19 = 1;
+    uVar21 = 0;
+    puVar28 = &UNK_016cde9c;
+    puVar9 = puVar9 + -0x1c0;
+    unaff_x22 = uVar24;
+  } while( true );
+  puVar7 = puVar9 + -0x1c0;
+  *(undefined8 *)(puVar9 + -0x1c0) = unaff_d9;
+  *(undefined8 *)(puVar9 + -0x1b8) = unaff_d8;
+  *(undefined8 *)(puVar9 + -0x1b0) = 0;
+  *(ulong *)(puVar9 + -0x1a8) = uVar14;
+  *(undefined8 *)(puVar9 + -0x1a0) = *(undefined8 *)(puVar9 + -0x1a0);
+  *(undefined8 *)(puVar9 + -0x198) = *(undefined8 *)(puVar9 + -0x198);
+  puVar25 = puVar9 + -0x1a0;
+  uVar19 = 8;
+  puVar28 = &UNK_016ccc34;
+code_r0x016cc7a4:
+  do {
+    puVar11 = puVar7 + -0x20;
+    *(long *)(puVar7 + -0x20) = auVar6._8_8_;
+    *(ulong *)(puVar7 + -0x18) = uVar23;
+    *(undefined1 **)(puVar7 + -0x10) = puVar25;
+    *(undefined **)(puVar7 + -8) = puVar28;
+    puVar25 = puVar7 + -0x10;
+    if (auVar30._8_4_ < 0) {
+code_r0x016cc7d8:
+      func_0x00f78a24(0x3d1fcf8);
+      uVar23 = func_0x00f78aec();
+      /*System.ArgumentOutOfRangeException$$.ctor*/ func_0x0292a4d0(uVar23,0);
+      uVar15 = func_0x00f78a24(0x3d52ce8);
+      func_0x00f78ac0(uVar23,uVar15);
+      uVar21 = uVar19;
+    }
+    else {
+      lVar16 = *(long *)(auVar30._0_8_ + 0x10);
+      uVar21 = uVar19;
+      if (lVar16 != 0) {
+        if (auVar30._8_4_ <= *(int *)(lVar16 + 0x18) - (int)uVar19) {
+          return auVar30._0_8_;
+        }
+        goto code_r0x016cc7d8;
+      }
+    }
+    puVar28 = &FlatBuffers_ByteBuffer__PutSbyte;
+    auVar30 = func_0x00f78af4();
+code_r0x016cc810:
+    puVar7 = puVar11 + -0x30;
+    *(ulong *)(puVar11 + -0x30) = uVar24;
+    *(undefined1 (*) [16])(puVar11 + -0x28) = auVar6;
+    *(ulong *)(puVar11 + -0x18) = uVar23;
+    *(undefined1 **)(puVar11 + -0x10) = puVar25;
+    *(undefined **)(puVar11 + -8) = puVar28;
+    puVar25 = puVar11 + -0x10;
+    uVar19 = 1;
+    puVar28 = &UNK_016cc834;
+    uVar23 = uVar21;
+    auVar6 = auVar30;
+  } while( true );
+}
+
+
+
+// ============================================================
+// RVA: 0x167d8c8 | Core.Services.Match.StartMatch
+// ============================================================
+
+/* WARNING: Possible PIC construction at 0x016ce31c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce3a0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce468: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x0167d918: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce220: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x0167d9dc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce184: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc898: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc904: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc830: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdc30: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc688: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdc8c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdce8: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdd44: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdda0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cddfc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccba0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccc30: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cccb8: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccd14: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccdc0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cde98: Changing call to branch */
+/* WARNING: Removing unreachable block (ram,0x016ccdc4) */
+/* WARNING: Removing unreachable block (ram,0x016ccd18) */
+/* WARNING: Removing unreachable block (ram,0x016ccd20) */
+/* WARNING: Removing unreachable block (ram,0x016ccd48) */
+/* WARNING: Removing unreachable block (ram,0x016ccd28) */
+/* WARNING: Removing unreachable block (ram,0x016ccd4c) */
+/* WARNING: Removing unreachable block (ram,0x016ccd84) */
+/* WARNING: Removing unreachable block (ram,0x016ccdb0) */
+/* WARNING: Removing unreachable block (ram,0x016ccd88) */
+/* WARNING: Removing unreachable block (ram,0x016ccd34) */
+/* WARNING: Removing unreachable block (ram,0x016cccbc) */
+/* WARNING: Removing unreachable block (ram,0x016cccc4) */
+/* WARNING: Removing unreachable block (ram,0x016cccec) */
+/* WARNING: Removing unreachable block (ram,0x016ccccc) */
+/* WARNING: Removing unreachable block (ram,0x016cccf0) */
+/* WARNING: Removing unreachable block (ram,0x016cccd8) */
+/* WARNING: Removing unreachable block (ram,0x016ccc34) */
+/* WARNING: Removing unreachable block (ram,0x016ccc3c) */
+/* WARNING: Removing unreachable block (ram,0x016ccc44) */
+/* WARNING: Removing unreachable block (ram,0x016ccc90) */
+/* WARNING: Removing unreachable block (ram,0x016ccc68) */
+/* WARNING: Removing unreachable block (ram,0x016ccc94) */
+/* WARNING: Removing unreachable block (ram,0x016ccc70) */
+/* WARNING: Removing unreachable block (ram,0x016ccba4) */
+/* WARNING: Removing unreachable block (ram,0x016ccbac) */
+/* WARNING: Removing unreachable block (ram,0x016ccbb4) */
+/* WARNING: Removing unreachable block (ram,0x016ccc00) */
+/* WARNING: Removing unreachable block (ram,0x016ccbd8) */
+/* WARNING: Removing unreachable block (ram,0x016ccc04) */
+/* WARNING: Removing unreachable block (ram,0x016ccbe0) */
+/* WARNING: Removing unreachable block (ram,0x016cde00) */
+/* WARNING: Removing unreachable block (ram,0x016cdda4) */
+/* WARNING: Removing unreachable block (ram,0x016cdd48) */
+/* WARNING: Removing unreachable block (ram,0x016cdcec) */
+/* WARNING: Removing unreachable block (ram,0x016cdc90) */
+/* WARNING: Removing unreachable block (ram,0x016cc68c) */
+/* WARNING: Removing unreachable block (ram,0x016cc698) */
+/* WARNING: Removing unreachable block (ram,0x016cc6a0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6a8) */
+/* WARNING: Removing unreachable block (ram,0x016cc718) */
+/* WARNING: Removing unreachable block (ram,0x016cc720) */
+/* WARNING: Removing unreachable block (ram,0x016cc728) */
+/* WARNING: Removing unreachable block (ram,0x016cc730) */
+/* WARNING: Removing unreachable block (ram,0x016cc74c) */
+/* WARNING: Removing unreachable block (ram,0x016cc754) */
+/* WARNING: Removing unreachable block (ram,0x016cc778) */
+/* WARNING: Removing unreachable block (ram,0x016cc6b4) */
+/* WARNING: Removing unreachable block (ram,0x016cc77c) */
+/* WARNING: Removing unreachable block (ram,0x016cc6bc) */
+/* WARNING: Removing unreachable block (ram,0x016cc6c4) */
+/* WARNING: Removing unreachable block (ram,0x016cc6cc) */
+/* WARNING: Removing unreachable block (ram,0x016cc6e0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6e8) */
+/* WARNING: Removing unreachable block (ram,0x016cc794) */
+/* WARNING: Removing unreachable block (ram,0x016cc7a0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6f0) */
+/* WARNING: Removing unreachable block (ram,0x016cc714) */
+/* WARNING: Removing unreachable block (ram,0x016cc780) */
+/* WARNING: Removing unreachable block (ram,0x016cdc34) */
+/* WARNING: Removing unreachable block (ram,0x016cc4e0) */
+/* WARNING: Removing unreachable block (ram,0x016cc518) */
+/* WARNING: Removing unreachable block (ram,0x016cc52c) */
+/* WARNING: Removing unreachable block (ram,0x016cc538) */
+/* WARNING: Removing unreachable block (ram,0x016cc540) */
+/* WARNING: Removing unreachable block (ram,0x016cc548) */
+/* WARNING: Removing unreachable block (ram,0x016cc5b8) */
+/* WARNING: Removing unreachable block (ram,0x016cc5c0) */
+/* WARNING: Removing unreachable block (ram,0x016cc5d4) */
+/* WARNING: Removing unreachable block (ram,0x016cc5dc) */
+/* WARNING: Removing unreachable block (ram,0x016cc5e4) */
+/* WARNING: Removing unreachable block (ram,0x016cc5f0) */
+/* WARNING: Removing unreachable block (ram,0x016cc554) */
+/* WARNING: Removing unreachable block (ram,0x016cc55c) */
+/* WARNING: Removing unreachable block (ram,0x016cc574) */
+/* WARNING: Removing unreachable block (ram,0x016cc57c) */
+/* WARNING: Removing unreachable block (ram,0x016cc624) */
+/* WARNING: Removing unreachable block (ram,0x016cc584) */
+/* WARNING: Removing unreachable block (ram,0x016cc628) */
+/* WARNING: Removing unreachable block (ram,0x016cc634) */
+/* WARNING: Removing unreachable block (ram,0x016cc668) */
+/* WARNING: Removing unreachable block (ram,0x016cc67c) */
+/* WARNING: Removing unreachable block (ram,0x016cc590) */
+/* WARNING: Removing unreachable block (ram,0x016cc5b4) */
+/* WARNING: Removing unreachable block (ram,0x016cc610) */
+/* WARNING: Removing unreachable block (ram,0x016cc834) */
+/* WARNING: Removing unreachable block (ram,0x016cc83c) */
+/* WARNING: Removing unreachable block (ram,0x016cc868) */
+/* WARNING: Removing unreachable block (ram,0x016cc844) */
+/* WARNING: Removing unreachable block (ram,0x016cc86c) */
+/* WARNING: Removing unreachable block (ram,0x016cc850) */
+/* WARNING: Removing unreachable block (ram,0x016cc908) */
+/* WARNING: Removing unreachable block (ram,0x016cc910) */
+/* WARNING: Removing unreachable block (ram,0x016cc920) */
+/* WARNING: Removing unreachable block (ram,0x016cc928) */
+/* WARNING: Removing unreachable block (ram,0x016cc964) */
+/* WARNING: Removing unreachable block (ram,0x016cc930) */
+/* WARNING: Removing unreachable block (ram,0x016cc968) */
+/* WARNING: Removing unreachable block (ram,0x016cc93c) */
+/* WARNING: Removing unreachable block (ram,0x016cc954) */
+/* WARNING: Removing unreachable block (ram,0x016cc89c) */
+/* WARNING: Removing unreachable block (ram,0x016cc8a4) */
+/* WARNING: Removing unreachable block (ram,0x016cc8d0) */
+/* WARNING: Removing unreachable block (ram,0x016cc8ac) */
+/* WARNING: Removing unreachable block (ram,0x016cc8d4) */
+/* WARNING: Removing unreachable block (ram,0x016cc8b8) */
+/* WARNING: Removing unreachable block (ram,0x016ce188) */
+/* WARNING: Removing unreachable block (ram,0x0167d9e0) */
+/* WARNING: Removing unreachable block (ram,0x016ce224) */
+/* WARNING: Removing unreachable block (ram,0x0167d91c) */
+/* WARNING: Removing unreachable block (ram,0x0167d928) */
+/* WARNING: Removing unreachable block (ram,0x0167d930) */
+/* WARNING: Removing unreachable block (ram,0x0167d94c) */
+/* WARNING: Removing unreachable block (ram,0x0167d958) */
+/* WARNING: Removing unreachable block (ram,0x0167d964) */
+/* WARNING: Removing unreachable block (ram,0x016ce20c) */
+/* WARNING: Removing unreachable block (ram,0x016ce46c) */
+/* WARNING: Removing unreachable block (ram,0x016ce3a4) */
+/* WARNING: Removing unreachable block (ram,0x016ce3a8) */
+/* WARNING: Removing unreachable block (ram,0x016ce3b4) */
+/* WARNING: Removing unreachable block (ram,0x016ce320) */
+/* WARNING: Removing unreachable block (ram,0x016cde9c) */
+/* WARNING: Removing unreachable block (ram,0x016ce334) */
+
+ulong Core_Services_Match__StartMatch
+                (undefined *param_1,undefined8 param_2,undefined8 *param_3,int param_4)
+
+{
+  uint uVar1;
+  uint uVar2;
+  uint uVar3;
+  int iVar4;
+  undefined1 auVar5 [16];
+  undefined1 *puVar6;
+  dword **ppdVar7;
+  undefined1 *puVar8;
+  undefined1 *puVar9;
+  undefined1 *puVar10;
+  long *plVar11;
+  ulong uVar12;
+  ulong uVar13;
+  undefined8 uVar14;
+  undefined8 uVar15;
+  int iVar16;
+  ulong uVar17;
+  ulong uVar18;
+  long lVar19;
+  ulong uVar20;
+  long lVar21;
+  undefined8 unaff_x21;
+  ulong unaff_x22;
+  ulong uVar22;
+  undefined1 *puVar23;
+  dword *pdVar24;
+  undefined *puVar25;
+  undefined *puVar26;
+  undefined8 unaff_d8;
+  undefined8 unaff_d9;
+  undefined1 auVar27 [16];
+  undefined1 auVar28 [16];
+  undefined1 auVar29 [16];
+  undefined1 auVar30 [16];
+  undefined1 auVar31 [12];
+  dword *pdStack_50;
+  undefined *puStack_48;
+  
+  if (param_1 == (undefined *)0x0) {
+    auVar27 = func_0x00f78af4();
+    lVar19 = auVar27._0_8_;
+    if ((auVar27._8_8_ == 0) || (lVar19 == 0)) {
+      auVar27 = func_0x00f78af4();
+      lVar21 = auVar27._8_8_;
+      lVar19 = auVar27._0_8_;
+      puVar8 = &stack0xffffffffffffff90;
+      puStack_48 = &Core_Services_Match__CreateOtherPlayersVectorBlock;
+      pdVar24 = (dword *)&pdStack_50;
+      unaff_x21 = 0x3eb5000;
+      pdStack_50 = (dword *)&stack0xffffffffffffffe0;
+      if ((bRam0000000003eb59e0 & 1) == 0) {
+        func_0x00f78a20(0x3d569d8);
+        bRam0000000003eb59e0 = 1;
+      }
+      if ((lVar21 == 0) || (lVar19 == 0)) {
+        puVar26 = &Core_Services_Match__StartOtherPlayersVector;
+        auVar31 = func_0x00f78af4();
+        iVar16 = auVar31._8_4_;
+        auVar27._8_8_ = lVar21;
+        auVar27._0_8_ = auVar31._0_8_;
+        if (auVar31._0_8_ == 0) {
+          auVar27 = func_0x00f78af4();
+          uVar13 = auVar27._0_8_;
+          *(undefined8 *)(uVar13 + 0x10) = *param_3;
+          *(long *)(uVar13 + 0x20) = auVar27._8_8_;
+          *(undefined8 **)(uVar13 + 0x28) = param_3;
+          return uVar13;
+        }
+      }
+      else {
+        unaff_x21 = 0x3d56000;
+        iVar16 = *(int *)(lVar21 + 0x18);
+        puVar26 = &UNK_0167d9e0;
+        puVar8 = &stack0xffffffffffffff90;
+      }
+    }
+    else {
+      iVar16 = *(int *)(auVar27._8_8_ + 0x18);
+      puVar26 = &UNK_0167d91c;
+      puVar8 = &stack0xffffffffffffffc0;
+      pdVar24 = (dword *)&stack0xffffffffffffffe0;
+    }
+    uVar13 = auVar27._0_8_;
+    *(ulong *)(puVar8 + -0x30) = unaff_x22;
+    *(undefined8 *)(puVar8 + -0x28) = unaff_x21;
+    *(long *)(puVar8 + -0x20) = auVar27._8_8_;
+    *(long *)(puVar8 + -0x18) = lVar19;
+    *(dword **)(puVar8 + -0x10) = pdVar24;
+    *(undefined **)(puVar8 + -8) = puVar26;
+    puVar23 = puVar8 + -0x10;
+    uVar17 = 4;
+    /*FlatBuffers.FlatBufferBuilder$$NotNested*/ func_0x016ce1a4();
+    *(int *)(uVar13 + 0x44) = iVar16;
+    uVar18 = CONCAT44(0,iVar16 * 4);
+    auVar30._8_8_ = 4;
+    auVar30._0_8_ = uVar18;
+    auVar29._8_8_ = 4;
+    auVar29._0_8_ = uVar13;
+    puVar26 = &UNK_016ce188;
+    puVar8 = puVar8 + -0x30;
+code_r0x016cdaac:
+    do {
+      while( true ) {
+        uVar20 = auVar30._0_8_;
+        uVar12 = auVar29._0_8_;
+        puVar6 = puVar8 + -0x30;
+        *(ulong *)(puVar8 + -0x30) = uVar13;
+        *(ulong *)(puVar8 + -0x28) = uVar17;
+        *(undefined1 (*) [16])(puVar8 + -0x20) = auVar30;
+        *(undefined1 **)(puVar8 + -0x10) = puVar23;
+        *(undefined **)(puVar8 + -8) = puVar26;
+        iVar16 = auVar29._8_4_;
+        if (*(int *)(uVar12 + 0x20) < iVar16) {
+          *(int *)(uVar12 + 0x20) = iVar16;
+        }
+        uVar22 = uVar13;
+        if ((*(long *)(uVar12 + 0x18) == 0) ||
+           (lVar19 = *(long *)(*(long *)(uVar12 + 0x18) + 0x10), lVar19 == 0)) break;
+        uVar3 = *(uint *)(lVar19 + 0x18);
+        iVar4 = *(int *)(uVar12 + 0x10);
+        uVar2 = iVar4 - (uVar3 + (int)uVar18) & iVar16 - 1U;
+        uVar20 = CONCAT44(0,uVar2);
+        uVar1 = (int)uVar18 + iVar16 + uVar2;
+        uVar22 = (ulong)uVar1;
+        uVar13 = uVar12;
+        while (uVar17 = (ulong)uVar3, iVar4 < (int)uVar1) {
+          uVar13 = /*FlatBuffers.FlatBufferBuilder$$GrowBuffer*/ func_0x016cda78(uVar12);
+          if ((*(long *)(uVar12 + 0x18) == 0) ||
+             (lVar19 = *(long *)(*(long *)(uVar12 + 0x18) + 0x10), lVar19 == 0))
+          goto code_r0x016cdb68;
+          iVar4 = *(int *)(uVar12 + 0x10) - uVar3;
+          uVar3 = *(uint *)(lVar19 + 0x18);
+          iVar4 = iVar4 + uVar3;
+          *(int *)(uVar12 + 0x10) = iVar4;
+        }
+        if ((int)uVar2 < 1) {
+          return uVar13;
+        }
+        uVar14 = *(undefined8 *)*(undefined1 (*) [16])(puVar8 + -0x20);
+        uVar15 = *(undefined8 *)(puVar8 + -0x18);
+        auVar30 = *(undefined1 (*) [16])(puVar8 + -0x20);
+        uVar13 = *(ulong *)(puVar8 + -0x30);
+        uVar17 = *(ulong *)(puVar8 + -0x28);
+        *(undefined8 *)(puVar8 + -0x10) = *(undefined8 *)(puVar8 + -0x10);
+        *(undefined8 *)(puVar8 + -8) = *(undefined8 *)(puVar8 + -8);
+        lVar19 = *(long *)(uVar12 + 0x18);
+        auVar5._8_8_ = lVar19;
+        auVar5._0_8_ = uVar20;
+        uVar2 = *(int *)(uVar12 + 0x10) - uVar2;
+        uVar22 = (ulong)uVar2;
+        auVar28._8_4_ = uVar2;
+        auVar28._0_8_ = lVar19;
+        auVar28._12_4_ = 0;
+        *(uint *)(uVar12 + 0x10) = uVar2;
+        if (lVar19 != 0) {
+          *(ulong *)(puVar8 + -0x30) = uVar13;
+          *(ulong *)(puVar8 + -0x28) = uVar17;
+          *(undefined8 *)(puVar8 + -0x20) = uVar14;
+          *(undefined8 *)(puVar8 + -0x18) = uVar15;
+          *(undefined8 *)(puVar8 + -0x10) = *(undefined8 *)(puVar8 + -0x10);
+          *(undefined8 *)(puVar8 + -8) = *(undefined8 *)(puVar8 + -8);
+          puVar23 = puVar8 + -0x10;
+          puVar26 = &UNK_016cc908;
+          uVar13 = 0;
+          goto code_r0x016cc7a4;
+        }
+        lVar19 = func_0x00f78af4();
+        puVar23 = puVar8 + -0x20;
+        *(undefined1 **)(puVar8 + -0x20) = puVar8 + -0x10;
+        *(undefined **)(puVar8 + -0x18) = &FlatBuffers_FlatBufferBuilder__GrowBuffer;
+        if ((*(long *)(lVar19 + 0x18) != 0) &&
+           (plVar11 = *(long **)(*(long *)(lVar19 + 0x18) + 0x10), plVar11 != (long *)0x0)) {
+                    /* WARNING: Could not recover jumptable at 0x016cdaa4. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          uVar13 = (**(code **)(*plVar11 + 0x178))
+                             (plVar11,(int)plVar11[3] << 1,*(undefined8 *)(*plVar11 + 0x180));
+          return uVar13;
+        }
+        puVar26 = &FlatBuffers_FlatBufferBuilder__Prep;
+        auVar29 = func_0x00f78af4();
+        puVar8 = puVar8 + -0x20;
+      }
+code_r0x016cdb68:
+      auVar5._8_8_ = uVar20;
+      auVar5._0_8_ = uVar17;
+      auVar27 = func_0x00f78af4();
+      uVar13 = auVar27._8_8_;
+      lVar21 = auVar27._0_8_;
+      *(undefined1 **)(puVar8 + -0x40) = puVar8 + -0x10;
+      *(undefined **)(puVar8 + -0x38) = &FlatBuffers_FlatBufferBuilder__PutBool;
+      lVar19 = *(long *)(lVar21 + 0x18);
+      iVar16 = *(int *)(lVar21 + 0x10) + -1;
+      *(int *)(lVar21 + 0x10) = iVar16;
+      if (lVar19 != 0) {
+        puVar9 = puVar8 + -0x30;
+        uVar14 = *(undefined8 *)(puVar8 + -0x40);
+        uVar15 = *(undefined8 *)(puVar8 + -0x38);
+FlatBuffers_ByteBuffer__PutByte:
+        auVar5._8_4_ = iVar16;
+        auVar5._0_8_ = lVar19;
+        auVar5._12_4_ = 0;
+        auVar28._8_4_ = iVar16;
+        auVar28._0_8_ = lVar19;
+        auVar28._12_4_ = 0;
+        puVar6 = puVar9 + -0x30;
+        *(ulong *)(puVar9 + -0x30) = uVar22;
+        *(ulong *)(puVar9 + -0x28) = uVar17;
+        *(ulong *)(puVar9 + -0x20) = uVar20;
+        *(ulong *)(puVar9 + -0x18) = uVar12;
+        *(undefined8 *)(puVar9 + -0x10) = uVar14;
+        *(undefined8 *)(puVar9 + -8) = uVar15;
+        puVar23 = puVar9 + -0x10;
+        uVar20 = 1;
+        puVar26 = &UNK_016cc89c;
+        goto code_r0x016cc7a4;
+      }
+      auVar27 = func_0x00f78af4();
+      uVar18 = auVar27._8_8_;
+      lVar19 = auVar27._0_8_;
+      *(undefined1 **)(puVar8 + -0x50) = puVar8 + -0x40;
+      *(undefined **)(puVar8 + -0x48) = &FlatBuffers_FlatBufferBuilder__PutSbyte;
+      iVar16 = *(int *)(lVar19 + 0x10) + -1;
+      auVar28._8_4_ = iVar16;
+      auVar28._0_8_ = *(long *)(lVar19 + 0x18);
+      auVar28._12_4_ = 0;
+      *(int *)(lVar19 + 0x10) = iVar16;
+      if (*(long *)(lVar19 + 0x18) != 0) {
+        puVar10 = puVar8 + -0x40;
+        puVar23 = *(undefined1 **)(puVar8 + -0x50);
+        puVar26 = *(undefined **)(puVar8 + -0x48);
+        uVar13 = uVar12;
+        goto code_r0x016cc810;
+      }
+      auVar27 = func_0x00f78af4();
+      uVar13 = auVar27._8_8_;
+      lVar21 = auVar27._0_8_;
+      *(undefined1 **)(puVar8 + -0x60) = puVar8 + -0x50;
+      *(undefined **)(puVar8 + -0x58) = &FlatBuffers_FlatBufferBuilder__PutByte;
+      lVar19 = *(long *)(lVar21 + 0x18);
+      iVar16 = *(int *)(lVar21 + 0x10) + -1;
+      *(int *)(lVar21 + 0x10) = iVar16;
+      if (lVar19 != 0) {
+        puVar9 = puVar8 + -0x50;
+        uVar14 = *(undefined8 *)(puVar8 + -0x60);
+        uVar15 = *(undefined8 *)(puVar8 + -0x58);
+        goto FlatBuffers_ByteBuffer__PutByte;
+      }
+      auVar27 = func_0x00f78af4();
+      uVar13 = auVar27._8_8_;
+      lVar19 = auVar27._0_8_;
+      puVar6 = puVar8 + -0x90;
+      *(ulong *)(puVar8 + -0x90) = uVar22;
+      *(ulong *)(puVar8 + -0x88) = uVar17;
+      *(ulong *)(puVar8 + -0x80) = uVar20;
+      *(ulong *)(puVar8 + -0x78) = uVar12;
+      *(undefined1 **)(puVar8 + -0x70) = puVar8 + -0x60;
+      *(undefined **)(puVar8 + -0x68) = &FlatBuffers_FlatBufferBuilder__PutShort;
+      puVar23 = puVar8 + -0x70;
+      lVar21 = *(long *)(lVar19 + 0x18);
+      uVar1 = *(int *)(lVar19 + 0x10) - 2;
+      auVar5._8_8_ = lVar21;
+      auVar5._0_8_ = CONCAT44(0,uVar1);
+      auVar28._8_4_ = uVar1;
+      auVar28._0_8_ = lVar21;
+      auVar28._12_4_ = 0;
+      *(uint *)(lVar19 + 0x10) = uVar1;
+      if (lVar21 != 0) {
+        uVar20 = 2;
+        puVar26 = &UNK_016cdc34;
+        goto code_r0x016cc7a4;
+      }
+      auVar27 = func_0x00f78af4();
+      uVar13 = auVar27._8_8_;
+      lVar19 = auVar27._0_8_;
+      puVar6 = puVar8 + -0xc0;
+      *(ulong *)(puVar8 + -0xc0) = uVar22;
+      *(ulong *)(puVar8 + -0xb8) = CONCAT44(0,uVar1);
+      *(undefined8 *)(puVar8 + -0xb0) = 0;
+      *(ulong *)(puVar8 + -0xa8) = uVar12;
+      *(undefined1 **)(puVar8 + -0xa0) = puVar23;
+      *(undefined **)(puVar8 + -0x98) = &FlatBuffers_FlatBufferBuilder__PutUshort;
+      puVar23 = puVar8 + -0xa0;
+      lVar21 = *(long *)(lVar19 + 0x18);
+      uVar1 = *(int *)(lVar19 + 0x10) - 2;
+      auVar5._8_8_ = lVar21;
+      auVar5._0_8_ = CONCAT44(0,uVar1);
+      auVar28._8_4_ = uVar1;
+      auVar28._0_8_ = lVar21;
+      auVar28._12_4_ = 0;
+      *(uint *)(lVar19 + 0x10) = uVar1;
+      if (lVar21 != 0) {
+        uVar20 = 2;
+        puVar26 = &UNK_016cdc90;
+        goto code_r0x016cc7a4;
+      }
+      auVar27 = func_0x00f78af4();
+      uVar13 = auVar27._8_8_;
+      lVar19 = auVar27._0_8_;
+      puVar6 = puVar8 + -0xf0;
+      *(ulong *)(puVar8 + -0xf0) = uVar22;
+      *(ulong *)(puVar8 + -0xe8) = CONCAT44(0,uVar1);
+      *(undefined8 *)(puVar8 + -0xe0) = 0;
+      *(ulong *)(puVar8 + -0xd8) = uVar12;
+      *(undefined1 **)(puVar8 + -0xd0) = puVar23;
+      *(undefined **)(puVar8 + -200) = &FlatBuffers_FlatBufferBuilder__PutInt;
+      puVar23 = puVar8 + -0xd0;
+      lVar21 = *(long *)(lVar19 + 0x18);
+      uVar1 = *(int *)(lVar19 + 0x10) - 4;
+      auVar5._8_8_ = lVar21;
+      auVar5._0_8_ = CONCAT44(0,uVar1);
+      auVar28._8_4_ = uVar1;
+      auVar28._0_8_ = lVar21;
+      auVar28._12_4_ = 0;
+      *(uint *)(lVar19 + 0x10) = uVar1;
+      if (lVar21 != 0) {
+        uVar20 = 4;
+        puVar26 = &UNK_016cdcec;
+        goto code_r0x016cc7a4;
+      }
+      auVar27 = func_0x00f78af4();
+      uVar13 = auVar27._8_8_;
+      lVar19 = auVar27._0_8_;
+      puVar6 = puVar8 + -0x120;
+      *(ulong *)(puVar8 + -0x120) = uVar22;
+      *(ulong *)(puVar8 + -0x118) = CONCAT44(0,uVar1);
+      *(undefined8 *)(puVar8 + -0x110) = 0;
+      *(ulong *)(puVar8 + -0x108) = uVar12;
+      *(undefined1 **)(puVar8 + -0x100) = puVar23;
+      *(undefined **)(puVar8 + -0xf8) = &FlatBuffers_FlatBufferBuilder__PutUint;
+      puVar23 = puVar8 + -0x100;
+      lVar21 = *(long *)(lVar19 + 0x18);
+      uVar1 = *(int *)(lVar19 + 0x10) - 4;
+      auVar5._8_8_ = lVar21;
+      auVar5._0_8_ = CONCAT44(0,uVar1);
+      auVar28._8_4_ = uVar1;
+      auVar28._0_8_ = lVar21;
+      auVar28._12_4_ = 0;
+      *(uint *)(lVar19 + 0x10) = uVar1;
+      if (lVar21 != 0) {
+        uVar20 = 4;
+        puVar26 = &UNK_016cdd48;
+        goto code_r0x016cc7a4;
+      }
+      auVar27 = func_0x00f78af4();
+      uVar13 = auVar27._8_8_;
+      lVar19 = auVar27._0_8_;
+      puVar6 = puVar8 + -0x150;
+      *(ulong *)(puVar8 + -0x150) = uVar22;
+      *(ulong *)(puVar8 + -0x148) = CONCAT44(0,uVar1);
+      *(undefined8 *)(puVar8 + -0x140) = 0;
+      *(ulong *)(puVar8 + -0x138) = uVar12;
+      *(undefined1 **)(puVar8 + -0x130) = puVar23;
+      *(undefined **)(puVar8 + -0x128) = &FlatBuffers_FlatBufferBuilder__PutLong;
+      puVar23 = puVar8 + -0x130;
+      lVar21 = *(long *)(lVar19 + 0x18);
+      uVar1 = *(int *)(lVar19 + 0x10) - 8;
+      auVar5._8_8_ = lVar21;
+      auVar5._0_8_ = CONCAT44(0,uVar1);
+      auVar28._8_4_ = uVar1;
+      auVar28._0_8_ = lVar21;
+      auVar28._12_4_ = 0;
+      *(uint *)(lVar19 + 0x10) = uVar1;
+      if (lVar21 != 0) {
+        uVar20 = 8;
+        puVar26 = &UNK_016cdda4;
+        goto code_r0x016cc7a4;
+      }
+      auVar27 = func_0x00f78af4();
+      uVar13 = auVar27._8_8_;
+      lVar19 = auVar27._0_8_;
+      puVar6 = puVar8 + -0x180;
+      *(ulong *)(puVar8 + -0x180) = uVar22;
+      *(ulong *)(puVar8 + -0x178) = CONCAT44(0,uVar1);
+      *(undefined8 *)(puVar8 + -0x170) = 0;
+      *(ulong *)(puVar8 + -0x168) = uVar12;
+      *(undefined1 **)(puVar8 + -0x160) = puVar23;
+      *(undefined **)(puVar8 + -0x158) = &FlatBuffers_FlatBufferBuilder__PutUlong;
+      puVar23 = puVar8 + -0x160;
+      lVar21 = *(long *)(lVar19 + 0x18);
+      uVar1 = *(int *)(lVar19 + 0x10) - 8;
+      uVar17 = CONCAT44(0,uVar1);
+      auVar5._8_8_ = lVar21;
+      auVar5._0_8_ = uVar17;
+      auVar28._8_4_ = uVar1;
+      auVar28._0_8_ = lVar21;
+      auVar28._12_4_ = 0;
+      *(uint *)(lVar19 + 0x10) = uVar1;
+      if (lVar21 != 0) {
+        uVar20 = 8;
+        puVar26 = &UNK_016cde00;
+        goto code_r0x016cc7a4;
+      }
+      lVar19 = func_0x00f78af4();
+      *(undefined1 **)(puVar8 + -400) = puVar23;
+      *(undefined **)(puVar8 + -0x188) = &FlatBuffers_FlatBufferBuilder__PutFloat;
+      lVar21 = *(long *)(lVar19 + 0x18);
+      auVar5._8_8_ = lVar21;
+      uVar1 = *(int *)(lVar19 + 0x10) - 4;
+      uVar13 = (ulong)uVar1;
+      auVar28._8_4_ = uVar1;
+      auVar28._0_8_ = lVar21;
+      auVar28._12_4_ = 0;
+      *(uint *)(lVar19 + 0x10) = uVar1;
+      if (lVar21 != 0) {
+        puVar6 = puVar8 + -0x1b0;
+        *(undefined8 *)(puVar8 + -0x1b0) = unaff_d9;
+        *(undefined8 *)(puVar8 + -0x1a8) = unaff_d8;
+        *(undefined8 *)(puVar8 + -0x1a0) = 0;
+        *(ulong *)(puVar8 + -0x198) = uVar12;
+        *(undefined8 *)(puVar8 + -400) = *(undefined8 *)(puVar8 + -400);
+        *(undefined8 *)(puVar8 + -0x188) = *(undefined8 *)(puVar8 + -0x188);
+        puVar23 = puVar8 + -400;
+        uVar20 = 4;
+        puVar26 = &UNK_016ccba4;
+        goto code_r0x016cc7a4;
+      }
+      lVar19 = func_0x00f78af4();
+      *(undefined1 **)(puVar8 + -0x1a0) = puVar8 + -400;
+      *(undefined **)(puVar8 + -0x198) = &FlatBuffers_FlatBufferBuilder__PutDouble;
+      lVar21 = *(long *)(lVar19 + 0x18);
+      auVar5._8_8_ = lVar21;
+      uVar1 = *(int *)(lVar19 + 0x10) - 8;
+      uVar13 = (ulong)uVar1;
+      auVar28._8_4_ = uVar1;
+      auVar28._0_8_ = lVar21;
+      auVar28._12_4_ = 0;
+      *(uint *)(lVar19 + 0x10) = uVar1;
+      if (lVar21 != 0) goto code_r0x016cde70;
+      auVar30 = func_0x00f78af4();
+      *(undefined8 *)(puVar8 + -0x1c0) = 0;
+      *(ulong *)(puVar8 + -0x1b8) = uVar12;
+      *(undefined1 **)(puVar8 + -0x1b0) = puVar8 + -0x1a0;
+      *(undefined **)(puVar8 + -0x1a8) = &FlatBuffers_FlatBufferBuilder__AddBool;
+      puVar23 = puVar8 + -0x1b0;
+      auVar29._8_8_ = 1;
+      auVar29._0_8_ = auVar30._0_8_;
+      uVar18 = 0;
+      puVar26 = &UNK_016cde9c;
+      puVar8 = puVar8 + -0x1c0;
+      uVar13 = uVar22;
+    } while( true );
+  }
+  ppdVar7 = (dword **)&stack0xffffffffffffffd0;
+  puVar8 = &stack0xfffffffffffffff0;
+  if ((bRam0000000003eb5cd7 & 1) == 0) {
+    func_0x00f78a20(0x3d1f100,4,0);
+    bRam0000000003eb5cd7 = 1;
+  }
+  /*FlatBuffers.FlatBufferBuilder$$NotNested*/ func_0x016ce1a4(param_1);
+  if (*(long *)(param_1 + 0x28) == 0) {
+    auVar31 = func_0x00f78af4();
+    puVar26 = auVar31._0_8_;
+    ppdVar7 = &pdStack_50;
+    pdStack_50 = &MACH_HEADER.cputype;
+    puVar8 = &stack0xffffffffffffffc0;
+    puStack_48 = param_1;
+    if (*(int *)(puVar26 + 0x30) <= auVar31._8_4_) {
+      func_0x00f78a24(0x3d22738);
+      uVar14 = func_0x00f78aec();
+      uVar15 = func_0x00f78a24(0x3d6ceb8);
+      uVar17 = 0;
+      /*System.IndexOutOfRangeException$$.ctor*/ func_0x02ae8c34(uVar14,uVar15);
+      uVar15 = func_0x00f78a24(0x3d56a58);
+      func_0x00f78ac0(uVar14,uVar15);
+      func_0x00f78af4();
+      uVar14 = func_0x00f78b24();
+      auVar30 = func_0x00f78ac0(uVar14,0);
+      uVar13 = auVar30._0_8_;
+      puVar23 = &stack0xffffffffffffffa0;
+      if (((int)uVar17 == param_4) && (*(char *)(uVar13 + 0x48) == '\0')) {
+        return uVar13;
+      }
+      auVar29._8_8_ = 1;
+      auVar29._0_8_ = uVar13;
+      uVar18 = 0;
+      puVar26 = &UNK_016ce46c;
+      puVar8 = &stack0xffffffffffffff80;
+      uVar13 = unaff_x22;
+      goto code_r0x016cdaac;
+    }
+    puVar25 = &UNK_016ce3a4;
+  }
+  else {
+    if (*(int *)(*(long *)(param_1 + 0x28) + 0x18) < 4) {
+      uVar14 = func_0x00f78a34(/*int[]_TypeInfo*/ uRam0000000003d1f100,4);
+      *(undefined8 *)(param_1 + 0x28) = uVar14;
+    }
+    *(undefined4 *)(param_1 + 0x30) = 4;
+    puVar25 = &UNK_016ce320;
+    puVar26 = param_1;
+  }
+  *(undefined1 **)((long)ppdVar7 + -0x10) = puVar8;
+  *(undefined **)((long)ppdVar7 + -8) = puVar25;
+  if ((*(long *)(puVar26 + 0x18) != 0) &&
+     (lVar19 = *(long *)(*(long *)(puVar26 + 0x18) + 0x10), lVar19 != 0)) {
+    return (ulong)(uint)(*(int *)(lVar19 + 0x18) - *(int *)(puVar26 + 0x10));
+  }
+  lVar19 = func_0x00f78af4();
+  return (ulong)*(byte *)(lVar19 + 0x48);
+code_r0x016cde70:
+  puVar6 = puVar8 + -0x1c0;
+  *(undefined8 *)(puVar8 + -0x1c0) = unaff_d9;
+  *(undefined8 *)(puVar8 + -0x1b8) = unaff_d8;
+  *(undefined8 *)(puVar8 + -0x1b0) = 0;
+  *(ulong *)(puVar8 + -0x1a8) = uVar12;
+  *(undefined8 *)(puVar8 + -0x1a0) = *(undefined8 *)(puVar8 + -0x1a0);
+  *(undefined8 *)(puVar8 + -0x198) = *(undefined8 *)(puVar8 + -0x198);
+  puVar23 = puVar8 + -0x1a0;
+  uVar20 = 8;
+  puVar26 = &UNK_016ccc34;
+code_r0x016cc7a4:
+  do {
+    puVar10 = puVar6 + -0x20;
+    *(long *)(puVar6 + -0x20) = auVar5._8_8_;
+    *(ulong *)(puVar6 + -0x18) = uVar13;
+    *(undefined1 **)(puVar6 + -0x10) = puVar23;
+    *(undefined **)(puVar6 + -8) = puVar26;
+    puVar23 = puVar6 + -0x10;
+    if (auVar28._8_4_ < 0) {
+code_r0x016cc7d8:
+      func_0x00f78a24(0x3d1fcf8);
+      uVar13 = func_0x00f78aec();
+      /*System.ArgumentOutOfRangeException$$.ctor*/ func_0x0292a4d0(uVar13,0);
+      uVar14 = func_0x00f78a24(0x3d52ce8);
+      func_0x00f78ac0(uVar13,uVar14);
+      uVar18 = uVar20;
+    }
+    else {
+      lVar19 = *(long *)(auVar28._0_8_ + 0x10);
+      uVar18 = uVar20;
+      if (lVar19 != 0) {
+        if (auVar28._8_4_ <= *(int *)(lVar19 + 0x18) - (int)uVar20) {
+          return auVar28._0_8_;
+        }
+        goto code_r0x016cc7d8;
+      }
+    }
+    puVar26 = &FlatBuffers_ByteBuffer__PutSbyte;
+    auVar28 = func_0x00f78af4();
+code_r0x016cc810:
+    puVar6 = puVar10 + -0x30;
+    *(ulong *)(puVar10 + -0x30) = uVar22;
+    *(undefined1 (*) [16])(puVar10 + -0x28) = auVar5;
+    *(ulong *)(puVar10 + -0x18) = uVar13;
+    *(undefined1 **)(puVar10 + -0x10) = puVar23;
+    *(undefined **)(puVar10 + -8) = puVar26;
+    puVar23 = puVar10 + -0x10;
+    uVar20 = 1;
+    puVar26 = &UNK_016cc834;
+    uVar13 = uVar18;
+    auVar5 = auVar28;
+  } while( true );
+}
+
+
+
+// ============================================================
+// RVA: 0x167d8e4 | Core.Services.Match.CreateOtherPlayersVector
+// ============================================================
+
+/* WARNING: Possible PIC construction at 0x0167d918: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce220: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x0167d9dc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce184: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc898: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc904: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc830: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdc30: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc688: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdc8c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdce8: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdd44: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdda0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cddfc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccba0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccc30: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cccb8: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccd14: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccdc0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cde98: Changing call to branch */
+/* WARNING: Removing unreachable block (ram,0x016ccdc4) */
+/* WARNING: Removing unreachable block (ram,0x016ccd18) */
+/* WARNING: Removing unreachable block (ram,0x016ccd20) */
+/* WARNING: Removing unreachable block (ram,0x016ccd48) */
+/* WARNING: Removing unreachable block (ram,0x016ccd28) */
+/* WARNING: Removing unreachable block (ram,0x016ccd4c) */
+/* WARNING: Removing unreachable block (ram,0x016ccd84) */
+/* WARNING: Removing unreachable block (ram,0x016ccdb0) */
+/* WARNING: Removing unreachable block (ram,0x016ccd88) */
+/* WARNING: Removing unreachable block (ram,0x016ccd34) */
+/* WARNING: Removing unreachable block (ram,0x016cccbc) */
+/* WARNING: Removing unreachable block (ram,0x016cccc4) */
+/* WARNING: Removing unreachable block (ram,0x016cccec) */
+/* WARNING: Removing unreachable block (ram,0x016ccccc) */
+/* WARNING: Removing unreachable block (ram,0x016cccf0) */
+/* WARNING: Removing unreachable block (ram,0x016cccd8) */
+/* WARNING: Removing unreachable block (ram,0x016ccc34) */
+/* WARNING: Removing unreachable block (ram,0x016ccc3c) */
+/* WARNING: Removing unreachable block (ram,0x016ccc44) */
+/* WARNING: Removing unreachable block (ram,0x016ccc90) */
+/* WARNING: Removing unreachable block (ram,0x016ccc68) */
+/* WARNING: Removing unreachable block (ram,0x016ccc94) */
+/* WARNING: Removing unreachable block (ram,0x016ccc70) */
+/* WARNING: Removing unreachable block (ram,0x016ccba4) */
+/* WARNING: Removing unreachable block (ram,0x016ccbac) */
+/* WARNING: Removing unreachable block (ram,0x016ccbb4) */
+/* WARNING: Removing unreachable block (ram,0x016ccc00) */
+/* WARNING: Removing unreachable block (ram,0x016ccbd8) */
+/* WARNING: Removing unreachable block (ram,0x016ccc04) */
+/* WARNING: Removing unreachable block (ram,0x016ccbe0) */
+/* WARNING: Removing unreachable block (ram,0x016cde00) */
+/* WARNING: Removing unreachable block (ram,0x016cdda4) */
+/* WARNING: Removing unreachable block (ram,0x016cdd48) */
+/* WARNING: Removing unreachable block (ram,0x016cdcec) */
+/* WARNING: Removing unreachable block (ram,0x016cdc90) */
+/* WARNING: Removing unreachable block (ram,0x016cc68c) */
+/* WARNING: Removing unreachable block (ram,0x016cc698) */
+/* WARNING: Removing unreachable block (ram,0x016cc6a0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6a8) */
+/* WARNING: Removing unreachable block (ram,0x016cc718) */
+/* WARNING: Removing unreachable block (ram,0x016cc720) */
+/* WARNING: Removing unreachable block (ram,0x016cc728) */
+/* WARNING: Removing unreachable block (ram,0x016cc730) */
+/* WARNING: Removing unreachable block (ram,0x016cc74c) */
+/* WARNING: Removing unreachable block (ram,0x016cc754) */
+/* WARNING: Removing unreachable block (ram,0x016cc778) */
+/* WARNING: Removing unreachable block (ram,0x016cc6b4) */
+/* WARNING: Removing unreachable block (ram,0x016cc77c) */
+/* WARNING: Removing unreachable block (ram,0x016cc6bc) */
+/* WARNING: Removing unreachable block (ram,0x016cc6c4) */
+/* WARNING: Removing unreachable block (ram,0x016cc6cc) */
+/* WARNING: Removing unreachable block (ram,0x016cc6e0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6e8) */
+/* WARNING: Removing unreachable block (ram,0x016cc794) */
+/* WARNING: Removing unreachable block (ram,0x016cc7a0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6f0) */
+/* WARNING: Removing unreachable block (ram,0x016cc714) */
+/* WARNING: Removing unreachable block (ram,0x016cc780) */
+/* WARNING: Removing unreachable block (ram,0x016cdc34) */
+/* WARNING: Removing unreachable block (ram,0x016cc4e0) */
+/* WARNING: Removing unreachable block (ram,0x016cc518) */
+/* WARNING: Removing unreachable block (ram,0x016cc52c) */
+/* WARNING: Removing unreachable block (ram,0x016cc538) */
+/* WARNING: Removing unreachable block (ram,0x016cc540) */
+/* WARNING: Removing unreachable block (ram,0x016cc548) */
+/* WARNING: Removing unreachable block (ram,0x016cc5b8) */
+/* WARNING: Removing unreachable block (ram,0x016cc5c0) */
+/* WARNING: Removing unreachable block (ram,0x016cc5d4) */
+/* WARNING: Removing unreachable block (ram,0x016cc5dc) */
+/* WARNING: Removing unreachable block (ram,0x016cc5e4) */
+/* WARNING: Removing unreachable block (ram,0x016cc5f0) */
+/* WARNING: Removing unreachable block (ram,0x016cc554) */
+/* WARNING: Removing unreachable block (ram,0x016cc55c) */
+/* WARNING: Removing unreachable block (ram,0x016cc574) */
+/* WARNING: Removing unreachable block (ram,0x016cc57c) */
+/* WARNING: Removing unreachable block (ram,0x016cc624) */
+/* WARNING: Removing unreachable block (ram,0x016cc584) */
+/* WARNING: Removing unreachable block (ram,0x016cc628) */
+/* WARNING: Removing unreachable block (ram,0x016cc634) */
+/* WARNING: Removing unreachable block (ram,0x016cc668) */
+/* WARNING: Removing unreachable block (ram,0x016cc67c) */
+/* WARNING: Removing unreachable block (ram,0x016cc590) */
+/* WARNING: Removing unreachable block (ram,0x016cc5b4) */
+/* WARNING: Removing unreachable block (ram,0x016cc610) */
+/* WARNING: Removing unreachable block (ram,0x016cc834) */
+/* WARNING: Removing unreachable block (ram,0x016cc83c) */
+/* WARNING: Removing unreachable block (ram,0x016cc868) */
+/* WARNING: Removing unreachable block (ram,0x016cc844) */
+/* WARNING: Removing unreachable block (ram,0x016cc86c) */
+/* WARNING: Removing unreachable block (ram,0x016cc850) */
+/* WARNING: Removing unreachable block (ram,0x016cc908) */
+/* WARNING: Removing unreachable block (ram,0x016cc910) */
+/* WARNING: Removing unreachable block (ram,0x016cc920) */
+/* WARNING: Removing unreachable block (ram,0x016cc928) */
+/* WARNING: Removing unreachable block (ram,0x016cc964) */
+/* WARNING: Removing unreachable block (ram,0x016cc930) */
+/* WARNING: Removing unreachable block (ram,0x016cc968) */
+/* WARNING: Removing unreachable block (ram,0x016cc93c) */
+/* WARNING: Removing unreachable block (ram,0x016cc954) */
+/* WARNING: Removing unreachable block (ram,0x016cc89c) */
+/* WARNING: Removing unreachable block (ram,0x016cc8a4) */
+/* WARNING: Removing unreachable block (ram,0x016cc8d0) */
+/* WARNING: Removing unreachable block (ram,0x016cc8ac) */
+/* WARNING: Removing unreachable block (ram,0x016cc8d4) */
+/* WARNING: Removing unreachable block (ram,0x016cc8b8) */
+/* WARNING: Removing unreachable block (ram,0x016ce188) */
+/* WARNING: Removing unreachable block (ram,0x0167d9e0) */
+/* WARNING: Removing unreachable block (ram,0x016ce224) */
+/* WARNING: Removing unreachable block (ram,0x016cda04) */
+/* WARNING: Removing unreachable block (ram,0x016cda14) */
+/* WARNING: Removing unreachable block (ram,0x016cda30) */
+/* WARNING: Removing unreachable block (ram,0x016cda1c) */
+/* WARNING: Removing unreachable block (ram,0x0167d91c) */
+/* WARNING: Removing unreachable block (ram,0x0167d928) */
+/* WARNING: Removing unreachable block (ram,0x0167d930) */
+/* WARNING: Removing unreachable block (ram,0x0167d94c) */
+/* WARNING: Removing unreachable block (ram,0x0167d958) */
+/* WARNING: Removing unreachable block (ram,0x0167d964) */
+/* WARNING: Removing unreachable block (ram,0x016ce20c) */
+/* WARNING: Removing unreachable block (ram,0x016cde9c) */
+
+void Core_Services_Match__CreateOtherPlayersVector(long param_1,long param_2,undefined8 *param_3)
+
+{
+  uint uVar1;
+  uint uVar2;
+  uint uVar3;
+  int iVar4;
+  undefined1 auVar5 [16];
+  undefined1 *puVar6;
+  undefined1 *puVar7;
+  undefined1 *puVar8;
+  undefined1 *puVar9;
+  ulong uVar10;
+  undefined8 uVar11;
+  long *plVar12;
+  ulong uVar13;
+  int iVar14;
+  long lVar15;
+  ulong uVar16;
+  long lVar17;
+  ulong uVar18;
+  undefined8 unaff_x21;
+  ulong uVar19;
+  undefined8 unaff_x22;
+  ulong uVar20;
+  undefined1 *puVar21;
+  undefined8 ****ppppuVar22;
+  undefined *puVar23;
+  undefined8 uVar24;
+  undefined8 unaff_d8;
+  undefined8 unaff_d9;
+  undefined1 auVar25 [16];
+  undefined1 auVar26 [16];
+  undefined1 auVar27 [16];
+  undefined1 auVar28 [16];
+  undefined1 auVar29 [12];
+  undefined8 ***pppuStack_40;
+  undefined *puStack_38;
+  
+  auVar25._8_8_ = param_2;
+  auVar25._0_8_ = param_1;
+  if ((param_2 == 0) || (param_1 == 0)) {
+    auVar25 = func_0x00f78af4();
+    lVar15 = auVar25._8_8_;
+    param_1 = auVar25._0_8_;
+    puVar7 = &stack0xffffffffffffffa0;
+    puStack_38 = &Core_Services_Match__CreateOtherPlayersVectorBlock;
+    ppppuVar22 = &pppuStack_40;
+    unaff_x21 = 0x3eb5000;
+    pppuStack_40 = (undefined8 ***)&stack0xfffffffffffffff0;
+    if ((bRam0000000003eb59e0 & 1) == 0) {
+      func_0x00f78a20(0x3d569d8);
+      bRam0000000003eb59e0 = 1;
+    }
+    if ((lVar15 == 0) || (param_1 == 0)) {
+      puVar23 = &Core_Services_Match__StartOtherPlayersVector;
+      auVar29 = func_0x00f78af4();
+      iVar14 = auVar29._8_4_;
+      auVar25._8_8_ = lVar15;
+      auVar25._0_8_ = auVar29._0_8_;
+      if (auVar29._0_8_ == 0) {
+        auVar25 = func_0x00f78af4();
+        lVar15 = auVar25._0_8_;
+        *(undefined8 *)(lVar15 + 0x10) = *param_3;
+        *(long *)(lVar15 + 0x20) = auVar25._8_8_;
+        *(undefined8 **)(lVar15 + 0x28) = param_3;
+        return;
+      }
+    }
+    else {
+      unaff_x21 = 0x3d56000;
+      iVar14 = *(int *)(lVar15 + 0x18);
+      puVar23 = &UNK_0167d9e0;
+      puVar7 = &stack0xffffffffffffffa0;
+    }
+  }
+  else {
+    iVar14 = *(int *)(param_2 + 0x18);
+    puVar23 = (undefined *)0x167d91c;
+    puVar7 = &stack0xffffffffffffffd0;
+    ppppuVar22 = (undefined8 ****)&stack0xfffffffffffffff0;
+  }
+  uVar10 = auVar25._0_8_;
+  uVar19 = 4;
+  *(undefined8 *)(puVar7 + -0x30) = unaff_x22;
+  *(undefined8 *)(puVar7 + -0x28) = unaff_x21;
+  *(long *)(puVar7 + -0x20) = auVar25._8_8_;
+  *(long *)(puVar7 + -0x18) = param_1;
+  *(undefined8 *****)(puVar7 + -0x10) = ppppuVar22;
+  *(undefined **)(puVar7 + -8) = puVar23;
+  puVar21 = puVar7 + -0x10;
+  /*FlatBuffers.FlatBufferBuilder$$NotNested*/ func_0x016ce1a4();
+  *(int *)(uVar10 + 0x44) = iVar14;
+  uVar18 = CONCAT44(0,iVar14 * 4);
+  auVar28._8_8_ = 4;
+  auVar28._0_8_ = uVar18;
+  auVar27._8_8_ = 4;
+  auVar27._0_8_ = uVar10;
+  puVar23 = &UNK_016ce188;
+  puVar7 = puVar7 + -0x30;
+code_r0x016cdaac:
+  while( true ) {
+    uVar16 = auVar28._0_8_;
+    uVar13 = auVar27._0_8_;
+    puVar6 = puVar7 + -0x30;
+    *(ulong *)(puVar7 + -0x30) = uVar10;
+    *(ulong *)(puVar7 + -0x28) = uVar19;
+    *(undefined1 (*) [16])(puVar7 + -0x20) = auVar28;
+    *(undefined1 **)(puVar7 + -0x10) = puVar21;
+    *(undefined **)(puVar7 + -8) = puVar23;
+    iVar14 = auVar27._8_4_;
+    if (*(int *)(uVar13 + 0x20) < iVar14) {
+      *(int *)(uVar13 + 0x20) = iVar14;
+    }
+    uVar20 = uVar10;
+    if ((*(long *)(uVar13 + 0x18) == 0) ||
+       (lVar15 = *(long *)(*(long *)(uVar13 + 0x18) + 0x10), lVar15 == 0)) break;
+    uVar3 = *(uint *)(lVar15 + 0x18);
+    iVar4 = *(int *)(uVar13 + 0x10);
+    uVar2 = iVar4 - (uVar3 + (int)uVar18) & iVar14 - 1U;
+    uVar16 = CONCAT44(0,uVar2);
+    uVar1 = (int)uVar18 + iVar14 + uVar2;
+    uVar20 = (ulong)uVar1;
+    while (uVar19 = (ulong)uVar3, iVar4 < (int)uVar1) {
+      /*FlatBuffers.FlatBufferBuilder$$GrowBuffer*/ func_0x016cda78(uVar13);
+      if ((*(long *)(uVar13 + 0x18) == 0) ||
+         (lVar15 = *(long *)(*(long *)(uVar13 + 0x18) + 0x10), lVar15 == 0)) goto code_r0x016cdb68;
+      iVar4 = *(int *)(uVar13 + 0x10) - uVar3;
+      uVar3 = *(uint *)(lVar15 + 0x18);
+      iVar4 = iVar4 + uVar3;
+      *(int *)(uVar13 + 0x10) = iVar4;
+    }
+    if ((int)uVar2 < 1) {
+      return;
+    }
+    uVar11 = *(undefined8 *)*(undefined1 (*) [16])(puVar7 + -0x20);
+    uVar24 = *(undefined8 *)(puVar7 + -0x18);
+    auVar28 = *(undefined1 (*) [16])(puVar7 + -0x20);
+    uVar10 = *(ulong *)(puVar7 + -0x30);
+    uVar19 = *(ulong *)(puVar7 + -0x28);
+    *(undefined8 *)(puVar7 + -0x10) = *(undefined8 *)(puVar7 + -0x10);
+    *(undefined8 *)(puVar7 + -8) = *(undefined8 *)(puVar7 + -8);
+    lVar15 = *(long *)(uVar13 + 0x18);
+    auVar5._8_8_ = lVar15;
+    auVar5._0_8_ = uVar16;
+    uVar2 = *(int *)(uVar13 + 0x10) - uVar2;
+    uVar20 = (ulong)uVar2;
+    auVar26._8_4_ = uVar2;
+    auVar26._0_8_ = lVar15;
+    auVar26._12_4_ = 0;
+    *(uint *)(uVar13 + 0x10) = uVar2;
+    if (lVar15 != 0) {
+      *(ulong *)(puVar7 + -0x30) = uVar10;
+      *(ulong *)(puVar7 + -0x28) = uVar19;
+      *(undefined8 *)(puVar7 + -0x20) = uVar11;
+      *(undefined8 *)(puVar7 + -0x18) = uVar24;
+      *(undefined8 *)(puVar7 + -0x10) = *(undefined8 *)(puVar7 + -0x10);
+      *(undefined8 *)(puVar7 + -8) = *(undefined8 *)(puVar7 + -8);
+      puVar21 = puVar7 + -0x10;
+      puVar23 = &UNK_016cc908;
+      uVar10 = 0;
+      goto code_r0x016cc7a4;
+    }
+    lVar15 = func_0x00f78af4();
+    puVar21 = puVar7 + -0x20;
+    *(undefined1 **)(puVar7 + -0x20) = puVar7 + -0x10;
+    *(undefined **)(puVar7 + -0x18) = &FlatBuffers_FlatBufferBuilder__GrowBuffer;
+    if ((*(long *)(lVar15 + 0x18) != 0) &&
+       (plVar12 = *(long **)(*(long *)(lVar15 + 0x18) + 0x10), plVar12 != (long *)0x0)) {
+                    /* WARNING: Could not recover jumptable at 0x016cdaa4. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (**(code **)(*plVar12 + 0x178))
+                (plVar12,(int)plVar12[3] << 1,*(undefined8 *)(*plVar12 + 0x180));
+      return;
+    }
+    puVar23 = &FlatBuffers_FlatBufferBuilder__Prep;
+    auVar27 = func_0x00f78af4();
+    puVar7 = puVar7 + -0x20;
+  }
+code_r0x016cdb68:
+  auVar5._8_8_ = uVar16;
+  auVar5._0_8_ = uVar19;
+  auVar25 = func_0x00f78af4();
+  uVar10 = auVar25._8_8_;
+  lVar17 = auVar25._0_8_;
+  *(undefined1 **)(puVar7 + -0x40) = puVar7 + -0x10;
+  *(undefined **)(puVar7 + -0x38) = &FlatBuffers_FlatBufferBuilder__PutBool;
+  lVar15 = *(long *)(lVar17 + 0x18);
+  iVar14 = *(int *)(lVar17 + 0x10) + -1;
+  *(int *)(lVar17 + 0x10) = iVar14;
+  if (lVar15 == 0) {
+    auVar25 = func_0x00f78af4();
+    uVar18 = auVar25._8_8_;
+    lVar15 = auVar25._0_8_;
+    *(undefined1 **)(puVar7 + -0x50) = puVar7 + -0x40;
+    *(undefined **)(puVar7 + -0x48) = &FlatBuffers_FlatBufferBuilder__PutSbyte;
+    iVar14 = *(int *)(lVar15 + 0x10) + -1;
+    auVar26._8_4_ = iVar14;
+    auVar26._0_8_ = *(long *)(lVar15 + 0x18);
+    auVar26._12_4_ = 0;
+    *(int *)(lVar15 + 0x10) = iVar14;
+    if (*(long *)(lVar15 + 0x18) != 0) {
+      puVar9 = puVar7 + -0x40;
+      puVar21 = *(undefined1 **)(puVar7 + -0x50);
+      puVar23 = *(undefined **)(puVar7 + -0x48);
+      uVar10 = uVar13;
+      goto code_r0x016cc810;
+    }
+    auVar25 = func_0x00f78af4();
+    uVar10 = auVar25._8_8_;
+    lVar17 = auVar25._0_8_;
+    *(undefined1 **)(puVar7 + -0x60) = puVar7 + -0x50;
+    *(undefined **)(puVar7 + -0x58) = &FlatBuffers_FlatBufferBuilder__PutByte;
+    lVar15 = *(long *)(lVar17 + 0x18);
+    iVar14 = *(int *)(lVar17 + 0x10) + -1;
+    *(int *)(lVar17 + 0x10) = iVar14;
+    if (lVar15 == 0) {
+      auVar25 = func_0x00f78af4();
+      uVar10 = auVar25._8_8_;
+      lVar15 = auVar25._0_8_;
+      puVar6 = puVar7 + -0x90;
+      *(ulong *)(puVar7 + -0x90) = uVar20;
+      *(ulong *)(puVar7 + -0x88) = uVar19;
+      *(ulong *)(puVar7 + -0x80) = uVar16;
+      *(ulong *)(puVar7 + -0x78) = uVar13;
+      *(undefined1 **)(puVar7 + -0x70) = puVar7 + -0x60;
+      *(undefined **)(puVar7 + -0x68) = &FlatBuffers_FlatBufferBuilder__PutShort;
+      puVar21 = puVar7 + -0x70;
+      lVar17 = *(long *)(lVar15 + 0x18);
+      uVar1 = *(int *)(lVar15 + 0x10) - 2;
+      auVar5._8_8_ = lVar17;
+      auVar5._0_8_ = CONCAT44(0,uVar1);
+      auVar26._8_4_ = uVar1;
+      auVar26._0_8_ = lVar17;
+      auVar26._12_4_ = 0;
+      *(uint *)(lVar15 + 0x10) = uVar1;
+      if (lVar17 != 0) {
+        uVar16 = 2;
+        puVar23 = &UNK_016cdc34;
+        goto code_r0x016cc7a4;
+      }
+      auVar25 = func_0x00f78af4();
+      uVar10 = auVar25._8_8_;
+      lVar15 = auVar25._0_8_;
+      puVar6 = puVar7 + -0xc0;
+      *(ulong *)(puVar7 + -0xc0) = uVar20;
+      *(ulong *)(puVar7 + -0xb8) = CONCAT44(0,uVar1);
+      *(undefined8 *)(puVar7 + -0xb0) = 0;
+      *(ulong *)(puVar7 + -0xa8) = uVar13;
+      *(undefined1 **)(puVar7 + -0xa0) = puVar21;
+      *(undefined **)(puVar7 + -0x98) = &FlatBuffers_FlatBufferBuilder__PutUshort;
+      puVar21 = puVar7 + -0xa0;
+      lVar17 = *(long *)(lVar15 + 0x18);
+      uVar1 = *(int *)(lVar15 + 0x10) - 2;
+      auVar5._8_8_ = lVar17;
+      auVar5._0_8_ = CONCAT44(0,uVar1);
+      auVar26._8_4_ = uVar1;
+      auVar26._0_8_ = lVar17;
+      auVar26._12_4_ = 0;
+      *(uint *)(lVar15 + 0x10) = uVar1;
+      if (lVar17 != 0) {
+        uVar16 = 2;
+        puVar23 = &UNK_016cdc90;
+        goto code_r0x016cc7a4;
+      }
+      auVar25 = func_0x00f78af4();
+      uVar10 = auVar25._8_8_;
+      lVar15 = auVar25._0_8_;
+      puVar6 = puVar7 + -0xf0;
+      *(ulong *)(puVar7 + -0xf0) = uVar20;
+      *(ulong *)(puVar7 + -0xe8) = CONCAT44(0,uVar1);
+      *(undefined8 *)(puVar7 + -0xe0) = 0;
+      *(ulong *)(puVar7 + -0xd8) = uVar13;
+      *(undefined1 **)(puVar7 + -0xd0) = puVar21;
+      *(undefined **)(puVar7 + -200) = &FlatBuffers_FlatBufferBuilder__PutInt;
+      puVar21 = puVar7 + -0xd0;
+      lVar17 = *(long *)(lVar15 + 0x18);
+      uVar1 = *(int *)(lVar15 + 0x10) - 4;
+      auVar5._8_8_ = lVar17;
+      auVar5._0_8_ = CONCAT44(0,uVar1);
+      auVar26._8_4_ = uVar1;
+      auVar26._0_8_ = lVar17;
+      auVar26._12_4_ = 0;
+      *(uint *)(lVar15 + 0x10) = uVar1;
+      if (lVar17 != 0) {
+        uVar16 = 4;
+        puVar23 = &UNK_016cdcec;
+        goto code_r0x016cc7a4;
+      }
+      auVar25 = func_0x00f78af4();
+      uVar10 = auVar25._8_8_;
+      lVar15 = auVar25._0_8_;
+      puVar6 = puVar7 + -0x120;
+      *(ulong *)(puVar7 + -0x120) = uVar20;
+      *(ulong *)(puVar7 + -0x118) = CONCAT44(0,uVar1);
+      *(undefined8 *)(puVar7 + -0x110) = 0;
+      *(ulong *)(puVar7 + -0x108) = uVar13;
+      *(undefined1 **)(puVar7 + -0x100) = puVar21;
+      *(undefined **)(puVar7 + -0xf8) = &FlatBuffers_FlatBufferBuilder__PutUint;
+      puVar21 = puVar7 + -0x100;
+      lVar17 = *(long *)(lVar15 + 0x18);
+      uVar1 = *(int *)(lVar15 + 0x10) - 4;
+      auVar5._8_8_ = lVar17;
+      auVar5._0_8_ = CONCAT44(0,uVar1);
+      auVar26._8_4_ = uVar1;
+      auVar26._0_8_ = lVar17;
+      auVar26._12_4_ = 0;
+      *(uint *)(lVar15 + 0x10) = uVar1;
+      if (lVar17 != 0) {
+        uVar16 = 4;
+        puVar23 = &UNK_016cdd48;
+        goto code_r0x016cc7a4;
+      }
+      auVar25 = func_0x00f78af4();
+      uVar10 = auVar25._8_8_;
+      lVar15 = auVar25._0_8_;
+      puVar6 = puVar7 + -0x150;
+      *(ulong *)(puVar7 + -0x150) = uVar20;
+      *(ulong *)(puVar7 + -0x148) = CONCAT44(0,uVar1);
+      *(undefined8 *)(puVar7 + -0x140) = 0;
+      *(ulong *)(puVar7 + -0x138) = uVar13;
+      *(undefined1 **)(puVar7 + -0x130) = puVar21;
+      *(undefined **)(puVar7 + -0x128) = &FlatBuffers_FlatBufferBuilder__PutLong;
+      puVar21 = puVar7 + -0x130;
+      lVar17 = *(long *)(lVar15 + 0x18);
+      uVar1 = *(int *)(lVar15 + 0x10) - 8;
+      auVar5._8_8_ = lVar17;
+      auVar5._0_8_ = CONCAT44(0,uVar1);
+      auVar26._8_4_ = uVar1;
+      auVar26._0_8_ = lVar17;
+      auVar26._12_4_ = 0;
+      *(uint *)(lVar15 + 0x10) = uVar1;
+      if (lVar17 != 0) {
+        uVar16 = 8;
+        puVar23 = &UNK_016cdda4;
+        goto code_r0x016cc7a4;
+      }
+      auVar25 = func_0x00f78af4();
+      uVar10 = auVar25._8_8_;
+      lVar15 = auVar25._0_8_;
+      puVar6 = puVar7 + -0x180;
+      *(ulong *)(puVar7 + -0x180) = uVar20;
+      *(ulong *)(puVar7 + -0x178) = CONCAT44(0,uVar1);
+      *(undefined8 *)(puVar7 + -0x170) = 0;
+      *(ulong *)(puVar7 + -0x168) = uVar13;
+      *(undefined1 **)(puVar7 + -0x160) = puVar21;
+      *(undefined **)(puVar7 + -0x158) = &FlatBuffers_FlatBufferBuilder__PutUlong;
+      puVar21 = puVar7 + -0x160;
+      lVar17 = *(long *)(lVar15 + 0x18);
+      uVar1 = *(int *)(lVar15 + 0x10) - 8;
+      uVar19 = CONCAT44(0,uVar1);
+      auVar5._8_8_ = lVar17;
+      auVar5._0_8_ = uVar19;
+      auVar26._8_4_ = uVar1;
+      auVar26._0_8_ = lVar17;
+      auVar26._12_4_ = 0;
+      *(uint *)(lVar15 + 0x10) = uVar1;
+      if (lVar17 != 0) {
+        uVar16 = 8;
+        puVar23 = &UNK_016cde00;
+        goto code_r0x016cc7a4;
+      }
+      lVar15 = func_0x00f78af4();
+      *(undefined1 **)(puVar7 + -400) = puVar21;
+      *(undefined **)(puVar7 + -0x188) = &FlatBuffers_FlatBufferBuilder__PutFloat;
+      lVar17 = *(long *)(lVar15 + 0x18);
+      auVar5._8_8_ = lVar17;
+      uVar1 = *(int *)(lVar15 + 0x10) - 4;
+      uVar10 = (ulong)uVar1;
+      auVar26._8_4_ = uVar1;
+      auVar26._0_8_ = lVar17;
+      auVar26._12_4_ = 0;
+      *(uint *)(lVar15 + 0x10) = uVar1;
+      if (lVar17 != 0) {
+        puVar6 = puVar7 + -0x1b0;
+        *(undefined8 *)(puVar7 + -0x1b0) = unaff_d9;
+        *(undefined8 *)(puVar7 + -0x1a8) = unaff_d8;
+        *(undefined8 *)(puVar7 + -0x1a0) = 0;
+        *(ulong *)(puVar7 + -0x198) = uVar13;
+        *(undefined8 *)(puVar7 + -400) = *(undefined8 *)(puVar7 + -400);
+        *(undefined8 *)(puVar7 + -0x188) = *(undefined8 *)(puVar7 + -0x188);
+        puVar21 = puVar7 + -400;
+        uVar16 = 4;
+        puVar23 = &UNK_016ccba4;
+        goto code_r0x016cc7a4;
+      }
+      lVar15 = func_0x00f78af4();
+      *(undefined1 **)(puVar7 + -0x1a0) = puVar7 + -400;
+      *(undefined **)(puVar7 + -0x198) = &FlatBuffers_FlatBufferBuilder__PutDouble;
+      lVar17 = *(long *)(lVar15 + 0x18);
+      auVar5._8_8_ = lVar17;
+      uVar1 = *(int *)(lVar15 + 0x10) - 8;
+      uVar10 = (ulong)uVar1;
+      auVar26._8_4_ = uVar1;
+      auVar26._0_8_ = lVar17;
+      auVar26._12_4_ = 0;
+      *(uint *)(lVar15 + 0x10) = uVar1;
+      if (lVar17 != 0) {
+        puVar6 = puVar7 + -0x1c0;
+        *(undefined8 *)(puVar7 + -0x1c0) = unaff_d9;
+        *(undefined8 *)(puVar7 + -0x1b8) = unaff_d8;
+        *(undefined8 *)(puVar7 + -0x1b0) = 0;
+        *(ulong *)(puVar7 + -0x1a8) = uVar13;
+        *(undefined8 *)(puVar7 + -0x1a0) = *(undefined8 *)(puVar7 + -0x1a0);
+        *(undefined8 *)(puVar7 + -0x198) = *(undefined8 *)(puVar7 + -0x198);
+        puVar21 = puVar7 + -0x1a0;
+        uVar16 = 8;
+        puVar23 = &UNK_016ccc34;
+        goto code_r0x016cc7a4;
+      }
+      auVar28 = func_0x00f78af4();
+      *(undefined8 *)(puVar7 + -0x1c0) = 0;
+      *(ulong *)(puVar7 + -0x1b8) = uVar13;
+      *(undefined1 **)(puVar7 + -0x1b0) = puVar7 + -0x1a0;
+      *(undefined **)(puVar7 + -0x1a8) = &FlatBuffers_FlatBufferBuilder__AddBool;
+      puVar21 = puVar7 + -0x1b0;
+      auVar27._8_8_ = 1;
+      auVar27._0_8_ = auVar28._0_8_;
+      uVar18 = 0;
+      puVar23 = &UNK_016cde9c;
+      puVar7 = puVar7 + -0x1c0;
+      uVar10 = uVar20;
+      goto code_r0x016cdaac;
+    }
+    puVar8 = puVar7 + -0x50;
+    uVar11 = *(undefined8 *)(puVar7 + -0x60);
+    uVar24 = *(undefined8 *)(puVar7 + -0x58);
+  }
+  else {
+    puVar8 = puVar7 + -0x30;
+    uVar11 = *(undefined8 *)(puVar7 + -0x40);
+    uVar24 = *(undefined8 *)(puVar7 + -0x38);
+  }
+  auVar5._8_4_ = iVar14;
+  auVar5._0_8_ = lVar15;
+  auVar5._12_4_ = 0;
+  auVar26._8_4_ = iVar14;
+  auVar26._0_8_ = lVar15;
+  auVar26._12_4_ = 0;
+  puVar6 = puVar8 + -0x30;
+  *(ulong *)(puVar8 + -0x30) = uVar20;
+  *(ulong *)(puVar8 + -0x28) = uVar19;
+  *(ulong *)(puVar8 + -0x20) = uVar16;
+  *(ulong *)(puVar8 + -0x18) = uVar13;
+  *(undefined8 *)(puVar8 + -0x10) = uVar11;
+  *(undefined8 *)(puVar8 + -8) = uVar24;
+  puVar21 = puVar8 + -0x10;
+  uVar16 = 1;
+  puVar23 = &UNK_016cc89c;
+code_r0x016cc7a4:
+  puVar9 = puVar6 + -0x20;
+  *(long *)(puVar6 + -0x20) = auVar5._8_8_;
+  *(ulong *)(puVar6 + -0x18) = uVar10;
+  *(undefined1 **)(puVar6 + -0x10) = puVar21;
+  *(undefined **)(puVar6 + -8) = puVar23;
+  puVar21 = puVar6 + -0x10;
+  if (auVar26._8_4_ < 0) {
+code_r0x016cc7d8:
+    func_0x00f78a24(0x3d1fcf8);
+    uVar10 = func_0x00f78aec();
+    /*System.ArgumentOutOfRangeException$$.ctor*/ func_0x0292a4d0(uVar10,0);
+    uVar11 = func_0x00f78a24(0x3d52ce8);
+    func_0x00f78ac0(uVar10,uVar11);
+    uVar18 = uVar16;
+  }
+  else {
+    lVar15 = *(long *)(auVar26._0_8_ + 0x10);
+    uVar18 = uVar16;
+    if (lVar15 != 0) {
+      if (auVar26._8_4_ <= *(int *)(lVar15 + 0x18) - (int)uVar16) {
+        return;
+      }
+      goto code_r0x016cc7d8;
+    }
+  }
+  puVar23 = &FlatBuffers_ByteBuffer__PutSbyte;
+  auVar26 = func_0x00f78af4();
+code_r0x016cc810:
+  puVar6 = puVar9 + -0x30;
+  *(ulong *)(puVar9 + -0x30) = uVar20;
+  *(undefined1 (*) [16])(puVar9 + -0x28) = auVar5;
+  *(ulong *)(puVar9 + -0x18) = uVar10;
+  *(undefined1 **)(puVar9 + -0x10) = puVar21;
+  *(undefined **)(puVar9 + -8) = puVar23;
+  puVar21 = puVar9 + -0x10;
+  uVar16 = 1;
+  puVar23 = &UNK_016cc834;
+  uVar10 = uVar18;
+  auVar5 = auVar26;
+  goto code_r0x016cc7a4;
+}
+
+
+
+// ============================================================
+// RVA: 0x167d980 | Core.Services.Match.CreateOtherPlayersVectorBlock
+// ============================================================
+
+/* WARNING: Possible PIC construction at 0x0167d9dc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce220: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ce184: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc898: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc904: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc830: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdc30: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc688: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdc8c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdce8: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdd44: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdda0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cddfc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccba0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccc30: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cccb8: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccd14: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccdc0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cde98: Changing call to branch */
+/* WARNING: Removing unreachable block (ram,0x016ccdc4) */
+/* WARNING: Removing unreachable block (ram,0x016ccd18) */
+/* WARNING: Removing unreachable block (ram,0x016ccd20) */
+/* WARNING: Removing unreachable block (ram,0x016ccd48) */
+/* WARNING: Removing unreachable block (ram,0x016ccd28) */
+/* WARNING: Removing unreachable block (ram,0x016ccd4c) */
+/* WARNING: Removing unreachable block (ram,0x016ccd84) */
+/* WARNING: Removing unreachable block (ram,0x016ccdb0) */
+/* WARNING: Removing unreachable block (ram,0x016ccd88) */
+/* WARNING: Removing unreachable block (ram,0x016ccd34) */
+/* WARNING: Removing unreachable block (ram,0x016cccbc) */
+/* WARNING: Removing unreachable block (ram,0x016cccc4) */
+/* WARNING: Removing unreachable block (ram,0x016cccec) */
+/* WARNING: Removing unreachable block (ram,0x016ccccc) */
+/* WARNING: Removing unreachable block (ram,0x016cccf0) */
+/* WARNING: Removing unreachable block (ram,0x016cccd8) */
+/* WARNING: Removing unreachable block (ram,0x016ccc34) */
+/* WARNING: Removing unreachable block (ram,0x016ccc3c) */
+/* WARNING: Removing unreachable block (ram,0x016ccc44) */
+/* WARNING: Removing unreachable block (ram,0x016ccc90) */
+/* WARNING: Removing unreachable block (ram,0x016ccc68) */
+/* WARNING: Removing unreachable block (ram,0x016ccc94) */
+/* WARNING: Removing unreachable block (ram,0x016ccc70) */
+/* WARNING: Removing unreachable block (ram,0x016ccba4) */
+/* WARNING: Removing unreachable block (ram,0x016ccbac) */
+/* WARNING: Removing unreachable block (ram,0x016ccbb4) */
+/* WARNING: Removing unreachable block (ram,0x016ccc00) */
+/* WARNING: Removing unreachable block (ram,0x016ccbd8) */
+/* WARNING: Removing unreachable block (ram,0x016ccc04) */
+/* WARNING: Removing unreachable block (ram,0x016ccbe0) */
+/* WARNING: Removing unreachable block (ram,0x016cde00) */
+/* WARNING: Removing unreachable block (ram,0x016cdda4) */
+/* WARNING: Removing unreachable block (ram,0x016cdd48) */
+/* WARNING: Removing unreachable block (ram,0x016cdcec) */
+/* WARNING: Removing unreachable block (ram,0x016cdc90) */
+/* WARNING: Removing unreachable block (ram,0x016cc68c) */
+/* WARNING: Removing unreachable block (ram,0x016cc698) */
+/* WARNING: Removing unreachable block (ram,0x016cc6a0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6a8) */
+/* WARNING: Removing unreachable block (ram,0x016cc718) */
+/* WARNING: Removing unreachable block (ram,0x016cc720) */
+/* WARNING: Removing unreachable block (ram,0x016cc728) */
+/* WARNING: Removing unreachable block (ram,0x016cc730) */
+/* WARNING: Removing unreachable block (ram,0x016cc74c) */
+/* WARNING: Removing unreachable block (ram,0x016cc754) */
+/* WARNING: Removing unreachable block (ram,0x016cc778) */
+/* WARNING: Removing unreachable block (ram,0x016cc6b4) */
+/* WARNING: Removing unreachable block (ram,0x016cc77c) */
+/* WARNING: Removing unreachable block (ram,0x016cc6bc) */
+/* WARNING: Removing unreachable block (ram,0x016cc6c4) */
+/* WARNING: Removing unreachable block (ram,0x016cc6cc) */
+/* WARNING: Removing unreachable block (ram,0x016cc6e0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6e8) */
+/* WARNING: Removing unreachable block (ram,0x016cc794) */
+/* WARNING: Removing unreachable block (ram,0x016cc7a0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6f0) */
+/* WARNING: Removing unreachable block (ram,0x016cc714) */
+/* WARNING: Removing unreachable block (ram,0x016cc780) */
+/* WARNING: Removing unreachable block (ram,0x016cdc34) */
+/* WARNING: Removing unreachable block (ram,0x016cc4e0) */
+/* WARNING: Removing unreachable block (ram,0x016cc518) */
+/* WARNING: Removing unreachable block (ram,0x016cc52c) */
+/* WARNING: Removing unreachable block (ram,0x016cc538) */
+/* WARNING: Removing unreachable block (ram,0x016cc540) */
+/* WARNING: Removing unreachable block (ram,0x016cc548) */
+/* WARNING: Removing unreachable block (ram,0x016cc5b8) */
+/* WARNING: Removing unreachable block (ram,0x016cc5c0) */
+/* WARNING: Removing unreachable block (ram,0x016cc5d4) */
+/* WARNING: Removing unreachable block (ram,0x016cc5dc) */
+/* WARNING: Removing unreachable block (ram,0x016cc5e4) */
+/* WARNING: Removing unreachable block (ram,0x016cc5f0) */
+/* WARNING: Removing unreachable block (ram,0x016cc554) */
+/* WARNING: Removing unreachable block (ram,0x016cc55c) */
+/* WARNING: Removing unreachable block (ram,0x016cc574) */
+/* WARNING: Removing unreachable block (ram,0x016cc57c) */
+/* WARNING: Removing unreachable block (ram,0x016cc624) */
+/* WARNING: Removing unreachable block (ram,0x016cc584) */
+/* WARNING: Removing unreachable block (ram,0x016cc628) */
+/* WARNING: Removing unreachable block (ram,0x016cc634) */
+/* WARNING: Removing unreachable block (ram,0x016cc668) */
+/* WARNING: Removing unreachable block (ram,0x016cc67c) */
+/* WARNING: Removing unreachable block (ram,0x016cc590) */
+/* WARNING: Removing unreachable block (ram,0x016cc5b4) */
+/* WARNING: Removing unreachable block (ram,0x016cc610) */
+/* WARNING: Removing unreachable block (ram,0x016cc834) */
+/* WARNING: Removing unreachable block (ram,0x016cc83c) */
+/* WARNING: Removing unreachable block (ram,0x016cc868) */
+/* WARNING: Removing unreachable block (ram,0x016cc844) */
+/* WARNING: Removing unreachable block (ram,0x016cc86c) */
+/* WARNING: Removing unreachable block (ram,0x016cc850) */
+/* WARNING: Removing unreachable block (ram,0x016cc908) */
+/* WARNING: Removing unreachable block (ram,0x016cc910) */
+/* WARNING: Removing unreachable block (ram,0x016cc920) */
+/* WARNING: Removing unreachable block (ram,0x016cc928) */
+/* WARNING: Removing unreachable block (ram,0x016cc964) */
+/* WARNING: Removing unreachable block (ram,0x016cc930) */
+/* WARNING: Removing unreachable block (ram,0x016cc968) */
+/* WARNING: Removing unreachable block (ram,0x016cc93c) */
+/* WARNING: Removing unreachable block (ram,0x016cc954) */
+/* WARNING: Removing unreachable block (ram,0x016cc89c) */
+/* WARNING: Removing unreachable block (ram,0x016cc8a4) */
+/* WARNING: Removing unreachable block (ram,0x016cc8d0) */
+/* WARNING: Removing unreachable block (ram,0x016cc8ac) */
+/* WARNING: Removing unreachable block (ram,0x016cc8d4) */
+/* WARNING: Removing unreachable block (ram,0x016cc8b8) */
+/* WARNING: Removing unreachable block (ram,0x016ce188) */
+/* WARNING: Removing unreachable block (ram,0x016ce224) */
+/* WARNING: Removing unreachable block (ram,0x016cda04) */
+/* WARNING: Removing unreachable block (ram,0x016cda14) */
+/* WARNING: Removing unreachable block (ram,0x016cda30) */
+/* WARNING: Removing unreachable block (ram,0x016cda1c) */
+/* WARNING: Removing unreachable block (ram,0x0167d9e0) */
+/* WARNING: Removing unreachable block (ram,0x016ce20c) */
+/* WARNING: Removing unreachable block (ram,0x016cde9c) */
+
+void Core_Services_Match__CreateOtherPlayersVectorBlock
+               (ulong param_1,long param_2,undefined8 *param_3)
+
+{
+  uint uVar1;
+  uint uVar2;
+  uint uVar3;
+  int iVar4;
+  undefined1 auVar5 [16];
+  undefined1 *puVar6;
+  undefined1 *puVar7;
+  undefined1 *puVar8;
+  undefined1 *puVar9;
+  undefined8 uVar10;
+  long *plVar11;
+  ulong uVar12;
+  int iVar13;
+  ulong uVar14;
+  long lVar15;
+  ulong uVar16;
+  long lVar17;
+  ulong uVar18;
+  ulong uVar19;
+  ulong uVar20;
+  undefined1 *puVar21;
+  undefined1 **ppuVar22;
+  undefined *puVar23;
+  undefined8 uVar24;
+  undefined8 unaff_d8;
+  undefined8 unaff_d9;
+  undefined1 auVar25 [16];
+  undefined1 auVar26 [16];
+  undefined1 auVar27 [16];
+  undefined1 auVar28 [12];
+  undefined1 *puStack_40;
+  undefined *puStack_38;
+  
+  if ((bRam0000000003eb59e0 & 1) == 0) {
+    func_0x00f78a20(0x3d569d8);
+    bRam0000000003eb59e0 = 1;
+  }
+  puStack_40 = &stack0xfffffffffffffff0;
+  if ((param_2 == 0) || (param_1 == 0)) {
+    puVar23 = &Core_Services_Match__StartOtherPlayersVector;
+    auVar28 = func_0x00f78af4();
+    iVar13 = auVar28._8_4_;
+    param_1 = auVar28._0_8_;
+    if (param_1 == 0) {
+      puStack_38 = &Core_Services_Match__StartOtherPlayersVector;
+      auVar26 = func_0x00f78af4();
+      lVar15 = auVar26._0_8_;
+      *(undefined8 *)(lVar15 + 0x10) = *param_3;
+      *(long *)(lVar15 + 0x20) = auVar26._8_8_;
+      *(undefined8 **)(lVar15 + 0x28) = param_3;
+      return;
+    }
+  }
+  else {
+    iVar13 = *(int *)(param_2 + 0x18);
+    puVar23 = (undefined *)0x167d9e0;
+  }
+  uVar19 = 4;
+  ppuVar22 = &puStack_40;
+  puStack_38 = puVar23;
+  /*FlatBuffers.FlatBufferBuilder$$NotNested*/ func_0x016ce1a4();
+  *(int *)(param_1 + 0x44) = iVar13;
+  uVar18 = CONCAT44(0,iVar13 * 4);
+  auVar27._8_8_ = 4;
+  auVar27._0_8_ = uVar18;
+  auVar26._8_8_ = 4;
+  auVar26._0_8_ = param_1;
+  puVar23 = &UNK_016ce188;
+  puVar7 = &stack0xffffffffffffffa0;
+code_r0x016cdaac:
+  while( true ) {
+    uVar16 = auVar27._0_8_;
+    uVar12 = auVar26._0_8_;
+    puVar6 = puVar7 + -0x30;
+    *(ulong *)(puVar7 + -0x30) = param_1;
+    *(ulong *)(puVar7 + -0x28) = uVar19;
+    *(undefined1 (*) [16])(puVar7 + -0x20) = auVar27;
+    *(undefined1 ***)(puVar7 + -0x10) = ppuVar22;
+    *(undefined **)(puVar7 + -8) = puVar23;
+    iVar13 = auVar26._8_4_;
+    if (*(int *)(uVar12 + 0x20) < iVar13) {
+      *(int *)(uVar12 + 0x20) = iVar13;
+    }
+    uVar20 = param_1;
+    if ((*(long *)(uVar12 + 0x18) == 0) ||
+       (lVar15 = *(long *)(*(long *)(uVar12 + 0x18) + 0x10), lVar15 == 0)) break;
+    uVar3 = *(uint *)(lVar15 + 0x18);
+    iVar4 = *(int *)(uVar12 + 0x10);
+    uVar2 = iVar4 - (uVar3 + (int)uVar18) & iVar13 - 1U;
+    uVar16 = CONCAT44(0,uVar2);
+    uVar1 = (int)uVar18 + iVar13 + uVar2;
+    uVar20 = (ulong)uVar1;
+    while (uVar19 = (ulong)uVar3, iVar4 < (int)uVar1) {
+      /*FlatBuffers.FlatBufferBuilder$$GrowBuffer*/ func_0x016cda78(uVar12);
+      if ((*(long *)(uVar12 + 0x18) == 0) ||
+         (lVar15 = *(long *)(*(long *)(uVar12 + 0x18) + 0x10), lVar15 == 0)) goto code_r0x016cdb68;
+      iVar4 = *(int *)(uVar12 + 0x10) - uVar3;
+      uVar3 = *(uint *)(lVar15 + 0x18);
+      iVar4 = iVar4 + uVar3;
+      *(int *)(uVar12 + 0x10) = iVar4;
+    }
+    if ((int)uVar2 < 1) {
+      return;
+    }
+    uVar10 = *(undefined8 *)*(undefined1 (*) [16])(puVar7 + -0x20);
+    uVar24 = *(undefined8 *)(puVar7 + -0x18);
+    auVar27 = *(undefined1 (*) [16])(puVar7 + -0x20);
+    param_1 = *(ulong *)(puVar7 + -0x30);
+    uVar19 = *(ulong *)(puVar7 + -0x28);
+    *(undefined8 *)(puVar7 + -0x10) = *(undefined8 *)(puVar7 + -0x10);
+    *(undefined8 *)(puVar7 + -8) = *(undefined8 *)(puVar7 + -8);
+    lVar15 = *(long *)(uVar12 + 0x18);
+    auVar5._8_8_ = lVar15;
+    auVar5._0_8_ = uVar16;
+    uVar2 = *(int *)(uVar12 + 0x10) - uVar2;
+    uVar20 = (ulong)uVar2;
+    auVar25._8_4_ = uVar2;
+    auVar25._0_8_ = lVar15;
+    auVar25._12_4_ = 0;
+    *(uint *)(uVar12 + 0x10) = uVar2;
+    if (lVar15 != 0) {
+      *(ulong *)(puVar7 + -0x30) = param_1;
+      *(ulong *)(puVar7 + -0x28) = uVar19;
+      *(undefined8 *)(puVar7 + -0x20) = uVar10;
+      *(undefined8 *)(puVar7 + -0x18) = uVar24;
+      *(undefined8 *)(puVar7 + -0x10) = *(undefined8 *)(puVar7 + -0x10);
+      *(undefined8 *)(puVar7 + -8) = *(undefined8 *)(puVar7 + -8);
+      puVar21 = puVar7 + -0x10;
+      puVar23 = &UNK_016cc908;
+      uVar18 = 0;
+      goto code_r0x016cc7a4;
+    }
+    lVar15 = func_0x00f78af4();
+    ppuVar22 = (undefined1 **)(puVar7 + -0x20);
+    *(undefined1 **)(puVar7 + -0x20) = puVar7 + -0x10;
+    *(undefined **)(puVar7 + -0x18) = &FlatBuffers_FlatBufferBuilder__GrowBuffer;
+    if ((*(long *)(lVar15 + 0x18) != 0) &&
+       (plVar11 = *(long **)(*(long *)(lVar15 + 0x18) + 0x10), plVar11 != (long *)0x0)) {
+                    /* WARNING: Could not recover jumptable at 0x016cdaa4. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (**(code **)(*plVar11 + 0x178))
+                (plVar11,(int)plVar11[3] << 1,*(undefined8 *)(*plVar11 + 0x180));
+      return;
+    }
+    puVar23 = &FlatBuffers_FlatBufferBuilder__Prep;
+    auVar26 = func_0x00f78af4();
+    puVar7 = puVar7 + -0x20;
+  }
+code_r0x016cdb68:
+  auVar5._8_8_ = uVar16;
+  auVar5._0_8_ = uVar19;
+  auVar26 = func_0x00f78af4();
+  uVar18 = auVar26._8_8_;
+  lVar17 = auVar26._0_8_;
+  *(undefined1 **)(puVar7 + -0x40) = puVar7 + -0x10;
+  *(undefined **)(puVar7 + -0x38) = &FlatBuffers_FlatBufferBuilder__PutBool;
+  lVar15 = *(long *)(lVar17 + 0x18);
+  iVar13 = *(int *)(lVar17 + 0x10) + -1;
+  *(int *)(lVar17 + 0x10) = iVar13;
+  if (lVar15 == 0) {
+    auVar26 = func_0x00f78af4();
+    uVar14 = auVar26._8_8_;
+    lVar15 = auVar26._0_8_;
+    *(undefined1 **)(puVar7 + -0x50) = puVar7 + -0x40;
+    *(undefined **)(puVar7 + -0x48) = &FlatBuffers_FlatBufferBuilder__PutSbyte;
+    iVar13 = *(int *)(lVar15 + 0x10) + -1;
+    auVar25._8_4_ = iVar13;
+    auVar25._0_8_ = *(long *)(lVar15 + 0x18);
+    auVar25._12_4_ = 0;
+    *(int *)(lVar15 + 0x10) = iVar13;
+    if (*(long *)(lVar15 + 0x18) != 0) {
+      puVar9 = puVar7 + -0x40;
+      puVar21 = *(undefined1 **)(puVar7 + -0x50);
+      puVar23 = *(undefined **)(puVar7 + -0x48);
+      uVar18 = uVar12;
+      goto code_r0x016cc810;
+    }
+    auVar26 = func_0x00f78af4();
+    uVar18 = auVar26._8_8_;
+    lVar17 = auVar26._0_8_;
+    *(undefined1 **)(puVar7 + -0x60) = puVar7 + -0x50;
+    *(undefined **)(puVar7 + -0x58) = &FlatBuffers_FlatBufferBuilder__PutByte;
+    lVar15 = *(long *)(lVar17 + 0x18);
+    iVar13 = *(int *)(lVar17 + 0x10) + -1;
+    *(int *)(lVar17 + 0x10) = iVar13;
+    if (lVar15 == 0) {
+      auVar26 = func_0x00f78af4();
+      uVar18 = auVar26._8_8_;
+      lVar15 = auVar26._0_8_;
+      puVar6 = puVar7 + -0x90;
+      *(ulong *)(puVar7 + -0x90) = uVar20;
+      *(ulong *)(puVar7 + -0x88) = uVar19;
+      *(ulong *)(puVar7 + -0x80) = uVar16;
+      *(ulong *)(puVar7 + -0x78) = uVar12;
+      *(undefined1 **)(puVar7 + -0x70) = puVar7 + -0x60;
+      *(undefined **)(puVar7 + -0x68) = &FlatBuffers_FlatBufferBuilder__PutShort;
+      puVar21 = puVar7 + -0x70;
+      lVar17 = *(long *)(lVar15 + 0x18);
+      uVar1 = *(int *)(lVar15 + 0x10) - 2;
+      auVar5._8_8_ = lVar17;
+      auVar5._0_8_ = CONCAT44(0,uVar1);
+      auVar25._8_4_ = uVar1;
+      auVar25._0_8_ = lVar17;
+      auVar25._12_4_ = 0;
+      *(uint *)(lVar15 + 0x10) = uVar1;
+      if (lVar17 != 0) {
+        uVar16 = 2;
+        puVar23 = &UNK_016cdc34;
+        goto code_r0x016cc7a4;
+      }
+      auVar26 = func_0x00f78af4();
+      uVar18 = auVar26._8_8_;
+      lVar15 = auVar26._0_8_;
+      puVar6 = puVar7 + -0xc0;
+      *(ulong *)(puVar7 + -0xc0) = uVar20;
+      *(ulong *)(puVar7 + -0xb8) = CONCAT44(0,uVar1);
+      *(undefined8 *)(puVar7 + -0xb0) = 0;
+      *(ulong *)(puVar7 + -0xa8) = uVar12;
+      *(undefined1 **)(puVar7 + -0xa0) = puVar21;
+      *(undefined **)(puVar7 + -0x98) = &FlatBuffers_FlatBufferBuilder__PutUshort;
+      puVar21 = puVar7 + -0xa0;
+      lVar17 = *(long *)(lVar15 + 0x18);
+      uVar1 = *(int *)(lVar15 + 0x10) - 2;
+      auVar5._8_8_ = lVar17;
+      auVar5._0_8_ = CONCAT44(0,uVar1);
+      auVar25._8_4_ = uVar1;
+      auVar25._0_8_ = lVar17;
+      auVar25._12_4_ = 0;
+      *(uint *)(lVar15 + 0x10) = uVar1;
+      if (lVar17 != 0) {
+        uVar16 = 2;
+        puVar23 = &UNK_016cdc90;
+        goto code_r0x016cc7a4;
+      }
+      auVar26 = func_0x00f78af4();
+      uVar18 = auVar26._8_8_;
+      lVar15 = auVar26._0_8_;
+      puVar6 = puVar7 + -0xf0;
+      *(ulong *)(puVar7 + -0xf0) = uVar20;
+      *(ulong *)(puVar7 + -0xe8) = CONCAT44(0,uVar1);
+      *(undefined8 *)(puVar7 + -0xe0) = 0;
+      *(ulong *)(puVar7 + -0xd8) = uVar12;
+      *(undefined1 **)(puVar7 + -0xd0) = puVar21;
+      *(undefined **)(puVar7 + -200) = &FlatBuffers_FlatBufferBuilder__PutInt;
+      puVar21 = puVar7 + -0xd0;
+      lVar17 = *(long *)(lVar15 + 0x18);
+      uVar1 = *(int *)(lVar15 + 0x10) - 4;
+      auVar5._8_8_ = lVar17;
+      auVar5._0_8_ = CONCAT44(0,uVar1);
+      auVar25._8_4_ = uVar1;
+      auVar25._0_8_ = lVar17;
+      auVar25._12_4_ = 0;
+      *(uint *)(lVar15 + 0x10) = uVar1;
+      if (lVar17 != 0) {
+        uVar16 = 4;
+        puVar23 = &UNK_016cdcec;
+        goto code_r0x016cc7a4;
+      }
+      auVar26 = func_0x00f78af4();
+      uVar18 = auVar26._8_8_;
+      lVar15 = auVar26._0_8_;
+      puVar6 = puVar7 + -0x120;
+      *(ulong *)(puVar7 + -0x120) = uVar20;
+      *(ulong *)(puVar7 + -0x118) = CONCAT44(0,uVar1);
+      *(undefined8 *)(puVar7 + -0x110) = 0;
+      *(ulong *)(puVar7 + -0x108) = uVar12;
+      *(undefined1 **)(puVar7 + -0x100) = puVar21;
+      *(undefined **)(puVar7 + -0xf8) = &FlatBuffers_FlatBufferBuilder__PutUint;
+      puVar21 = puVar7 + -0x100;
+      lVar17 = *(long *)(lVar15 + 0x18);
+      uVar1 = *(int *)(lVar15 + 0x10) - 4;
+      auVar5._8_8_ = lVar17;
+      auVar5._0_8_ = CONCAT44(0,uVar1);
+      auVar25._8_4_ = uVar1;
+      auVar25._0_8_ = lVar17;
+      auVar25._12_4_ = 0;
+      *(uint *)(lVar15 + 0x10) = uVar1;
+      if (lVar17 != 0) {
+        uVar16 = 4;
+        puVar23 = &UNK_016cdd48;
+        goto code_r0x016cc7a4;
+      }
+      auVar26 = func_0x00f78af4();
+      uVar18 = auVar26._8_8_;
+      lVar15 = auVar26._0_8_;
+      puVar6 = puVar7 + -0x150;
+      *(ulong *)(puVar7 + -0x150) = uVar20;
+      *(ulong *)(puVar7 + -0x148) = CONCAT44(0,uVar1);
+      *(undefined8 *)(puVar7 + -0x140) = 0;
+      *(ulong *)(puVar7 + -0x138) = uVar12;
+      *(undefined1 **)(puVar7 + -0x130) = puVar21;
+      *(undefined **)(puVar7 + -0x128) = &FlatBuffers_FlatBufferBuilder__PutLong;
+      puVar21 = puVar7 + -0x130;
+      lVar17 = *(long *)(lVar15 + 0x18);
+      uVar1 = *(int *)(lVar15 + 0x10) - 8;
+      auVar5._8_8_ = lVar17;
+      auVar5._0_8_ = CONCAT44(0,uVar1);
+      auVar25._8_4_ = uVar1;
+      auVar25._0_8_ = lVar17;
+      auVar25._12_4_ = 0;
+      *(uint *)(lVar15 + 0x10) = uVar1;
+      if (lVar17 != 0) {
+        uVar16 = 8;
+        puVar23 = &UNK_016cdda4;
+        goto code_r0x016cc7a4;
+      }
+      auVar26 = func_0x00f78af4();
+      uVar18 = auVar26._8_8_;
+      lVar15 = auVar26._0_8_;
+      puVar6 = puVar7 + -0x180;
+      *(ulong *)(puVar7 + -0x180) = uVar20;
+      *(ulong *)(puVar7 + -0x178) = CONCAT44(0,uVar1);
+      *(undefined8 *)(puVar7 + -0x170) = 0;
+      *(ulong *)(puVar7 + -0x168) = uVar12;
+      *(undefined1 **)(puVar7 + -0x160) = puVar21;
+      *(undefined **)(puVar7 + -0x158) = &FlatBuffers_FlatBufferBuilder__PutUlong;
+      puVar21 = puVar7 + -0x160;
+      lVar17 = *(long *)(lVar15 + 0x18);
+      uVar1 = *(int *)(lVar15 + 0x10) - 8;
+      uVar19 = CONCAT44(0,uVar1);
+      auVar5._8_8_ = lVar17;
+      auVar5._0_8_ = uVar19;
+      auVar25._8_4_ = uVar1;
+      auVar25._0_8_ = lVar17;
+      auVar25._12_4_ = 0;
+      *(uint *)(lVar15 + 0x10) = uVar1;
+      if (lVar17 != 0) {
+        uVar16 = 8;
+        puVar23 = &UNK_016cde00;
+        goto code_r0x016cc7a4;
+      }
+      lVar15 = func_0x00f78af4();
+      *(undefined1 **)(puVar7 + -400) = puVar21;
+      *(undefined **)(puVar7 + -0x188) = &FlatBuffers_FlatBufferBuilder__PutFloat;
+      lVar17 = *(long *)(lVar15 + 0x18);
+      auVar5._8_8_ = lVar17;
+      uVar1 = *(int *)(lVar15 + 0x10) - 4;
+      uVar18 = (ulong)uVar1;
+      auVar25._8_4_ = uVar1;
+      auVar25._0_8_ = lVar17;
+      auVar25._12_4_ = 0;
+      *(uint *)(lVar15 + 0x10) = uVar1;
+      if (lVar17 != 0) {
+        puVar6 = puVar7 + -0x1b0;
+        *(undefined8 *)(puVar7 + -0x1b0) = unaff_d9;
+        *(undefined8 *)(puVar7 + -0x1a8) = unaff_d8;
+        *(undefined8 *)(puVar7 + -0x1a0) = 0;
+        *(ulong *)(puVar7 + -0x198) = uVar12;
+        *(undefined8 *)(puVar7 + -400) = *(undefined8 *)(puVar7 + -400);
+        *(undefined8 *)(puVar7 + -0x188) = *(undefined8 *)(puVar7 + -0x188);
+        puVar21 = puVar7 + -400;
+        uVar16 = 4;
+        puVar23 = &UNK_016ccba4;
+        goto code_r0x016cc7a4;
+      }
+      lVar15 = func_0x00f78af4();
+      *(undefined1 **)(puVar7 + -0x1a0) = puVar7 + -400;
+      *(undefined **)(puVar7 + -0x198) = &FlatBuffers_FlatBufferBuilder__PutDouble;
+      lVar17 = *(long *)(lVar15 + 0x18);
+      auVar5._8_8_ = lVar17;
+      uVar1 = *(int *)(lVar15 + 0x10) - 8;
+      uVar18 = (ulong)uVar1;
+      auVar25._8_4_ = uVar1;
+      auVar25._0_8_ = lVar17;
+      auVar25._12_4_ = 0;
+      *(uint *)(lVar15 + 0x10) = uVar1;
+      if (lVar17 != 0) {
+        puVar6 = puVar7 + -0x1c0;
+        *(undefined8 *)(puVar7 + -0x1c0) = unaff_d9;
+        *(undefined8 *)(puVar7 + -0x1b8) = unaff_d8;
+        *(undefined8 *)(puVar7 + -0x1b0) = 0;
+        *(ulong *)(puVar7 + -0x1a8) = uVar12;
+        *(undefined8 *)(puVar7 + -0x1a0) = *(undefined8 *)(puVar7 + -0x1a0);
+        *(undefined8 *)(puVar7 + -0x198) = *(undefined8 *)(puVar7 + -0x198);
+        puVar21 = puVar7 + -0x1a0;
+        uVar16 = 8;
+        puVar23 = &UNK_016ccc34;
+        goto code_r0x016cc7a4;
+      }
+      auVar27 = func_0x00f78af4();
+      *(undefined8 *)(puVar7 + -0x1c0) = 0;
+      *(ulong *)(puVar7 + -0x1b8) = uVar12;
+      *(undefined1 **)(puVar7 + -0x1b0) = puVar7 + -0x1a0;
+      *(undefined **)(puVar7 + -0x1a8) = &FlatBuffers_FlatBufferBuilder__AddBool;
+      ppuVar22 = (undefined1 **)(puVar7 + -0x1b0);
+      auVar26._8_8_ = 1;
+      auVar26._0_8_ = auVar27._0_8_;
+      uVar18 = 0;
+      puVar23 = &UNK_016cde9c;
+      puVar7 = puVar7 + -0x1c0;
+      param_1 = uVar20;
+      goto code_r0x016cdaac;
+    }
+    puVar8 = puVar7 + -0x50;
+    uVar10 = *(undefined8 *)(puVar7 + -0x60);
+    uVar24 = *(undefined8 *)(puVar7 + -0x58);
+  }
+  else {
+    puVar8 = puVar7 + -0x30;
+    uVar10 = *(undefined8 *)(puVar7 + -0x40);
+    uVar24 = *(undefined8 *)(puVar7 + -0x38);
+  }
+  auVar5._8_4_ = iVar13;
+  auVar5._0_8_ = lVar15;
+  auVar5._12_4_ = 0;
+  auVar25._8_4_ = iVar13;
+  auVar25._0_8_ = lVar15;
+  auVar25._12_4_ = 0;
+  puVar6 = puVar8 + -0x30;
+  *(ulong *)(puVar8 + -0x30) = uVar20;
+  *(ulong *)(puVar8 + -0x28) = uVar19;
+  *(ulong *)(puVar8 + -0x20) = uVar16;
+  *(ulong *)(puVar8 + -0x18) = uVar12;
+  *(undefined8 *)(puVar8 + -0x10) = uVar10;
+  *(undefined8 *)(puVar8 + -8) = uVar24;
+  puVar21 = puVar8 + -0x10;
+  uVar16 = 1;
+  puVar23 = &UNK_016cc89c;
+code_r0x016cc7a4:
+  puVar9 = puVar6 + -0x20;
+  *(long *)(puVar6 + -0x20) = auVar5._8_8_;
+  *(ulong *)(puVar6 + -0x18) = uVar18;
+  *(undefined1 **)(puVar6 + -0x10) = puVar21;
+  *(undefined **)(puVar6 + -8) = puVar23;
+  puVar21 = puVar6 + -0x10;
+  if (auVar25._8_4_ < 0) {
+code_r0x016cc7d8:
+    func_0x00f78a24(0x3d1fcf8);
+    uVar18 = func_0x00f78aec();
+    /*System.ArgumentOutOfRangeException$$.ctor*/ func_0x0292a4d0(uVar18,0);
+    uVar10 = func_0x00f78a24(0x3d52ce8);
+    func_0x00f78ac0(uVar18,uVar10);
+    uVar14 = uVar16;
+  }
+  else {
+    lVar15 = *(long *)(auVar25._0_8_ + 0x10);
+    uVar14 = uVar16;
+    if (lVar15 != 0) {
+      if (auVar25._8_4_ <= *(int *)(lVar15 + 0x18) - (int)uVar16) {
+        return;
+      }
+      goto code_r0x016cc7d8;
+    }
+  }
+  puVar23 = &FlatBuffers_ByteBuffer__PutSbyte;
+  auVar25 = func_0x00f78af4();
+code_r0x016cc810:
+  puVar6 = puVar9 + -0x30;
+  *(ulong *)(puVar9 + -0x30) = uVar20;
+  *(undefined1 (*) [16])(puVar9 + -0x28) = auVar5;
+  *(ulong *)(puVar9 + -0x18) = uVar18;
+  *(undefined1 **)(puVar9 + -0x10) = puVar21;
+  *(undefined **)(puVar9 + -8) = puVar23;
+  puVar21 = puVar9 + -0x10;
+  uVar16 = 1;
+  puVar23 = &UNK_016cc834;
+  uVar18 = uVar14;
+  auVar5 = auVar25;
+  goto code_r0x016cc7a4;
+}
+
+
+
+// ============================================================
+// RVA: 0x167da0c | Core.Services.Match.StartOtherPlayersVector
+// ============================================================
+
+/* WARNING: Possible PIC construction at 0x016ce184: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc898: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc904: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc830: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdc30: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cc688: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdc8c: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdce8: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdd44: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cdda0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cddfc: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccba0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccc30: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cccb8: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccd14: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016ccdc0: Changing call to branch */
+/* WARNING: Possible PIC construction at 0x016cde98: Changing call to branch */
+/* WARNING: Removing unreachable block (ram,0x016ccdc4) */
+/* WARNING: Removing unreachable block (ram,0x016ccd18) */
+/* WARNING: Removing unreachable block (ram,0x016ccd20) */
+/* WARNING: Removing unreachable block (ram,0x016ccd48) */
+/* WARNING: Removing unreachable block (ram,0x016ccd28) */
+/* WARNING: Removing unreachable block (ram,0x016ccd4c) */
+/* WARNING: Removing unreachable block (ram,0x016ccd84) */
+/* WARNING: Removing unreachable block (ram,0x016ccdb0) */
+/* WARNING: Removing unreachable block (ram,0x016ccd88) */
+/* WARNING: Removing unreachable block (ram,0x016ccd34) */
+/* WARNING: Removing unreachable block (ram,0x016cccbc) */
+/* WARNING: Removing unreachable block (ram,0x016cccc4) */
+/* WARNING: Removing unreachable block (ram,0x016cccec) */
+/* WARNING: Removing unreachable block (ram,0x016ccccc) */
+/* WARNING: Removing unreachable block (ram,0x016cccf0) */
+/* WARNING: Removing unreachable block (ram,0x016cccd8) */
+/* WARNING: Removing unreachable block (ram,0x016ccc34) */
+/* WARNING: Removing unreachable block (ram,0x016ccc3c) */
+/* WARNING: Removing unreachable block (ram,0x016ccc44) */
+/* WARNING: Removing unreachable block (ram,0x016ccc90) */
+/* WARNING: Removing unreachable block (ram,0x016ccc68) */
+/* WARNING: Removing unreachable block (ram,0x016ccc94) */
+/* WARNING: Removing unreachable block (ram,0x016ccc70) */
+/* WARNING: Removing unreachable block (ram,0x016ccba4) */
+/* WARNING: Removing unreachable block (ram,0x016ccbac) */
+/* WARNING: Removing unreachable block (ram,0x016ccbb4) */
+/* WARNING: Removing unreachable block (ram,0x016ccc00) */
+/* WARNING: Removing unreachable block (ram,0x016ccbd8) */
+/* WARNING: Removing unreachable block (ram,0x016ccc04) */
+/* WARNING: Removing unreachable block (ram,0x016ccbe0) */
+/* WARNING: Removing unreachable block (ram,0x016cde00) */
+/* WARNING: Removing unreachable block (ram,0x016cdda4) */
+/* WARNING: Removing unreachable block (ram,0x016cdd48) */
+/* WARNING: Removing unreachable block (ram,0x016cdcec) */
+/* WARNING: Removing unreachable block (ram,0x016cdc90) */
+/* WARNING: Removing unreachable block (ram,0x016cc68c) */
+/* WARNING: Removing unreachable block (ram,0x016cc698) */
+/* WARNING: Removing unreachable block (ram,0x016cc6a0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6a8) */
+/* WARNING: Removing unreachable block (ram,0x016cc718) */
+/* WARNING: Removing unreachable block (ram,0x016cc720) */
+/* WARNING: Removing unreachable block (ram,0x016cc728) */
+/* WARNING: Removing unreachable block (ram,0x016cc730) */
+/* WARNING: Removing unreachable block (ram,0x016cc74c) */
+/* WARNING: Removing unreachable block (ram,0x016cc754) */
+/* WARNING: Removing unreachable block (ram,0x016cc778) */
+/* WARNING: Removing unreachable block (ram,0x016cc6b4) */
+/* WARNING: Removing unreachable block (ram,0x016cc77c) */
+/* WARNING: Removing unreachable block (ram,0x016cc6bc) */
+/* WARNING: Removing unreachable block (ram,0x016cc6c4) */
+/* WARNING: Removing unreachable block (ram,0x016cc6cc) */
+/* WARNING: Removing unreachable block (ram,0x016cc6e0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6e8) */
+/* WARNING: Removing unreachable block (ram,0x016cc794) */
+/* WARNING: Removing unreachable block (ram,0x016cc7a0) */
+/* WARNING: Removing unreachable block (ram,0x016cc6f0) */
+/* WARNING: Removing unreachable block (ram,0x016cc714) */
+/* WARNING: Removing unreachable block (ram,0x016cc780) */
+/* WARNING: Removing unreachable block (ram,0x016cdc34) */
+/* WARNING: Removing unreachable block (ram,0x016cc4e0) */
+/* WARNING: Removing unreachable block (ram,0x016cc518) */
+/* WARNING: Removing unreachable block (ram,0x016cc52c) */
+/* WARNING: Removing unreachable block (ram,0x016cc538) */
+/* WARNING: Removing unreachable block (ram,0x016cc540) */
+/* WARNING: Removing unreachable block (ram,0x016cc548) */
+/* WARNING: Removing unreachable block (ram,0x016cc5b8) */
+/* WARNING: Removing unreachable block (ram,0x016cc5c0) */
+/* WARNING: Removing unreachable block (ram,0x016cc5d4) */
+/* WARNING: Removing unreachable block (ram,0x016cc5dc) */
+/* WARNING: Removing unreachable block (ram,0x016cc5e4) */
+/* WARNING: Removing unreachable block (ram,0x016cc5f0) */
+/* WARNING: Removing unreachable block (ram,0x016cc554) */
+/* WARNING: Removing unreachable block (ram,0x016cc55c) */
+/* WARNING: Removing unreachable block (ram,0x016cc574) */
+/* WARNING: Removing unreachable block (ram,0x016cc57c) */
+/* WARNING: Removing unreachable block (ram,0x016cc624) */
+/* WARNING: Removing unreachable block (ram,0x016cc584) */
+/* WARNING: Removing unreachable block (ram,0x016cc628) */
+/* WARNING: Removing unreachable block (ram,0x016cc634) */
+/* WARNING: Removing unreachable block (ram,0x016cc668) */
+/* WARNING: Removing unreachable block (ram,0x016cc67c) */
+/* WARNING: Removing unreachable block (ram,0x016cc590) */
+/* WARNING: Removing unreachable block (ram,0x016cc5b4) */
+/* WARNING: Removing unreachable block (ram,0x016cc610) */
+/* WARNING: Removing unreachable block (ram,0x016cc834) */
+/* WARNING: Removing unreachable block (ram,0x016cc83c) */
+/* WARNING: Removing unreachable block (ram,0x016cc868) */
+/* WARNING: Removing unreachable block (ram,0x016cc844) */
+/* WARNING: Removing unreachable block (ram,0x016cc86c) */
+/* WARNING: Removing unreachable block (ram,0x016cc850) */
+/* WARNING: Removing unreachable block (ram,0x016cc908) */
+/* WARNING: Removing unreachable block (ram,0x016cc910) */
+/* WARNING: Removing unreachable block (ram,0x016cc920) */
+/* WARNING: Removing unreachable block (ram,0x016cc928) */
+/* WARNING: Removing unreachable block (ram,0x016cc964) */
+/* WARNING: Removing unreachable block (ram,0x016cc930) */
+/* WARNING: Removing unreachable block (ram,0x016cc968) */
+/* WARNING: Removing unreachable block (ram,0x016cc93c) */
+/* WARNING: Removing unreachable block (ram,0x016cc954) */
+/* WARNING: Removing unreachable block (ram,0x016cc89c) */
+/* WARNING: Removing unreachable block (ram,0x016cc8a4) */
+/* WARNING: Removing unreachable block (ram,0x016cc8d0) */
+/* WARNING: Removing unreachable block (ram,0x016cc8ac) */
+/* WARNING: Removing unreachable block (ram,0x016cc8d4) */
+/* WARNING: Removing unreachable block (ram,0x016cc8b8) */
+/* WARNING: Removing unreachable block (ram,0x016ce188) */
+/* WARNING: Removing unreachable block (ram,0x016cde9c) */
+
+void Core_Services_Match__StartOtherPlayersVector(ulong param_1,int param_2,undefined8 *param_3)
+
+{
+  uint uVar1;
+  uint uVar2;
+  uint uVar3;
+  int iVar4;
+  undefined1 auVar5 [16];
+  undefined1 *puVar6;
+  undefined1 *puVar7;
+  undefined1 *puVar8;
+  undefined1 *puVar9;
+  ulong uVar10;
+  long *plVar11;
+  int iVar12;
+  ulong uVar13;
+  undefined8 uVar14;
+  ulong uVar15;
+  undefined8 uVar16;
+  long lVar17;
+  ulong uVar18;
+  long lVar19;
+  ulong uVar20;
+  ulong uVar21;
+  undefined1 *puVar22;
+  undefined *puVar23;
+  undefined8 unaff_d8;
+  undefined8 unaff_d9;
+  undefined1 auVar24 [16];
+  
+  if (param_1 == 0) {
+    auVar24 = func_0x00f78af4();
+    lVar17 = auVar24._0_8_;
+    *(undefined8 *)(lVar17 + 0x10) = *param_3;
+    *(long *)(lVar17 + 0x20) = auVar24._8_8_;
+    *(undefined8 **)(lVar17 + 0x28) = param_3;
+    return;
+  }
+  uVar13 = 4;
+  uVar16 = 4;
+  puVar22 = &stack0xfffffffffffffff0;
+  /*FlatBuffers.FlatBufferBuilder$$NotNested*/ func_0x016ce1a4();
+  *(int *)(param_1 + 0x44) = param_2;
+  uVar20 = (ulong)(uint)(param_2 * 4);
+  uVar14 = 4;
+  puVar23 = &UNK_016ce188;
+  puVar7 = &stack0xffffffffffffffd0;
+  uVar10 = uVar20;
+  uVar15 = param_1;
+code_r0x016cdaac:
+  while( true ) {
+    puVar6 = puVar7 + -0x30;
+    *(ulong *)(puVar7 + -0x30) = uVar15;
+    *(ulong *)(puVar7 + -0x28) = uVar13;
+    *(ulong *)(puVar7 + -0x20) = uVar10;
+    *(undefined8 *)(puVar7 + -0x18) = uVar16;
+    *(undefined1 **)(puVar7 + -0x10) = puVar22;
+    *(undefined **)(puVar7 + -8) = puVar23;
+    iVar12 = (int)uVar14;
+    if (*(int *)(param_1 + 0x20) < iVar12) {
+      *(int *)(param_1 + 0x20) = iVar12;
+    }
+    uVar18 = uVar10;
+    uVar21 = uVar15;
+    if ((*(long *)(param_1 + 0x18) == 0) ||
+       (lVar17 = *(long *)(*(long *)(param_1 + 0x18) + 0x10), lVar17 == 0)) break;
+    uVar3 = *(uint *)(lVar17 + 0x18);
+    iVar4 = *(int *)(param_1 + 0x10);
+    uVar2 = iVar4 - (uVar3 + (int)uVar20) & iVar12 - 1U;
+    uVar18 = CONCAT44(0,uVar2);
+    uVar1 = (int)uVar20 + iVar12 + uVar2;
+    uVar21 = (ulong)uVar1;
+    while( true ) {
+      uVar13 = (ulong)uVar3;
+      if ((int)uVar1 <= iVar4) break;
+      /*FlatBuffers.FlatBufferBuilder$$GrowBuffer*/ func_0x016cda78(param_1);
+      if ((*(long *)(param_1 + 0x18) == 0) ||
+         (lVar17 = *(long *)(*(long *)(param_1 + 0x18) + 0x10), lVar17 == 0)) goto code_r0x016cdb68;
+      iVar4 = *(int *)(param_1 + 0x10) - uVar3;
+      uVar3 = *(uint *)(lVar17 + 0x18);
+      iVar4 = iVar4 + uVar3;
+      *(int *)(param_1 + 0x10) = iVar4;
+    }
+    if ((int)uVar2 < 1) {
+      return;
+    }
+    uVar10 = *(ulong *)(puVar7 + -0x20);
+    uVar16 = *(undefined8 *)(puVar7 + -0x18);
+    uVar15 = *(ulong *)(puVar7 + -0x30);
+    uVar13 = *(ulong *)(puVar7 + -0x28);
+    *(undefined8 *)(puVar7 + -0x10) = *(undefined8 *)(puVar7 + -0x10);
+    *(undefined8 *)(puVar7 + -8) = *(undefined8 *)(puVar7 + -8);
+    lVar17 = *(long *)(param_1 + 0x18);
+    auVar5._8_8_ = lVar17;
+    auVar5._0_8_ = uVar18;
+    uVar2 = *(int *)(param_1 + 0x10) - uVar2;
+    uVar21 = (ulong)uVar2;
+    auVar24._8_4_ = uVar2;
+    auVar24._0_8_ = lVar17;
+    auVar24._12_4_ = 0;
+    *(uint *)(param_1 + 0x10) = uVar2;
+    if (lVar17 != 0) {
+      *(ulong *)(puVar7 + -0x30) = uVar15;
+      *(ulong *)(puVar7 + -0x28) = uVar13;
+      *(ulong *)(puVar7 + -0x20) = uVar10;
+      *(undefined8 *)(puVar7 + -0x18) = uVar16;
+      *(undefined8 *)(puVar7 + -0x10) = *(undefined8 *)(puVar7 + -0x10);
+      *(undefined8 *)(puVar7 + -8) = *(undefined8 *)(puVar7 + -8);
+      puVar22 = puVar7 + -0x10;
+      puVar23 = &UNK_016cc908;
+      uVar10 = 0;
+      goto code_r0x016cc7a4;
+    }
+    lVar17 = func_0x00f78af4();
+    puVar22 = puVar7 + -0x20;
+    *(undefined1 **)(puVar7 + -0x20) = puVar7 + -0x10;
+    *(undefined **)(puVar7 + -0x18) = &FlatBuffers_FlatBufferBuilder__GrowBuffer;
+    if ((*(long *)(lVar17 + 0x18) != 0) &&
+       (plVar11 = *(long **)(*(long *)(lVar17 + 0x18) + 0x10), plVar11 != (long *)0x0)) {
+                    /* WARNING: Could not recover jumptable at 0x016cdaa4. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (**(code **)(*plVar11 + 0x178))
+                (plVar11,(int)plVar11[3] << 1,*(undefined8 *)(*plVar11 + 0x180));
+      return;
+    }
+    puVar23 = &FlatBuffers_FlatBufferBuilder__Prep;
+    auVar24 = func_0x00f78af4();
+    uVar14 = auVar24._8_8_;
+    param_1 = auVar24._0_8_;
+    puVar7 = puVar7 + -0x20;
+  }
+code_r0x016cdb68:
+  auVar5._8_8_ = uVar18;
+  auVar5._0_8_ = uVar13;
+  auVar24 = func_0x00f78af4();
+  uVar10 = auVar24._8_8_;
+  lVar19 = auVar24._0_8_;
+  *(undefined1 **)(puVar7 + -0x40) = puVar7 + -0x10;
+  *(undefined **)(puVar7 + -0x38) = &FlatBuffers_FlatBufferBuilder__PutBool;
+  lVar17 = *(long *)(lVar19 + 0x18);
+  iVar12 = *(int *)(lVar19 + 0x10) + -1;
+  *(int *)(lVar19 + 0x10) = iVar12;
+  if (lVar17 == 0) {
+    auVar24 = func_0x00f78af4();
+    uVar15 = auVar24._8_8_;
+    lVar17 = auVar24._0_8_;
+    *(undefined1 **)(puVar7 + -0x50) = puVar7 + -0x40;
+    *(undefined **)(puVar7 + -0x48) = &FlatBuffers_FlatBufferBuilder__PutSbyte;
+    iVar12 = *(int *)(lVar17 + 0x10) + -1;
+    auVar24._8_4_ = iVar12;
+    auVar24._0_8_ = *(long *)(lVar17 + 0x18);
+    auVar24._12_4_ = 0;
+    *(int *)(lVar17 + 0x10) = iVar12;
+    if (*(long *)(lVar17 + 0x18) != 0) {
+      puVar9 = puVar7 + -0x40;
+      puVar22 = *(undefined1 **)(puVar7 + -0x50);
+      puVar23 = *(undefined **)(puVar7 + -0x48);
+      uVar10 = param_1;
+      goto code_r0x016cc810;
+    }
+    auVar24 = func_0x00f78af4();
+    uVar10 = auVar24._8_8_;
+    lVar19 = auVar24._0_8_;
+    *(undefined1 **)(puVar7 + -0x60) = puVar7 + -0x50;
+    *(undefined **)(puVar7 + -0x58) = &FlatBuffers_FlatBufferBuilder__PutByte;
+    lVar17 = *(long *)(lVar19 + 0x18);
+    iVar12 = *(int *)(lVar19 + 0x10) + -1;
+    *(int *)(lVar19 + 0x10) = iVar12;
+    if (lVar17 == 0) {
+      auVar24 = func_0x00f78af4();
+      uVar10 = auVar24._8_8_;
+      lVar17 = auVar24._0_8_;
+      puVar6 = puVar7 + -0x90;
+      *(ulong *)(puVar7 + -0x90) = uVar21;
+      *(ulong *)(puVar7 + -0x88) = uVar13;
+      *(ulong *)(puVar7 + -0x80) = uVar18;
+      *(ulong *)(puVar7 + -0x78) = param_1;
+      *(undefined1 **)(puVar7 + -0x70) = puVar7 + -0x60;
+      *(undefined **)(puVar7 + -0x68) = &FlatBuffers_FlatBufferBuilder__PutShort;
+      puVar22 = puVar7 + -0x70;
+      lVar19 = *(long *)(lVar17 + 0x18);
+      uVar1 = *(int *)(lVar17 + 0x10) - 2;
+      auVar5._8_8_ = lVar19;
+      auVar5._0_8_ = CONCAT44(0,uVar1);
+      auVar24._8_4_ = uVar1;
+      auVar24._0_8_ = lVar19;
+      auVar24._12_4_ = 0;
+      *(uint *)(lVar17 + 0x10) = uVar1;
+      if (lVar19 != 0) {
+        uVar18 = 2;
+        puVar23 = &UNK_016cdc34;
+        goto code_r0x016cc7a4;
+      }
+      auVar24 = func_0x00f78af4();
+      uVar10 = auVar24._8_8_;
+      lVar17 = auVar24._0_8_;
+      puVar6 = puVar7 + -0xc0;
+      *(ulong *)(puVar7 + -0xc0) = uVar21;
+      *(ulong *)(puVar7 + -0xb8) = CONCAT44(0,uVar1);
+      *(undefined8 *)(puVar7 + -0xb0) = 0;
+      *(ulong *)(puVar7 + -0xa8) = param_1;
+      *(undefined1 **)(puVar7 + -0xa0) = puVar22;
+      *(undefined **)(puVar7 + -0x98) = &FlatBuffers_FlatBufferBuilder__PutUshort;
+      puVar22 = puVar7 + -0xa0;
+      lVar19 = *(long *)(lVar17 + 0x18);
+      uVar1 = *(int *)(lVar17 + 0x10) - 2;
+      auVar5._8_8_ = lVar19;
+      auVar5._0_8_ = CONCAT44(0,uVar1);
+      auVar24._8_4_ = uVar1;
+      auVar24._0_8_ = lVar19;
+      auVar24._12_4_ = 0;
+      *(uint *)(lVar17 + 0x10) = uVar1;
+      if (lVar19 != 0) {
+        uVar18 = 2;
+        puVar23 = &UNK_016cdc90;
+        goto code_r0x016cc7a4;
+      }
+      auVar24 = func_0x00f78af4();
+      uVar10 = auVar24._8_8_;
+      lVar17 = auVar24._0_8_;
+      puVar6 = puVar7 + -0xf0;
+      *(ulong *)(puVar7 + -0xf0) = uVar21;
+      *(ulong *)(puVar7 + -0xe8) = CONCAT44(0,uVar1);
+      *(undefined8 *)(puVar7 + -0xe0) = 0;
+      *(ulong *)(puVar7 + -0xd8) = param_1;
+      *(undefined1 **)(puVar7 + -0xd0) = puVar22;
+      *(undefined **)(puVar7 + -200) = &FlatBuffers_FlatBufferBuilder__PutInt;
+      puVar22 = puVar7 + -0xd0;
+      lVar19 = *(long *)(lVar17 + 0x18);
+      uVar1 = *(int *)(lVar17 + 0x10) - 4;
+      auVar5._8_8_ = lVar19;
+      auVar5._0_8_ = CONCAT44(0,uVar1);
+      auVar24._8_4_ = uVar1;
+      auVar24._0_8_ = lVar19;
+      auVar24._12_4_ = 0;
+      *(uint *)(lVar17 + 0x10) = uVar1;
+      if (lVar19 != 0) {
+        uVar18 = 4;
+        puVar23 = &UNK_016cdcec;
+        goto code_r0x016cc7a4;
+      }
+      auVar24 = func_0x00f78af4();
+      uVar10 = auVar24._8_8_;
+      lVar17 = auVar24._0_8_;
+      puVar6 = puVar7 + -0x120;
+      *(ulong *)(puVar7 + -0x120) = uVar21;
+      *(ulong *)(puVar7 + -0x118) = CONCAT44(0,uVar1);
+      *(undefined8 *)(puVar7 + -0x110) = 0;
+      *(ulong *)(puVar7 + -0x108) = param_1;
+      *(undefined1 **)(puVar7 + -0x100) = puVar22;
+      *(undefined **)(puVar7 + -0xf8) = &FlatBuffers_FlatBufferBuilder__PutUint;
+      puVar22 = puVar7 + -0x100;
+      lVar19 = *(long *)(lVar17 + 0x18);
+      uVar1 = *(int *)(lVar17 + 0x10) - 4;
+      auVar5._8_8_ = lVar19;
+      auVar5._0_8_ = CONCAT44(0,uVar1);
+      auVar24._8_4_ = uVar1;
+      auVar24._0_8_ = lVar19;
+      auVar24._12_4_ = 0;
+      *(uint *)(lVar17 + 0x10) = uVar1;
+      if (lVar19 != 0) {
+        uVar18 = 4;
+        puVar23 = &UNK_016cdd48;
+        goto code_r0x016cc7a4;
+      }
+      auVar24 = func_0x00f78af4();
+      uVar10 = auVar24._8_8_;
+      lVar17 = auVar24._0_8_;
+      puVar6 = puVar7 + -0x150;
+      *(ulong *)(puVar7 + -0x150) = uVar21;
+      *(ulong *)(puVar7 + -0x148) = CONCAT44(0,uVar1);
+      *(undefined8 *)(puVar7 + -0x140) = 0;
+      *(ulong *)(puVar7 + -0x138) = param_1;
+      *(undefined1 **)(puVar7 + -0x130) = puVar22;
+      *(undefined **)(puVar7 + -0x128) = &FlatBuffers_FlatBufferBuilder__PutLong;
+      puVar22 = puVar7 + -0x130;
+      lVar19 = *(long *)(lVar17 + 0x18);
+      uVar1 = *(int *)(lVar17 + 0x10) - 8;
+      auVar5._8_8_ = lVar19;
+      auVar5._0_8_ = CONCAT44(0,uVar1);
+      auVar24._8_4_ = uVar1;
+      auVar24._0_8_ = lVar19;
+      auVar24._12_4_ = 0;
+      *(uint *)(lVar17 + 0x10) = uVar1;
+      if (lVar19 != 0) {
+        uVar18 = 8;
+        puVar23 = &UNK_016cdda4;
+        goto code_r0x016cc7a4;
+      }
+      auVar24 = func_0x00f78af4();
+      uVar10 = auVar24._8_8_;
+      lVar17 = auVar24._0_8_;
+      puVar6 = puVar7 + -0x180;
+      *(ulong *)(puVar7 + -0x180) = uVar21;
+      *(ulong *)(puVar7 + -0x178) = CONCAT44(0,uVar1);
+      *(undefined8 *)(puVar7 + -0x170) = 0;
+      *(ulong *)(puVar7 + -0x168) = param_1;
+      *(undefined1 **)(puVar7 + -0x160) = puVar22;
+      *(undefined **)(puVar7 + -0x158) = &FlatBuffers_FlatBufferBuilder__PutUlong;
+      puVar22 = puVar7 + -0x160;
+      lVar19 = *(long *)(lVar17 + 0x18);
+      uVar1 = *(int *)(lVar17 + 0x10) - 8;
+      uVar13 = CONCAT44(0,uVar1);
+      auVar5._8_8_ = lVar19;
+      auVar5._0_8_ = uVar13;
+      auVar24._8_4_ = uVar1;
+      auVar24._0_8_ = lVar19;
+      auVar24._12_4_ = 0;
+      *(uint *)(lVar17 + 0x10) = uVar1;
+      if (lVar19 != 0) {
+        uVar18 = 8;
+        puVar23 = &UNK_016cde00;
+        goto code_r0x016cc7a4;
+      }
+      lVar17 = func_0x00f78af4();
+      *(undefined1 **)(puVar7 + -400) = puVar22;
+      *(undefined **)(puVar7 + -0x188) = &FlatBuffers_FlatBufferBuilder__PutFloat;
+      lVar19 = *(long *)(lVar17 + 0x18);
+      auVar5._8_8_ = lVar19;
+      uVar1 = *(int *)(lVar17 + 0x10) - 4;
+      uVar10 = (ulong)uVar1;
+      auVar24._8_4_ = uVar1;
+      auVar24._0_8_ = lVar19;
+      auVar24._12_4_ = 0;
+      *(uint *)(lVar17 + 0x10) = uVar1;
+      if (lVar19 != 0) {
+        puVar6 = puVar7 + -0x1b0;
+        *(undefined8 *)(puVar7 + -0x1b0) = unaff_d9;
+        *(undefined8 *)(puVar7 + -0x1a8) = unaff_d8;
+        *(undefined8 *)(puVar7 + -0x1a0) = 0;
+        *(ulong *)(puVar7 + -0x198) = param_1;
+        *(undefined8 *)(puVar7 + -400) = *(undefined8 *)(puVar7 + -400);
+        *(undefined8 *)(puVar7 + -0x188) = *(undefined8 *)(puVar7 + -0x188);
+        puVar22 = puVar7 + -400;
+        uVar18 = 4;
+        puVar23 = &UNK_016ccba4;
+        goto code_r0x016cc7a4;
+      }
+      lVar17 = func_0x00f78af4();
+      *(undefined1 **)(puVar7 + -0x1a0) = puVar7 + -400;
+      *(undefined **)(puVar7 + -0x198) = &FlatBuffers_FlatBufferBuilder__PutDouble;
+      lVar19 = *(long *)(lVar17 + 0x18);
+      auVar5._8_8_ = lVar19;
+      uVar1 = *(int *)(lVar17 + 0x10) - 8;
+      uVar10 = (ulong)uVar1;
+      auVar24._8_4_ = uVar1;
+      auVar24._0_8_ = lVar19;
+      auVar24._12_4_ = 0;
+      *(uint *)(lVar17 + 0x10) = uVar1;
+      if (lVar19 != 0) {
+        puVar6 = puVar7 + -0x1c0;
+        *(undefined8 *)(puVar7 + -0x1c0) = unaff_d9;
+        *(undefined8 *)(puVar7 + -0x1b8) = unaff_d8;
+        *(undefined8 *)(puVar7 + -0x1b0) = 0;
+        *(ulong *)(puVar7 + -0x1a8) = param_1;
+        *(undefined8 *)(puVar7 + -0x1a0) = *(undefined8 *)(puVar7 + -0x1a0);
+        *(undefined8 *)(puVar7 + -0x198) = *(undefined8 *)(puVar7 + -0x198);
+        puVar22 = puVar7 + -0x1a0;
+        uVar18 = 8;
+        puVar23 = &UNK_016ccc34;
+        goto code_r0x016cc7a4;
+      }
+      auVar24 = func_0x00f78af4();
+      uVar16 = auVar24._8_8_;
+      uVar10 = auVar24._0_8_;
+      *(undefined8 *)(puVar7 + -0x1c0) = 0;
+      *(ulong *)(puVar7 + -0x1b8) = param_1;
+      *(undefined1 **)(puVar7 + -0x1b0) = puVar7 + -0x1a0;
+      *(undefined **)(puVar7 + -0x1a8) = &FlatBuffers_FlatBufferBuilder__AddBool;
+      puVar22 = puVar7 + -0x1b0;
+      uVar14 = 1;
+      uVar20 = 0;
+      puVar23 = &UNK_016cde9c;
+      puVar7 = puVar7 + -0x1c0;
+      param_1 = uVar10;
+      uVar15 = uVar21;
+      goto code_r0x016cdaac;
+    }
+    puVar8 = puVar7 + -0x50;
+    uVar16 = *(undefined8 *)(puVar7 + -0x60);
+    uVar14 = *(undefined8 *)(puVar7 + -0x58);
+  }
+  else {
+    puVar8 = puVar7 + -0x30;
+    uVar16 = *(undefined8 *)(puVar7 + -0x40);
+    uVar14 = *(undefined8 *)(puVar7 + -0x38);
+  }
+  auVar5._8_4_ = iVar12;
+  auVar5._0_8_ = lVar17;
+  auVar5._12_4_ = 0;
+  auVar24._8_4_ = iVar12;
+  auVar24._0_8_ = lVar17;
+  auVar24._12_4_ = 0;
+  puVar6 = puVar8 + -0x30;
+  *(ulong *)(puVar8 + -0x30) = uVar21;
+  *(ulong *)(puVar8 + -0x28) = uVar13;
+  *(ulong *)(puVar8 + -0x20) = uVar18;
+  *(ulong *)(puVar8 + -0x18) = param_1;
+  *(undefined8 *)(puVar8 + -0x10) = uVar16;
+  *(undefined8 *)(puVar8 + -8) = uVar14;
+  puVar22 = puVar8 + -0x10;
+  uVar18 = 1;
+  puVar23 = &UNK_016cc89c;
+code_r0x016cc7a4:
+  puVar9 = puVar6 + -0x20;
+  *(long *)(puVar6 + -0x20) = auVar5._8_8_;
+  *(ulong *)(puVar6 + -0x18) = uVar10;
+  *(undefined1 **)(puVar6 + -0x10) = puVar22;
+  *(undefined **)(puVar6 + -8) = puVar23;
+  puVar22 = puVar6 + -0x10;
+  if (auVar24._8_4_ < 0) {
+code_r0x016cc7d8:
+    func_0x00f78a24(0x3d1fcf8);
+    uVar10 = func_0x00f78aec();
+    /*System.ArgumentOutOfRangeException$$.ctor*/ func_0x0292a4d0(uVar10,0);
+    uVar16 = func_0x00f78a24(0x3d52ce8);
+    func_0x00f78ac0(uVar10,uVar16);
+    uVar15 = uVar18;
+  }
+  else {
+    lVar17 = *(long *)(auVar24._0_8_ + 0x10);
+    uVar15 = uVar18;
+    if (lVar17 != 0) {
+      if (auVar24._8_4_ <= *(int *)(lVar17 + 0x18) - (int)uVar18) {
+        return;
+      }
+      goto code_r0x016cc7d8;
+    }
+  }
+  puVar23 = &FlatBuffers_ByteBuffer__PutSbyte;
+  auVar24 = func_0x00f78af4();
+code_r0x016cc810:
+  puVar6 = puVar9 + -0x30;
+  *(ulong *)(puVar9 + -0x30) = uVar21;
+  *(undefined1 (*) [16])(puVar9 + -0x28) = auVar5;
+  *(ulong *)(puVar9 + -0x18) = uVar10;
+  *(undefined1 **)(puVar9 + -0x10) = puVar22;
+  *(undefined **)(puVar9 + -8) = puVar23;
+  puVar22 = puVar9 + -0x10;
+  uVar18 = 1;
+  puVar23 = &UNK_016cc834;
+  uVar10 = uVar15;
+  auVar5 = auVar24;
+  goto code_r0x016cc7a4;
+}
+
+
+

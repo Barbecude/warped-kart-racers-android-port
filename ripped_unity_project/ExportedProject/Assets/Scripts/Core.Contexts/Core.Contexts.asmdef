@@ -1,0 +1,7 @@
+{
+  "name": "Core.Contexts",
+  "references": [
+    "Core.Application"
+  ],
+  "allowUnsafeCode": true
+}

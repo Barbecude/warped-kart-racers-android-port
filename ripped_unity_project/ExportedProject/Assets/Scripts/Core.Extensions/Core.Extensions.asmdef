@@ -1,0 +1,7 @@
+{
+  "name": "Core.Extensions",
+  "references": [
+    "Unity.Mathematics"
+  ],
+  "allowUnsafeCode": true
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Core.Assets",
+  "references": [
+    "Unity.Addressables",
+    "Unity.ResourceManager"
+  ],
+  "allowUnsafeCode": true
+}

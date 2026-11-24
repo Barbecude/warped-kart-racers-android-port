@@ -1,0 +1,5 @@
+{
+  "name": "Atlas.Build.Runtime",
+  "references": [],
+  "allowUnsafeCode": true
+}

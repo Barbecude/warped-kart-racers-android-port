@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Warped Kart Racers — 1:1 Android Port Realtime Progress</title>
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: #131a2a;
+      --border: #1f2b44;
+      --text: #e6edf7;
+      --muted: #8b9bb8;
+      --accent: #38bdf8;
+      --green: #22c55e;
+      --amber: #f59e0b;
+      --purple: #a855f7;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 24px;
+      line-height: 1.5;
+    }
+    .container { max-width: 1160px; margin: 0 auto; }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(168, 85, 247, 0.14);
+      color: #c084fc;
+      border: 1px solid rgba(168, 85, 247, 0.38);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #c084fc;
+      animation: pulse 1.4s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+    }
+    .stat-label { color: var(--muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .stat-val { font-size: 1.7rem; font-weight: 700; margin-top: 4px; }
+    .stat-sub { color: var(--muted); font-size: 0.82rem; margin-top: 2px; }
+    .section-title { font-size: 1.05rem; font-weight: 600; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+    .bar-wrap {
+      background: #0a101d;
+      border-radius: 999px;
+      height: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      transition: width 0.5s ease;
+    }
+    .fill-blue { background: linear-gradient(90deg, #0284c7, #38bdf8); }
+    .fill-green { background: linear-gradient(90deg, #16a34a, #4ade80); }
+    .fill-purple { background: linear-gradient(90deg, #7c3aed, #c084fc); }
+    .fill-amber { background: linear-gradient(90deg, #d97706, #fbbf24); }
+    .row-2 {
+      display: grid;
+      grid-template-columns: 1.05fr 1.15fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    @media (max-width: 860px) { .row-2 { grid-template-columns: 1fr; } }
+    .mod-item { margin-bottom: 11px; }
+    .mod-head { display: flex; justify-content: space-between; font-size: 0.86rem; margin-bottom: 4px; }
+    .mod-name { font-weight: 600; font-family: ui-monospace, Consolas, monospace; }
+    .mod-meta { color: var(--muted); font-size: 0.82rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+    th, td { text-align: left; padding: 7px 6px; border-bottom: 1px solid var(--border); }
+    th { color: var(--muted); font-weight: 600; font-size: 0.74rem; text-transform: uppercase; }
+    td.mono { font-family: ui-monospace, Consolas, monospace; word-break: break-all; }
+    td.num { text-align: right; white-space: nowrap; color: var(--muted); }
+    .stage-row { margin-bottom: 12px; }
+    .stage-head { display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 4px; gap: 10px; }
+    footer { text-align: center; color: var(--muted); font-size: 0.78rem; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Warped Kart Racers — 1:1 Offline Android Port</h1>
+        <div class="stat-sub">Live C# 1:1 Reconstruction Monitor (Ghidra 12.1.4 + Unity 2020.3.30f1)</div>
+      </div>
+      <div class="badge" id="statusBadge"><span class="dot"></span><span id="statusText">Menghubungkan...</span></div>
+    </header>
+
+    <div class="grid">
+      <div class="card">
+        <div class="stat-label">Script C# 1:1 Selesai</div>
+        <div class="stat-val" id="csCount">-</div>
+        <div class="stat-sub" id="csSub">-</div>
+      </div>
+      <div class="card">
+        <div class="stat-label">Baris Kode C# 1:1</div>
+        <div class="stat-val" id="csLoc">-</div>
+        <div class="stat-sub" id="csActiveMod">-</div>
+      </div>
+      <div class="card">
+        <div class="stat-label">Ghidra Decompile &amp; Resolve</div>
+        <div class="stat-val" id="methCount">-</div>
+        <div class="stat-sub" id="methSub">-</div>
+      </div>
+      <div class="card">
+        <div class="stat-label">Total Menuju 1:1 APK</div>
+        <div class="stat-val" id="overallPct">-</div>
+        <div class="stat-sub" id="overallSub">-</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="section-title">
+        <span>Progres Keseluruhan Proyek 1:1</span>
+        <span class="mod-meta" id="lastUpdate">Memuat...</span>
+      </div>
+      <div id="stagesBox"></div>
+    </div>
+
+    <div class="row-2">
+      <div class="card">
+        <div class="section-title">
+          <span>Progres Rekonstruksi C# 1:1 per Modul</span>
+          <span class="mod-meta">Assets/Scripts/</span>
+        </div>
+        <div id="csModulesBox"></div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">
+          <span>File .cs 1:1 Terbaru Diupdate</span>
+          <span class="mod-meta">Auto-refresh 2s</span>
+        </div>
+        <table>
+          <thead>
+            <tr><th>Script C#</th><th style="text-align:right">Baris</th><th style="text-align:right">Waktu</th></tr>
+          </thead>
+          <tbody id="recentCsBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <footer>Auto-refresh setiap 2 detik dari <code>http://127.0.0.1:8765/api/progress</code></footer>
+  </div>
+
+  <script>
+    function fmtKB(bytes) {
+      if (bytes >= 1048576) return (bytes / 1048576).toFixed(2) + ' MB';
+      return (bytes / 1024).toFixed(1) + ' KB';
+    }
+
+    async function refresh() {
+      try {
+        const res = await fetch('/api/progress?t=' + Date.now());
+        const d = await res.json();
+
+        document.getElementById('statusText').textContent = d.finished
+          ? 'Rekonstruksi C# 1:1 Aktif (Live)'
+          : 'Decompile Aktif (Live)';
+
+        document.getElementById('csCount').textContent = `${d.cs_real.toLocaleString()} / ${d.cs_total.toLocaleString()}`;
+        document.getElementById('csSub').textContent = `${d.cs_pct.toFixed(1)}% selesai · ${d.cs_dummy.toLocaleString()} stub tersisa`;
+
+        document.getElementById('csLoc').textContent = `${d.cs_loc.toLocaleString()} LOC`;
+        document.getElementById('csActiveMod').textContent = `Modul aktif: ${d.cs_active_module}`;
+
+        document.getElementById('methCount').textContent = `${d.methods_done.toLocaleString()} / ${d.methods_total.toLocaleString()}`;
+        document.getElementById('methSub').textContent = `${d.methods_pct.toFixed(1)}% · ${d.resolved_classes.toLocaleString()}/${d.classes_total.toLocaleString()} resolved (${d.total_mb.toFixed(1)} MB)`;
+
+        document.getElementById('overallPct').textContent = `${d.overall_pct.toFixed(1)}%`;
+        document.getElementById('overallSub').textContent = `Ghidra ok: ${d.success_rate.toFixed(1)}% · C# 1:1: ${d.cs_pct.toFixed(1)}%`;
+
+        document.getElementById('lastUpdate').textContent = `Update: ${d.timestamp}`;
+
+        const stagesHtml = d.stages.map(s => `
+          <div class="stage-row">
+            <div class="stage-head">
+              <span>${s.name}</span>
+              <span class="mod-meta"><strong>${s.pct.toFixed(1)}%</strong> — ${s.note}</span>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar-fill ${s.color}" style="width:${Math.min(100, s.pct)}%"></div>
+            </div>
+          </div>
+        `).join('');
+        document.getElementById('stagesBox').innerHTML = stagesHtml;
+
+        const csModsHtml = d.cs_modules.map(m => `
+          <div class="mod-item">
+            <div class="mod-head">
+              <span class="mod-name">${m.name}</span>
+              <span class="mod-meta">${m.done} / ${m.total} script (${m.pct.toFixed(0)}%)</span>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar-fill ${m.pct >= 100 ? 'fill-green' : 'fill-purple'}" style="width:${Math.min(100, m.pct)}%"></div>
+            </div>
+          </div>
+        `).join('');
+        document.getElementById('csModulesBox').innerHTML = csModsHtml;
+
+        const recentCsHtml = d.recent_cs.map(r => `
+          <tr>
+            <td class="mono">${r.name}</td>
+            <td class="num">${r.lines.toLocaleString()} · ${fmtKB(r.size)}</td>
+            <td class="num">${r.time}</td>
+          </tr>
+        `).join('');
+        document.getElementById('recentCsBody').innerHTML = recentCsHtml;
+      } catch (e) {
+        document.getElementById('statusText').textContent = 'Menunggu server...';
+      }
+    }
+
+    refresh();
+    setInterval(refresh, 2000);
+  </script>
+</body>
+</html>

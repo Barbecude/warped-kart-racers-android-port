@@ -1,0 +1,5 @@
+{
+  "name": "ElectricSquare.Build.Runtime",
+  "references": [],
+  "allowUnsafeCode": true
+}

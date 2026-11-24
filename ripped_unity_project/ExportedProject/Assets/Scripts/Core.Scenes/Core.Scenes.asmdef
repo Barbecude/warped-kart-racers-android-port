@@ -1,0 +1,8 @@
+{
+  "name": "Core.Scenes",
+  "references": [
+    "Unity.Addressables",
+    "Unity.ResourceManager"
+  ],
+  "allowUnsafeCode": true
+}

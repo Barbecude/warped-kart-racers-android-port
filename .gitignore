@@ -1,23 +1,53 @@
-# Binary files and large APKs (GitHub rejects files > 100MB)
-*.apk
+# Unity generated / cache folders
+**/Library/
+**/Temp/
+**/Obj/
+**/Build/
+**/Builds/
+**/Logs/
+**/UserSettings/
+**/MemoryCaptures/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+.vs/
+.vscode/
+
+# Large binary / IPA / raw dumps (exceed GitHub 100MB limit)
 *.ipa
-*.idsig
-*.zip
-*.so
-*.dll
-*.bank
-*.bundle
+*.apk
+*.aab
+extracted_ipa/
+ripped_addressables/
+decompiled_c/
+investigation.cany/
+il2cpp_dump/il2cpp.h
+il2cpp_dump/script.json
+il2cpp_dump/DummyDll/
 
-# Android build outputs
-build_unity/
-bin/
-gen/
-out/
-.gradle/
-*.dex
-*.class
-*.flat
+# Ignore Unity binary assets (keep only Scripts, Packages, ProjectSettings)
+ripped_unity_project/ExportedProject/Assets/*
+!ripped_unity_project/ExportedProject/Assets/Scripts/
+!ripped_unity_project/ExportedProject/Assets/Scripts.meta
 
-# System files
-.DS_Store
-Thumbs.db
+# Temporary disassembly, logs, and scratch dumps
+*.log
+tools/*_disasm*.txt
+tools/*_dump.txt
+tools/kc_*.c
+tools/kcf_*.c
+tools/u_*.c
+tools/unity_compile*.log
+__pycache__/
+*.pyc

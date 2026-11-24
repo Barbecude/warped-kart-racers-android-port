@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - KartVisualRoot
+  - BoostTrigger
+  - Wood
+  - Grass
+  - Dust
+  - Tarmac
+  - Dirt
+  - RumbleStrip
+  - GlideTrigger
+  - DontOverrideCellShading
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Character
+  - Kart
+  - Glider
+  - EnvironmentDecals
+  - Foliage
+  - Outline
+  - KartPhysics
+  - CollidableUsable
+  - Antenna
+  - Wheels
+  - PlacementHomingUsable
+  - Obstacle
+  - BackgroundTransparency
+  - KartPhysicsGhost
+  - KartTrigger
+  - CollidableUsableTrigger
+  - PlacementHomingUsableTrigger
+  - KartTriggersOnly
+  - SteeringWheel
+  - NearCulling
+  - MidCulling
+  - FarCulling
+  - NearOutlineCulling
+  - MidOutlineCulling
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

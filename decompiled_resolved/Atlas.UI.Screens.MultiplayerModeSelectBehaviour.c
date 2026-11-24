@@ -1,0 +1,105 @@
+// Decompiled from UnityFramework (ARM64 IL2CPP) via Ghidra 12.1.4
+// Class: Atlas.UI.Screens.MultiplayerModeSelectBehaviour
+
+// ============================================================
+// RVA: 0x149b468 | Atlas.UI.Screens.MultiplayerModeSelectBehaviour.get_CreateRoomButton
+// ============================================================
+
+undefined8 Atlas_UI_Screens_MultiplayerModeSelectBehaviour__get_CreateRoomButton(long param_1)
+
+{
+  return *(undefined8 *)(param_1 + 0x98);
+}
+
+
+
+// ============================================================
+// RVA: 0x149b470 | Atlas.UI.Screens.MultiplayerModeSelectBehaviour.get_JoinRoomButton
+// ============================================================
+
+undefined8 Atlas_UI_Screens_MultiplayerModeSelectBehaviour__get_JoinRoomButton(long param_1)
+
+{
+  return *(undefined8 *)(param_1 + 0xa0);
+}
+
+
+
+// ============================================================
+// RVA: 0x149b478 | Atlas.UI.Screens.MultiplayerModeSelectBehaviour.get_ExpandedReferenceRect
+// ============================================================
+
+undefined8 Atlas_UI_Screens_MultiplayerModeSelectBehaviour__get_ExpandedReferenceRect(long param_1)
+
+{
+  return *(undefined8 *)(param_1 + 0xa8);
+}
+
+
+
+// ============================================================
+// RVA: 0x149b480 | Atlas.UI.Screens.MultiplayerModeSelectBehaviour.get_ButtonRect
+// ============================================================
+
+undefined8 Atlas_UI_Screens_MultiplayerModeSelectBehaviour__get_ButtonRect(long param_1)
+
+{
+  return *(undefined8 *)(param_1 + 0xb0);
+}
+
+
+
+// ============================================================
+// RVA: 0x149b488 | Atlas.UI.Screens.MultiplayerModeSelectBehaviour.get_SeasonalContent
+// ============================================================
+
+undefined8 Atlas_UI_Screens_MultiplayerModeSelectBehaviour__get_SeasonalContent(long param_1)
+
+{
+  return *(undefined8 *)(param_1 + 0xb8);
+}
+
+
+
+// ============================================================
+// RVA: 0x149b490 | Atlas.UI.Screens.MultiplayerModeSelectBehaviour..ctor
+// ============================================================
+
+undefined1  [16] Atlas_UI_Screens_MultiplayerModeSelectBehaviour___ctor(ulong param_1)
+
+{
+  undefined8 uVar1;
+  undefined1 auVar2 [16];
+  
+  if ((bRam0000000003eb4872 & 1) == 0) {
+    func_0x00f78a20(0x3d3dc88,0);
+    func_0x00f78a20(0x3d1e380);
+    func_0x00f78a20(0x3d255d8);
+    bRam0000000003eb4872 = 1;
+  }
+  uVar1 = func_0x00f78aec(/*System.Collections.Generic.List<TopBarManager.TopBarButton>_TypeInfo*/ uRam0000000003d1e380);
+  /*System.Collections.Generic.List<TopBarManager.TopBarButton>$$.ctor*/ func_0x023dda88(uVar1,uRam0000000003d3dc88);
+  *(undefined8 *)(param_1 + 0x40) = uVar1;
+  uVar1 = func_0x00f78aec(/*System.Collections.Generic.List<TopBarManager.TopBarButton>_TypeInfo*/ uRam0000000003d1e380);
+  /*System.Collections.Generic.List<TopBarManager.TopBarButton>$$.ctor*/ func_0x023dda88(uVar1,uRam0000000003d3dc88);
+  *(undefined8 *)(param_1 + 0x48) = uVar1;
+  *(undefined4 *)(param_1 + 100) = 1;
+  if (((*(ushort *)(/*Core.UI2.UIScreenBehaviour_TypeInfo*/ lRam0000000003d255d8 + 0x132) >> 10 & 1) != 0) &&
+     (*(int *)(/*Core.UI2.UIScreenBehaviour_TypeInfo*/ lRam0000000003d255d8 + 0xe0) == 0)) {
+    func_0x00f78ad0();
+  }
+  if ((bRam0000000003ebf1b8 & 1) == 0) {
+    func_0x00f78a20(0x3d23990,0);
+    bRam0000000003ebf1b8 = 1;
+  }
+  if (((*(ushort *)(/*UnityEngine.Object_TypeInfo*/ lRam0000000003d23990 + 0x132) >> 10 & 1) != 0) &&
+     (*(int *)(/*UnityEngine.Object_TypeInfo*/ lRam0000000003d23990 + 0xe0) == 0)) {
+    func_0x00f78ad0();
+  }
+  auVar2._8_8_ = 0;
+  auVar2._0_8_ = param_1;
+  return auVar2;
+}
+
+
+
